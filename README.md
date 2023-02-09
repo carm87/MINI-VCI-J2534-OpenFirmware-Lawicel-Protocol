@@ -11,7 +11,9 @@ Now we have to manage the MCU reset when the application or dll open COMx port d
 We can procede in 3 different ways:
 
 1 - cut on the PCB the track that from the FTD chip goes into the LPC2119 reset pin (deprecated)
+
 2 - open FT_prog, read device, go into Hardware specific, invert RTS, CTS, DTR, RTS, program devices.
+
 3 - create a virtual COM port with Virtual Serial Ports Emulator e.g COMy, open realterm select COMx and 115200, in pins clear CTS, clear DTR (with this order). In echo port select COMy, 115200 and open it. Your application or dll shall be configured to work on COMy.
 
 The 3rd way can be also used to debug (realterm windows will show, if enabled, received and sent commands).
@@ -19,9 +21,13 @@ The 3rd way can be also used to debug (realterm windows will show, if enabled, r
 For whom want to develop:
 
 Download from peak-system development pack
+
 https://www.peak-system.com/PEAK-DevPack.565.0.html?&L=1
+
 Download Visual Studio ( I used v 1.28)
+
 Replace GIT source in the PCAN-Router_DR folder (PCAN-Router_DR shares LPC2119 with MINI VCI).
+
 Run VBS script.
 
 you can run make all task.
