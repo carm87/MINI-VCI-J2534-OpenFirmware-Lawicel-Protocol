@@ -1,0 +1,2507 @@
+[18:23:41.114] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[18:23:41.122] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[18:23:41.131] Found J2534 device: (2) ETAS - Generic Provider
+[18:23:41.136] Found J2534 device: (3) Sardine CAN
+[18:23:41.141] Found J2534 device: (4) Sardine CAN #2
+[18:23:41.147] Found J2534 device: (5) Teradyne - GNA600
+[18:23:41.153] Found J2534 device: (6) XHorse - MVCI
+[18:23:41.158] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[18:23:41.163] Found J2534 device: (8) XHorse - MVCIV
+[18:23:41.169] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[18:23:41.175] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[18:23:41.182] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[18:23:41.188] Sardine CAN registry: 4: [COM_PORT] = [1]
+[18:23:41.193] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[18:23:41.200] Sardine CAN registry: 6: [DISABLE_DTR] = [0]
+[18:23:41.205] Sardine CAN registry: 7: [CAN] = [1]
+[18:23:41.210] Sardine CAN registry: 8: [ISO15765] = [1]
+[18:23:41.217] Sardine CAN registry: 9: [ISO9141] = [1]
+[18:23:41.222] Sardine CAN registry: 10: [ISO14230] = [1]
+[18:23:41.228] Sardine CAN registry: 11: [UseInterceptor] = [0]
+[18:23:41.236] Couldn't find our Sardine CAN DLL path entry (FunctionLibrary) in registry!
+[18:23:41.245] Loading library or functions failed!
+[18:25:10.974] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[18:25:10.980] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[18:25:10.988] Found J2534 device: (2) ETAS - Generic Provider
+[18:25:10.993] Found J2534 device: (3) Sardine CAN
+[18:25:10.998] Found J2534 device: (4) Sardine CAN #2
+[18:25:11.  3] Found J2534 device: (5) Teradyne - GNA600
+[18:25:11.  9] Found J2534 device: (6) XHorse - MVCI
+[18:25:11. 15] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[18:25:11. 21] Found J2534 device: (8) XHorse - MVCIV
+[18:25:11. 27] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[18:25:11. 33] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[18:25:11. 41] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[18:25:11. 48] Sardine CAN registry: 4: [COM_PORT] = [3]
+[18:25:11. 54] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[18:25:11. 60] Sardine CAN registry: 6: [DISABLE_DTR] = [1]
+[18:25:11. 67] Sardine CAN registry: 7: [CAN] = [1]
+[18:25:11. 72] Sardine CAN registry: 8: [ISO15765] = [1]
+[18:25:11. 77] Sardine CAN registry: 9: [ISO9141] = [1]
+[18:25:11. 83] Sardine CAN registry: 10: [ISO14230] = [1]
+[18:25:11. 89] Sardine CAN registry: 11: [UseInterceptor] = [0]
+[18:25:11. 95] Couldn't find our Sardine CAN DLL path entry (FunctionLibrary) in registry!
+[18:25:11.105] Loading library or functions failed!
+[18:25:47.911] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[18:25:47.918] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[18:25:47.928] Found J2534 device: (2) ETAS - Generic Provider
+[18:25:47.935] Found J2534 device: (3) Sardine CAN
+[18:25:47.940] Found J2534 device: (4) Sardine CAN #2
+[18:25:47.947] Found J2534 device: (5) Teradyne - GNA600
+[18:25:47.953] Found J2534 device: (6) XHorse - MVCI
+[18:25:47.959] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[18:25:47.965] Found J2534 device: (8) XHorse - MVCIV
+[18:25:47.971] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[18:25:47.978] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[18:25:47.986] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[18:25:47.993] Sardine CAN registry: 4: [COM_PORT] = [3]
+[18:25:47.999] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[18:25:48.  6] Sardine CAN registry: 6: [DISABLE_DTR] = [1]
+[18:25:48. 12] Sardine CAN registry: 7: [CAN] = [1]
+[18:25:48. 18] Sardine CAN registry: 8: [ISO15765] = [1]
+[18:25:48. 24] Sardine CAN registry: 9: [ISO9141] = [1]
+[18:25:48. 30] Sardine CAN registry: 10: [ISO14230] = [1]
+[18:25:48. 37] Sardine CAN registry: 11: [UseInterceptor] = [0]
+[18:25:48. 44] Couldn't find our Sardine CAN DLL path entry (FunctionLibrary) in registry!
+[18:25:48. 53] Loading library or functions failed!
+[18:30:53.186] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[18:30:53.192] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[18:30:53.199] Found J2534 device: (2) ETAS - Generic Provider
+[18:30:53.205] Found J2534 device: (3) Sardine CAN
+[18:30:53.210] Found J2534 device: (4) Sardine CAN #2
+[18:30:53.215] Found J2534 device: (5) Teradyne - GNA600
+[18:30:53.221] Found J2534 device: (6) XHorse - MVCI
+[18:30:53.226] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[18:30:53.232] Found J2534 device: (8) XHorse - MVCIV
+[18:30:53.238] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[18:30:53.243] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[18:30:53.250] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[18:30:53.256] Sardine CAN registry: 4: [COM_PORT] = [1]
+[18:30:53.261] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[18:30:53.266] Sardine CAN registry: 6: [DISABLE_DTR] = [1]
+[18:30:53.272] Sardine CAN registry: 7: [CAN] = [1]
+[18:30:53.277] Sardine CAN registry: 8: [ISO15765] = [1]
+[18:30:53.282] Sardine CAN registry: 9: [ISO9141] = [1]
+[18:30:53.287] Sardine CAN registry: 10: [ISO14230] = [1]
+[18:30:53.293] Sardine CAN registry: 11: [UseInterceptor] = [0]
+[18:30:53.298] Sardine CAN registry: 12: [FunctionLibrary] = "C:\sardine\sardine.dll"
+[18:30:53.307] Loading library..
+[18:30:53.317] Loading functions..
+[18:30:53.321] Loading function #1..
+[18:30:53.325] Loading function #2..
+[18:30:53.329] Loading function #3..
+[18:30:53.333] Loading function #4..
+[18:30:53.337] Loading function #5..
+[18:30:53.341] Loading function #6..
+[18:30:53.344] Loading function #7..
+[18:30:53.348] Loading function #8..
+[18:30:53.352] Loading function #9..
+[18:30:53.355] Loading function #10..
+[18:30:53.359] Loading function #11..
+[18:30:53.362] Loading function #12..
+[18:30:53.366] Loading function #13..
+[18:30:53.371] Loading library&function: success! 
+[18:30:53.375] ------------ Testing DLL API ------------ 
+[18:30:53.381] ConnectTest +1
+[18:30:53.387] Error [8]: PassThru device is not connected to the PC.
+[18:30:53.393] ConnectTest +2
+[18:30:53.398] Error [8]: PassThru device is not connected to the PC.
+[18:30:53.404] ConnectTest +3
+[18:30:53.409] Error [8]: PassThru device is not connected to the PC.
+[18:30:53.415] ConnectTest +4
+[18:30:53.421] Error [8]: PassThru device is not connected to the PC.
+[18:30:53.427] ConnectTest +5
+[18:30:53.432] Error [8]: PassThru device is not connected to the PC.
+[18:30:53.438] ConnectTest +6
+[18:30:53.443] Error [8]: PassThru device is not connected to the PC.
+[18:30:53.449] ConnectTest -1
+[18:30:53.454] ConnectTest -2
+[18:30:53.459] ConnectTest -3
+[18:30:53.463] ReadTest 1:1
+[18:30:53.468] Error [8]: PassThru device is not connected to the PC.
+[18:30:53.474] ReadTest 2:1
+[18:30:53.478] Error [8]: PassThru device is not connected to the PC.
+[18:30:53.485] WriteTest 1:1
+[18:30:53.490] Error [8]: PassThru device is not connected to the PC.
+[18:30:53.496] WriteTest 2:1
+[18:30:53.501] Error [8]: PassThru device is not connected to the PC.
+[18:30:53.508] IOCTLtest 1:1
+[18:30:53.513] Error [8]: PassThru device is not connected to the PC.
+[18:30:53.521] IOCTLtest failed: PassThru device is not connected to the PC.
+[18:30:53.528] InterceptorTest 1:1 - NOTE! For this to work, "UseInterceptor" must be set to "1" in Windows registry!
+[18:30:53.541] Error [8]: PassThru device is not connected to the PC.
+[18:30:53.548] InterceptorTest failed: PassThru device is not connected to the PC.
+[18:30:53.557] PeriodicMsgTest 1:1
+[18:30:53.564] Error [8]: PassThru device is not connected to the PC.
+[18:30:53.572] OtherTest failed: PassThru device is not connected to the PC.
+[18:30:53.579] Freeing library...
+[18:30:53.587] 
+Connect tests failed: 6
+ Write tests failed: 2
+ read tests failed: 2
+ ioctl tests failed: 1
+ other tests failed: 1
+
+[18:31:22.846] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[18:31:22.854] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[18:31:22.863] Found J2534 device: (2) ETAS - Generic Provider
+[18:31:22.870] Found J2534 device: (3) Sardine CAN
+[18:31:22.877] Found J2534 device: (4) Sardine CAN #2
+[18:31:22.882] Found J2534 device: (5) Teradyne - GNA600
+[18:31:22.888] Found J2534 device: (6) XHorse - MVCI
+[18:31:22.894] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[18:31:22.900] Found J2534 device: (8) XHorse - MVCIV
+[18:31:22.906] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[18:31:22.912] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[18:31:22.919] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[18:31:22.925] Sardine CAN registry: 4: [COM_PORT] = [1]
+[18:31:22.931] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[18:31:22.938] Sardine CAN registry: 6: [DISABLE_DTR] = [1]
+[18:31:22.945] Sardine CAN registry: 7: [CAN] = [1]
+[18:31:22.950] Sardine CAN registry: 8: [ISO15765] = [1]
+[18:31:22.956] Sardine CAN registry: 9: [ISO9141] = [1]
+[18:31:22.961] Sardine CAN registry: 10: [ISO14230] = [1]
+[18:31:22.967] Sardine CAN registry: 11: [UseInterceptor] = [0]
+[18:31:22.974] Sardine CAN registry: 12: [FunctionLibrary] = "C:\sardine\sardine.dll"
+[18:31:22.983] Loading library..
+[18:31:22.993] Loading functions..
+[18:31:22.996] Loading function #1..
+[18:31:23.  0] Loading function #2..
+[18:31:23.  4] Loading function #3..
+[18:31:23.  8] Loading function #4..
+[18:31:23. 12] Loading function #5..
+[18:31:23. 16] Loading function #6..
+[18:31:23. 19] Loading function #7..
+[18:31:23. 24] Loading function #8..
+[18:31:23. 28] Loading function #9..
+[18:31:23. 32] Loading function #10..
+[18:31:23. 36] Loading function #11..
+[18:31:23. 40] Loading function #12..
+[18:31:23. 44] Loading function #13..
+[18:31:23. 48] Loading library&function: success! 
+[18:31:23. 53] ------------ Testing DLL API ------------ 
+[18:31:23. 60] ConnectTest +1
+[18:31:23. 65] Error [8]: PassThru device is not connected to the PC.
+[18:31:23. 71] ConnectTest +2
+[18:31:23. 77] Error [8]: PassThru device is not connected to the PC.
+[18:31:23. 83] ConnectTest +3
+[18:31:23. 89] Error [8]: PassThru device is not connected to the PC.
+[18:31:23. 95] ConnectTest +4
+[18:31:23.100] Error [8]: PassThru device is not connected to the PC.
+[18:31:23.107] ConnectTest +5
+[18:31:23.112] Error [8]: PassThru device is not connected to the PC.
+[18:31:23.118] ConnectTest +6
+[18:31:23.124] Error [8]: PassThru device is not connected to the PC.
+[18:31:23.130] ConnectTest -1
+[18:31:23.135] ConnectTest -2
+[18:31:23.140] ConnectTest -3
+[18:31:23.144] ReadTest 1:1
+[18:31:23.149] Error [8]: PassThru device is not connected to the PC.
+[18:31:23.155] ReadTest 2:1
+[18:31:23.161] Error [8]: PassThru device is not connected to the PC.
+[18:31:23.167] WriteTest 1:1
+[18:31:23.172] Error [8]: PassThru device is not connected to the PC.
+[18:31:23.179] WriteTest 2:1
+[18:31:23.184] Error [8]: PassThru device is not connected to the PC.
+[18:31:23.191] IOCTLtest 1:1
+[18:31:23.196] Error [8]: PassThru device is not connected to the PC.
+[18:31:23.203] IOCTLtest failed: PassThru device is not connected to the PC.
+[18:31:23.211] InterceptorTest 1:1 - NOTE! For this to work, "UseInterceptor" must be set to "1" in Windows registry!
+[18:31:23.224] Error [8]: PassThru device is not connected to the PC.
+[18:31:23.232] InterceptorTest failed: PassThru device is not connected to the PC.
+[18:31:23.241] PeriodicMsgTest 1:1
+[18:31:23.247] Error [8]: PassThru device is not connected to the PC.
+[18:31:23.255] OtherTest failed: PassThru device is not connected to the PC.
+[18:31:23.262] Freeing library...
+[18:31:23.269] 
+Connect tests failed: 6
+ Write tests failed: 2
+ read tests failed: 2
+ ioctl tests failed: 1
+ other tests failed: 1
+
+[18:32: 5.119] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[18:32: 5.127] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[18:32: 5.136] Found J2534 device: (2) ETAS - Generic Provider
+[18:32: 5.142] Found J2534 device: (3) Sardine CAN
+[18:32: 5.147] Found J2534 device: (4) Sardine CAN #2
+[18:32: 5.153] Found J2534 device: (5) Teradyne - GNA600
+[18:32: 5.159] Found J2534 device: (6) XHorse - MVCI
+[18:32: 5.164] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[18:32: 5.170] Found J2534 device: (8) XHorse - MVCIV
+[18:32: 5.176] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[18:32: 5.183] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[18:32: 5.190] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[18:32: 5.196] Sardine CAN registry: 4: [COM_PORT] = [1]
+[18:32: 5.201] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[18:32: 5.207] Sardine CAN registry: 6: [DISABLE_DTR] = [1]
+[18:32: 5.214] Sardine CAN registry: 7: [CAN] = [1]
+[18:32: 5.219] Sardine CAN registry: 8: [ISO15765] = [1]
+[18:32: 5.225] Sardine CAN registry: 9: [ISO9141] = [1]
+[18:32: 5.231] Sardine CAN registry: 10: [ISO14230] = [1]
+[18:32: 5.237] Sardine CAN registry: 11: [UseInterceptor] = [1]
+[18:32: 5.243] Sardine CAN registry: 12: [FunctionLibrary] = "C:\sardine\sardine.dll"
+[18:32: 5.253] Loading library..
+[18:32: 5.262] Loading functions..
+[18:32: 5.269] Loading function #1..
+[18:32: 5.273] Loading function #2..
+[18:32: 5.277] Loading function #3..
+[18:32: 5.281] Loading function #4..
+[18:32: 5.285] Loading function #5..
+[18:32: 5.289] Loading function #6..
+[18:32: 5.293] Loading function #7..
+[18:32: 5.298] Loading function #8..
+[18:32: 5.301] Loading function #9..
+[18:32: 5.305] Loading function #10..
+[18:32: 5.309] Loading function #11..
+[18:32: 5.313] Loading function #12..
+[18:32: 5.318] Loading function #13..
+[18:32: 5.322] Loading library&function: success! 
+[18:32: 5.327] ------------ Testing DLL API ------------ 
+[18:32: 5.333] ConnectTest +1
+[18:32: 5.339] Error [8]: PassThru device is not connected to the PC.
+[18:32: 5.347] ConnectTest +2
+[18:32: 5.353] Error [8]: PassThru device is not connected to the PC.
+[18:32: 5.360] ConnectTest +3
+[18:32: 5.367] Error [8]: PassThru device is not connected to the PC.
+[18:32: 5.373] ConnectTest +4
+[18:32: 5.378] Error [8]: PassThru device is not connected to the PC.
+[18:32: 5.386] ConnectTest +5
+[18:32: 5.391] Error [8]: PassThru device is not connected to the PC.
+[18:32: 5.397] ConnectTest +6
+[18:32: 5.402] Error [8]: PassThru device is not connected to the PC.
+[18:32: 5.408] ConnectTest -1
+[18:32: 5.413] ConnectTest -2
+[18:32: 5.417] ConnectTest -3
+[18:32: 5.421] ReadTest 1:1
+[18:32: 5.425] Error [8]: PassThru device is not connected to the PC.
+[18:32: 5.432] ReadTest 2:1
+[18:32: 5.437] Error [8]: PassThru device is not connected to the PC.
+[18:32: 5.443] WriteTest 1:1
+[18:32: 5.447] Error [8]: PassThru device is not connected to the PC.
+[18:32: 5.454] WriteTest 2:1
+[18:32: 5.458] Error [8]: PassThru device is not connected to the PC.
+[18:32: 5.465] IOCTLtest 1:1
+[18:32: 5.469] Error [8]: PassThru device is not connected to the PC.
+[18:32: 5.476] IOCTLtest failed: PassThru device is not connected to the PC.
+[18:32: 5.484] InterceptorTest 1:1 - NOTE! For this to work, "UseInterceptor" must be set to "1" in Windows registry!
+[18:32: 5.496] Error [8]: PassThru device is not connected to the PC.
+[18:32: 5.503] InterceptorTest failed: PassThru device is not connected to the PC.
+[18:32: 5.510] PeriodicMsgTest 1:1
+[18:32: 5.516] Error [8]: PassThru device is not connected to the PC.
+[18:32: 5.523] OtherTest failed: PassThru device is not connected to the PC.
+[18:32: 5.530] Freeing library...
+[18:32: 5.537] 
+Connect tests failed: 6
+ Write tests failed: 2
+ read tests failed: 2
+ ioctl tests failed: 1
+ other tests failed: 1
+
+[18:32:54. 59] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[18:32:54. 66] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[18:32:54. 74] Found J2534 device: (2) ETAS - Generic Provider
+[18:32:54. 81] Found J2534 device: (3) Sardine CAN
+[18:32:54. 86] Found J2534 device: (4) Sardine CAN #2
+[18:32:54. 92] Found J2534 device: (5) Teradyne - GNA600
+[18:32:54. 98] Found J2534 device: (6) XHorse - MVCI
+[18:32:54.103] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[18:32:54.109] Found J2534 device: (8) XHorse - MVCIV
+[18:32:54.115] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[18:32:54.121] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[18:32:54.128] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[18:32:54.134] Sardine CAN registry: 4: [COM_PORT] = [1]
+[18:32:54.139] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[18:32:54.146] Sardine CAN registry: 6: [DISABLE_DTR] = [1]
+[18:32:54.152] Sardine CAN registry: 7: [CAN] = [1]
+[18:32:54.156] Sardine CAN registry: 8: [ISO15765] = [1]
+[18:32:54.162] Sardine CAN registry: 9: [ISO9141] = [1]
+[18:32:54.168] Sardine CAN registry: 10: [ISO14230] = [1]
+[18:32:54.173] Sardine CAN registry: 11: [UseInterceptor] = [1]
+[18:32:54.179] Sardine CAN registry: 12: [FunctionLibrary] = "C:\sardine\sardine.dll"
+[18:32:54.187] Loading library..
+[18:32:54.196] Loading functions..
+[18:32:54.202] Loading function #1..
+[18:32:54.206] Loading function #2..
+[18:32:54.209] Loading function #3..
+[18:32:54.214] Loading function #4..
+[18:32:54.217] Loading function #5..
+[18:32:54.221] Loading function #6..
+[18:32:54.224] Loading function #7..
+[18:32:54.228] Loading function #8..
+[18:32:54.232] Loading function #9..
+[18:32:54.235] Loading function #10..
+[18:32:54.241] Loading function #11..
+[18:32:54.245] Loading function #12..
+[18:32:54.249] Loading function #13..
+[18:32:54.252] Loading library&function: success! 
+[18:32:54.257] ------------ Testing DLL API ------------ 
+[18:32:54.263] ConnectTest +1
+[18:32:54.267] Error [8]: PassThru device is not connected to the PC.
+[18:32:54.274] ConnectTest +2
+[18:32:54.280] Error [8]: PassThru device is not connected to the PC.
+[18:32:54.286] ConnectTest +3
+[18:32:54.290] Error [8]: PassThru device is not connected to the PC.
+[18:32:54.297] ConnectTest +4
+[18:32:54.301] Error [8]: PassThru device is not connected to the PC.
+[18:32:54.308] ConnectTest +5
+[18:32:54.313] Error [8]: PassThru device is not connected to the PC.
+[18:32:54.319] ConnectTest +6
+[18:32:54.324] Error [8]: PassThru device is not connected to the PC.
+[18:32:54.330] ConnectTest -1
+[18:32:54.334] ConnectTest -2
+[18:32:54.338] ConnectTest -3
+[18:32:54.342] ReadTest 1:1
+[18:32:54.347] Error [8]: PassThru device is not connected to the PC.
+[18:32:54.353] ReadTest 2:1
+[18:32:54.357] Error [8]: PassThru device is not connected to the PC.
+[18:32:54.364] WriteTest 1:1
+[18:32:54.368] Error [8]: PassThru device is not connected to the PC.
+[18:32:54.375] WriteTest 2:1
+[18:32:54.380] Error [8]: PassThru device is not connected to the PC.
+[18:32:54.386] IOCTLtest 1:1
+[18:32:54.391] Error [8]: PassThru device is not connected to the PC.
+[18:32:54.398] IOCTLtest failed: PassThru device is not connected to the PC.
+[18:32:54.405] InterceptorTest 1:1 - NOTE! For this to work, "UseInterceptor" must be set to "1" in Windows registry!
+[18:32:54.418] Error [8]: PassThru device is not connected to the PC.
+[18:32:54.425] InterceptorTest failed: PassThru device is not connected to the PC.
+[18:32:54.432] PeriodicMsgTest 1:1
+[18:32:54.437] Error [8]: PassThru device is not connected to the PC.
+[18:32:54.445] OtherTest failed: PassThru device is not connected to the PC.
+[18:32:54.452] Freeing library...
+[18:32:54.459] 
+Connect tests failed: 6
+ Write tests failed: 2
+ read tests failed: 2
+ ioctl tests failed: 1
+ other tests failed: 1
+
+[18:33:42.314] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[18:33:42.322] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[18:33:42.329] Found J2534 device: (2) ETAS - Generic Provider
+[18:33:42.335] Found J2534 device: (3) Sardine CAN
+[18:33:42.342] Found J2534 device: (4) Sardine CAN #2
+[18:33:42.348] Found J2534 device: (5) Teradyne - GNA600
+[18:33:42.353] Found J2534 device: (6) XHorse - MVCI
+[18:33:42.360] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[18:33:42.366] Found J2534 device: (8) XHorse - MVCIV
+[18:33:42.371] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[18:33:42.378] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[18:33:42.385] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[18:33:42.392] Sardine CAN registry: 4: [COM_PORT] = [21]
+[18:33:42.398] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[18:33:42.406] Sardine CAN registry: 6: [DISABLE_DTR] = [1]
+[18:33:42.412] Sardine CAN registry: 7: [CAN] = [1]
+[18:33:42.417] Sardine CAN registry: 8: [ISO15765] = [1]
+[18:33:42.424] Sardine CAN registry: 9: [ISO9141] = [1]
+[18:33:42.429] Sardine CAN registry: 10: [ISO14230] = [1]
+[18:33:42.435] Sardine CAN registry: 11: [UseInterceptor] = [1]
+[18:33:42.442] Sardine CAN registry: 12: [FunctionLibrary] = "C:\sardine\sardine.dll"
+[18:33:42.451] Loading library..
+[18:33:42.462] Loading functions..
+[18:33:42.469] Loading function #1..
+[18:33:42.475] Loading function #2..
+[18:33:42.478] Loading function #3..
+[18:33:42.486] Loading function #4..
+[18:33:42.497] Loading function #5..
+[18:33:42.502] Loading function #6..
+[18:33:42.506] Loading function #7..
+[18:33:42.510] Loading function #8..
+[18:33:42.514] Loading function #9..
+[18:33:42.518] Loading function #10..
+[18:33:42.524] Loading function #11..
+[18:33:42.527] Loading function #12..
+[18:33:42.530] Loading function #13..
+[18:33:42.534] Loading library&function: success! 
+[18:33:42.541] ------------ Testing DLL API ------------ 
+[18:33:42.546] ConnectTest +1
+[18:33:42.550] Error [8]: PassThru device is not connected to the PC.
+[18:33:42.557] ConnectTest +2
+[18:33:42.563] Error [8]: PassThru device is not connected to the PC.
+[18:33:42.578] ConnectTest +3
+[18:33:42.589] Error [8]: PassThru device is not connected to the PC.
+[18:33:42.595] ConnectTest +4
+[18:33:42.599] Error [8]: PassThru device is not connected to the PC.
+[18:33:42.606] ConnectTest +5
+[18:33:42.610] Error [8]: PassThru device is not connected to the PC.
+[18:33:42.615] ConnectTest +6
+[18:33:42.621] Error [8]: PassThru device is not connected to the PC.
+[18:33:42.627] ConnectTest -1
+[18:33:42.631] ConnectTest -2
+[18:33:42.638] ConnectTest -3
+[18:33:42.643] ReadTest 1:1
+[18:33:42.647] Error [8]: PassThru device is not connected to the PC.
+[18:33:42.653] ReadTest 2:1
+[18:33:42.659] Error [8]: PassThru device is not connected to the PC.
+[18:33:42.667] WriteTest 1:1
+[18:33:42.671] Error [8]: PassThru device is not connected to the PC.
+[18:33:42.678] WriteTest 2:1
+[18:33:42.682] Error [8]: PassThru device is not connected to the PC.
+[18:33:42.690] IOCTLtest 1:1
+[18:33:42.694] Error [8]: PassThru device is not connected to the PC.
+[18:33:42.702] IOCTLtest failed: PassThru device is not connected to the PC.
+[18:33:42.709] InterceptorTest 1:1 - NOTE! For this to work, "UseInterceptor" must be set to "1" in Windows registry!
+[18:33:42.720] Error [8]: PassThru device is not connected to the PC.
+[18:33:42.728] InterceptorTest failed: PassThru device is not connected to the PC.
+[18:33:42.735] PeriodicMsgTest 1:1
+[18:33:42.741] Error [8]: PassThru device is not connected to the PC.
+[18:33:42.749] OtherTest failed: PassThru device is not connected to the PC.
+[18:33:42.757] Freeing library...
+[18:33:42.764] 
+Connect tests failed: 6
+ Write tests failed: 2
+ read tests failed: 2
+ ioctl tests failed: 1
+ other tests failed: 1
+
+[18:35: 7.611] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[18:35: 7.618] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[18:35: 7.626] Found J2534 device: (2) ETAS - Generic Provider
+[18:35: 7.632] Found J2534 device: (3) Sardine CAN
+[18:35: 7.636] Found J2534 device: (4) Sardine CAN #2
+[18:35: 7.642] Found J2534 device: (5) Teradyne - GNA600
+[18:35: 7.647] Found J2534 device: (6) XHorse - MVCI
+[18:35: 7.652] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[18:35: 7.658] Found J2534 device: (8) XHorse - MVCIV
+[18:35: 7.663] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[18:35: 7.669] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[18:35: 7.676] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[18:35: 7.681] Sardine CAN registry: 4: [COM_PORT] = [1]
+[18:35: 7.686] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[18:35: 7.693] Sardine CAN registry: 6: [DISABLE_DTR] = [0]
+[18:35: 7.697] Sardine CAN registry: 7: [CAN] = [1]
+[18:35: 7.705] Sardine CAN registry: 8: [ISO15765] = [1]
+[18:35: 7.711] Sardine CAN registry: 9: [ISO9141] = [1]
+[18:35: 7.715] Sardine CAN registry: 10: [ISO14230] = [1]
+[18:35: 7.720] Sardine CAN registry: 11: [UseInterceptor] = [1]
+[18:35: 7.726] Sardine CAN registry: 12: [FunctionLibrary] = "C:\sardine\sardine.dll"
+[18:35: 7.733] Loading library..
+[18:35: 7.741] Loading functions..
+[18:35: 7.745] Loading function #1..
+[18:35: 7.748] Loading function #2..
+[18:35: 7.751] Loading function #3..
+[18:35: 7.754] Loading function #4..
+[18:35: 7.759] Loading function #5..
+[18:35: 7.763] Loading function #6..
+[18:35: 7.766] Loading function #7..
+[18:35: 7.769] Loading function #8..
+[18:35: 7.772] Loading function #9..
+[18:35: 7.776] Loading function #10..
+[18:35: 7.779] Loading function #11..
+[18:35: 7.782] Loading function #12..
+[18:35: 7.785] Loading function #13..
+[18:35: 7.788] Loading library&function: success! 
+[18:35: 7.794] ------------ Testing DLL API ------------ 
+[18:35: 7.798] ConnectTest +1
+[18:35: 7.803] Error [8]: PassThru device is not connected to the PC.
+[18:35: 7.810] ConnectTest +2
+[18:35: 7.814] Error [8]: PassThru device is not connected to the PC.
+[18:35: 7.820] ConnectTest +3
+[18:35: 7.826] Error [8]: PassThru device is not connected to the PC.
+[18:35: 7.832] ConnectTest +4
+[18:35: 7.836] Error [8]: PassThru device is not connected to the PC.
+[18:35: 7.843] ConnectTest +5
+[18:35: 7.848] Error [8]: PassThru device is not connected to the PC.
+[18:35: 7.854] ConnectTest +6
+[18:35: 7.858] Error [8]: PassThru device is not connected to the PC.
+[18:35: 7.865] ConnectTest -1
+[18:35: 7.869] ConnectTest -2
+[18:35: 7.872] ConnectTest -3
+[18:35: 7.877] ReadTest 1:1
+[18:35: 7.882] Error [8]: PassThru device is not connected to the PC.
+[18:35: 7.888] ReadTest 2:1
+[18:35: 7.893] Error [8]: PassThru device is not connected to the PC.
+[18:35: 7.899] WriteTest 1:1
+[18:35: 7.904] Error [8]: PassThru device is not connected to the PC.
+[18:35: 7.910] WriteTest 2:1
+[18:35: 7.915] Error [8]: PassThru device is not connected to the PC.
+[18:35: 7.921] IOCTLtest 1:1
+[18:35: 7.926] Error [8]: PassThru device is not connected to the PC.
+[18:35: 7.933] IOCTLtest failed: PassThru device is not connected to the PC.
+[18:35: 7.940] InterceptorTest 1:1 - NOTE! For this to work, "UseInterceptor" must be set to "1" in Windows registry!
+[18:35: 7.952] Error [8]: PassThru device is not connected to the PC.
+[18:35: 7.960] InterceptorTest failed: PassThru device is not connected to the PC.
+[18:35: 7.967] PeriodicMsgTest 1:1
+[18:35: 7.972] Error [8]: PassThru device is not connected to the PC.
+[18:35: 7.980] OtherTest failed: PassThru device is not connected to the PC.
+[18:35: 7.986] Freeing library...
+[18:35: 7.993] 
+Connect tests failed: 6
+ Write tests failed: 2
+ read tests failed: 2
+ ioctl tests failed: 1
+ other tests failed: 1
+
+[18:35:11.916] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[18:35:11.929] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[18:35:11.938] Found J2534 device: (2) ETAS - Generic Provider
+[18:35:11.944] Found J2534 device: (3) Sardine CAN
+[18:35:11.948] Found J2534 device: (4) Sardine CAN #2
+[18:35:11.954] Found J2534 device: (5) Teradyne - GNA600
+[18:35:11.959] Found J2534 device: (6) XHorse - MVCI
+[18:35:11.964] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[18:35:11.971] Found J2534 device: (8) XHorse - MVCIV
+[18:35:11.976] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[18:35:11.982] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[18:35:11.989] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[18:35:11.994] Sardine CAN registry: 4: [COM_PORT] = [1]
+[18:35:12.  0] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[18:35:12.  6] Sardine CAN registry: 6: [DISABLE_DTR] = [0]
+[18:35:12. 12] Sardine CAN registry: 7: [CAN] = [1]
+[18:35:12. 17] Sardine CAN registry: 8: [ISO15765] = [1]
+[18:35:12. 22] Sardine CAN registry: 9: [ISO9141] = [1]
+[18:35:12. 28] Sardine CAN registry: 10: [ISO14230] = [1]
+[18:35:12. 33] Sardine CAN registry: 11: [UseInterceptor] = [1]
+[18:35:12. 39] Sardine CAN registry: 12: [FunctionLibrary] = "C:\sardine\sardine.dll"
+[18:35:12. 47] Loading library..
+[18:35:12. 56] Loading functions..
+[18:35:12. 60] Loading function #1..
+[18:35:12. 64] Loading function #2..
+[18:35:12. 68] Loading function #3..
+[18:35:12. 72] Loading function #4..
+[18:35:12. 75] Loading function #5..
+[18:35:12. 79] Loading function #6..
+[18:35:12. 82] Loading function #7..
+[18:35:12. 86] Loading function #8..
+[18:35:12. 90] Loading function #9..
+[18:35:12. 93] Loading function #10..
+[18:35:12. 97] Loading function #11..
+[18:35:12.101] Loading function #12..
+[18:35:12.105] Loading function #13..
+[18:35:12.108] Loading library&function: success! 
+[18:35:12.113] ------------ Testing DLL API ------------ 
+[18:35:12.118] ConnectTest +1
+[18:35:12.124] Error [8]: PassThru device is not connected to the PC.
+[18:35:12.130] ConnectTest +2
+[18:35:12.134] Error [8]: PassThru device is not connected to the PC.
+[18:35:12.141] ConnectTest +3
+[18:35:12.145] Error [8]: PassThru device is not connected to the PC.
+[18:35:12.152] ConnectTest +4
+[18:35:12.158] Error [8]: PassThru device is not connected to the PC.
+[18:35:12.164] ConnectTest +5
+[18:35:12.168] Error [8]: PassThru device is not connected to the PC.
+[18:35:12.175] ConnectTest +6
+[18:35:12.179] Error [8]: PassThru device is not connected to the PC.
+[18:35:12.186] ConnectTest -1
+[18:35:12.191] ConnectTest -2
+[18:35:12.195] ConnectTest -3
+[18:35:12.199] ReadTest 1:1
+[18:35:12.203] Error [8]: PassThru device is not connected to the PC.
+[18:35:12.210] ReadTest 2:1
+[18:35:12.214] Error [8]: PassThru device is not connected to the PC.
+[18:35:12.220] WriteTest 1:1
+[18:35:12.226] Error [8]: PassThru device is not connected to the PC.
+[18:35:12.232] WriteTest 2:1
+[18:35:12.236] Error [8]: PassThru device is not connected to the PC.
+[18:35:12.244] IOCTLtest 1:1
+[18:35:12.249] Error [8]: PassThru device is not connected to the PC.
+[18:35:12.256] IOCTLtest failed: PassThru device is not connected to the PC.
+[18:35:12.263] InterceptorTest 1:1 - NOTE! For this to work, "UseInterceptor" must be set to "1" in Windows registry!
+[18:35:12.275] Error [8]: PassThru device is not connected to the PC.
+[18:35:12.282] InterceptorTest failed: PassThru device is not connected to the PC.
+[18:35:12.290] PeriodicMsgTest 1:1
+[18:35:12.295] Error [8]: PassThru device is not connected to the PC.
+[18:35:12.302] OtherTest failed: PassThru device is not connected to the PC.
+[18:35:12.310] Freeing library...
+[18:35:12.317] 
+Connect tests failed: 6
+ Write tests failed: 2
+ read tests failed: 2
+ ioctl tests failed: 1
+ other tests failed: 1
+
+[18:37:14.448] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[18:37:14.457] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[18:37:14.465] Found J2534 device: (2) ETAS - Generic Provider
+[18:37:14.471] Found J2534 device: (3) Sardine CAN
+[18:37:14.479] Found J2534 device: (4) Sardine CAN #2
+[18:37:14.483] Found J2534 device: (5) Teradyne - GNA600
+[18:37:14.490] Found J2534 device: (6) XHorse - MVCI
+[18:37:14.496] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[18:37:14.502] Found J2534 device: (8) XHorse - MVCIV
+[18:37:14.508] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[18:37:14.528] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[18:37:14.533] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[18:37:14.547] Sardine CAN registry: 4: [COM_PORT] = [1]
+[18:37:14.556] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[18:37:14.566] Sardine CAN registry: 6: [DISABLE_DTR] = [0]
+[18:37:14.576] Sardine CAN registry: 7: [CAN] = [1]
+[18:37:14.582] Sardine CAN registry: 8: [ISO15765] = [1]
+[18:37:14.592] Sardine CAN registry: 9: [ISO9141] = [1]
+[18:37:14.615] Sardine CAN registry: 10: [ISO14230] = [1]
+[18:37:14.623] Sardine CAN registry: 11: [UseInterceptor] = [1]
+[18:37:14.632] Sardine CAN registry: 12: [FunctionLibrary] = "C:\sardine\sardine.dll"
+[18:37:14.645] Loading library..
+[18:37:14.656] Loading functions..
+[18:37:14.662] Loading function #1..
+[18:37:14.666] Loading function #2..
+[18:37:14.674] Loading function #3..
+[18:37:14.678] Loading function #4..
+[18:37:14.681] Loading function #5..
+[18:37:14.688] Loading function #6..
+[18:37:14.692] Loading function #7..
+[18:37:14.697] Loading function #8..
+[18:37:14.700] Loading function #9..
+[18:37:14.705] Loading function #10..
+[18:37:14.708] Loading function #11..
+[18:37:14.712] Loading function #12..
+[18:37:14.715] Loading function #13..
+[18:37:14.719] Loading library&function: success! 
+[18:37:14.725] ------------ Testing DLL API ------------ 
+[18:37:14.730] ConnectTest +1
+[18:37:14.735] Error [8]: PassThru device is not connected to the PC.
+[18:37:14.742] ConnectTest +2
+[18:37:14.747] Error [8]: PassThru device is not connected to the PC.
+[18:37:14.757] ConnectTest +3
+[18:37:14.762] Error [8]: PassThru device is not connected to the PC.
+[18:37:14.769] ConnectTest +4
+[18:37:14.774] Error [8]: PassThru device is not connected to the PC.
+[18:37:14.782] ConnectTest +5
+[18:37:14.786] Error [8]: PassThru device is not connected to the PC.
+[18:37:14.792] ConnectTest +6
+[18:37:14.797] Error [8]: PassThru device is not connected to the PC.
+[18:37:14.810] ConnectTest -1
+[18:37:14.814] ConnectTest -2
+[18:37:14.818] ConnectTest -3
+[18:37:14.824] ReadTest 1:1
+[18:37:14.828] Error [8]: PassThru device is not connected to the PC.
+[18:37:14.835] ReadTest 2:1
+[18:37:14.847] Error [8]: PassThru device is not connected to the PC.
+[18:37:14.856] WriteTest 1:1
+[18:37:14.861] Error [8]: PassThru device is not connected to the PC.
+[18:37:14.868] WriteTest 2:1
+[18:37:14.873] Error [8]: PassThru device is not connected to the PC.
+[18:37:14.879] IOCTLtest 1:1
+[18:37:14.884] Error [8]: PassThru device is not connected to the PC.
+[18:37:14.892] IOCTLtest failed: PassThru device is not connected to the PC.
+[18:37:14.900] InterceptorTest 1:1 - NOTE! For this to work, "UseInterceptor" must be set to "1" in Windows registry!
+[18:37:14.923] Error [8]: PassThru device is not connected to the PC.
+[18:37:14.930] InterceptorTest failed: PassThru device is not connected to the PC.
+[18:37:14.943] PeriodicMsgTest 1:1
+[18:37:14.955] Error [8]: PassThru device is not connected to the PC.
+[18:37:14.964] OtherTest failed: PassThru device is not connected to the PC.
+[18:37:14.988] Freeing library...
+[18:37:15. 11] 
+Connect tests failed: 6
+ Write tests failed: 2
+ read tests failed: 2
+ ioctl tests failed: 1
+ other tests failed: 1
+
+[18:37:17.907] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[18:37:17.916] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[18:37:17.923] Found J2534 device: (2) ETAS - Generic Provider
+[18:37:17.930] Found J2534 device: (3) Sardine CAN
+[18:37:17.934] Found J2534 device: (4) Sardine CAN #2
+[18:37:17.939] Found J2534 device: (5) Teradyne - GNA600
+[18:37:17.944] Found J2534 device: (6) XHorse - MVCI
+[18:37:17.951] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[18:37:17.957] Found J2534 device: (8) XHorse - MVCIV
+[18:37:17.964] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[18:37:17.969] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[18:37:17.976] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[18:37:17.983] Sardine CAN registry: 4: [COM_PORT] = [1]
+[18:37:17.988] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[18:37:17.994] Sardine CAN registry: 6: [DISABLE_DTR] = [0]
+[18:37:18.  1] Sardine CAN registry: 7: [CAN] = [1]
+[18:37:18.  5] Sardine CAN registry: 8: [ISO15765] = [1]
+[18:37:18. 10] Sardine CAN registry: 9: [ISO9141] = [1]
+[18:37:18. 17] Sardine CAN registry: 10: [ISO14230] = [1]
+[18:37:18. 22] Sardine CAN registry: 11: [UseInterceptor] = [1]
+[18:37:18. 27] Sardine CAN registry: 12: [FunctionLibrary] = "C:\sardine\sardine.dll"
+[18:37:18. 37] Loading library..
+[18:37:18. 47] Loading functions..
+[18:37:18. 61] Loading function #1..
+[18:37:18. 66] Loading function #2..
+[18:37:18. 70] Loading function #3..
+[18:37:18. 74] Loading function #4..
+[18:37:18. 78] Loading function #5..
+[18:37:18. 82] Loading function #6..
+[18:37:18. 86] Loading function #7..
+[18:37:18. 89] Loading function #8..
+[18:37:18. 93] Loading function #9..
+[18:37:18. 97] Loading function #10..
+[18:37:18.100] Loading function #11..
+[18:37:18.104] Loading function #12..
+[18:37:18.107] Loading function #13..
+[18:37:18.111] Loading library&function: success! 
+[18:37:18.116] ------------ Testing DLL API ------------ 
+[18:37:18.121] ConnectTest +1
+[18:37:18.126] Error [8]: PassThru device is not connected to the PC.
+[18:37:18.133] ConnectTest +2
+[18:37:18.137] Error [8]: PassThru device is not connected to the PC.
+[18:37:18.143] ConnectTest +3
+[18:37:18.149] Error [8]: PassThru device is not connected to the PC.
+[18:37:18.155] ConnectTest +4
+[18:37:18.159] Error [8]: PassThru device is not connected to the PC.
+[18:37:18.166] ConnectTest +5
+[18:37:18.171] Error [8]: PassThru device is not connected to the PC.
+[18:37:18.177] ConnectTest +6
+[18:37:18.182] Error [8]: PassThru device is not connected to the PC.
+[18:37:18.188] ConnectTest -1
+[18:37:18.192] ConnectTest -2
+[18:37:18.196] ConnectTest -3
+[18:37:18.201] ReadTest 1:1
+[18:37:18.205] Error [8]: PassThru device is not connected to the PC.
+[18:37:18.211] ReadTest 2:1
+[18:37:18.216] Error [8]: PassThru device is not connected to the PC.
+[18:37:18.223] WriteTest 1:1
+[18:37:18.227] Error [8]: PassThru device is not connected to the PC.
+[18:37:18.234] WriteTest 2:1
+[18:37:18.239] Error [8]: PassThru device is not connected to the PC.
+[18:37:18.247] IOCTLtest 1:1
+[18:37:18.252] Error [8]: PassThru device is not connected to the PC.
+[18:37:18.261] IOCTLtest failed: PassThru device is not connected to the PC.
+[18:37:18.269] InterceptorTest 1:1 - NOTE! For this to work, "UseInterceptor" must be set to "1" in Windows registry!
+[18:37:18.282] Error [8]: PassThru device is not connected to the PC.
+[18:37:18.290] InterceptorTest failed: PassThru device is not connected to the PC.
+[18:37:18.298] PeriodicMsgTest 1:1
+[18:37:18.303] Error [8]: PassThru device is not connected to the PC.
+[18:37:18.310] OtherTest failed: PassThru device is not connected to the PC.
+[18:37:18.317] Freeing library...
+[18:37:18.324] 
+Connect tests failed: 6
+ Write tests failed: 2
+ read tests failed: 2
+ ioctl tests failed: 1
+ other tests failed: 1
+
+[18:37:21.405] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[18:37:21.415] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[18:37:21.423] Found J2534 device: (2) ETAS - Generic Provider
+[18:37:21.429] Found J2534 device: (3) Sardine CAN
+[18:37:21.435] Found J2534 device: (4) Sardine CAN #2
+[18:37:21.441] Found J2534 device: (5) Teradyne - GNA600
+[18:37:21.447] Found J2534 device: (6) XHorse - MVCI
+[18:37:21.453] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[18:37:21.460] Found J2534 device: (8) XHorse - MVCIV
+[18:37:21.465] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[18:37:21.471] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[18:37:21.478] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[18:37:21.483] Sardine CAN registry: 4: [COM_PORT] = [1]
+[18:37:21.488] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[18:37:21.495] Sardine CAN registry: 6: [DISABLE_DTR] = [0]
+[18:37:21.501] Sardine CAN registry: 7: [CAN] = [1]
+[18:37:21.506] Sardine CAN registry: 8: [ISO15765] = [1]
+[18:37:21.512] Sardine CAN registry: 9: [ISO9141] = [1]
+[18:37:21.517] Sardine CAN registry: 10: [ISO14230] = [1]
+[18:37:21.522] Sardine CAN registry: 11: [UseInterceptor] = [1]
+[18:37:21.529] Sardine CAN registry: 12: [FunctionLibrary] = "C:\sardine\sardine.dll"
+[18:37:21.537] Loading library..
+[18:37:21.547] Loading functions..
+[18:37:21.551] Loading function #1..
+[18:37:21.555] Loading function #2..
+[18:37:21.559] Loading function #3..
+[18:37:21.562] Loading function #4..
+[18:37:21.566] Loading function #5..
+[18:37:21.570] Loading function #6..
+[18:37:21.573] Loading function #7..
+[18:37:21.577] Loading function #8..
+[18:37:21.581] Loading function #9..
+[18:37:21.584] Loading function #10..
+[18:37:21.587] Loading function #11..
+[18:37:21.592] Loading function #12..
+[18:37:21.596] Loading function #13..
+[18:37:21.599] Loading library&function: success! 
+[18:37:21.604] ------------ Testing DLL API ------------ 
+[18:37:21.610] ConnectTest +1
+[18:37:21.614] Error [8]: PassThru device is not connected to the PC.
+[18:37:21.623] ConnectTest +2
+[18:37:21.628] Error [8]: PassThru device is not connected to the PC.
+[18:37:21.634] ConnectTest +3
+[18:37:21.639] Error [8]: PassThru device is not connected to the PC.
+[18:37:21.646] ConnectTest +4
+[18:37:21.651] Error [8]: PassThru device is not connected to the PC.
+[18:37:21.659] ConnectTest +5
+[18:37:21.664] Error [8]: PassThru device is not connected to the PC.
+[18:37:21.670] ConnectTest +6
+[18:37:21.675] Error [8]: PassThru device is not connected to the PC.
+[18:37:21.682] ConnectTest -1
+[18:37:21.686] ConnectTest -2
+[18:37:21.692] ConnectTest -3
+[18:37:21.696] ReadTest 1:1
+[18:37:21.712] Error [8]: PassThru device is not connected to the PC.
+[18:37:21.720] ReadTest 2:1
+[18:37:21.725] Error [8]: PassThru device is not connected to the PC.
+[18:37:21.732] WriteTest 1:1
+[18:37:21.736] Error [8]: PassThru device is not connected to the PC.
+[18:37:21.743] WriteTest 2:1
+[18:37:21.748] Error [8]: PassThru device is not connected to the PC.
+[18:37:21.754] IOCTLtest 1:1
+[18:37:21.759] Error [8]: PassThru device is not connected to the PC.
+[18:37:21.766] IOCTLtest failed: PassThru device is not connected to the PC.
+[18:37:21.773] InterceptorTest 1:1 - NOTE! For this to work, "UseInterceptor" must be set to "1" in Windows registry!
+[18:37:21.785] Error [8]: PassThru device is not connected to the PC.
+[18:37:21.793] InterceptorTest failed: PassThru device is not connected to the PC.
+[18:37:21.800] PeriodicMsgTest 1:1
+[18:37:21.805] Error [8]: PassThru device is not connected to the PC.
+[18:37:21.812] OtherTest failed: PassThru device is not connected to the PC.
+[18:37:21.819] Freeing library...
+[18:37:21.826] 
+Connect tests failed: 6
+ Write tests failed: 2
+ read tests failed: 2
+ ioctl tests failed: 1
+ other tests failed: 1
+
+[18:37:37.742] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[18:37:37.750] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[18:37:37.759] Found J2534 device: (2) ETAS - Generic Provider
+[18:37:37.767] Found J2534 device: (3) Sardine CAN
+[18:37:37.774] Found J2534 device: (4) Sardine CAN #2
+[18:37:37.779] Found J2534 device: (5) Teradyne - GNA600
+[18:37:37.784] Found J2534 device: (6) XHorse - MVCI
+[18:37:37.792] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[18:37:37.801] Found J2534 device: (8) XHorse - MVCIV
+[18:37:37.807] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[18:37:37.813] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[18:37:37.819] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[18:37:37.827] Sardine CAN registry: 4: [COM_PORT] = [1]
+[18:37:37.832] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[18:37:37.837] Sardine CAN registry: 6: [DISABLE_DTR] = [0]
+[18:37:37.844] Sardine CAN registry: 7: [CAN] = [1]
+[18:37:37.849] Sardine CAN registry: 8: [ISO15765] = [1]
+[18:37:37.853] Sardine CAN registry: 9: [ISO9141] = [1]
+[18:37:37.860] Sardine CAN registry: 10: [ISO14230] = [1]
+[18:37:37.865] Sardine CAN registry: 11: [UseInterceptor] = [1]
+[18:37:37.870] Sardine CAN registry: 12: [FunctionLibrary] = "C:\sardine\sardine.dll"
+[18:37:37.880] Loading library..
+[18:37:37.889] Loading functions..
+[18:37:37.893] Loading function #1..
+[18:37:37.898] Loading function #2..
+[18:37:37.901] Loading function #3..
+[18:37:37.906] Loading function #4..
+[18:37:37.911] Loading function #5..
+[18:37:37.914] Loading function #6..
+[18:37:37.918] Loading function #7..
+[18:37:37.922] Loading function #8..
+[18:37:37.926] Loading function #9..
+[18:37:37.929] Loading function #10..
+[18:37:37.933] Loading function #11..
+[18:37:37.936] Loading function #12..
+[18:37:37.941] Loading function #13..
+[18:37:37.945] Loading library&function: success! 
+[18:37:37.956] ------------ Testing DLL API ------------ 
+[18:37:37.961] ConnectTest +1
+[18:37:37.966] Error [8]: PassThru device is not connected to the PC.
+[18:37:37.974] ConnectTest +2
+[18:37:37.984] Error [8]: PassThru device is not connected to the PC.
+[18:37:37.991] ConnectTest +3
+[18:37:37.996] Error [8]: PassThru device is not connected to the PC.
+[18:37:38.  3] ConnectTest +4
+[18:37:38. 10] Error [8]: PassThru device is not connected to the PC.
+[18:37:38. 16] ConnectTest +5
+[18:37:38. 23] Error [8]: PassThru device is not connected to the PC.
+[18:37:38. 29] ConnectTest +6
+[18:37:38. 35] Error [8]: PassThru device is not connected to the PC.
+[18:37:38. 43] ConnectTest -1
+[18:37:38. 48] ConnectTest -2
+[18:37:38. 54] ConnectTest -3
+[18:37:38. 61] ReadTest 1:1
+[18:37:38. 66] Error [8]: PassThru device is not connected to the PC.
+[18:37:38. 74] ReadTest 2:1
+[18:37:38. 78] Error [8]: PassThru device is not connected to the PC.
+[18:37:38. 87] WriteTest 1:1
+[18:37:38. 93] Error [8]: PassThru device is not connected to the PC.
+[18:37:38.102] WriteTest 2:1
+[18:37:38.108] Error [8]: PassThru device is not connected to the PC.
+[18:37:38.118] IOCTLtest 1:1
+[18:37:38.128] Error [8]: PassThru device is not connected to the PC.
+[18:37:38.137] IOCTLtest failed: PassThru device is not connected to the PC.
+[18:37:38.145] InterceptorTest 1:1 - NOTE! For this to work, "UseInterceptor" must be set to "1" in Windows registry!
+[18:37:38.160] Error [8]: PassThru device is not connected to the PC.
+[18:37:38.170] InterceptorTest failed: PassThru device is not connected to the PC.
+[18:37:38.178] PeriodicMsgTest 1:1
+[18:37:38.184] Error [8]: PassThru device is not connected to the PC.
+[18:37:38.193] OtherTest failed: PassThru device is not connected to the PC.
+[18:37:38.202] Freeing library...
+[18:37:38.211] 
+Connect tests failed: 6
+ Write tests failed: 2
+ read tests failed: 2
+ ioctl tests failed: 1
+ other tests failed: 1
+
+[18:39:44.673] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[18:39:44.681] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[18:39:44.689] Found J2534 device: (2) ETAS - Generic Provider
+[18:39:44.695] Found J2534 device: (3) Sardine CAN
+[18:39:44.700] Found J2534 device: (4) Sardine CAN #2
+[18:39:44.705] Found J2534 device: (5) Teradyne - GNA600
+[18:39:44.710] Found J2534 device: (6) XHorse - MVCI
+[18:39:44.715] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[18:39:44.722] Found J2534 device: (8) XHorse - MVCIV
+[18:39:44.727] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[18:39:44.733] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[18:39:44.740] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[18:39:44.745] Sardine CAN registry: 4: [COM_PORT] = [1]
+[18:39:44.751] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[18:39:44.757] Sardine CAN registry: 6: [DISABLE_DTR] = [0]
+[18:39:44.762] Sardine CAN registry: 7: [CAN] = [1]
+[18:39:44.767] Sardine CAN registry: 8: [ISO15765] = [1]
+[18:39:44.773] Sardine CAN registry: 9: [ISO9141] = [1]
+[18:39:44.778] Sardine CAN registry: 10: [ISO14230] = [1]
+[18:39:44.784] Sardine CAN registry: 11: [UseInterceptor] = [1]
+[18:39:44.790] Sardine CAN registry: 12: [FunctionLibrary] = "C:\sardine\Sardine.dll"
+[18:39:44.797] Loading library..
+[18:39:44.814] Loading functions..
+[18:39:44.819] Loading function #1..
+[18:39:44.822] Loading function #2..
+[18:39:44.826] Loading function #3..
+[18:39:44.829] Loading function #4..
+[18:39:44.834] Loading function #5..
+[18:39:44.837] Loading function #6..
+[18:39:44.841] Loading function #7..
+[18:39:44.844] Loading function #8..
+[18:39:44.848] Loading function #9..
+[18:39:44.851] Loading function #10..
+[18:39:44.855] Loading function #11..
+[18:39:44.859] Loading function #12..
+[18:39:44.862] Loading function #13..
+[18:39:44.866] Loading library&function: success! 
+[18:39:44.871] ------------ Testing DLL API ------------ 
+[18:39:44.876] ConnectTest +1
+[18:39:44.883] Error [8]: PassThru device is not connected to the PC.
+[18:39:44.890] ConnectTest +2
+[18:39:44.895] Error [8]: PassThru device is not connected to the PC.
+[18:39:44.901] ConnectTest +3
+[18:39:44.906] Error [8]: PassThru device is not connected to the PC.
+[18:39:44.913] ConnectTest +4
+[18:39:44.918] Error [8]: PassThru device is not connected to the PC.
+[18:39:44.924] ConnectTest +5
+[18:39:44.929] Error [8]: PassThru device is not connected to the PC.
+[18:39:44.936] ConnectTest +6
+[18:39:44.940] Error [8]: PassThru device is not connected to the PC.
+[18:39:44.946] ConnectTest -1
+[18:39:44.951] ConnectTest -2
+[18:39:44.955] ConnectTest -3
+[18:39:44.959] ReadTest 1:1
+[18:39:44.964] Error [8]: PassThru device is not connected to the PC.
+[18:39:44.970] ReadTest 2:1
+[18:39:44.975] Error [8]: PassThru device is not connected to the PC.
+[18:39:44.981] WriteTest 1:1
+[18:39:44.987] Error [8]: PassThru device is not connected to the PC.
+[18:39:44.993] WriteTest 2:1
+[18:39:44.998] Error [8]: PassThru device is not connected to the PC.
+[18:39:45.  5] IOCTLtest 1:1
+[18:39:45. 11] Error [8]: PassThru device is not connected to the PC.
+[18:39:45. 19] IOCTLtest failed: PassThru device is not connected to the PC.
+[18:39:45. 26] InterceptorTest 1:1 - NOTE! For this to work, "UseInterceptor" must be set to "1" in Windows registry!
+[18:39:45. 39] Error [8]: PassThru device is not connected to the PC.
+[18:39:45. 46] InterceptorTest failed: PassThru device is not connected to the PC.
+[18:39:45. 54] PeriodicMsgTest 1:1
+[18:39:45. 59] Error [8]: PassThru device is not connected to the PC.
+[18:39:45. 67] OtherTest failed: PassThru device is not connected to the PC.
+[18:39:45. 74] Freeing library...
+[18:39:45. 81] 
+Connect tests failed: 6
+ Write tests failed: 2
+ read tests failed: 2
+ ioctl tests failed: 1
+ other tests failed: 1
+
+[18:40:11.337] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[18:40:11.344] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[18:40:11.353] Found J2534 device: (2) ETAS - Generic Provider
+[18:40:11.359] Found J2534 device: (3) Sardine CAN
+[18:40:11.365] Found J2534 device: (4) Sardine CAN #2
+[18:40:11.371] Found J2534 device: (5) Teradyne - GNA600
+[18:40:11.377] Found J2534 device: (6) XHorse - MVCI
+[18:40:11.383] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[18:40:11.389] Found J2534 device: (8) XHorse - MVCIV
+[18:40:11.394] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[18:40:11.400] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[18:40:11.407] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[18:40:11.413] Sardine CAN registry: 4: [COM_PORT] = [1]
+[18:40:11.419] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[18:40:11.425] Sardine CAN registry: 6: [DISABLE_DTR] = [0]
+[18:40:11.431] Sardine CAN registry: 7: [CAN] = [1]
+[18:40:11.436] Sardine CAN registry: 8: [ISO15765] = [1]
+[18:40:11.441] Sardine CAN registry: 9: [ISO9141] = [1]
+[18:40:11.447] Sardine CAN registry: 10: [ISO14230] = [1]
+[18:40:11.452] Sardine CAN registry: 11: [UseInterceptor] = [1]
+[18:40:11.458] Sardine CAN registry: 12: [FunctionLibrary] = "C:\sardine\Sardine.dll"
+[18:40:11.466] Loading library..
+[18:40:11.527] Loading functions..
+[18:40:11.537] Loading function #1..
+[18:40:11.541] Loading function #2..
+[18:40:11.547] Loading function #3..
+[18:40:11.552] Loading function #4..
+[18:40:11.556] Loading function #5..
+[18:40:11.561] Loading function #6..
+[18:40:11.565] Loading function #7..
+[18:40:11.569] Loading function #8..
+[18:40:11.573] Loading function #9..
+[18:40:11.576] Loading function #10..
+[18:40:11.580] Loading function #11..
+[18:40:11.584] Loading function #12..
+[18:40:11.587] Loading function #13..
+[18:40:11.591] Loading library&function: success! 
+[18:40:11.596] ------------ Testing DLL API ------------ 
+[18:40:11.602] ConnectTest +1
+[18:40:11.607] Error [8]: PassThru device is not connected to the PC.
+[18:40:11.614] ConnectTest +2
+[18:40:11.618] Error [8]: PassThru device is not connected to the PC.
+[18:40:11.625] ConnectTest +3
+[18:40:11.630] Error [8]: PassThru device is not connected to the PC.
+[18:40:11.636] ConnectTest +4
+[18:40:11.641] Error [8]: PassThru device is not connected to the PC.
+[18:40:11.648] ConnectTest +5
+[18:40:11.652] Error [8]: PassThru device is not connected to the PC.
+[18:40:11.659] ConnectTest +6
+[18:40:11.664] Error [8]: PassThru device is not connected to the PC.
+[18:40:11.670] ConnectTest -1
+[18:40:11.674] ConnectTest -2
+[18:40:11.678] ConnectTest -3
+[18:40:11.683] ReadTest 1:1
+[18:40:11.687] Error [8]: PassThru device is not connected to the PC.
+[18:40:11.694] ReadTest 2:1
+[18:40:11.699] Error [8]: PassThru device is not connected to the PC.
+[18:40:11.705] WriteTest 1:1
+[18:40:11.710] Error [8]: PassThru device is not connected to the PC.
+[18:40:11.717] WriteTest 2:1
+[18:40:11.721] Error [8]: PassThru device is not connected to the PC.
+[18:40:11.728] IOCTLtest 1:1
+[18:40:11.733] Error [8]: PassThru device is not connected to the PC.
+[18:40:11.740] IOCTLtest failed: PassThru device is not connected to the PC.
+[18:40:11.747] InterceptorTest 1:1 - NOTE! For this to work, "UseInterceptor" must be set to "1" in Windows registry!
+[18:40:11.759] Error [8]: PassThru device is not connected to the PC.
+[18:40:11.767] InterceptorTest failed: PassThru device is not connected to the PC.
+[18:40:11.775] PeriodicMsgTest 1:1
+[18:40:11.780] Error [8]: PassThru device is not connected to the PC.
+[18:40:11.787] OtherTest failed: PassThru device is not connected to the PC.
+[18:40:11.794] Freeing library...
+[18:40:11.802] 
+Connect tests failed: 6
+ Write tests failed: 2
+ read tests failed: 2
+ ioctl tests failed: 1
+ other tests failed: 1
+
+[18:43:16.738] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[18:43:16.747] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[18:43:16.754] Found J2534 device: (2) ETAS - Generic Provider
+[18:43:16.760] Found J2534 device: (3) Sardine CAN
+[18:43:16.766] Found J2534 device: (4) Sardine CAN #2
+[18:43:16.771] Found J2534 device: (5) Teradyne - GNA600
+[18:43:16.777] Found J2534 device: (6) XHorse - MVCI
+[18:43:16.784] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[18:43:16.790] Found J2534 device: (8) XHorse - MVCIV
+[18:43:16.795] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[18:43:16.803] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[18:43:16.810] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[18:43:16.817] Sardine CAN registry: 4: [COM_PORT] = [1]
+[18:43:16.823] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[18:43:16.829] Sardine CAN registry: 6: [DISABLE_DTR] = [0]
+[18:43:16.836] Sardine CAN registry: 7: [CAN] = [1]
+[18:43:16.841] Sardine CAN registry: 8: [ISO15765] = [1]
+[18:43:16.848] Sardine CAN registry: 9: [ISO9141] = [1]
+[18:43:16.855] Sardine CAN registry: 10: [ISO14230] = [1]
+[18:43:16.860] Sardine CAN registry: 11: [UseInterceptor] = [1]
+[18:43:16.869] Sardine CAN registry: 12: [FunctionLibrary] = "C:\sardine\Sardine.dll"
+[18:43:16.877] Loading library..
+[18:43:16.886] Loading functions..
+[18:43:16.893] Loading function #1..
+[18:43:16.900] Loading function #2..
+[18:43:16.903] Loading function #3..
+[18:43:16.907] Loading function #4..
+[18:43:16.913] Loading function #5..
+[18:43:16.917] Loading function #6..
+[18:43:16.921] Loading function #7..
+[18:43:16.924] Loading function #8..
+[18:43:16.928] Loading function #9..
+[18:43:16.933] Loading function #10..
+[18:43:16.937] Loading function #11..
+[18:43:16.941] Loading function #12..
+[18:43:16.945] Loading function #13..
+[18:43:16.950] Loading library&function: success! 
+[18:43:16.956] ------------ Testing DLL API ------------ 
+[18:43:16.961] ConnectTest +1
+[18:43:16.967] Error [8]: PassThru device is not connected to the PC.
+[18:43:16.976] ConnectTest +2
+[18:43:16.986] Error [8]: PassThru device is not connected to the PC.
+[18:43:16.994] ConnectTest +3
+[18:43:17.  1] Error [8]: PassThru device is not connected to the PC.
+[18:43:17.  9] ConnectTest +4
+[18:43:17. 13] Error [8]: PassThru device is not connected to the PC.
+[18:43:17. 22] ConnectTest +5
+[18:43:17. 27] Error [8]: PassThru device is not connected to the PC.
+[18:43:17. 34] ConnectTest +6
+[18:43:17. 39] Error [8]: PassThru device is not connected to the PC.
+[18:43:17. 45] ConnectTest -1
+[18:43:17. 50] ConnectTest -2
+[18:43:17. 55] ConnectTest -3
+[18:43:17. 60] ReadTest 1:1
+[18:43:17. 65] Error [8]: PassThru device is not connected to the PC.
+[18:43:17. 73] ReadTest 2:1
+[18:43:17. 78] Error [8]: PassThru device is not connected to the PC.
+[18:43:17. 85] WriteTest 1:1
+[18:43:17. 90] Error [8]: PassThru device is not connected to the PC.
+[18:43:17. 96] WriteTest 2:1
+[18:43:17.102] Error [8]: PassThru device is not connected to the PC.
+[18:43:17.137] IOCTLtest 1:1
+[18:43:17.148] Error [8]: PassThru device is not connected to the PC.
+[18:43:17.161] IOCTLtest failed: PassThru device is not connected to the PC.
+[18:43:17.171] InterceptorTest 1:1 - NOTE! For this to work, "UseInterceptor" must be set to "1" in Windows registry!
+[18:43:17.187] Error [8]: PassThru device is not connected to the PC.
+[18:43:17.195] InterceptorTest failed: PassThru device is not connected to the PC.
+[18:43:17.204] PeriodicMsgTest 1:1
+[18:43:17.211] Error [8]: PassThru device is not connected to the PC.
+[18:43:17.219] OtherTest failed: PassThru device is not connected to the PC.
+[18:43:17.226] Freeing library...
+[18:43:17.234] 
+Connect tests failed: 6
+ Write tests failed: 2
+ read tests failed: 2
+ ioctl tests failed: 1
+ other tests failed: 1
+
+[18:44:23.485] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[18:44:23.492] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[18:44:23.500] Found J2534 device: (2) ETAS - Generic Provider
+[18:44:23.507] Found J2534 device: (3) Sardine CAN
+[18:44:23.513] Found J2534 device: (4) Sardine CAN #2
+[18:44:23.519] Found J2534 device: (5) Teradyne - GNA600
+[18:44:23.525] Found J2534 device: (6) XHorse - MVCI
+[18:44:23.530] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[18:44:23.536] Found J2534 device: (8) XHorse - MVCIV
+[18:44:23.543] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[18:44:23.550] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[18:44:23.555] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[18:44:23.561] Sardine CAN registry: 4: [COM_PORT] = [1]
+[18:44:23.570] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[18:44:23.575] Sardine CAN registry: 6: [DISABLE_DTR] = [0]
+[18:44:23.581] Sardine CAN registry: 7: [CAN] = [1]
+[18:44:23.585] Sardine CAN registry: 8: [ISO15765] = [1]
+[18:44:23.592] Sardine CAN registry: 9: [ISO9141] = [1]
+[18:44:23.598] Sardine CAN registry: 10: [ISO14230] = [1]
+[18:44:23.603] Sardine CAN registry: 11: [UseInterceptor] = [1]
+[18:44:23.609] Sardine CAN registry: 12: [FunctionLibrary] = "C:\sardine\Sardine.dll"
+[18:44:23.617] Loading library..
+[18:44:23.625] Loading functions..
+[18:44:23.628] Loading function #1..
+[18:44:23.632] Loading function #2..
+[18:44:23.636] Loading function #3..
+[18:44:23.641] Loading function #4..
+[18:44:23.644] Loading function #5..
+[18:44:23.649] Loading function #6..
+[18:44:23.652] Loading function #7..
+[18:44:23.656] Loading function #8..
+[18:44:23.659] Loading function #9..
+[18:44:23.663] Loading function #10..
+[18:44:23.667] Loading function #11..
+[18:44:23.670] Loading function #12..
+[18:44:23.674] Loading function #13..
+[18:44:23.678] Loading library&function: success! 
+[18:44:23.683] ------------ Testing DLL API ------------ 
+[18:44:23.688] ConnectTest +1
+[18:44:23.693] Error [8]: PassThru device is not connected to the PC.
+[18:44:23.701] ConnectTest +2
+[18:44:23.705] Error [8]: PassThru device is not connected to the PC.
+[18:44:23.712] ConnectTest +3
+[18:44:23.717] Error [8]: PassThru device is not connected to the PC.
+[18:44:23.724] ConnectTest +4
+[18:44:23.728] Error [8]: PassThru device is not connected to the PC.
+[18:44:23.735] ConnectTest +5
+[18:44:23.740] Error [8]: PassThru device is not connected to the PC.
+[18:44:23.748] ConnectTest +6
+[18:44:23.752] Error [8]: PassThru device is not connected to the PC.
+[18:44:23.759] ConnectTest -1
+[18:44:23.764] ConnectTest -2
+[18:44:23.768] ConnectTest -3
+[18:44:23.773] ReadTest 1:1
+[18:44:23.777] Error [8]: PassThru device is not connected to the PC.
+[18:44:23.784] ReadTest 2:1
+[18:44:23.789] Error [8]: PassThru device is not connected to the PC.
+[18:44:23.795] WriteTest 1:1
+[18:44:23.801] Error [8]: PassThru device is not connected to the PC.
+[18:44:23.808] WriteTest 2:1
+[18:44:23.812] Error [8]: PassThru device is not connected to the PC.
+[18:44:23.819] IOCTLtest 1:1
+[18:44:23.824] Error [8]: PassThru device is not connected to the PC.
+[18:44:23.832] IOCTLtest failed: PassThru device is not connected to the PC.
+[18:44:23.839] InterceptorTest 1:1 - NOTE! For this to work, "UseInterceptor" must be set to "1" in Windows registry!
+[18:44:23.852] Error [8]: PassThru device is not connected to the PC.
+[18:44:23.859] InterceptorTest failed: PassThru device is not connected to the PC.
+[18:44:23.868] PeriodicMsgTest 1:1
+[18:44:23.873] Error [8]: PassThru device is not connected to the PC.
+[18:44:23.881] OtherTest failed: PassThru device is not connected to the PC.
+[18:44:23.888] Freeing library...
+[18:44:23.896] 
+Connect tests failed: 6
+ Write tests failed: 2
+ read tests failed: 2
+ ioctl tests failed: 1
+ other tests failed: 1
+
+[18:44:30.  1] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[18:44:30.  7] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[18:44:30. 15] Found J2534 device: (2) ETAS - Generic Provider
+[18:44:30. 22] Found J2534 device: (3) Sardine CAN
+[18:44:30. 28] Found J2534 device: (4) Sardine CAN #2
+[18:44:30. 34] Found J2534 device: (5) Teradyne - GNA600
+[18:44:30. 39] Found J2534 device: (6) XHorse - MVCI
+[18:44:30. 44] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[18:44:30. 50] Found J2534 device: (8) XHorse - MVCIV
+[18:44:30. 55] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[18:44:30. 61] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[18:44:30. 68] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[18:44:30. 74] Sardine CAN registry: 4: [COM_PORT] = [1]
+[18:44:30. 79] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[18:44:30. 86] Sardine CAN registry: 6: [DISABLE_DTR] = [0]
+[18:44:30. 92] Sardine CAN registry: 7: [CAN] = [1]
+[18:44:30. 97] Sardine CAN registry: 8: [ISO15765] = [1]
+[18:44:30.103] Sardine CAN registry: 9: [ISO9141] = [1]
+[18:44:30.108] Sardine CAN registry: 10: [ISO14230] = [1]
+[18:44:30.115] Sardine CAN registry: 11: [UseInterceptor] = [1]
+[18:44:30.123] Sardine CAN registry: 12: [FunctionLibrary] = "C:\sardine\Sardine.dll"
+[18:44:30.131] Loading library..
+[18:44:30.143] Loading functions..
+[18:44:30.151] Loading function #1..
+[18:44:30.155] Loading function #2..
+[18:44:30.159] Loading function #3..
+[18:44:30.163] Loading function #4..
+[18:44:30.168] Loading function #5..
+[18:44:30.172] Loading function #6..
+[18:44:30.175] Loading function #7..
+[18:44:30.179] Loading function #8..
+[18:44:30.183] Loading function #9..
+[18:44:30.187] Loading function #10..
+[18:44:30.191] Loading function #11..
+[18:44:30.194] Loading function #12..
+[18:44:30.198] Loading function #13..
+[18:44:30.203] Loading library&function: success! 
+[18:44:30.208] ------------ Testing DLL API ------------ 
+[18:44:30.214] ConnectTest +1
+[18:44:30.221] Error [8]: PassThru device is not connected to the PC.
+[18:44:30.227] ConnectTest +2
+[18:44:30.232] Error [8]: PassThru device is not connected to the PC.
+[18:44:30.240] ConnectTest +3
+[18:44:30.245] Error [8]: PassThru device is not connected to the PC.
+[18:44:30.252] ConnectTest +4
+[18:44:30.257] Error [8]: PassThru device is not connected to the PC.
+[18:44:30.263] ConnectTest +5
+[18:44:30.269] Error [8]: PassThru device is not connected to the PC.
+[18:44:30.275] ConnectTest +6
+[18:44:30.280] Error [8]: PassThru device is not connected to the PC.
+[18:44:30.287] ConnectTest -1
+[18:44:30.291] ConnectTest -2
+[18:44:30.296] ConnectTest -3
+[18:44:30.301] ReadTest 1:1
+[18:44:30.306] Error [8]: PassThru device is not connected to the PC.
+[18:44:30.312] ReadTest 2:1
+[18:44:30.318] Error [8]: PassThru device is not connected to the PC.
+[18:44:30.324] WriteTest 1:1
+[18:44:30.329] Error [8]: PassThru device is not connected to the PC.
+[18:44:30.336] WriteTest 2:1
+[18:44:30.341] Error [8]: PassThru device is not connected to the PC.
+[18:44:30.348] IOCTLtest 1:1
+[18:44:30.354] Error [8]: PassThru device is not connected to the PC.
+[18:44:30.361] IOCTLtest failed: PassThru device is not connected to the PC.
+[18:44:30.369] InterceptorTest 1:1 - NOTE! For this to work, "UseInterceptor" must be set to "1" in Windows registry!
+[18:44:30.381] Error [8]: PassThru device is not connected to the PC.
+[18:44:30.389] InterceptorTest failed: PassThru device is not connected to the PC.
+[18:44:30.396] PeriodicMsgTest 1:1
+[18:44:30.402] Error [8]: PassThru device is not connected to the PC.
+[18:44:30.410] OtherTest failed: PassThru device is not connected to the PC.
+[18:44:30.417] Freeing library...
+[18:44:30.425] 
+Connect tests failed: 6
+ Write tests failed: 2
+ read tests failed: 2
+ ioctl tests failed: 1
+ other tests failed: 1
+
+[18:44:35. 95] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[18:44:35.103] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[18:44:35.110] Found J2534 device: (2) ETAS - Generic Provider
+[18:44:35.117] Found J2534 device: (3) Sardine CAN
+[18:44:35.122] Found J2534 device: (4) Sardine CAN #2
+[18:44:35.127] Found J2534 device: (5) Teradyne - GNA600
+[18:44:35.133] Found J2534 device: (6) XHorse - MVCI
+[18:44:35.138] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[18:44:35.144] Found J2534 device: (8) XHorse - MVCIV
+[18:44:35.149] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[18:44:35.155] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[18:44:35.162] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[18:44:35.169] Sardine CAN registry: 4: [COM_PORT] = [1]
+[18:44:35.174] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[18:44:35.180] Sardine CAN registry: 6: [DISABLE_DTR] = [0]
+[18:44:35.186] Sardine CAN registry: 7: [CAN] = [1]
+[18:44:35.191] Sardine CAN registry: 8: [ISO15765] = [1]
+[18:44:35.196] Sardine CAN registry: 9: [ISO9141] = [1]
+[18:44:35.202] Sardine CAN registry: 10: [ISO14230] = [1]
+[18:44:35.207] Sardine CAN registry: 11: [UseInterceptor] = [1]
+[18:44:35.213] Sardine CAN registry: 12: [FunctionLibrary] = "C:\sardine\Sardine.dll"
+[18:44:35.222] Loading library..
+[18:44:35.230] Loading functions..
+[18:44:35.234] Loading function #1..
+[18:44:35.239] Loading function #2..
+[18:44:35.244] Loading function #3..
+[18:44:35.249] Loading function #4..
+[18:44:35.253] Loading function #5..
+[18:44:35.256] Loading function #6..
+[18:44:35.260] Loading function #7..
+[18:44:35.263] Loading function #8..
+[18:44:35.268] Loading function #9..
+[18:44:35.272] Loading function #10..
+[18:44:35.275] Loading function #11..
+[18:44:35.279] Loading function #12..
+[18:44:35.283] Loading function #13..
+[18:44:35.287] Loading library&function: success! 
+[18:44:35.292] ------------ Testing DLL API ------------ 
+[18:44:35.297] ConnectTest +1
+[18:44:35.303] Error [8]: PassThru device is not connected to the PC.
+[18:44:35.309] ConnectTest +2
+[18:44:35.314] Error [8]: PassThru device is not connected to the PC.
+[18:44:35.321] ConnectTest +3
+[18:44:35.326] Error [8]: PassThru device is not connected to the PC.
+[18:44:35.333] ConnectTest +4
+[18:44:35.337] Error [8]: PassThru device is not connected to the PC.
+[18:44:35.344] ConnectTest +5
+[18:44:35.349] Error [8]: PassThru device is not connected to the PC.
+[18:44:35.356] ConnectTest +6
+[18:44:35.360] Error [8]: PassThru device is not connected to the PC.
+[18:44:35.368] ConnectTest -1
+[18:44:35.372] ConnectTest -2
+[18:44:35.376] ConnectTest -3
+[18:44:35.380] ReadTest 1:1
+[18:44:35.386] Error [8]: PassThru device is not connected to the PC.
+[18:44:35.392] ReadTest 2:1
+[18:44:35.397] Error [8]: PassThru device is not connected to the PC.
+[18:44:35.404] WriteTest 1:1
+[18:44:35.409] Error [8]: PassThru device is not connected to the PC.
+[18:44:35.416] WriteTest 2:1
+[18:44:35.421] Error [8]: PassThru device is not connected to the PC.
+[18:44:35.427] IOCTLtest 1:1
+[18:44:35.432] Error [8]: PassThru device is not connected to the PC.
+[18:44:35.440] IOCTLtest failed: PassThru device is not connected to the PC.
+[18:44:35.447] InterceptorTest 1:1 - NOTE! For this to work, "UseInterceptor" must be set to "1" in Windows registry!
+[18:44:35.460] Error [8]: PassThru device is not connected to the PC.
+[18:44:35.468] InterceptorTest failed: PassThru device is not connected to the PC.
+[18:44:35.475] PeriodicMsgTest 1:1
+[18:44:35.480] Error [8]: PassThru device is not connected to the PC.
+[18:44:35.489] OtherTest failed: PassThru device is not connected to the PC.
+[18:44:35.496] Freeing library...
+[18:44:35.504] 
+Connect tests failed: 6
+ Write tests failed: 2
+ read tests failed: 2
+ ioctl tests failed: 1
+ other tests failed: 1
+
+[20:19:27.674] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[20:19:27.674] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[20:19:27.737] Found J2534 device: (2) ETAS - Generic Provider
+[20:19:27.737] Found J2534 device: (3) Sardine CAN
+[20:19:27.752] Found J2534 device: (4) Sardine CAN #2
+[20:19:27.752] Found J2534 device: (5) Teradyne - GNA600
+[20:19:27.768] Found J2534 device: (6) XHorse - MVCI
+[20:19:27.768] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[20:19:27.768] Found J2534 device: (8) XHorse - MVCIV
+[20:19:27.783] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[20:19:27.783] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[20:19:27.799] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[20:19:27.799] Sardine CAN registry: 4: [COM_PORT] = [1]
+[20:19:27.815] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[20:19:27.815] Sardine CAN registry: 6: [DISABLE_DTR] = [0]
+[20:19:27.815] Sardine CAN registry: 7: [CAN] = [1]
+[20:19:27.830] Sardine CAN registry: 8: [ISO15765] = [1]
+[20:19:27.830] Sardine CAN registry: 9: [ISO9141] = [1]
+[20:19:27.830] Sardine CAN registry: 10: [ISO14230] = [1]
+[20:19:27.846] Sardine CAN registry: 11: [UseInterceptor] = [1]
+[20:19:27.846] Sardine CAN registry: 12: [FunctionLibrary] = "C:\sardine\Sardine.dll"
+[20:19:27.861] Loading library..
+[20:19:48.407] Loading functions..
+[20:19:48.422] Loading function #1..
+[20:19:48.422] Loading function #2..
+[20:19:48.422] Loading function #3..
+[20:19:48.438] Loading function #4..
+[20:19:48.454] Loading function #5..
+[20:19:48.454] Loading function #6..
+[20:19:48.454] Loading function #7..
+[20:19:48.469] Loading function #8..
+[20:19:48.469] Loading function #9..
+[20:19:48.469] Loading function #10..
+[20:19:48.469] Loading function #11..
+[20:19:48.485] Loading function #12..
+[20:19:48.485] Loading function #13..
+[20:19:48.485] Loading library&function: success! 
+[20:19:48.500] ------------ Testing DLL API ------------ 
+[20:19:48.500] ConnectTest +1
+[20:19:48.500] Error [8]: PassThru device is not connected to the PC.
+[20:19:48.516] ConnectTest +2
+[20:19:48.516] Error [8]: PassThru device is not connected to the PC.
+[20:19:48.516] ConnectTest +3
+[20:19:48.532] Error [8]: PassThru device is not connected to the PC.
+[20:19:48.532] ConnectTest +4
+[20:19:48.547] Error [8]: PassThru device is not connected to the PC.
+[20:19:48.547] ConnectTest +5
+[20:19:48.547] Error [8]: PassThru device is not connected to the PC.
+[20:19:48.563] ConnectTest +6
+[20:19:48.563] Error [8]: PassThru device is not connected to the PC.
+[20:19:48.578] ConnectTest -1
+[20:19:48.578] ConnectTest -2
+[20:19:48.578] ConnectTest -3
+[20:19:48.594] ReadTest 1:1
+[20:19:48.594] Error [8]: PassThru device is not connected to the PC.
+[20:19:48.610] ReadTest 2:1
+[20:19:48.610] Error [8]: PassThru device is not connected to the PC.
+[20:19:48.610] WriteTest 1:1
+[20:19:48.625] Error [8]: PassThru device is not connected to the PC.
+[20:19:48.625] WriteTest 2:1
+[20:19:48.625] Error [8]: PassThru device is not connected to the PC.
+[20:19:48.641] IOCTLtest 1:1
+[20:19:48.641] Error [8]: PassThru device is not connected to the PC.
+[20:19:48.656] IOCTLtest failed: PassThru device is not connected to the PC.
+[20:19:48.656] InterceptorTest 1:1 - NOTE! For this to work, "UseInterceptor" must be set to "1" in Windows registry!
+[20:19:48.672] Error [8]: PassThru device is not connected to the PC.
+[20:19:48.688] InterceptorTest failed: PassThru device is not connected to the PC.
+[20:19:48.688] PeriodicMsgTest 1:1
+[20:19:48.688] Error [8]: PassThru device is not connected to the PC.
+[20:19:48.703] OtherTest failed: PassThru device is not connected to the PC.
+[20:19:48.703] Freeing library...
+[20:19:48.719] 
+Connect tests failed: 6
+ Write tests failed: 2
+ read tests failed: 2
+ ioctl tests failed: 1
+ other tests failed: 1
+
+[20:20: 7.860] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[20:20: 7.860] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[20:20: 7.876] Found J2534 device: (2) ETAS - Generic Provider
+[20:20: 7.876] Found J2534 device: (3) Sardine CAN
+[20:20: 7.891] Found J2534 device: (4) Sardine CAN #2
+[20:20: 7.891] Found J2534 device: (5) Teradyne - GNA600
+[20:20: 7.907] Found J2534 device: (6) XHorse - MVCI
+[20:20: 7.907] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[20:20: 7.922] Found J2534 device: (8) XHorse - MVCIV
+[20:20: 7.922] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[20:20: 7.922] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[20:20: 7.938] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[20:20: 7.938] Sardine CAN registry: 4: [COM_PORT] = [1]
+[20:20: 7.954] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[20:20: 7.954] Sardine CAN registry: 6: [DISABLE_DTR] = [0]
+[20:20: 7.954] Sardine CAN registry: 7: [CAN] = [1]
+[20:20: 7.969] Sardine CAN registry: 8: [ISO15765] = [1]
+[20:20: 7.969] Sardine CAN registry: 9: [ISO9141] = [1]
+[20:20: 7.969] Sardine CAN registry: 10: [ISO14230] = [1]
+[20:20: 7.985] Sardine CAN registry: 11: [UseInterceptor] = [1]
+[20:20: 7.985] Sardine CAN registry: 12: [FunctionLibrary] = "C:\sardine\Sardine.dll"
+[20:20: 8.  0] Loading library..
+[20:20: 8.  0] Loading functions..
+[20:20: 8. 16] Loading function #1..
+[20:20: 8. 16] Loading function #2..
+[20:20: 8. 16] Loading function #3..
+[20:20: 8. 16] Loading function #4..
+[20:20: 8. 32] Loading function #5..
+[20:20: 8. 32] Loading function #6..
+[20:20: 8. 32] Loading function #7..
+[20:20: 8. 32] Loading function #8..
+[20:20: 8. 47] Loading function #9..
+[20:20: 8. 47] Loading function #10..
+[20:20: 8. 47] Loading function #11..
+[20:20: 8. 47] Loading function #12..
+[20:20: 8. 63] Loading function #13..
+[20:20: 8. 63] Loading library&function: success! 
+[20:20: 8. 63] ------------ Testing DLL API ------------ 
+[20:20: 8. 63] ConnectTest +1
+[20:20: 8. 78] Error [8]: PassThru device is not connected to the PC.
+[20:20: 8. 78] ConnectTest +2
+[20:20: 8. 78] Error [8]: PassThru device is not connected to the PC.
+[20:20: 8. 94] ConnectTest +3
+[20:20: 8. 94] Error [8]: PassThru device is not connected to the PC.
+[20:20: 8.110] ConnectTest +4
+[20:20: 8.110] Error [8]: PassThru device is not connected to the PC.
+[20:20: 8.110] ConnectTest +5
+[20:20: 8.125] Error [8]: PassThru device is not connected to the PC.
+[20:20: 8.125] ConnectTest +6
+[20:20: 8.125] Error [8]: PassThru device is not connected to the PC.
+[20:20: 8.141] ConnectTest -1
+[20:20: 8.141] ConnectTest -2
+[20:20: 8.141] ConnectTest -3
+[20:20: 8.156] ReadTest 1:1
+[20:20: 8.156] Error [8]: PassThru device is not connected to the PC.
+[20:20: 8.172] ReadTest 2:1
+[20:20: 8.172] Error [8]: PassThru device is not connected to the PC.
+[20:20: 8.172] WriteTest 1:1
+[20:20: 8.188] Error [8]: PassThru device is not connected to the PC.
+[20:20: 8.188] WriteTest 2:1
+[20:20: 8.188] Error [8]: PassThru device is not connected to the PC.
+[20:20: 8.203] IOCTLtest 1:1
+[20:20: 8.203] Error [8]: PassThru device is not connected to the PC.
+[20:20: 8.219] IOCTLtest failed: PassThru device is not connected to the PC.
+[20:20: 8.219] InterceptorTest 1:1 - NOTE! For this to work, "UseInterceptor" must be set to "1" in Windows registry!
+[20:20: 8.234] Error [8]: PassThru device is not connected to the PC.
+[20:20: 8.250] InterceptorTest failed: PassThru device is not connected to the PC.
+[20:20: 8.250] PeriodicMsgTest 1:1
+[20:20: 8.250] Error [8]: PassThru device is not connected to the PC.
+[20:20: 8.266] OtherTest failed: PassThru device is not connected to the PC.
+[20:20: 8.266] Freeing library...
+[20:20: 8.281] 
+Connect tests failed: 6
+ Write tests failed: 2
+ read tests failed: 2
+ ioctl tests failed: 1
+ other tests failed: 1
+
+[20:20:14.615] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[20:20:14.615] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[20:20:14.630] Found J2534 device: (2) ETAS - Generic Provider
+[20:20:14.630] Found J2534 device: (3) Sardine CAN
+[20:20:14.646] Found J2534 device: (4) Sardine CAN #2
+[20:20:14.646] Found J2534 device: (5) Teradyne - GNA600
+[20:20:14.646] Found J2534 device: (6) XHorse - MVCI
+[20:20:14.662] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[20:20:14.662] Found J2534 device: (8) XHorse - MVCIV
+[20:20:14.662] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[20:20:14.677] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[20:20:14.677] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[20:20:14.693] Sardine CAN registry: 4: [COM_PORT] = [1]
+[20:20:14.693] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[20:20:14.708] Sardine CAN registry: 6: [DISABLE_DTR] = [0]
+[20:20:14.708] Sardine CAN registry: 7: [CAN] = [1]
+[20:20:14.708] Sardine CAN registry: 8: [ISO15765] = [1]
+[20:20:14.724] Sardine CAN registry: 9: [ISO9141] = [1]
+[20:20:14.724] Sardine CAN registry: 10: [ISO14230] = [1]
+[20:20:14.724] Sardine CAN registry: 11: [UseInterceptor] = [1]
+[20:20:14.740] Sardine CAN registry: 12: [FunctionLibrary] = "C:\sardine\Sardine.dll"
+[20:20:14.740] Loading library..
+[20:20:14.755] Loading functions..
+[20:20:14.755] Loading function #1..
+[20:20:14.771] Loading function #2..
+[20:20:14.771] Loading function #3..
+[20:20:14.771] Loading function #4..
+[20:20:14.771] Loading function #5..
+[20:20:14.786] Loading function #6..
+[20:20:14.786] Loading function #7..
+[20:20:14.786] Loading function #8..
+[20:20:14.786] Loading function #9..
+[20:20:14.802] Loading function #10..
+[20:20:14.802] Loading function #11..
+[20:20:14.802] Loading function #12..
+[20:20:14.818] Loading function #13..
+[20:20:14.818] Loading library&function: success! 
+[20:20:14.818] ------------ Testing DLL API ------------ 
+[20:20:14.833] ConnectTest +1
+[20:20:14.833] Error [8]: PassThru device is not connected to the PC.
+[20:20:14.833] ConnectTest +2
+[20:20:14.849] Error [8]: PassThru device is not connected to the PC.
+[20:20:14.849] ConnectTest +3
+[20:20:14.849] Error [8]: PassThru device is not connected to the PC.
+[20:20:14.864] ConnectTest +4
+[20:20:14.864] Error [8]: PassThru device is not connected to the PC.
+[20:20:14.880] ConnectTest +5
+[20:20:14.880] Error [8]: PassThru device is not connected to the PC.
+[20:20:14.880] ConnectTest +6
+[20:20:14.896] Error [8]: PassThru device is not connected to the PC.
+[20:20:14.896] ConnectTest -1
+[20:20:14.896] ConnectTest -2
+[20:20:14.911] ConnectTest -3
+[20:20:14.911] ReadTest 1:1
+[20:20:14.911] Error [8]: PassThru device is not connected to the PC.
+[20:20:14.927] ReadTest 2:1
+[20:20:14.927] Error [8]: PassThru device is not connected to the PC.
+[20:20:14.942] WriteTest 1:1
+[20:20:14.942] Error [8]: PassThru device is not connected to the PC.
+[20:20:14.942] WriteTest 2:1
+[20:20:14.958] Error [8]: PassThru device is not connected to the PC.
+[20:20:14.958] IOCTLtest 1:1
+[20:20:14.958] Error [8]: PassThru device is not connected to the PC.
+[20:20:14.974] IOCTLtest failed: PassThru device is not connected to the PC.
+[20:20:14.974] InterceptorTest 1:1 - NOTE! For this to work, "UseInterceptor" must be set to "1" in Windows registry!
+[20:20:14.989] Error [8]: PassThru device is not connected to the PC.
+[20:20:15.  5] InterceptorTest failed: PassThru device is not connected to the PC.
+[20:20:15.  5] PeriodicMsgTest 1:1
+[20:20:15. 20] Error [8]: PassThru device is not connected to the PC.
+[20:20:15. 20] OtherTest failed: PassThru device is not connected to the PC.
+[20:20:15. 36] Freeing library...
+[20:20:15. 36] 
+Connect tests failed: 6
+ Write tests failed: 2
+ read tests failed: 2
+ ioctl tests failed: 1
+ other tests failed: 1
+
+[20:22:19.982] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[20:22:19.982] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[20:22:19.998] Found J2534 device: (2) ETAS - Generic Provider
+[20:22:19.998] Found J2534 device: (3) Sardine CAN
+[20:22:20. 14] Found J2534 device: (4) Sardine CAN #2
+[20:22:20. 14] Found J2534 device: (5) Teradyne - GNA600
+[20:22:20. 29] Found J2534 device: (6) XHorse - MVCI
+[20:22:20. 29] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[20:22:20. 29] Found J2534 device: (8) XHorse - MVCIV
+[20:22:20. 45] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[20:22:20. 45] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[20:22:20. 60] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[20:22:20. 60] Sardine CAN registry: 4: [COM_PORT] = [1]
+[20:22:20. 60] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[20:22:20. 76] Sardine CAN registry: 6: [DISABLE_DTR] = [0]
+[20:22:20. 76] Sardine CAN registry: 7: [CAN] = [1]
+[20:22:20. 92] Sardine CAN registry: 8: [ISO15765] = [1]
+[20:22:20. 92] Sardine CAN registry: 9: [ISO9141] = [1]
+[20:22:20. 92] Sardine CAN registry: 10: [ISO14230] = [1]
+[20:22:20.107] Sardine CAN registry: 11: [UseInterceptor] = [1]
+[20:22:20.107] Sardine CAN registry: 12: [FunctionLibrary] = "C:\sardine\Sardine.dll"
+[20:22:20.123] Loading library..
+[20:22:20.123] Loading functions..
+[20:22:20.123] Loading function #1..
+[20:22:20.138] Loading function #2..
+[20:22:20.138] Loading function #3..
+[20:22:20.138] Loading function #4..
+[20:22:20.138] Loading function #5..
+[20:22:20.154] Loading function #6..
+[20:22:20.154] Loading function #7..
+[20:22:20.154] Loading function #8..
+[20:22:20.154] Loading function #9..
+[20:22:20.170] Loading function #10..
+[20:22:20.170] Loading function #11..
+[20:22:20.170] Loading function #12..
+[20:22:20.170] Loading function #13..
+[20:22:20.185] Loading library&function: success! 
+[20:22:20.185] ------------ Testing DLL API ------------ 
+[20:22:20.185] ConnectTest +1
+[20:22:20.201] Error [8]: PassThru device is not connected to the PC.
+[20:22:20.201] ConnectTest +2
+[20:22:20.201] Error [8]: PassThru device is not connected to the PC.
+[20:22:20.216] ConnectTest +3
+[20:22:20.216] Error [8]: PassThru device is not connected to the PC.
+[20:22:20.232] ConnectTest +4
+[20:22:20.232] Error [8]: PassThru device is not connected to the PC.
+[20:22:20.232] ConnectTest +5
+[20:22:20.248] Error [8]: PassThru device is not connected to the PC.
+[20:22:20.248] ConnectTest +6
+[20:22:20.248] Error [8]: PassThru device is not connected to the PC.
+[20:22:20.263] ConnectTest -1
+[20:22:20.263] ConnectTest -2
+[20:22:20.263] ConnectTest -3
+[20:22:20.279] ReadTest 1:1
+[20:22:20.279] Error [8]: PassThru device is not connected to the PC.
+[20:22:20.279] ReadTest 2:1
+[20:22:20.294] Error [8]: PassThru device is not connected to the PC.
+[20:22:20.294] WriteTest 1:1
+[20:22:20.310] Error [8]: PassThru device is not connected to the PC.
+[20:22:20.310] WriteTest 2:1
+[20:22:20.310] Error [8]: PassThru device is not connected to the PC.
+[20:22:20.326] IOCTLtest 1:1
+[20:22:20.326] Error [8]: PassThru device is not connected to the PC.
+[20:22:20.341] IOCTLtest failed: PassThru device is not connected to the PC.
+[20:22:20.341] InterceptorTest 1:1 - NOTE! For this to work, "UseInterceptor" must be set to "1" in Windows registry!
+[20:22:20.357] Error [8]: PassThru device is not connected to the PC.
+[20:22:20.372] InterceptorTest failed: PassThru device is not connected to the PC.
+[20:22:20.372] PeriodicMsgTest 1:1
+[20:22:20.372] Error [8]: PassThru device is not connected to the PC.
+[20:22:20.388] OtherTest failed: PassThru device is not connected to the PC.
+[20:22:20.388] Freeing library...
+[20:22:20.404] 
+Connect tests failed: 6
+ Write tests failed: 2
+ read tests failed: 2
+ ioctl tests failed: 1
+ other tests failed: 1
+
+[20:22:23.258] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[20:22:23.274] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[20:22:23.290] Found J2534 device: (2) ETAS - Generic Provider
+[20:22:23.290] Found J2534 device: (3) Sardine CAN
+[20:22:23.305] Found J2534 device: (4) Sardine CAN #2
+[20:22:23.305] Found J2534 device: (5) Teradyne - GNA600
+[20:22:23.321] Found J2534 device: (6) XHorse - MVCI
+[20:22:23.321] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[20:22:23.336] Found J2534 device: (8) XHorse - MVCIV
+[20:22:23.336] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[20:22:23.352] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[20:22:23.352] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[20:22:23.368] Sardine CAN registry: 4: [COM_PORT] = [1]
+[20:22:23.368] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[20:22:23.383] Sardine CAN registry: 6: [DISABLE_DTR] = [0]
+[20:22:23.383] Sardine CAN registry: 7: [CAN] = [1]
+[20:22:23.399] Sardine CAN registry: 8: [ISO15765] = [1]
+[20:22:23.399] Sardine CAN registry: 9: [ISO9141] = [1]
+[20:22:23.414] Sardine CAN registry: 10: [ISO14230] = [1]
+[20:22:23.414] Sardine CAN registry: 11: [UseInterceptor] = [1]
+[20:22:23.430] Sardine CAN registry: 12: [FunctionLibrary] = "C:\sardine\Sardine.dll"
+[20:22:23.446] Loading library..
+[20:22:23.446] Loading functions..
+[20:22:23.446] Loading function #1..
+[20:22:23.461] Loading function #2..
+[20:22:23.461] Loading function #3..
+[20:22:23.461] Loading function #4..
+[20:22:23.461] Loading function #5..
+[20:22:23.477] Loading function #6..
+[20:22:23.477] Loading function #7..
+[20:22:23.477] Loading function #8..
+[20:22:23.477] Loading function #9..
+[20:22:23.477] Loading function #10..
+[20:22:23.492] Loading function #11..
+[20:22:23.492] Loading function #12..
+[20:22:23.492] Loading function #13..
+[20:22:23.492] Loading library&function: success! 
+[20:22:23.508] ------------ Testing DLL API ------------ 
+[20:22:23.508] ConnectTest +1
+[20:22:23.508] Error [8]: PassThru device is not connected to the PC.
+[20:22:23.524] ConnectTest +2
+[20:22:23.524] Error [8]: PassThru device is not connected to the PC.
+[20:22:23.539] ConnectTest +3
+[20:22:23.539] Error [8]: PassThru device is not connected to the PC.
+[20:22:23.539] ConnectTest +4
+[20:22:23.555] Error [8]: PassThru device is not connected to the PC.
+[20:22:23.555] ConnectTest +5
+[20:22:23.555] Error [8]: PassThru device is not connected to the PC.
+[20:22:23.570] ConnectTest +6
+[20:22:23.570] Error [8]: PassThru device is not connected to the PC.
+[20:22:23.570] ConnectTest -1
+[20:22:23.586] ConnectTest -2
+[20:22:23.586] ConnectTest -3
+[20:22:23.586] ReadTest 1:1
+[20:22:23.586] Error [8]: PassThru device is not connected to the PC.
+[20:22:23.602] ReadTest 2:1
+[20:22:23.602] Error [8]: PassThru device is not connected to the PC.
+[20:22:23.617] WriteTest 1:1
+[20:22:23.617] Error [8]: PassThru device is not connected to the PC.
+[20:22:23.617] WriteTest 2:1
+[20:22:23.633] Error [8]: PassThru device is not connected to the PC.
+[20:22:23.633] IOCTLtest 1:1
+[20:22:23.633] Error [8]: PassThru device is not connected to the PC.
+[20:22:23.648] IOCTLtest failed: PassThru device is not connected to the PC.
+[20:22:23.648] InterceptorTest 1:1 - NOTE! For this to work, "UseInterceptor" must be set to "1" in Windows registry!
+[20:22:23.664] Error [8]: PassThru device is not connected to the PC.
+[20:22:23.680] InterceptorTest failed: PassThru device is not connected to the PC.
+[20:22:23.680] PeriodicMsgTest 1:1
+[20:22:23.680] Error [8]: PassThru device is not connected to the PC.
+[20:22:23.695] OtherTest failed: PassThru device is not connected to the PC.
+[20:22:23.695] Freeing library...
+[20:22:23.711] 
+Connect tests failed: 6
+ Write tests failed: 2
+ read tests failed: 2
+ ioctl tests failed: 1
+ other tests failed: 1
+
+[20:24:17. 77] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[20:24:17. 92] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[20:24:17. 92] Found J2534 device: (2) ETAS - Generic Provider
+[20:24:17.108] Found J2534 device: (3) Sardine CAN
+[20:24:17.108] Found J2534 device: (4) Sardine CAN #2
+[20:24:17.108] Found J2534 device: (5) Teradyne - GNA600
+[20:24:17.123] Found J2534 device: (6) XHorse - MVCI
+[20:24:17.123] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[20:24:17.123] Found J2534 device: (8) XHorse - MVCIV
+[20:24:17.139] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[20:24:17.139] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[20:24:17.155] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[20:24:17.155] Sardine CAN registry: 4: [COM_PORT] = [2]
+[20:24:17.155] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[20:24:17.170] Sardine CAN registry: 6: [DISABLE_DTR] = [0]
+[20:24:17.170] Sardine CAN registry: 7: [CAN] = [1]
+[20:24:17.170] Sardine CAN registry: 8: [ISO15765] = [1]
+[20:24:17.186] Sardine CAN registry: 9: [ISO9141] = [1]
+[20:24:17.186] Sardine CAN registry: 10: [ISO14230] = [1]
+[20:24:17.201] Sardine CAN registry: 11: [UseInterceptor] = [1]
+[20:24:17.201] Sardine CAN registry: 12: [FunctionLibrary] = "C:\sardine\Sardine.dll"
+[20:24:17.201] Loading library..
+[20:24:17.217] Loading functions..
+[20:24:17.217] Loading function #1..
+[20:24:17.233] Loading function #2..
+[20:24:17.233] Loading function #3..
+[20:24:17.233] Loading function #4..
+[20:24:17.233] Loading function #5..
+[20:24:17.248] Loading function #6..
+[20:24:17.248] Loading function #7..
+[20:24:17.248] Loading function #8..
+[20:24:17.264] Loading function #9..
+[20:24:17.264] Loading function #10..
+[20:24:17.264] Loading function #11..
+[20:24:17.264] Loading function #12..
+[20:24:17.264] Loading function #13..
+[20:24:17.279] Loading library&function: success! 
+[20:24:17.279] ------------ Testing DLL API ------------ 
+[20:24:17.279] ConnectTest +1
+[20:24:17.295] Error [8]: PassThru device is not connected to the PC.
+[20:24:17.295] ConnectTest +2
+[20:24:17.295] Error [8]: PassThru device is not connected to the PC.
+[20:24:17.311] ConnectTest +3
+[20:24:17.311] Error [8]: PassThru device is not connected to the PC.
+[20:24:17.326] ConnectTest +4
+[20:24:17.326] Error [8]: PassThru device is not connected to the PC.
+[20:24:17.326] ConnectTest +5
+[20:24:17.342] Error [8]: PassThru device is not connected to the PC.
+[20:24:17.342] ConnectTest +6
+[20:24:17.342] Error [8]: PassThru device is not connected to the PC.
+[20:24:17.357] ConnectTest -1
+[20:24:17.357] ConnectTest -2
+[20:24:17.357] ConnectTest -3
+[20:24:17.373] ReadTest 1:1
+[20:24:17.373] Error [8]: PassThru device is not connected to the PC.
+[20:24:17.373] ReadTest 2:1
+[20:24:17.389] Error [8]: PassThru device is not connected to the PC.
+[20:24:17.389] WriteTest 1:1
+[20:24:17.389] Error [8]: PassThru device is not connected to the PC.
+[20:24:17.404] WriteTest 2:1
+[20:24:17.404] Error [8]: PassThru device is not connected to the PC.
+[20:24:17.404] IOCTLtest 1:1
+[20:24:17.420] Error [8]: PassThru device is not connected to the PC.
+[20:24:17.420] IOCTLtest failed: PassThru device is not connected to the PC.
+[20:24:17.435] InterceptorTest 1:1 - NOTE! For this to work, "UseInterceptor" must be set to "1" in Windows registry!
+[20:24:17.435] Error [8]: PassThru device is not connected to the PC.
+[20:24:17.451] InterceptorTest failed: PassThru device is not connected to the PC.
+[20:24:17.451] PeriodicMsgTest 1:1
+[20:24:17.467] Error [8]: PassThru device is not connected to the PC.
+[20:24:17.467] OtherTest failed: PassThru device is not connected to the PC.
+[20:24:17.482] Freeing library...
+[20:24:17.482] 
+Connect tests failed: 6
+ Write tests failed: 2
+ read tests failed: 2
+ ioctl tests failed: 1
+ other tests failed: 1
+
+[20:27: 3.924] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[20:27: 3.940] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[20:27: 3.940] Found J2534 device: (2) ETAS - Generic Provider
+[20:27: 3.955] Found J2534 device: (3) Sardine CAN
+[20:27: 3.955] Found J2534 device: (4) Sardine CAN #2
+[20:27: 3.955] Found J2534 device: (5) Teradyne - GNA600
+[20:27: 3.971] Found J2534 device: (6) XHorse - MVCI
+[20:27: 3.971] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[20:27: 3.971] Found J2534 device: (8) XHorse - MVCIV
+[20:27: 3.987] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[20:27: 3.987] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[20:27: 3.987] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[20:27: 4.  2] Sardine CAN registry: 4: [COM_PORT] = [2]
+[20:27: 4.  2] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[20:27: 4.  2] Sardine CAN registry: 6: [DISABLE_DTR] = [0]
+[20:27: 4. 18] Sardine CAN registry: 7: [CAN] = [1]
+[20:27: 4. 18] Sardine CAN registry: 8: [ISO15765] = [1]
+[20:27: 4. 33] Sardine CAN registry: 9: [ISO9141] = [1]
+[20:27: 4. 33] Sardine CAN registry: 10: [ISO14230] = [1]
+[20:27: 4. 33] Sardine CAN registry: 11: [UseInterceptor] = [1]
+[20:27: 4. 49] Sardine CAN registry: 12: [FunctionLibrary] = "C:\sardine\Sardine.dll"
+[20:27: 4. 49] Loading library..
+[20:27: 4.111] Loading functions..
+[20:27: 4.111] Loading function #1..
+[20:27: 4.111] Loading function #2..
+[20:27: 4.127] Loading function #3..
+[20:27: 4.127] Loading function #4..
+[20:27: 4.127] Loading function #5..
+[20:27: 4.127] Loading function #6..
+[20:27: 4.143] Loading function #7..
+[20:27: 4.143] Loading function #8..
+[20:27: 4.143] Loading function #9..
+[20:27: 4.143] Loading function #10..
+[20:27: 4.158] Loading function #11..
+[20:27: 4.158] Loading function #12..
+[20:27: 4.158] Loading function #13..
+[20:27: 4.158] Loading library&function: success! 
+[20:27: 4.174] ------------ Testing DLL API ------------ 
+[20:27: 4.174] ConnectTest +1
+[20:27: 4.189] Error [8]: PassThru device is not connected to the PC.
+[20:27: 4.189] ConnectTest +2
+[20:27: 4.205] Error [8]: PassThru device is not connected to the PC.
+[20:27: 4.205] ConnectTest +3
+[20:27: 4.221] Error [8]: PassThru device is not connected to the PC.
+[20:27: 4.221] ConnectTest +4
+[20:27: 4.221] Error [8]: PassThru device is not connected to the PC.
+[20:27: 4.236] ConnectTest +5
+[20:27: 4.252] Error [8]: PassThru device is not connected to the PC.
+[20:27: 4.252] ConnectTest +6
+[20:27: 4.252] Error [8]: PassThru device is not connected to the PC.
+[20:27: 4.267] ConnectTest -1
+[20:27: 4.267] ConnectTest -2
+[20:27: 4.283] ConnectTest -3
+[20:27: 4.283] ReadTest 1:1
+[20:27: 4.283] Error [8]: PassThru device is not connected to the PC.
+[20:27: 4.299] ReadTest 2:1
+[20:27: 4.299] Error [8]: PassThru device is not connected to the PC.
+[20:27: 4.299] WriteTest 1:1
+[20:27: 4.314] Error [8]: PassThru device is not connected to the PC.
+[20:27: 4.314] WriteTest 2:1
+[20:27: 4.314] Error [8]: PassThru device is not connected to the PC.
+[20:27: 4.330] IOCTLtest 1:1
+[20:27: 4.330] Error [8]: PassThru device is not connected to the PC.
+[20:27: 4.345] IOCTLtest failed: PassThru device is not connected to the PC.
+[20:27: 4.345] InterceptorTest 1:1 - NOTE! For this to work, "UseInterceptor" must be set to "1" in Windows registry!
+[20:27: 4.361] Error [8]: PassThru device is not connected to the PC.
+[20:27: 4.361] InterceptorTest failed: PassThru device is not connected to the PC.
+[20:27: 4.377] PeriodicMsgTest 1:1
+[20:27: 4.377] Error [8]: PassThru device is not connected to the PC.
+[20:27: 4.392] OtherTest failed: PassThru device is not connected to the PC.
+[20:27: 4.392] Freeing library...
+[20:27: 4.408] 
+Connect tests failed: 6
+ Write tests failed: 2
+ read tests failed: 2
+ ioctl tests failed: 1
+ other tests failed: 1
+
+[20:27:33.109] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[20:27:33.125] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[20:27:33.125] Found J2534 device: (2) ETAS - Generic Provider
+[20:27:33.140] Found J2534 device: (3) Sardine CAN
+[20:27:33.140] Found J2534 device: (4) Sardine CAN #2
+[20:27:33.156] Found J2534 device: (5) Teradyne - GNA600
+[20:27:33.156] Found J2534 device: (6) XHorse - MVCI
+[20:27:33.172] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[20:27:33.172] Found J2534 device: (8) XHorse - MVCIV
+[20:27:33.187] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[20:27:33.187] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[20:27:33.203] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[20:27:33.203] Sardine CAN registry: 4: [COM_PORT] = [2]
+[20:27:33.218] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[20:27:33.218] Sardine CAN registry: 6: [DISABLE_DTR] = [0]
+[20:27:33.218] Sardine CAN registry: 7: [CAN] = [1]
+[20:27:33.234] Sardine CAN registry: 8: [ISO15765] = [1]
+[20:27:33.234] Sardine CAN registry: 9: [ISO9141] = [1]
+[20:27:33.234] Sardine CAN registry: 10: [ISO14230] = [1]
+[20:27:33.250] Sardine CAN registry: 11: [UseInterceptor] = [1]
+[20:27:33.265] Sardine CAN registry: 12: [FunctionLibrary] = "C:\\sardine\\Sardine.dll"
+[20:27:33.265] Loading library..
+[20:27:33.281] Loading functions..
+[20:27:33.281] Loading function #1..
+[20:27:33.296] Loading function #2..
+[20:27:33.296] Loading function #3..
+[20:27:33.296] Loading function #4..
+[20:27:33.296] Loading function #5..
+[20:27:33.296] Loading function #6..
+[20:27:33.312] Loading function #7..
+[20:27:33.312] Loading function #8..
+[20:27:33.312] Loading function #9..
+[20:27:33.312] Loading function #10..
+[20:27:33.328] Loading function #11..
+[20:27:33.328] Loading function #12..
+[20:27:33.328] Loading function #13..
+[20:27:33.328] Loading library&function: success! 
+[20:27:33.343] ------------ Testing DLL API ------------ 
+[20:27:33.343] ConnectTest +1
+[20:27:33.359] Error [8]: PassThru device is not connected to the PC.
+[20:27:33.359] ConnectTest +2
+[20:27:33.421] Error [8]: PassThru device is not connected to the PC.
+[20:27:33.437] ConnectTest +3
+[20:27:33.437] Error [8]: PassThru device is not connected to the PC.
+[20:27:33.452] ConnectTest +4
+[20:27:33.452] Error [8]: PassThru device is not connected to the PC.
+[20:27:33.452] ConnectTest +5
+[20:27:33.468] Error [8]: PassThru device is not connected to the PC.
+[20:27:33.468] ConnectTest +6
+[20:27:33.468] Error [8]: PassThru device is not connected to the PC.
+[20:27:33.484] ConnectTest -1
+[20:27:33.484] ConnectTest -2
+[20:27:33.484] ConnectTest -3
+[20:27:33.499] ReadTest 1:1
+[20:27:33.499] Error [8]: PassThru device is not connected to the PC.
+[20:27:33.499] ReadTest 2:1
+[20:27:33.515] Error [8]: PassThru device is not connected to the PC.
+[20:27:33.515] WriteTest 1:1
+[20:27:33.515] Error [8]: PassThru device is not connected to the PC.
+[20:27:33.530] WriteTest 2:1
+[20:27:33.530] Error [8]: PassThru device is not connected to the PC.
+[20:27:33.546] IOCTLtest 1:1
+[20:27:33.546] Error [8]: PassThru device is not connected to the PC.
+[20:27:33.546] IOCTLtest failed: PassThru device is not connected to the PC.
+[20:27:33.562] InterceptorTest 1:1 - NOTE! For this to work, "UseInterceptor" must be set to "1" in Windows registry!
+[20:27:33.577] Error [8]: PassThru device is not connected to the PC.
+[20:27:33.577] InterceptorTest failed: PassThru device is not connected to the PC.
+[20:27:33.593] PeriodicMsgTest 1:1
+[20:27:33.593] Error [8]: PassThru device is not connected to the PC.
+[20:27:33.593] OtherTest failed: PassThru device is not connected to the PC.
+[20:27:33.608] Freeing library...
+[20:27:33.608] 
+Connect tests failed: 6
+ Write tests failed: 2
+ read tests failed: 2
+ ioctl tests failed: 1
+ other tests failed: 1
+
+[20:30:11.939] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[20:30:11.955] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[20:30:11.955] Found J2534 device: (2) ETAS - Generic Provider
+[20:30:11.971] Found J2534 device: (3) Sardine CAN
+[20:30:11.971] Found J2534 device: (4) Sardine CAN #2
+[20:30:11.971] Found J2534 device: (5) Teradyne - GNA600
+[20:30:11.986] Found J2534 device: (6) XHorse - MVCI
+[20:30:11.986] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[20:30:12.  2] Found J2534 device: (8) XHorse - MVCIV
+[20:30:12.  2] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[20:30:12.  2] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[20:30:12. 17] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[20:30:12. 17] Sardine CAN registry: 4: [COM_PORT] = [2]
+[20:30:12. 33] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[20:30:12. 33] Sardine CAN registry: 6: [DISABLE_DTR] = [0]
+[20:30:12. 33] Sardine CAN registry: 7: [CAN] = [1]
+[20:30:12. 49] Sardine CAN registry: 8: [ISO15765] = [1]
+[20:30:12. 49] Sardine CAN registry: 9: [ISO9141] = [1]
+[20:30:12. 49] Sardine CAN registry: 10: [ISO14230] = [1]
+[20:30:12. 64] Sardine CAN registry: 11: [UseInterceptor] = [1]
+[20:30:12. 64] Sardine CAN registry: 12: [FunctionLibrary] = "C:\\sardine\\Sardine.dll"
+[20:30:12. 80] Loading library..
+[20:30:12. 80] Loading functions..
+[20:30:12. 95] Loading function #1..
+[20:30:12. 95] Loading function #2..
+[20:30:12. 95] Loading function #3..
+[20:30:12. 95] Loading function #4..
+[20:30:12. 95] Loading function #5..
+[20:30:12.111] Loading function #6..
+[20:30:12.111] Loading function #7..
+[20:30:12.111] Loading function #8..
+[20:30:12.111] Loading function #9..
+[20:30:12.127] Loading function #10..
+[20:30:12.127] Loading function #11..
+[20:30:12.127] Loading function #12..
+[20:30:12.127] Loading function #13..
+[20:30:12.142] Loading library&function: success! 
+[20:30:12.142] ------------ Testing DLL API ------------ 
+[20:30:12.142] ConnectTest +1
+[20:30:12.158] Error [8]: PassThru device is not connected to the PC.
+[20:30:12.158] ConnectTest +2
+[20:30:12.158] Error [8]: PassThru device is not connected to the PC.
+[20:30:12.173] ConnectTest +3
+[20:30:12.173] Error [8]: PassThru device is not connected to the PC.
+[20:30:12.173] ConnectTest +4
+[20:30:12.189] Error [8]: PassThru device is not connected to the PC.
+[20:30:12.189] ConnectTest +5
+[20:30:12.189] Error [8]: PassThru device is not connected to the PC.
+[20:30:12.205] ConnectTest +6
+[20:30:12.205] Error [8]: PassThru device is not connected to the PC.
+[20:30:12.220] ConnectTest -1
+[20:30:12.220] ConnectTest -2
+[20:30:12.220] ConnectTest -3
+[20:30:12.220] ReadTest 1:1
+[20:30:12.236] Error [8]: PassThru device is not connected to the PC.
+[20:30:12.236] ReadTest 2:1
+[20:30:12.236] Error [8]: PassThru device is not connected to the PC.
+[20:30:12.251] WriteTest 1:1
+[20:30:12.251] Error [8]: PassThru device is not connected to the PC.
+[20:30:12.267] WriteTest 2:1
+[20:30:12.267] Error [8]: PassThru device is not connected to the PC.
+[20:30:12.267] IOCTLtest 1:1
+[20:30:12.283] Error [8]: PassThru device is not connected to the PC.
+[20:30:12.283] IOCTLtest failed: PassThru device is not connected to the PC.
+[20:30:12.283] InterceptorTest 1:1 - NOTE! For this to work, "UseInterceptor" must be set to "1" in Windows registry!
+[20:30:12.298] Error [8]: PassThru device is not connected to the PC.
+[20:30:12.314] InterceptorTest failed: PassThru device is not connected to the PC.
+[20:30:12.314] PeriodicMsgTest 1:1
+[20:30:12.329] Error [8]: PassThru device is not connected to the PC.
+[20:30:12.329] OtherTest failed: PassThru device is not connected to the PC.
+[20:30:12.345] Freeing library...
+[20:30:12.345] 
+Connect tests failed: 6
+ Write tests failed: 2
+ read tests failed: 2
+ ioctl tests failed: 1
+ other tests failed: 1
+
+[20:32:56.336] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[20:32:56.352] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[20:32:56.367] Found J2534 device: (2) ETAS - Generic Provider
+[20:32:56.367] Found J2534 device: (3) Sardine CAN
+[20:32:56.367] Found J2534 device: (4) Sardine CAN #2
+[20:32:56.383] Found J2534 device: (5) Teradyne - GNA600
+[20:32:56.383] Found J2534 device: (6) XHorse - MVCI
+[20:32:56.383] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[20:32:56.399] Found J2534 device: (8) XHorse - MVCIV
+[20:32:56.399] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[20:32:56.399] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[20:32:56.414] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[20:32:56.414] Sardine CAN registry: 4: [COM_PORT] = [2]
+[20:32:56.414] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[20:32:56.430] Sardine CAN registry: 6: [DISABLE_DTR] = [0]
+[20:32:56.430] Sardine CAN registry: 7: [CAN] = [1]
+[20:32:56.430] Sardine CAN registry: 8: [ISO15765] = [1]
+[20:32:56.445] Sardine CAN registry: 9: [ISO9141] = [1]
+[20:32:56.445] Sardine CAN registry: 10: [ISO14230] = [1]
+[20:32:56.445] Sardine CAN registry: 11: [UseInterceptor] = [1]
+[20:32:56.461] Sardine CAN registry: 12: [FunctionLibrary] = "C:\\sardine\\Sardine.dll"
+[20:32:56.461] Loading library..
+[20:33:16.859] Loading functions..
+[20:33:16.859] Loading function #1..
+[20:33:16.874] Loading function #2..
+[20:33:16.890] Loading function #3..
+[20:33:16.890] Loading function #4..
+[20:33:16.890] Loading function #5..
+[20:33:16.906] Loading function #6..
+[20:33:16.906] Loading function #7..
+[20:33:16.906] Loading function #8..
+[20:33:16.921] Loading function #9..
+[20:33:16.921] Loading function #10..
+[20:33:16.921] Loading function #11..
+[20:33:16.937] Loading function #12..
+[20:33:16.937] Loading function #13..
+[20:33:16.937] Loading library&function: success! 
+[20:33:16.952] ------------ Testing DLL API ------------ 
+[20:33:16.952] ConnectTest +1
+[20:33:16.968] Error [0]: Function completed successfully.
+[20:33:16.984] Error [0]: Function completed successfully.
+[20:33:16.984] ConnectTest +2
+[20:33:17. 15] Error [0]: Function completed successfully.
+[20:33:17. 15] Error [0]: Function completed successfully.
+[20:33:17. 15] ConnectTest +3
+[20:33:17. 30] Error [0]: Function completed successfully.
+[20:33:17. 46] Error [0]: Function completed successfully.
+[20:33:17. 62] ConnectTest +4
+[20:33:17. 77] Error [0]: Function completed successfully.
+[20:33:17. 93] Error [0]: Function completed successfully.
+[20:33:17. 93] ConnectTest +5
+[20:33:17.108] Error [0]: Function completed successfully.
+[20:33:17.108] Error [0]: Function completed successfully.
+[20:33:17.124] ConnectTest +6
+[20:33:17.124] Error [1]: Function option is not supported.
+[20:33:17.124] ConnectTest -1
+[20:33:17.140] ConnectTest -2
+[20:33:17.140] ConnectTest -3
+[20:33:17.140] ReadTest 1:1
+[20:33:17.155] Error [0]: Function completed successfully.
+[20:33:17.171] ReadTest 1:2
+[20:33:17.171] Error [16]: PassThru device could not read any messages from the vehicle network.
+[20:33:17.186] ReadMsgs failed: PassThru device could not read any messages from the vehicle network.
+[20:33:17.202] Error [0]: Function completed successfully.
+[20:33:17.202] ReadTest 2:1
+[20:33:17.218] Error [0]: Function completed successfully.
+[20:33:17.233] ReadTest 2:2
+[20:33:17.233] ReadMsgs failed: PassThru device could not read any messages from the vehicle network.
+[20:33:17.249] ReadTest 3:2
+[20:33:17.282] Error [0]: Function completed successfully.
+[20:33:17.282] WriteTest 1:1
+[20:33:17.298] Error [0]: Function completed successfully.
+[20:33:17.329] WriteTest 1:2
+[20:33:17.344] WriteTest 1:3
+[20:34: 5.759] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[20:34: 5.774] Found J2534 device: (1) Drew Technologies Inc. - j2534-logger
+[20:34: 5.790] Found J2534 device: (2) ETAS - Generic Provider
+[20:34: 5.790] Found J2534 device: (3) Sardine CAN
+[20:34: 5.806] Found J2534 device: (4) Sardine CAN #2
+[20:34: 5.806] Found J2534 device: (5) Teradyne - GNA600
+[20:34: 5.821] Found J2534 device: (6) XHorse - MVCI
+[20:34: 5.821] Found J2534 device: (7) XHorse - MVCI for ED 5.3.7
+[20:34: 5.837] Found J2534 device: (8) XHorse - MVCIV
+[20:34: 5.837] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[20:34: 5.852] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[20:34: 5.868] Sardine CAN registry: 3: [Name] = "Sardine CAN"
+[20:34: 5.868] Sardine CAN registry: 4: [COM_PORT] = [1]
+[20:34: 5.884] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[20:34: 5.884] Sardine CAN registry: 6: [DISABLE_DTR] = [0]
+[20:34: 5.899] Sardine CAN registry: 7: [CAN] = [1]
+[20:34: 5.899] Sardine CAN registry: 8: [ISO15765] = [1]
+[20:34: 5.915] Sardine CAN registry: 9: [ISO9141] = [1]
+[20:34: 5.915] Sardine CAN registry: 10: [ISO14230] = [1]
+[20:34: 5.930] Sardine CAN registry: 11: [UseInterceptor] = [1]
+[20:34: 5.946] Sardine CAN registry: 12: [FunctionLibrary] = "C:\\sardine\\Sardine.dll"
+[20:34: 5.946] Loading library..
+[20:34: 5.962] Loading functions..
+[20:34: 5.962] Loading function #1..
+[20:34: 5.977] Loading function #2..
+[20:34: 5.977] Loading function #3..
+[20:34: 5.993] Loading function #4..
+[20:34: 5.993] Loading function #5..
+[20:34: 5.993] Loading function #6..
+[20:34: 6.  8] Loading function #7..
+[20:34: 6.  8] Loading function #8..
+[20:34: 6.  8] Loading function #9..
+[20:34: 6. 24] Loading function #10..
+[20:34: 6. 24] Loading function #11..
+[20:34: 6. 40] Loading function #12..
+[20:34: 6. 40] Loading function #13..
+[20:34: 6. 40] Loading library&function: success! 
+[20:34: 6. 55] ------------ Testing DLL API ------------ 
+[20:34: 6. 55] ConnectTest +1
+[20:34: 6. 71] Error [0]: Function completed successfully.
+[20:34: 6. 86] Error [0]: Function completed successfully.
+[20:34: 6.102] ConnectTest +2
+[20:34: 6.118] Error [0]: Function completed successfully.
+[20:34: 6.133] Error [0]: Function completed successfully.
+[20:34: 6.133] ConnectTest +3
+[20:34: 6.149] Error [0]: Function completed successfully.
+[20:34: 6.164] Error [0]: Function completed successfully.
+[20:34: 6.164] ConnectTest +4
+[20:34: 6.180] Error [0]: Function completed successfully.
+[20:34: 6.196] Error [0]: Function completed successfully.
+[20:34: 6.196] ConnectTest +5
+[20:34: 6.211] Error [0]: Function completed successfully.
+[20:34: 6.211] Error [0]: Function completed successfully.
+[20:34: 6.227] ConnectTest +6
+[20:34: 6.227] Error [1]: Function option is not supported.
+[20:34: 6.227] ConnectTest -1
+[20:34: 6.242] ConnectTest -2
+[20:34: 6.242] ConnectTest -3
+[20:34: 6.242] ReadTest 1:1
+[20:34: 6.274] Error [0]: Function completed successfully.
+[20:34: 6.274] ReadTest 1:2
+[20:34: 6.274] Error [16]: PassThru device could not read any messages from the vehicle network.
+[20:34: 6.289] ReadMsgs failed: PassThru device could not read any messages from the vehicle network.
+[20:34: 6.305] Error [0]: Function completed successfully.
+[20:34: 6.305] ReadTest 2:1
+[20:34: 6.320] Error [0]: Function completed successfully.
+[20:34: 6.320] ReadTest 2:2
+[20:34: 6.336] ReadMsgs failed: PassThru device could not read any messages from the vehicle network.
+[20:34: 6.336] ReadTest 3:2
+[20:34: 6.352] Error [0]: Function completed successfully.
+[20:34: 6.352] WriteTest 1:1
+[20:34: 6.367] Error [0]: Function completed successfully.
+[20:34: 6.398] WriteTest 1:2
+[21:31:50.720] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[21:31:50.735] Found J2534 device: (1) ETAS - Generic Provider
+[21:31:50.751] Found J2534 device: (2) Sardine CAN 1000K
+[21:31:50.751] Found J2534 device: (3) Sardine CAN 100K
+[21:31:50.766] Found J2534 device: (4) Sardine CAN 10K
+[21:31:50.766] Found J2534 device: (5) Sardine CAN 125K
+[21:31:50.782] Found J2534 device: (6) Sardine CAN 20K
+[21:31:50.782] Found J2534 device: (7) Sardine CAN 250K
+[21:31:50.798] Found J2534 device: (8) Sardine CAN 500K
+[21:31:50.798] Found J2534 device: (9) Sardine CAN 50K
+[21:31:50.813] Found J2534 device: (10) Sardine CAN 800K
+[21:31:50.813] Found J2534 device: (11) XHorse - MVCI for ED 5.3.7
+[21:31:50.829] Couldn't find our Sardine CAN entry in registry!
+[21:31:50.829] Loading library or functions failed!
+[21:31:57.225] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[21:31:57.240] Found J2534 device: (1) ETAS - Generic Provider
+[21:31:57.256] Found J2534 device: (2) Sardine CAN 1000K
+[21:31:57.256] Found J2534 device: (3) Sardine CAN 100K
+[21:31:57.272] Found J2534 device: (4) Sardine CAN 10K
+[21:31:57.272] Found J2534 device: (5) Sardine CAN 125K
+[21:31:57.272] Found J2534 device: (6) Sardine CAN 20K
+[21:31:57.287] Found J2534 device: (7) Sardine CAN 250K
+[21:31:57.287] Found J2534 device: (8) Sardine CAN 500K
+[21:31:57.303] Found J2534 device: (9) Sardine CAN 50K
+[21:31:57.303] Found J2534 device: (10) Sardine CAN 800K
+[21:31:57.303] Found J2534 device: (11) XHorse - MVCI for ED 5.3.7
+[21:31:57.318] Couldn't find our Sardine CAN entry in registry!
+[21:31:57.318] Loading library or functions failed!
+[21:31:59.612] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[21:31:59.627] Found J2534 device: (1) ETAS - Generic Provider
+[21:31:59.627] Found J2534 device: (2) Sardine CAN 1000K
+[21:31:59.643] Found J2534 device: (3) Sardine CAN 100K
+[21:31:59.643] Found J2534 device: (4) Sardine CAN 10K
+[21:31:59.658] Found J2534 device: (5) Sardine CAN 125K
+[21:31:59.658] Found J2534 device: (6) Sardine CAN 20K
+[21:31:59.674] Found J2534 device: (7) Sardine CAN 250K
+[21:31:59.674] Found J2534 device: (8) Sardine CAN 500K
+[21:31:59.690] Found J2534 device: (9) Sardine CAN 50K
+[21:31:59.690] Found J2534 device: (10) Sardine CAN 800K
+[21:31:59.690] Found J2534 device: (11) XHorse - MVCI for ED 5.3.7
+[21:31:59.705] Couldn't find our Sardine CAN entry in registry!
+[21:31:59.705] Loading library or functions failed!
+[21:32: 0.672] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[21:32: 0.688] Found J2534 device: (1) ETAS - Generic Provider
+[21:32: 0.704] Found J2534 device: (2) Sardine CAN 1000K
+[21:32: 0.719] Found J2534 device: (3) Sardine CAN 100K
+[21:32: 0.719] Found J2534 device: (4) Sardine CAN 10K
+[21:32: 0.735] Found J2534 device: (5) Sardine CAN 125K
+[21:32: 0.735] Found J2534 device: (6) Sardine CAN 20K
+[21:32: 0.735] Found J2534 device: (7) Sardine CAN 250K
+[21:32: 0.750] Found J2534 device: (8) Sardine CAN 500K
+[21:32: 0.750] Found J2534 device: (9) Sardine CAN 50K
+[21:32: 0.766] Found J2534 device: (10) Sardine CAN 800K
+[21:32: 0.766] Found J2534 device: (11) XHorse - MVCI for ED 5.3.7
+[21:32: 0.766] Couldn't find our Sardine CAN entry in registry!
+[21:32: 0.782] Loading library or functions failed!
+[21:32:15.333] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[21:32:15.348] Found J2534 device: (1) ETAS - Generic Provider
+[21:32:15.348] Found J2534 device: (2) Sardine CAN
+[21:32:15.364] Found J2534 device: (3) Sardine CAN 100K
+[21:32:15.364] Found J2534 device: (4) Sardine CAN 10K
+[21:32:15.380] Found J2534 device: (5) Sardine CAN 125K
+[21:32:15.380] Found J2534 device: (6) Sardine CAN 20K
+[21:32:15.380] Found J2534 device: (7) Sardine CAN 250K
+[21:32:15.395] Found J2534 device: (8) Sardine CAN 500K
+[21:32:15.395] Found J2534 device: (9) Sardine CAN 50K
+[21:32:15.395] Found J2534 device: (10) Sardine CAN 800K
+[21:32:15.411] Found J2534 device: (11) XHorse - MVCI for ED 5.3.7
+[21:32:15.411] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[21:32:15.426] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[21:32:15.426] Sardine CAN registry: 3: [Name] = "Sardine CAN 1000K"
+[21:32:15.442] Sardine CAN registry: 4: [COM_PORT] = [1]
+[21:32:15.442] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[21:32:15.442] Sardine CAN registry: 6: [DISABLE_DTR] = [1]
+[21:32:15.458] Sardine CAN registry: 7: [CAN] = [1]
+[21:32:15.458] Sardine CAN registry: 8: [ISO15765] = [1]
+[21:32:15.458] Sardine CAN registry: 9: [ISO9141] = [1]
+[21:32:15.473] Sardine CAN registry: 10: [ISO14230] = [1]
+[21:32:15.473] Sardine CAN registry: 11: [UseInterceptor] = [0]
+[21:32:15.489] Sardine CAN registry: 12: [FunctionLibrary] = "C:\\sardine\\Sardine_1000K.dll"
+[21:32:15.489] Loading library..
+[21:32:15.504] Loading functions..
+[21:32:15.504] Loading function #1..
+[21:32:15.520] Loading function #2..
+[21:32:15.520] Loading function #3..
+[21:32:15.520] Loading function #4..
+[21:32:15.520] Loading function #5..
+[21:32:15.536] Loading function #6..
+[21:32:15.536] Loading function #7..
+[21:32:15.536] Loading function #8..
+[21:32:15.551] Loading function #9..
+[21:32:15.551] Loading function #10..
+[21:32:15.551] Loading function #11..
+[21:32:15.551] Loading function #12..
+[21:32:15.567] Loading function #13..
+[21:32:15.567] Loading library&function: success! 
+[21:32:15.567] ------------ Testing DLL API ------------ 
+[21:32:15.582] ConnectTest +1
+[21:32:15.598] Error [0]: Function completed successfully.
+[21:32:15.598] Error [0]: Function completed successfully.
+[21:32:15.614] ConnectTest +2
+[21:32:15.629] Error [0]: Function completed successfully.
+[21:32:15.645] Error [0]: Function completed successfully.
+[21:32:15.645] ConnectTest +3
+[21:32:15.660] Error [0]: Function completed successfully.
+[21:32:15.676] Error [0]: Function completed successfully.
+[21:32:15.676] ConnectTest +4
+[21:32:15.692] Error [0]: Function completed successfully.
+[21:32:15.707] Error [0]: Function completed successfully.
+[21:32:15.707] ConnectTest +5
+[21:32:15.738] Error [0]: Function completed successfully.
+[21:32:15.738] Error [0]: Function completed successfully.
+[21:32:15.754] ConnectTest +6
+[21:32:15.754] Error [1]: Function option is not supported.
+[21:32:15.770] ConnectTest -1
+[21:32:15.770] ConnectTest -2
+[21:32:15.770] ConnectTest -3
+[21:32:15.785] ReadTest 1:1
+[21:32:15.801] Error [0]: Function completed successfully.
+[21:32:15.801] ReadTest 1:2
+[21:32:15.801] Error [16]: PassThru device could not read any messages from the vehicle network.
+[21:32:15.816] ReadMsgs failed: PassThru device could not read any messages from the vehicle network.
+[21:32:15.832] Error [0]: Function completed successfully.
+[21:32:15.848] ReadTest 2:1
+[21:32:15.863] Error [0]: Function completed successfully.
+[21:32:15.863] ReadTest 2:2
+[21:32:15.863] ReadMsgs failed: PassThru device could not read any messages from the vehicle network.
+[21:32:15.879] ReadTest 3:2
+[21:32:15.894] Error [0]: Function completed successfully.
+[21:32:15.894] WriteTest 1:1
+[21:32:15.910] Error [0]: Function completed successfully.
+[21:32:15.941] WriteTest 1:2
+[21:32:15.957] WriteTest 1:3
+[21:32:16.971] ReadMsgs failed: PassThru device could not read any messages from the vehicle network.
+[21:32:16.986] Error [0]: Function completed successfully.
+[21:32:17.  2] WriteTest 2:1
+[21:32:17. 33] Error [0]: Function completed successfully.
+[21:32:17. 33] WriteTest 2:2
+[21:32:17. 49] WriteTest 3:3
+[21:32:18. 63] ReadMsgs failed: PassThru device could not read any messages from the vehicle network.
+[21:32:18. 78] Error [0]: Function completed successfully.
+[21:32:18. 94] IOCTLtest 1:1
+[21:32:18.141] Error [0]: Function completed successfully.
+[21:32:18.156] Error [0]: Function completed successfully.
+[21:32:18.172] InterceptorTest 1:1 - NOTE! For this to work, "UseInterceptor" must be set to "1" in Windows registry!
+[21:32:18.203] Error [0]: Function completed successfully.
+[21:32:18.203] InterceptorTest 1:2
+[21:32:18.219] Error [0]: Function completed successfully.
+[21:32:18.219] InterceptorTest 1:3
+[21:32:18.234] InterceptorTest 1:4
+[21:32:19.248] Error [16]: PassThru device could not read any messages from the vehicle network.
+[21:32:19.264] ReadMsgs failed: PassThru device could not read any messages from the vehicle network.
+[21:32:19.280] Error [0]: Function completed successfully.
+[21:32:19.295] PeriodicMsgTest 1:1
+[21:32:19.311] Error [0]: Function completed successfully.
+[21:32:19.326] PeriodicMsgTest 1:2
+[21:32:19.326] Error [0]: Function completed successfully.
+[21:32:19.342] Starting to send periodic messages every 1000 ms (msg id 0xbebe0001), press any key to stop
+[21:32:37.362] PeriodicMsgTest 1:3
+[21:32:37.378] Error [0]: Function completed successfully.
+[21:32:37.393] Error [0]: Function completed successfully.
+[21:32:37.393] Freeing library...
+[21:32:37.409] 
+Connect tests failed: 1
+ Write tests failed: 1
+ read tests failed: 2
+ ioctl tests failed: 0
+ other tests failed: 1
+
+[21:33:34.986] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[21:33:34.986] Found J2534 device: (1) ETAS - Generic Provider
+[21:33:35.  2] Found J2534 device: (2) Sardine CAN 1000K
+[21:33:35.  2] Found J2534 device: (3) Sardine CAN 100K
+[21:33:35. 17] Found J2534 device: (4) Sardine CAN 10K
+[21:33:35. 17] Found J2534 device: (5) Sardine CAN 125K
+[21:33:35. 33] Found J2534 device: (6) Sardine CAN 20K
+[21:33:35. 49] Found J2534 device: (7) Sardine CAN 250K
+[21:33:35. 49] Found J2534 device: (8) Sardine CAN 500K
+[21:33:35. 64] Found J2534 device: (9) Sardine CAN 50K
+[21:33:35. 64] Found J2534 device: (10) Sardine CAN 800K
+[21:33:35. 80] Found J2534 device: (11) XHorse - MVCI for ED 5.3.7
+[21:33:35. 80] Couldn't find our Sardine CAN entry in registry!
+[21:33:35. 95] Loading library or functions failed!
+[21:34: 6.799] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[21:34: 6.799] Found J2534 device: (1) ETAS - Generic Provider
+[21:34: 6.814] Found J2534 device: (2) Sardine CAN #1000K
+[21:34: 6.814] Found J2534 device: (3) Sardine CAN 100K
+[21:34: 6.830] Found J2534 device: (4) Sardine CAN 10K
+[21:34: 6.830] Found J2534 device: (5) Sardine CAN 125K
+[21:34: 6.846] Found J2534 device: (6) Sardine CAN 20K
+[21:34: 6.846] Found J2534 device: (7) Sardine CAN 250K
+[21:34: 6.846] Found J2534 device: (8) Sardine CAN 500K
+[21:34: 6.861] Found J2534 device: (9) Sardine CAN 50K
+[21:34: 6.861] Found J2534 device: (10) Sardine CAN 800K
+[21:34: 6.861] Found J2534 device: (11) XHorse - MVCI for ED 5.3.7
+[21:34: 6.877] Couldn't find our Sardine CAN entry in registry!
+[21:34: 6.877] Loading library or functions failed!
+[21:34: 7.799] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[21:34: 7.815] Found J2534 device: (1) ETAS - Generic Provider
+[21:34: 7.830] Found J2534 device: (2) Sardine CAN #1000K
+[21:34: 7.830] Found J2534 device: (3) Sardine CAN 100K
+[21:34: 7.830] Found J2534 device: (4) Sardine CAN 10K
+[21:34: 7.846] Found J2534 device: (5) Sardine CAN 125K
+[21:34: 7.846] Found J2534 device: (6) Sardine CAN 20K
+[21:34: 7.846] Found J2534 device: (7) Sardine CAN 250K
+[21:34: 7.862] Found J2534 device: (8) Sardine CAN 500K
+[21:34: 7.862] Found J2534 device: (9) Sardine CAN 50K
+[21:34: 7.877] Found J2534 device: (10) Sardine CAN 800K
+[21:34: 7.893] Found J2534 device: (11) XHorse - MVCI for ED 5.3.7
+[21:34: 7.893] Couldn't find our Sardine CAN entry in registry!
+[21:34: 7.908] Loading library or functions failed!
+[21:34:32.809] Sardine test util v0.1 : (c) Olaf @ HackingVolvo Labs 2012
+[21:34:32.825] Found J2534 device: (1) ETAS - Generic Provider
+[21:34:32.840] Found J2534 device: (2) Sardine CAN
+[21:34:32.840] Found J2534 device: (3) Sardine CAN 1000K
+[21:34:32.856] Found J2534 device: (4) Sardine CAN 100K
+[21:34:32.856] Found J2534 device: (5) Sardine CAN 10K
+[21:34:32.871] Found J2534 device: (6) Sardine CAN 125K
+[21:34:32.871] Found J2534 device: (7) Sardine CAN 20K
+[21:34:32.871] Found J2534 device: (8) Sardine CAN 250K
+[21:34:32.887] Found J2534 device: (9) Sardine CAN 50K
+[21:34:32.887] Found J2534 device: (10) Sardine CAN 800K
+[21:34:32.903] Found J2534 device: (11) XHorse - MVCI for ED 5.3.7
+[21:34:32.903] Sardine CAN registry: 1: [APIVersion] = "04.04"
+[21:34:32.903] Sardine CAN registry: 2: [Vendor] = "Olaf@HackingVolvo"
+[21:34:32.918] Sardine CAN registry: 3: [Name] = "Sardine CAN 500K"
+[21:34:32.918] Sardine CAN registry: 4: [COM_PORT] = [1]
+[21:34:32.934] Sardine CAN registry: 5: [BAUD_RATE] = [115200]
+[21:34:32.934] Sardine CAN registry: 6: [DISABLE_DTR] = [0]
+[21:34:32.949] Sardine CAN registry: 7: [CAN] = [1]
+[21:34:32.949] Sardine CAN registry: 8: [ISO15765] = [1]
+[21:34:32.949] Sardine CAN registry: 9: [ISO9141] = [1]
+[21:34:32.965] Sardine CAN registry: 10: [ISO14230] = [1]
+[21:34:32.965] Sardine CAN registry: 11: [UseInterceptor] = [0]
+[21:34:32.965] Sardine CAN registry: 12: [FunctionLibrary] = "C:\\sardine\\Sardine_500K.dll"
+[21:34:32.981] Loading library..
+[21:34:32.996] Loading functions..
+[21:34:33. 12] Loading function #1..
+[21:34:33. 12] Loading function #2..
+[21:34:33. 12] Loading function #3..
+[21:34:33. 27] Loading function #4..
+[21:34:33. 27] Loading function #5..
+[21:34:33. 27] Loading function #6..
+[21:34:33. 27] Loading function #7..
+[21:34:33. 43] Loading function #8..
+[21:34:33. 43] Loading function #9..
+[21:34:33. 43] Loading function #10..
+[21:34:33. 59] Loading function #11..
+[21:34:33. 59] Loading function #12..
+[21:34:33. 59] Loading function #13..
+[21:34:33. 74] Loading library&function: success! 
+[21:34:33. 74] ------------ Testing DLL API ------------ 
+[21:34:33. 74] ConnectTest +1
+[21:34:33.105] Error [0]: Function completed successfully.
+[21:34:33.105] Error [0]: Function completed successfully.
+[21:34:33.121] ConnectTest +2
+[21:34:33.137] Error [0]: Function completed successfully.
+[21:34:33.152] Error [0]: Function completed successfully.
+[21:34:33.152] ConnectTest +3
+[21:34:33.183] Error [0]: Function completed successfully.
+[21:34:33.199] Error [0]: Function completed successfully.
+[21:34:33.199] ConnectTest +4
+[21:34:33.230] Error [0]: Function completed successfully.
+[21:34:33.230] Error [0]: Function completed successfully.
+[21:34:33.246] ConnectTest +5
+[21:34:33.261] Error [0]: Function completed successfully.
