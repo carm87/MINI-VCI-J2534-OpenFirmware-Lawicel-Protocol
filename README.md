@@ -1,5 +1,5 @@
 # MINI-VCI-J2534-OpenFirmware-Lawicel-Protocol
-This is the firmware I ported from Peak RS232 to Chinese MINI-VCI J2534 to implement on in the Lawicel Protocol (e.g. CANHACKER tool or Sardine CAN J2534 dll)
+This is the firmware I ported from Peak RS232 to Chinese MINI-VCI J2534 to implement on it the Lawicel Protocol (e.g. CANHACKER tool or Sardine CAN J2534 dll)
 
 For whom wants just to use this firmware:
 
@@ -7,10 +7,10 @@ For whom wants just to use this firmware:
 2- open Flash Magic or LPC210x_ISP, select port COMx, baud 38400, select file MVCI_Lawicel_prot_v0001.bin/.hex
 3- write it into device flash
 
-Now we have to manage the MCU reset when the application or dll open COMx port due to DTR level change.
+Now we have to manage the MCU reset when the application or dll open COMx port due to DTR/RTS level change.
 We can procede in 3 different ways:
 
-1 - cut on the PCB the track that from the FTD chip goes into the LPC2119 reset pin (deprecated)
+1 - cut/jump on the PCB the RTS and/or DTR (deprecated)
 
 2 - open FT_prog, read device, go into Hardware specific, invert RTS, CTS, DTR, RTS, program devices.
 
