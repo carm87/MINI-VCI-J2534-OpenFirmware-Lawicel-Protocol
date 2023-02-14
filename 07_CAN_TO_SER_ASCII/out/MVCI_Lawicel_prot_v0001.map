@@ -48,7 +48,7 @@ END GROUP
                 0x00000008                SVC_Stack_Size = 0x8
                 0x00000800                USR_Stack_Size = 0x800
 
-.text           0x00000000     0x37cd
+.text           0x00000000     0x3821
  *(.init)
  .init          0x00000000      0x1a4 ./obj/crt0.o
                 0x00000000                _boot
@@ -61,114 +61,114 @@ END GROUP
                 0x0000015c                reset
  *(.text .text.*)
  .text          0x000001a4        0x0 ./obj/crt0.o
- .text          0x000001a4     0x12a4 ./obj/main.o
+ .text          0x000001a4     0x12f8 ./obj/main.o
                 0x000001a4                hex2ascii
                 0x000001b8                ascii2hex
                 0x000001e8                ProcessMsgFromSerial
-                0x000010a4                ProcessMsgFromCan
- .text.startup  0x00001448      0x158 ./obj/main.o
-                0x00001448                main
- .text          0x000015a0      0x3e8 ./obj/can_user.o
-                0x000015a0                CAN_InitChannelMio
-                0x000016ec                CAN_UserWrite
-                0x00001740                CAN_UserRead
-                0x00001798                CAN_UserInit
- .text          0x00001988       0x74 ./obj/systime.o
-                0x00001988                SYSTIME_wait_us
-                0x000019b8                SYSTIME_Init
- .text          0x000019fc       0x54 ./obj/ser_user.o
-                0x000019fc                SER_UserInit
- .text          0x00001a50       0x68 ./obj/syscalls.o
-                0x00001a50                _read_r
-                0x00001a5c                _write_r
-                0x00001a64                _close_r
-                0x00001a6c                _lseek_r
-                0x00001a74                _fstat_r
-                0x00001a84                isatty
-                0x00001a8c                _exit
-                0x00001a90                _sbrk_r
- .text          0x00001ab8      0x5bc ./lib/libPCAN-Router-DRGNU2.0.1ys.a(serial.o)
-                0x00001bf8                SER_Write
-                0x00001d08                SER_Read
-                0x00001e24                SER_ResetTX
-                0x00001e70                SER_ResetRX
-                0x00001ed0                SER_Initialize
- .text          0x00002074      0x380 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(hardware.o)
-                0x0000208c                HW_GetHexSwitch
-                0x000020dc                HW_SetLED
-                0x000022ac                HW_JumpToBootloader
-                0x0000232c                HW_Init
- .text          0x000023f4     0x129c ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
-                0x000025e0                CAN_ReferenceTxQueue
-                0x0000262c                CAN_ReferenceRxQueue
-                0x00002674                CAN_GetIsrVector
-                0x00002680                CAN_SetAtomicHandler
-                0x000026c4                CAN_SetUnatomicHandler
-                0x000026e0                CAN_SetTimestampHandler
-                0x00002704                CAN_SetErrorLimit
-                0x00002728                CAN_SetRxCallback
-                0x0000274c                CAN_SetChannelInfo
-                0x00002770                CAN_GetChannelInfo
-                0x00002790                CAN_SetTxErrorCallback
-                0x000027b4                CAN_SetBusMode
-                0x00002828                CAN_TxQueueGetNext
-                0x00002878                CAN_RxQueueGetNext
-                0x000028cc                CAN_TxQueueWriteNext
-                0x000029e8                CAN_RxQueueReadNext
-                0x00002a70                CAN_GetTransceiverType
-                0x00002a98                CAN_SetTransceiverMode
-                0x00002aa8                CAN_FilterAddId
-                0x000030e4                CAN_SetFilterMode
-                0x00003104                CAN_InitFilters
-                0x000031a0                CAN_InitChannel
-                0x000034e0                CAN_ReInitChannel
- .text          0x00003690        0x8 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(thumb_glue.o)
-                0x00003690                MyIAP
- .text          0x00003698        0x0 c:/peak-devpack/compiler/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib\libc.a(lib_a-memcpy-stub.o)
- .text.memcpy   0x00003698      0x120 c:/peak-devpack/compiler/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib\libc.a(lib_a-memcpy-stub.o)
-                0x00003698                memcpy
+                0x000010f8                ProcessMsgFromCan
+ .text.startup  0x0000149c      0x158 ./obj/main.o
+                0x0000149c                main
+ .text          0x000015f4      0x3e8 ./obj/can_user.o
+                0x000015f4                CAN_InitChannelMio
+                0x00001740                CAN_UserWrite
+                0x00001794                CAN_UserRead
+                0x000017ec                CAN_UserInit
+ .text          0x000019dc       0x74 ./obj/systime.o
+                0x000019dc                SYSTIME_wait_us
+                0x00001a0c                SYSTIME_Init
+ .text          0x00001a50       0x54 ./obj/ser_user.o
+                0x00001a50                SER_UserInit
+ .text          0x00001aa4       0x68 ./obj/syscalls.o
+                0x00001aa4                _read_r
+                0x00001ab0                _write_r
+                0x00001ab8                _close_r
+                0x00001ac0                _lseek_r
+                0x00001ac8                _fstat_r
+                0x00001ad8                isatty
+                0x00001ae0                _exit
+                0x00001ae4                _sbrk_r
+ .text          0x00001b0c      0x5bc ./lib/libPCAN-Router-DRGNU2.0.1ys.a(serial.o)
+                0x00001c4c                SER_Write
+                0x00001d5c                SER_Read
+                0x00001e78                SER_ResetTX
+                0x00001ec4                SER_ResetRX
+                0x00001f24                SER_Initialize
+ .text          0x000020c8      0x380 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(hardware.o)
+                0x000020e0                HW_GetHexSwitch
+                0x00002130                HW_SetLED
+                0x00002300                HW_JumpToBootloader
+                0x00002380                HW_Init
+ .text          0x00002448     0x129c ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+                0x00002634                CAN_ReferenceTxQueue
+                0x00002680                CAN_ReferenceRxQueue
+                0x000026c8                CAN_GetIsrVector
+                0x000026d4                CAN_SetAtomicHandler
+                0x00002718                CAN_SetUnatomicHandler
+                0x00002734                CAN_SetTimestampHandler
+                0x00002758                CAN_SetErrorLimit
+                0x0000277c                CAN_SetRxCallback
+                0x000027a0                CAN_SetChannelInfo
+                0x000027c4                CAN_GetChannelInfo
+                0x000027e4                CAN_SetTxErrorCallback
+                0x00002808                CAN_SetBusMode
+                0x0000287c                CAN_TxQueueGetNext
+                0x000028cc                CAN_RxQueueGetNext
+                0x00002920                CAN_TxQueueWriteNext
+                0x00002a3c                CAN_RxQueueReadNext
+                0x00002ac4                CAN_GetTransceiverType
+                0x00002aec                CAN_SetTransceiverMode
+                0x00002afc                CAN_FilterAddId
+                0x00003138                CAN_SetFilterMode
+                0x00003158                CAN_InitFilters
+                0x000031f4                CAN_InitChannel
+                0x00003534                CAN_ReInitChannel
+ .text          0x000036e4        0x8 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(thumb_glue.o)
+                0x000036e4                MyIAP
+ .text          0x000036ec        0x0 c:/peak-devpack/compiler/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib\libc.a(lib_a-memcpy-stub.o)
+ .text.memcpy   0x000036ec      0x120 c:/peak-devpack/compiler/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib\libc.a(lib_a-memcpy-stub.o)
+                0x000036ec                memcpy
  *(.gnu.linkonce.t.*)
  *(.glue_7)
- .glue_7        0x000037b8        0x0 linker stubs
+ .glue_7        0x0000380c        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x000037b8        0x0 linker stubs
+ .glue_7t       0x0000380c        0x0 linker stubs
  *(.gcc_except_table)
  *(.rodata)
- .rodata        0x000037b8       0x10 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+ .rodata        0x0000380c       0x10 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
  *(.rodata*)
  .rodata.str1.4
-                0x000037c8        0x5 ./obj/main.o
+                0x0000381c        0x5 ./obj/main.o
  *(.gnu.linkonce.r.*)
 
-.vfp11_veneer   0x000037d0        0x0
- .vfp11_veneer  0x000037d0        0x0 linker stubs
+.vfp11_veneer   0x00003824        0x0
+ .vfp11_veneer  0x00003824        0x0 linker stubs
 
-.v4_bx          0x000037d0        0x0
- .v4_bx         0x000037d0        0x0 linker stubs
+.v4_bx          0x00003824        0x0
+ .v4_bx         0x00003824        0x0 linker stubs
 
-.iplt           0x000037d0        0x0
- .iplt          0x000037d0        0x0 ./obj/crt0.o
+.iplt           0x00003824        0x0
+ .iplt          0x00003824        0x0 ./obj/crt0.o
 
-.rel.dyn        0x000037d0        0x0
- .rel.iplt      0x000037d0        0x0 ./obj/crt0.o
-                0x000037d0                . = ALIGN (0x4)
+.rel.dyn        0x00003824        0x0
+ .rel.iplt      0x00003824        0x0 ./obj/crt0.o
+                0x00003824                . = ALIGN (0x4)
 
-.ctors          0x000037cd        0x0
-                0x000037cd                PROVIDE (__ctors_start__ = .)
+.ctors          0x00003821        0x0
+                0x00003821                PROVIDE (__ctors_start__ = .)
  *(SORT_BY_NAME(.ctors.*))
  *(.ctors)
-                0x000037cd                PROVIDE (__ctors_end__ = .)
+                0x00003821                PROVIDE (__ctors_end__ = .)
 
-.dtors          0x000037cd        0x0
+.dtors          0x00003821        0x0
                 [!provide]                PROVIDE (__dtors_start__ = .)
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
                 [!provide]                PROVIDE (__dtors_end__ = .)
-                0x000037d0                . = ALIGN (0x4)
-                0x000037d0                _etext = .
+                0x00003824                . = ALIGN (0x4)
+                0x00003824                _etext = .
                 [!provide]                PROVIDE (etext = .)
 
-.data           0x40000000        0x8 load address 0x000037d0
+.data           0x40000000        0x8 load address 0x00003824
                 0x40000000                _data = .
  *(.data)
  .data          0x40000000        0x0 ./obj/crt0.o
@@ -191,13 +191,13 @@ END GROUP
  *fill*         0x40000006        0x2 
  *(.fastrun)
 
-.igot.plt       0x40000008        0x0 load address 0x000037d8
+.igot.plt       0x40000008        0x0 load address 0x0000382c
  .igot.plt      0x40000008        0x0 ./obj/crt0.o
                 0x40000008                . = ALIGN (0x4)
                 0x40000008                _edata = .
                 [!provide]                PROVIDE (edata = .)
 
-.bss            0x40000008      0x480 load address 0x000037d8
+.bss            0x40000008      0x480 load address 0x0000382c
                 0x40000008                __bss_start = .
                 0x40000008                __bss_start__ = .
  *(.bss)
@@ -241,7 +241,7 @@ END GROUP
                 0x40000488                __bss_end__ = .
                 [!provide]                PROVIDE (__bss_end = .)
 
-.stack          0x40000488      0x920 load address 0x00003c58
+.stack          0x40000488      0x920 load address 0x00003cac
                 0x40000488                . = ALIGN (0x8)
                 0x40000c88                . = (. + USR_Stack_Size)
  *fill*         0x40000488      0x800 
@@ -352,15 +352,15 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x33d6
+.debug_info     0x00000000     0x3424
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000       0x26 ./obj/crt0.o
- .debug_info    0x00000026     0x1ad5 ./obj/main.o
- .debug_info    0x00001afb      0x73f ./obj/can_user.o
- .debug_info    0x0000223a       0xdf ./obj/systime.o
- .debug_info    0x00002319      0x1ae ./obj/ser_user.o
- .debug_info    0x000024c7      0xe93 ./obj/syscalls.o
- .debug_info    0x0000335a       0x7c ./lib/libPCAN-Router-DRGNU2.0.1ys.a(thumb_glue.o)
+ .debug_info    0x00000026     0x1b23 ./obj/main.o
+ .debug_info    0x00001b49      0x73f ./obj/can_user.o
+ .debug_info    0x00002288       0xdf ./obj/systime.o
+ .debug_info    0x00002367      0x1ae ./obj/ser_user.o
+ .debug_info    0x00002515      0xe93 ./obj/syscalls.o
+ .debug_info    0x000033a8       0x7c ./lib/libPCAN-Router-DRGNU2.0.1ys.a(thumb_glue.o)
 
 .debug_abbrev   0x00000000      0x8c0
  *(.debug_abbrev)
@@ -372,15 +372,15 @@ END GROUP
  .debug_abbrev  0x0000065a      0x252 ./obj/syscalls.o
  .debug_abbrev  0x000008ac       0x14 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(thumb_glue.o)
 
-.debug_line     0x00000000     0x21d0
+.debug_line     0x00000000     0x220d
  *(.debug_line)
  .debug_line    0x00000000       0xb4 ./obj/crt0.o
- .debug_line    0x000000b4     0x199f ./obj/main.o
- .debug_line    0x00001a53      0x321 ./obj/can_user.o
- .debug_line    0x00001d74       0xfa ./obj/systime.o
- .debug_line    0x00001e6e       0xa5 ./obj/ser_user.o
- .debug_line    0x00001f13      0x27a ./obj/syscalls.o
- .debug_line    0x0000218d       0x43 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(thumb_glue.o)
+ .debug_line    0x000000b4     0x19dc ./obj/main.o
+ .debug_line    0x00001a90      0x321 ./obj/can_user.o
+ .debug_line    0x00001db1       0xfa ./obj/systime.o
+ .debug_line    0x00001eab       0xa5 ./obj/ser_user.o
+ .debug_line    0x00001f50      0x27a ./obj/syscalls.o
+ .debug_line    0x000021ca       0x43 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(thumb_glue.o)
 
 .debug_frame    0x00000000      0x298
  *(.debug_frame)
@@ -401,17 +401,17 @@ END GROUP
  .debug_str     0x00000647       0x2f ./obj/systime.o
                                 0x176 (size before relaxing)
  .debug_str     0x00000676       0x80 ./obj/ser_user.o
-                                0x1ca (size before relaxing)
+                                0x1de (size before relaxing)
  .debug_str     0x000006f6      0x513 ./obj/syscalls.o
                                 0x6cc (size before relaxing)
 
-.debug_loc      0x00000000     0x2c7b
+.debug_loc      0x00000000     0x2c52
  *(.debug_loc)
- .debug_loc     0x00000000     0x2813 ./obj/main.o
- .debug_loc     0x00002813      0x278 ./obj/can_user.o
- .debug_loc     0x00002a8b       0x56 ./obj/systime.o
- .debug_loc     0x00002ae1       0x44 ./obj/ser_user.o
- .debug_loc     0x00002b25      0x156 ./obj/syscalls.o
+ .debug_loc     0x00000000     0x27ea ./obj/main.o
+ .debug_loc     0x000027ea      0x278 ./obj/can_user.o
+ .debug_loc     0x00002a62       0x56 ./obj/systime.o
+ .debug_loc     0x00002ab8       0x44 ./obj/ser_user.o
+ .debug_loc     0x00002afc      0x156 ./obj/syscalls.o
 
 .debug_macinfo
  *(.debug_macinfo)

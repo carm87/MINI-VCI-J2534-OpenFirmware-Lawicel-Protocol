@@ -262,6 +262,21 @@ void ProcessMsgFromSerial(void)
 		}
 		break;
 		//-------------------------------------------------
+	case ('Y'): // Open CAN channel in normal mode with autopolling
+		if ((CmdLength == 1)&& (CanChnOpen == 0) && (CanInitialized == 1)) {
+			AutoPollAutoSend=1;
+			CAN_ReInitChannel ( CAN_BUS1);
+			CAN_SetBusMode ( CAN_BUS1, BUS_ON);
+			CanChnOpen = 1;
+			CanBusMode = BUS_ON;
+			// Send ASCII OK
+			SER_Write (SER_PORT1, &RetValue, 1);
+		}
+		else {
+			RetValue=ret_ERROR; // command wrong length or parameter out of range 
+		}
+		break;
+		//-------------------------------------------------
 	case ('L'): // Open CAN channel in listen-only mode
 		if ((CmdLength == 1)&& (CanChnOpen == 0) && (CanInitialized == 1)) {
 			CAN_ReInitChannel ( CAN_BUS1);
@@ -277,7 +292,7 @@ void ProcessMsgFromSerial(void)
 		break;
 		//-------------------------------------------------
 	case ('C'): // Close CAN channel
-		if ((CmdLength == 1)&& ((CanChnOpen == 1))) {
+		if ((CmdLength == 1)) {
 			CAN_SetBusMode ( CAN_BUS1, BUS_OFF);
 			CanChnOpen = 0;
 			CanBusMode = BUS_OFF;
@@ -358,6 +373,17 @@ void ProcessMsgFromSerial(void)
 		if ((CmdLength == 2) 
 		&&  (ascii2hex(SerRcvBuf[1]) <= 1)) {
 			SetAutoPollAutoSend();
+		}
+		else {
+			RetValue=ret_ERROR; // command wrong length or parameter out of range 
+		}
+		break;
+		//-------------------------------------------------
+	case ('D'): // single or dual filter
+		if ((CmdLength == 2) )
+		 {
+			// Send ASCII OK
+			SER_Write (SER_PORT1, &RetValue, 1);
 		}
 		else {
 			RetValue=ret_ERROR; // command wrong length or parameter out of range 
