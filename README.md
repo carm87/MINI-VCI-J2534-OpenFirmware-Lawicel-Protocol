@@ -1,20 +1,20 @@
 # MINI-VCI-J2534-OpenFirmware-Lawicel-Protocol
 This is the firmware I ported from Peak System CAN-RS232 hardware to Chinese MINI-VCI J2534 to implement on it the Lawicel Protocol that seems to be the standard de facto for serial to can adapter.
 
-So we can use MVCI with following tools:
-- Bustmaster (best freeware CAN monitor tool) via VSCOM driver (with modified api to use 115200, the original one will try 3M baud on USB-CAN FTDI converter)
-- Any diagnostic tool that support J2534 via Sardine CAN api (with modified dlls and reg key to support different bauds, the original one uses only 125KBPS)
+# So we can use MVCI with following tools:
+- Bustmaster (best freeware CAN monitor tool) via VSCOM driver (with modified api to use 115200, the original one will try 3M baud on USB-CAN FTDI converter). NEW: I added a specific HEX file and VSCOM driver to work at 1200000bps on the virtual serial. 
+- Any diagnostic tool that support J2534 via Sardine CAN api (with modified dlls and reg key to support different bauds, the original one uses only 125KBPS). NEW: I added a specific HEX file reg file to work at 1200000bps on the virtual serial.
 - Canhacker
 - Titan Can
 
-For whom wants just to use this firmware:
+# For whom wants just to use this firmware:
 
 1- connect your MINI-VCI and verify in windows control panel driver is correctly loaded shoul be COMx present
 2- open Flash Magic or LPC210x_ISP, select port COMx, baud 38400, select file MVCI_Lawicel_prot_v0001.bin/.hex
 3- write it into device flash
 
 
-RTS/DTR/CTS/DSR...
+# RTS/DTR/CTS/DSR...
 
 MVCI devices support LPC2119 reset and enable bootloadr via DTR and RTS.
 
@@ -48,7 +48,7 @@ Really appreciaty any other suggestion
 
 
 
-For whom want to develop:
+# For whom want to develop:
 
 Download from peak-system development pack
 
