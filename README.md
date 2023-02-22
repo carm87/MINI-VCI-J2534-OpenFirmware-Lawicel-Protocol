@@ -24,17 +24,17 @@ The side effect is that is diffulct to interface with existing software due to t
 
 I found two working configurations: 
 
-###Configuration for busmaster and sardine can:
+### Configuration for busmaster and sardine can:
 in FT_prog, read device, go into Hardware specific, invert RTS, CTS, program devicesm unplug and replug devide.
 if you need to use again flashmagic open FT_prog and revert those changes.
 make sure that sardine registry antry has DISABLE_DTR=1
 
-###Configuration for busmaster and sardine can:
+### Configuration for busmaster and sardine can:
 in FT_prog, read device, go into Hardware specific, invert RTS, CTS, program devicesm unplug and replug devide.
 if you need to use again flashmagic open FT_prog and revert those changes.
 make sure that sardine registry antry has DISABLE_DTR=1
 
-###Configuration for canhacker , titan :
+### Configuration for canhacker , titan :
 in FT_prog, read device, go into Hardware specific, invert DTR, program devicesm unplug and replug devide.
 if you need to use again flashmagic open FT_prog and revert those changes.
 
