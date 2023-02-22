@@ -1,0 +1,572 @@
+Archive member included to satisfy reference by file (symbol)
+
+./lib/libPCAN-Router-DRGNU2.0.1ys.a(serial.o)
+                              ./obj/main.o (SER_Write)
+./lib/libPCAN-Router-DRGNU2.0.1ys.a(hardware.o)
+                              ./obj/main.o (HW_Init)
+./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+                              ./obj/can_user.o (CAN_ReferenceTxQueue)
+./lib/libPCAN-Router-DRGNU2.0.1ys.a(thumb_glue.o)
+                              ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o) (MyIAP)
+c:/peak-devpack/compiler/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib\libc.a(lib_a-memcpy-stub.o)
+                              ./obj/main.o (memcpy)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+ROM              0x00000000         0x0003e000         xr
+RAM              0x40000000         0x00004000         rw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD ./obj/crt0.o
+LOAD ./obj/main.o
+LOAD ./obj/can_user.o
+LOAD ./obj/systime.o
+LOAD ./obj/ser_user.o
+LOAD ./obj/syscalls.o
+LOAD ./lib/libPCAN-Router-DRGNU2.0.1ys.a
+LOAD c:/peak-devpack/compiler/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib\libm.a
+LOAD c:/peak-devpack/compiler/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib\libc.a
+LOAD c:/peak-devpack/compiler/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1\libgcc.a
+LOAD c:/peak-devpack/compiler/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib\libstdc++.a
+START GROUP
+LOAD c:/peak-devpack/compiler/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1\libgcc.a
+LOAD c:/peak-devpack/compiler/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib\libg.a
+LOAD c:/peak-devpack/compiler/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib\libc.a
+END GROUP
+START GROUP
+LOAD c:/peak-devpack/compiler/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1\libgcc.a
+LOAD c:/peak-devpack/compiler/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib\libc.a
+LOAD c:/peak-devpack/compiler/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib\libnosys.a
+END GROUP
+                0x00000008                UND_Stack_Size = 0x8
+                0x00000008                ABT_Stack_Size = 0x8
+                0x00000008                FIQ_Stack_Size = 0x8
+                0x00000100                IRQ_Stack_Size = 0x100
+                0x00000008                SVC_Stack_Size = 0x8
+                0x00000800                USR_Stack_Size = 0x800
+
+.text           0x00000000     0x3821
+ *(.init)
+ .init          0x00000000      0x1a4 ./obj/crt0.o
+                0x00000000                _boot
+                0x00000050                _mainCRTStartup
+                0x00000050                _start
+                0x00000050                start
+                0x0000015c                _reset
+                0x0000015c                exit
+                0x0000015c                abort
+                0x0000015c                reset
+ *(.text .text.*)
+ .text          0x000001a4        0x0 ./obj/crt0.o
+ .text          0x000001a4     0x12f8 ./obj/main.o
+                0x000001a4                hex2ascii
+                0x000001b8                ascii2hex
+                0x000001e8                ProcessMsgFromSerial
+                0x000010f8                ProcessMsgFromCan
+ .text.startup  0x0000149c      0x158 ./obj/main.o
+                0x0000149c                main
+ .text          0x000015f4      0x3e8 ./obj/can_user.o
+                0x000015f4                CAN_InitChannelMio
+                0x00001740                CAN_UserWrite
+                0x00001794                CAN_UserRead
+                0x000017ec                CAN_UserInit
+ .text          0x000019dc       0x74 ./obj/systime.o
+                0x000019dc                SYSTIME_wait_us
+                0x00001a0c                SYSTIME_Init
+ .text          0x00001a50       0x54 ./obj/ser_user.o
+                0x00001a50                SER_UserInit
+ .text          0x00001aa4       0x68 ./obj/syscalls.o
+                0x00001aa4                _read_r
+                0x00001ab0                _write_r
+                0x00001ab8                _close_r
+                0x00001ac0                _lseek_r
+                0x00001ac8                _fstat_r
+                0x00001ad8                isatty
+                0x00001ae0                _exit
+                0x00001ae4                _sbrk_r
+ .text          0x00001b0c      0x5bc ./lib/libPCAN-Router-DRGNU2.0.1ys.a(serial.o)
+                0x00001c4c                SER_Write
+                0x00001d5c                SER_Read
+                0x00001e78                SER_ResetTX
+                0x00001ec4                SER_ResetRX
+                0x00001f24                SER_Initialize
+ .text          0x000020c8      0x380 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(hardware.o)
+                0x000020e0                HW_GetHexSwitch
+                0x00002130                HW_SetLED
+                0x00002300                HW_JumpToBootloader
+                0x00002380                HW_Init
+ .text          0x00002448     0x129c ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+                0x00002634                CAN_ReferenceTxQueue
+                0x00002680                CAN_ReferenceRxQueue
+                0x000026c8                CAN_GetIsrVector
+                0x000026d4                CAN_SetAtomicHandler
+                0x00002718                CAN_SetUnatomicHandler
+                0x00002734                CAN_SetTimestampHandler
+                0x00002758                CAN_SetErrorLimit
+                0x0000277c                CAN_SetRxCallback
+                0x000027a0                CAN_SetChannelInfo
+                0x000027c4                CAN_GetChannelInfo
+                0x000027e4                CAN_SetTxErrorCallback
+                0x00002808                CAN_SetBusMode
+                0x0000287c                CAN_TxQueueGetNext
+                0x000028cc                CAN_RxQueueGetNext
+                0x00002920                CAN_TxQueueWriteNext
+                0x00002a3c                CAN_RxQueueReadNext
+                0x00002ac4                CAN_GetTransceiverType
+                0x00002aec                CAN_SetTransceiverMode
+                0x00002afc                CAN_FilterAddId
+                0x00003138                CAN_SetFilterMode
+                0x00003158                CAN_InitFilters
+                0x000031f4                CAN_InitChannel
+                0x00003534                CAN_ReInitChannel
+ .text          0x000036e4        0x8 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(thumb_glue.o)
+                0x000036e4                MyIAP
+ .text          0x000036ec        0x0 c:/peak-devpack/compiler/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib\libc.a(lib_a-memcpy-stub.o)
+ .text.memcpy   0x000036ec      0x120 c:/peak-devpack/compiler/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib\libc.a(lib_a-memcpy-stub.o)
+                0x000036ec                memcpy
+ *(.gnu.linkonce.t.*)
+ *(.glue_7)
+ .glue_7        0x0000380c        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x0000380c        0x0 linker stubs
+ *(.gcc_except_table)
+ *(.rodata)
+ .rodata        0x0000380c       0x10 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+ *(.rodata*)
+ .rodata.str1.4
+                0x0000381c        0x5 ./obj/main.o
+ *(.gnu.linkonce.r.*)
+
+.vfp11_veneer   0x00003824        0x0
+ .vfp11_veneer  0x00003824        0x0 linker stubs
+
+.v4_bx          0x00003824        0x0
+ .v4_bx         0x00003824        0x0 linker stubs
+
+.iplt           0x00003824        0x0
+ .iplt          0x00003824        0x0 ./obj/crt0.o
+
+.rel.dyn        0x00003824        0x0
+ .rel.iplt      0x00003824        0x0 ./obj/crt0.o
+                0x00003824                . = ALIGN (0x4)
+
+.ctors          0x00003821        0x0
+                0x00003821                PROVIDE (__ctors_start__ = .)
+ *(SORT_BY_NAME(.ctors.*))
+ *(.ctors)
+                0x00003821                PROVIDE (__ctors_end__ = .)
+
+.dtors          0x00003821        0x0
+                [!provide]                PROVIDE (__dtors_start__ = .)
+ *(SORT_BY_NAME(.dtors.*))
+ *(.dtors)
+                [!provide]                PROVIDE (__dtors_end__ = .)
+                0x00003824                . = ALIGN (0x4)
+                0x00003824                _etext = .
+                [!provide]                PROVIDE (etext = .)
+
+.data           0x40000000        0x8 load address 0x00003824
+                0x40000000                _data = .
+ *(.data)
+ .data          0x40000000        0x0 ./obj/crt0.o
+ .data          0x40000000        0x6 ./obj/main.o
+                0x40000000                CanSpeed
+                0x40000004                CanBusMode
+                0x40000005                AutoPollAutoSend
+ .data          0x40000006        0x0 ./obj/can_user.o
+ .data          0x40000006        0x0 ./obj/systime.o
+ .data          0x40000006        0x0 ./obj/ser_user.o
+ .data          0x40000006        0x0 ./obj/syscalls.o
+ .data          0x40000006        0x0 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(serial.o)
+ .data          0x40000006        0x0 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(hardware.o)
+ .data          0x40000006        0x0 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+ .data          0x40000006        0x0 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(thumb_glue.o)
+ .data          0x40000006        0x0 c:/peak-devpack/compiler/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib\libc.a(lib_a-memcpy-stub.o)
+ *(.data.*)
+ *(.gnu.linkonce.d*)
+                0x40000008                . = ALIGN (0x4)
+ *fill*         0x40000006        0x2 
+ *(.fastrun)
+
+.igot.plt       0x40000008        0x0 load address 0x0000382c
+ .igot.plt      0x40000008        0x0 ./obj/crt0.o
+                0x40000008                . = ALIGN (0x4)
+                0x40000008                _edata = .
+                [!provide]                PROVIDE (edata = .)
+
+.bss            0x40000008      0x480 load address 0x0000382c
+                0x40000008                __bss_start = .
+                0x40000008                __bss_start__ = .
+ *(.bss)
+ .bss           0x40000008        0x0 ./obj/crt0.o
+ .bss           0x40000008       0x81 ./obj/main.o
+                0x40000008                SerRcvBufPtr
+                0x4000000c                SerRcvBuf
+                0x4000002d                SerRxOverrunOccurred
+                0x4000002e                CanChnOpen
+                0x4000002f                CanInitialized
+                0x40000030                SerXmtBuf
+                0x40000051                SerXmtBufPtr
+                0x40000052                AutostartMode
+                0x40000054                CanTxMsg
+                0x40000064                SerTxCongestionOccurred
+                0x40000065                FilterMode
+                0x40000066                CanRcvTimestampOn
+                0x40000068                UARTWriteResult
+                0x4000006c                CanRxMsg
+                0x4000007c                Millitimer
+                0x40000080                TimeDiff1000Hz
+                0x40000084                LedTimeDiff
+ *fill*         0x40000089        0x3 
+ .bss           0x4000008c      0x300 ./obj/can_user.o
+                0x4000008c                TxQueueCAN1
+                0x4000010c                RxQueueCAN1
+                0x4000020c                TxQueueCAN2
+                0x4000028c                RxQueueCAN2
+ .bss           0x4000038c        0x0 ./obj/systime.o
+ .bss           0x4000038c       0x64 ./obj/ser_user.o
+ .bss           0x400003f0        0x4 ./obj/syscalls.o
+ .bss           0x400003f4       0x18 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(serial.o)
+ .bss           0x4000040c        0x0 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(hardware.o)
+ .bss           0x4000040c       0x7c ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+ .bss           0x40000488        0x0 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(thumb_glue.o)
+ .bss           0x40000488        0x0 c:/peak-devpack/compiler/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib\libc.a(lib_a-memcpy-stub.o)
+ *(.gnu.linkonce.b*)
+ *(COMMON)
+                0x40000488                . = ALIGN (0x4)
+                0x40000488                . = ALIGN (0x4)
+                0x40000488                __bss_end__ = .
+                [!provide]                PROVIDE (__bss_end = .)
+
+.stack          0x40000488      0x920 load address 0x00003cac
+                0x40000488                . = ALIGN (0x8)
+                0x40000c88                . = (. + USR_Stack_Size)
+ *fill*         0x40000488      0x800 
+                0x40000c88                PROVIDE (_USRStackTop = .)
+                0x40000c90                . = (. + SVC_Stack_Size)
+ *fill*         0x40000c88        0x8 
+                0x40000c90                PROVIDE (_SVCStackTop = .)
+                0x40000d90                . = (. + IRQ_Stack_Size)
+ *fill*         0x40000c90      0x100 
+                0x40000d90                PROVIDE (_IRQStackTop = .)
+                0x40000d98                . = (. + FIQ_Stack_Size)
+ *fill*         0x40000d90        0x8 
+                0x40000d98                PROVIDE (_FIQStackTop = .)
+                0x40000da0                . = (. + ABT_Stack_Size)
+ *fill*         0x40000d98        0x8 
+                0x40000da0                PROVIDE (_ABTStackTop = .)
+                0x40000da8                . = (. + UND_Stack_Size)
+ *fill*         0x40000da0        0x8 
+                0x40000da8                PROVIDE (_UNDStackTop = .)
+                0x40000da8                _end = .
+                0x40000da8                PROVIDE (end = .)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x00000000       0x5e
+ *(.comment)
+ .comment       0x00000000       0x4d ./obj/main.o
+                                 0x4e (size before relaxing)
+ .comment       0x0000004d       0x4e ./obj/can_user.o
+ .comment       0x0000004d       0x4e ./obj/systime.o
+ .comment       0x0000004d       0x4e ./obj/ser_user.o
+ .comment       0x0000004d       0x4e ./obj/syscalls.o
+ .comment       0x0000004d       0x11 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(serial.o)
+                                 0x12 (size before relaxing)
+ .comment       0x0000005e       0x12 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(hardware.o)
+ .comment       0x0000005e       0x12 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+
+.ARM.attributes
+                0x00000000       0x28
+ .ARM.attributes
+                0x00000000       0x1a ./obj/crt0.o
+ .ARM.attributes
+                0x0000001a       0x2a ./obj/main.o
+ .ARM.attributes
+                0x00000044       0x2a ./obj/can_user.o
+ .ARM.attributes
+                0x0000006e       0x2a ./obj/systime.o
+ .ARM.attributes
+                0x00000098       0x2a ./obj/ser_user.o
+ .ARM.attributes
+                0x000000c2       0x2a ./obj/syscalls.o
+ .ARM.attributes
+                0x000000ec       0x34 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(serial.o)
+ .ARM.attributes
+                0x00000120       0x34 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(hardware.o)
+ .ARM.attributes
+                0x00000154       0x34 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+ .ARM.attributes
+                0x00000188       0x24 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(thumb_glue.o)
+ .ARM.attributes
+                0x000001ac       0x2a c:/peak-devpack/compiler/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib\libc.a(lib_a-memcpy-stub.o)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000       0xe8
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 ./obj/crt0.o
+ .debug_aranges
+                0x00000020       0x28 ./obj/main.o
+ .debug_aranges
+                0x00000048       0x20 ./obj/can_user.o
+ .debug_aranges
+                0x00000068       0x20 ./obj/systime.o
+ .debug_aranges
+                0x00000088       0x20 ./obj/ser_user.o
+ .debug_aranges
+                0x000000a8       0x20 ./obj/syscalls.o
+ .debug_aranges
+                0x000000c8       0x20 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(thumb_glue.o)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000     0x3424
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000       0x26 ./obj/crt0.o
+ .debug_info    0x00000026     0x1b23 ./obj/main.o
+ .debug_info    0x00001b49      0x73f ./obj/can_user.o
+ .debug_info    0x00002288       0xdf ./obj/systime.o
+ .debug_info    0x00002367      0x1ae ./obj/ser_user.o
+ .debug_info    0x00002515      0xe93 ./obj/syscalls.o
+ .debug_info    0x000033a8       0x7c ./lib/libPCAN-Router-DRGNU2.0.1ys.a(thumb_glue.o)
+
+.debug_abbrev   0x00000000      0x8c0
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000       0x14 ./obj/crt0.o
+ .debug_abbrev  0x00000014      0x2fb ./obj/main.o
+ .debug_abbrev  0x0000030f      0x1e6 ./obj/can_user.o
+ .debug_abbrev  0x000004f5       0x9b ./obj/systime.o
+ .debug_abbrev  0x00000590       0xca ./obj/ser_user.o
+ .debug_abbrev  0x0000065a      0x252 ./obj/syscalls.o
+ .debug_abbrev  0x000008ac       0x14 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(thumb_glue.o)
+
+.debug_line     0x00000000     0x220d
+ *(.debug_line)
+ .debug_line    0x00000000       0xb4 ./obj/crt0.o
+ .debug_line    0x000000b4     0x19dc ./obj/main.o
+ .debug_line    0x00001a90      0x321 ./obj/can_user.o
+ .debug_line    0x00001db1       0xfa ./obj/systime.o
+ .debug_line    0x00001eab       0xa5 ./obj/ser_user.o
+ .debug_line    0x00001f50      0x27a ./obj/syscalls.o
+ .debug_line    0x000021ca       0x43 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(thumb_glue.o)
+
+.debug_frame    0x00000000      0x298
+ *(.debug_frame)
+ .debug_frame   0x00000000       0xb4 ./obj/main.o
+ .debug_frame   0x000000b4       0xac ./obj/can_user.o
+ .debug_frame   0x00000160       0x3c ./obj/systime.o
+ .debug_frame   0x0000019c       0x34 ./obj/ser_user.o
+ .debug_frame   0x000001d0       0x90 ./obj/syscalls.o
+ .debug_frame   0x00000260       0x38 c:/peak-devpack/compiler/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib\libc.a(lib_a-memcpy-stub.o)
+
+.debug_str      0x00000000      0xc09
+ *(.debug_str)
+ .debug_str     0x00000000       0x60 ./obj/crt0.o
+ .debug_str     0x00000060      0x466 ./obj/main.o
+                                0x4d7 (size before relaxing)
+ .debug_str     0x000004c6      0x181 ./obj/can_user.o
+                                0x34e (size before relaxing)
+ .debug_str     0x00000647       0x2f ./obj/systime.o
+                                0x176 (size before relaxing)
+ .debug_str     0x00000676       0x80 ./obj/ser_user.o
+                                0x1de (size before relaxing)
+ .debug_str     0x000006f6      0x513 ./obj/syscalls.o
+                                0x6cc (size before relaxing)
+
+.debug_loc      0x00000000     0x2c52
+ *(.debug_loc)
+ .debug_loc     0x00000000     0x27ea ./obj/main.o
+ .debug_loc     0x000027ea      0x278 ./obj/can_user.o
+ .debug_loc     0x00002a62       0x56 ./obj/systime.o
+ .debug_loc     0x00002ab8       0x44 ./obj/ser_user.o
+ .debug_loc     0x00002afc      0x156 ./obj/syscalls.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+OUTPUT(./out/MVCI_Lawicel_prot_v0001_1250000.elf elf32-littlearm)
+LOAD linker stubs
+
+.debug_ranges   0x00000000      0x4d0
+ .debug_ranges  0x00000000      0x4a8 ./obj/main.o
+ .debug_ranges  0x000004a8       0x28 ./obj/can_user.o
+
+Cross Reference Table
+
+Symbol                                            File
+AutoPollAutoSend                                  ./obj/main.o
+AutostartMode                                     ./obj/main.o
+CAN_FilterAddId                                   ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+CAN_GetChannelInfo                                ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+CAN_GetIsrVector                                  ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+                                                  ./obj/can_user.o
+CAN_GetTransceiverType                            ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+CAN_InitChannel                                   ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+CAN_InitChannelMio                                ./obj/can_user.o
+                                                  ./obj/main.o
+CAN_InitFilters                                   ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+                                                  ./obj/can_user.o
+CAN_ReInitChannel                                 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+                                                  ./obj/can_user.o
+                                                  ./obj/main.o
+CAN_ReferenceRxQueue                              ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+                                                  ./obj/can_user.o
+CAN_ReferenceTxQueue                              ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+                                                  ./obj/can_user.o
+CAN_RxQueueGetNext                                ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+                                                  ./obj/can_user.o
+CAN_RxQueueReadNext                               ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+                                                  ./obj/can_user.o
+CAN_SetAtomicHandler                              ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+CAN_SetBusMode                                    ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+                                                  ./obj/can_user.o
+                                                  ./obj/main.o
+CAN_SetChannelInfo                                ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+                                                  ./obj/can_user.o
+CAN_SetErrorLimit                                 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+                                                  ./obj/can_user.o
+CAN_SetFilterMode                                 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+                                                  ./obj/can_user.o
+CAN_SetRxCallback                                 ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+                                                  ./obj/can_user.o
+CAN_SetTimestampHandler                           ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+                                                  ./obj/can_user.o
+CAN_SetTransceiverMode                            ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+                                                  ./obj/can_user.o
+CAN_SetTxErrorCallback                            ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+                                                  ./obj/can_user.o
+CAN_SetUnatomicHandler                            ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+CAN_TxQueueGetNext                                ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+                                                  ./obj/can_user.o
+CAN_TxQueueWriteNext                              ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+                                                  ./obj/can_user.o
+CAN_UserInit                                      ./obj/can_user.o
+                                                  ./obj/main.o
+CAN_UserRead                                      ./obj/can_user.o
+                                                  ./obj/main.o
+CAN_UserWrite                                     ./obj/can_user.o
+                                                  ./obj/main.o
+CanBusMode                                        ./obj/main.o
+CanChnOpen                                        ./obj/main.o
+CanInitialized                                    ./obj/main.o
+CanRcvTimestampOn                                 ./obj/main.o
+CanRxMsg                                          ./obj/main.o
+CanSpeed                                          ./obj/main.o
+CanTxMsg                                          ./obj/main.o
+FilterMode                                        ./obj/main.o
+HW_GetHexSwitch                                   ./lib/libPCAN-Router-DRGNU2.0.1ys.a(hardware.o)
+HW_Init                                           ./lib/libPCAN-Router-DRGNU2.0.1ys.a(hardware.o)
+                                                  ./obj/main.o
+HW_JumpToBootloader                               ./lib/libPCAN-Router-DRGNU2.0.1ys.a(hardware.o)
+HW_SetLED                                         ./lib/libPCAN-Router-DRGNU2.0.1ys.a(hardware.o)
+LedTimeDiff                                       ./obj/main.o
+Millitimer                                        ./obj/main.o
+MyIAP                                             ./lib/libPCAN-Router-DRGNU2.0.1ys.a(thumb_glue.o)
+                                                  ./lib/libPCAN-Router-DRGNU2.0.1ys.a(can.o)
+ProcessMsgFromCan                                 ./obj/main.o
+ProcessMsgFromSerial                              ./obj/main.o
+RxQueueCAN1                                       ./obj/can_user.o
+RxQueueCAN2                                       ./obj/can_user.o
+SER_Initialize                                    ./lib/libPCAN-Router-DRGNU2.0.1ys.a(serial.o)
+                                                  ./obj/ser_user.o
+SER_Read                                          ./lib/libPCAN-Router-DRGNU2.0.1ys.a(serial.o)
+                                                  ./obj/main.o
+SER_ResetRX                                       ./lib/libPCAN-Router-DRGNU2.0.1ys.a(serial.o)
+SER_ResetTX                                       ./lib/libPCAN-Router-DRGNU2.0.1ys.a(serial.o)
+SER_UserInit                                      ./obj/ser_user.o
+                                                  ./obj/main.o
+SER_Write                                         ./lib/libPCAN-Router-DRGNU2.0.1ys.a(serial.o)
+                                                  ./obj/main.o
+SYSTIME_Init                                      ./obj/systime.o
+                                                  ./obj/main.o
+SYSTIME_wait_us                                   ./obj/systime.o
+                                                  ./obj/main.o
+SerRcvBuf                                         ./obj/main.o
+SerRcvBufPtr                                      ./obj/main.o
+SerRxOverrunOccurred                              ./obj/main.o
+SerTxCongestionOccurred                           ./obj/main.o
+SerXmtBuf                                         ./obj/main.o
+SerXmtBufPtr                                      ./obj/main.o
+TimeDiff1000Hz                                    ./obj/main.o
+TxQueueCAN1                                       ./obj/can_user.o
+TxQueueCAN2                                       ./obj/can_user.o
+UARTWriteResult                                   ./obj/main.o
+_ABTStackTop                                      ./obj/crt0.o
+_FIQStackTop                                      ./obj/crt0.o
+_IRQStackTop                                      ./obj/crt0.o
+_SVCStackTop                                      ./obj/crt0.o
+_UNDStackTop                                      ./obj/crt0.o
+_USRStackTop                                      ./obj/crt0.o
+__bss_end__                                       ./obj/crt0.o
+__bss_start                                       ./obj/crt0.o
+__ctors_end__                                     ./obj/crt0.o
+__ctors_start__                                   ./obj/crt0.o
+_boot                                             ./obj/crt0.o
+_close_r                                          ./obj/syscalls.o
+_data                                             ./obj/crt0.o
+_edata                                            ./obj/crt0.o
+_etext                                            ./obj/crt0.o
+_exit                                             ./obj/syscalls.o
+_fstat_r                                          ./obj/syscalls.o
+_lseek_r                                          ./obj/syscalls.o
+_mainCRTStartup                                   ./obj/crt0.o
+_read_r                                           ./obj/syscalls.o
+_reset                                            ./obj/crt0.o
+_sbrk_r                                           ./obj/syscalls.o
+_start                                            ./obj/crt0.o
+_write_r                                          ./obj/syscalls.o
+abort                                             ./obj/crt0.o
+ascii2hex                                         ./obj/main.o
+end                                               ./obj/syscalls.o
+exit                                              ./obj/crt0.o
+hex2ascii                                         ./obj/main.o
+isatty                                            ./obj/syscalls.o
+main                                              ./obj/main.o
+                                                  ./obj/crt0.o
+memcpy                                            c:/peak-devpack/compiler/10 2020-q4-major/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib\libc.a(lib_a-memcpy-stub.o)
+                                                  ./obj/main.o
+reset                                             ./obj/crt0.o
+start                                             ./obj/crt0.o

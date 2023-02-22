@@ -1,0 +1,4974 @@
+
+./out/MVCI_Lawicel_prot_v0001_1250000.elf:     file format elf32-littlearm
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00003821  00000000  00000000  00000074  2**2
+                  CONTENTS, ALLOC, LOAD, CODE
+  1 .data         00000008  40000000  00003824  00003898  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000480  40000008  0000382c  000038a0  2**2
+                  ALLOC
+  3 .stack        00000920  40000488  00003cac  000038a0  2**0
+                  ALLOC
+  4 .comment      0000005e  00000000  00000000  000038a0  2**0
+                  CONTENTS, READONLY
+  5 .ARM.attributes 00000028  00000000  00000000  000038fe  2**0
+                  CONTENTS, READONLY
+  6 .debug_aranges 000000e8  00000000  00000000  00003928  2**3
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+  7 .debug_info   00003424  00000000  00000000  00003a10  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+  8 .debug_abbrev 000008c0  00000000  00000000  00006e34  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+  9 .debug_line   0000220d  00000000  00000000  000076f4  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 10 .debug_frame  00000298  00000000  00000000  00009904  2**2
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 11 .debug_str    00000c09  00000000  00000000  00009b9c  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 12 .debug_loc    00002c52  00000000  00000000  0000a7a5  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 13 .debug_ranges 000004d0  00000000  00000000  0000d3f7  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+
+Disassembly of section .text:
+
+00000000 <_boot>:
+       0:	ea000012 	b	50 <_start>
+       4:	e59ff014 	ldr	pc, [pc, #20]	; 20 <_undf>
+       8:	e59ff014 	ldr	pc, [pc, #20]	; 24 <_swi>
+       c:	e59ff014 	ldr	pc, [pc, #20]	; 28 <_pabt>
+      10:	e59ff014 	ldr	pc, [pc, #20]	; 2c <_dabt>
+      14:	e1a00000 	nop			; (mov r0, r0)
+      18:	e51ffff0 	ldr	pc, [pc, #-4080]	; fffff030 <VPBDIV+0x1fe02f30>
+      1c:	e59ff010 	ldr	pc, [pc, #16]	; 34 <_fiq>
+
+00000020 <_undf>:
+      20:	00000038 	.word	0x00000038
+
+00000024 <_swi>:
+      24:	0000003c 	.word	0x0000003c
+
+00000028 <_pabt>:
+      28:	00000040 	.word	0x00000040
+
+0000002c <_dabt>:
+      2c:	00000044 	.word	0x00000044
+
+00000030 <_irq>:
+      30:	00000048 	.word	0x00000048
+
+00000034 <_fiq>:
+      34:	0000004c 	.word	0x0000004c
+
+00000038 <__undf>:
+      38:	eafffffe 	b	38 <__undf>
+
+0000003c <__swi>:
+      3c:	eafffffe 	b	3c <__swi>
+
+00000040 <__pabt>:
+      40:	eafffffe 	b	40 <__pabt>
+
+00000044 <__dabt>:
+      44:	eafffffe 	b	44 <__dabt>
+
+00000048 <__irq>:
+      48:	eafffffe 	b	48 <__irq>
+
+0000004c <__fiq>:
+      4c:	eafffffe 	b	4c <__fiq>
+
+00000050 <_start>:
+      50:	e59f0108 	ldr	r0, [pc, #264]	; 160 <_reset+0x4>
+      54:	e3a01001 	mov	r1, #1
+      58:	e5801000 	str	r1, [r0]
+      5c:	e59f0100 	ldr	r0, [pc, #256]	; 164 <_reset+0x8>
+      60:	e3a010aa 	mov	r1, #170	; 0xaa
+      64:	e3a02055 	mov	r2, #85	; 0x55
+      68:	e3a03025 	mov	r3, #37	; 0x25
+      6c:	e5803004 	str	r3, [r0, #4]
+      70:	e3a03001 	mov	r3, #1
+      74:	e5803000 	str	r3, [r0]
+      78:	e580100c 	str	r1, [r0, #12]
+      7c:	e580200c 	str	r2, [r0, #12]
+
+00000080 <PLL_Loop>:
+      80:	e5903008 	ldr	r3, [r0, #8]
+      84:	e2133b01 	ands	r3, r3, #1024	; 0x400
+      88:	0afffffc 	beq	80 <PLL_Loop>
+      8c:	e3a03003 	mov	r3, #3
+      90:	e5803000 	str	r3, [r0]
+      94:	e580100c 	str	r1, [r0, #12]
+      98:	e580200c 	str	r2, [r0, #12]
+      9c:	e59f00c4 	ldr	r0, [pc, #196]	; 168 <_reset+0xc>
+      a0:	e3a01003 	mov	r1, #3
+      a4:	e5801004 	str	r1, [r0, #4]
+      a8:	e3a01002 	mov	r1, #2
+      ac:	e5801000 	str	r1, [r0]
+      b0:	e321f0db 	msr	CPSR_c, #219	; 0xdb
+      b4:	e59fd0b0 	ldr	sp, [pc, #176]	; 16c <_reset+0x10>
+      b8:	e321f0d7 	msr	CPSR_c, #215	; 0xd7
+      bc:	e59fd0ac 	ldr	sp, [pc, #172]	; 170 <_reset+0x14>
+      c0:	e321f0d1 	msr	CPSR_c, #209	; 0xd1
+      c4:	e59fd0a8 	ldr	sp, [pc, #168]	; 174 <_reset+0x18>
+      c8:	e321f0d2 	msr	CPSR_c, #210	; 0xd2
+      cc:	e59fd0a4 	ldr	sp, [pc, #164]	; 178 <_reset+0x1c>
+      d0:	e321f0d3 	msr	CPSR_c, #211	; 0xd3
+      d4:	e59fd0a0 	ldr	sp, [pc, #160]	; 17c <_reset+0x20>
+      d8:	e321f010 	msr	CPSR_c, #16
+      dc:	e59fd09c 	ldr	sp, [pc, #156]	; 180 <_reset+0x24>
+      e0:	e59f109c 	ldr	r1, [pc, #156]	; 184 <_reset+0x28>
+      e4:	e59f209c 	ldr	r2, [pc, #156]	; 188 <_reset+0x2c>
+      e8:	e59f309c 	ldr	r3, [pc, #156]	; 18c <_reset+0x30>
+      ec:	e1520003 	cmp	r2, r3
+      f0:	34910004 	ldrcc	r0, [r1], #4
+      f4:	34820004 	strcc	r0, [r2], #4
+      f8:	3afffffb 	bcc	ec <PLL_Loop+0x6c>
+      fc:	e3a00000 	mov	r0, #0
+     100:	e59f1088 	ldr	r1, [pc, #136]	; 190 <_reset+0x34>
+     104:	e59f2088 	ldr	r2, [pc, #136]	; 194 <_reset+0x38>
+     108:	e1510002 	cmp	r1, r2
+     10c:	34810004 	strcc	r0, [r1], #4
+     110:	3afffffc 	bcc	108 <IRQ_Stack_Size+0x8>
+     114:	e59f007c 	ldr	r0, [pc, #124]	; 198 <_reset+0x3c>
+     118:	e59f107c 	ldr	r1, [pc, #124]	; 19c <_reset+0x40>
+
+0000011c <ctor_loop>:
+     11c:	e1500001 	cmp	r0, r1
+     120:	0a000005 	beq	13c <ctor_end>
+     124:	e4902004 	ldr	r2, [r0], #4
+     128:	e92d0003 	push	{r0, r1}
+     12c:	e1a0e00f 	mov	lr, pc
+     130:	e1a0f002 	mov	pc, r2
+     134:	e8bd0003 	pop	{r0, r1}
+     138:	eafffff7 	b	11c <ctor_loop>
+
+0000013c <ctor_end>:
+     13c:	e3a00000 	mov	r0, #0
+     140:	e1a01000 	mov	r1, r0
+     144:	e1a02000 	mov	r2, r0
+     148:	e1a0b000 	mov	fp, r0
+     14c:	e1a07000 	mov	r7, r0
+     150:	e59fa048 	ldr	sl, [pc, #72]	; 1a0 <_reset+0x44>
+     154:	e1a0e00f 	mov	lr, pc
+     158:	e12fff1a 	bx	sl
+
+0000015c <_reset>:
+     15c:	eafffffe 	b	15c <_reset>
+     160:	e01fc100 	.word	0xe01fc100
+     164:	e01fc080 	.word	0xe01fc080
+     168:	e01fc000 	.word	0xe01fc000
+     16c:	40000da8 	.word	0x40000da8
+     170:	40000da0 	.word	0x40000da0
+     174:	40000d98 	.word	0x40000d98
+     178:	40000d90 	.word	0x40000d90
+     17c:	40000c90 	.word	0x40000c90
+     180:	40000c88 	.word	0x40000c88
+     184:	00003824 	.word	0x00003824
+     188:	40000000 	.word	0x40000000
+     18c:	40000008 	.word	0x40000008
+     190:	40000008 	.word	0x40000008
+     194:	40000488 	.word	0x40000488
+     198:	00003821 	.word	0x00003821
+     19c:	00003821 	.word	0x00003821
+     1a0:	0000149c 	.word	0x0000149c
+
+000001a4 <hex2ascii>:
+// Write to UART was either ok or TX queue was full (repeat in latter case)
+SERStatus_t UARTWriteResult;
+
+u8_t hex2ascii(u8_t chr)
+{
+	chr = chr & 0xF;
+     1a4:	e200000f 	and	r0, r0, #15
+	if(chr > 9)
+     1a8:	e3500009 	cmp	r0, #9
+	{
+		chr += 0x37;
+     1ac:	82800037 	addhi	r0, r0, #55	; 0x37
+	}
+	else
+	{
+		chr += 0x30;
+     1b0:	92800030 	addls	r0, r0, #48	; 0x30
+	}
+	return chr;
+}
+     1b4:	e12fff1e 	bx	lr
+
+000001b8 <ascii2hex>:
+
+u8_t ascii2hex(u8_t chr)
+{
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     1b8:	e2403041 	sub	r3, r0, #65	; 0x41
+     1bc:	e3530019 	cmp	r3, #25
+     1c0:	9a000005 	bls	1dc <ascii2hex+0x24>
+	{
+		chr -= 0x37;
+		return chr &0xF;
+	}
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     1c4:	e2403061 	sub	r3, r0, #97	; 0x61
+     1c8:	e20330ff 	and	r3, r3, #255	; 0xff
+     1cc:	e3530019 	cmp	r3, #25
+	{
+		chr -=0x57;
+     1d0:	92400057 	subls	r0, r0, #87	; 0x57
+	
+	if((chr <= 0x39) && (chr >= 0x30)) // Zahlen
+	{
+		chr -= 0x30;
+	}
+	return chr & 0xF;
+     1d4:	e200000f 	and	r0, r0, #15
+}
+     1d8:	e12fff1e 	bx	lr
+		chr -= 0x37;
+     1dc:	e2400037 	sub	r0, r0, #55	; 0x37
+		return chr &0xF;
+     1e0:	e200000f 	and	r0, r0, #15
+     1e4:	e12fff1e 	bx	lr
+
+000001e8 <ProcessMsgFromSerial>:
+
+
+
+void ProcessMsgFromSerial(void)
+//-------------------------------------------------
+{
+     1e8:	e92d43f0 	push	{r4, r5, r6, r7, r8, r9, lr}
+	u8_t CmdLength;		// length of currently received Command
+	u8_t RetValue;		// 
+
+	do {
+		// Read one byte from serial
+		ReadResult = SER_Read (SER_PORT1, &CurRcvChar, 1, &BytesRead);
+     1ec:	e3a06001 	mov	r6, #1
+				SerRcvBufPtr++;
+			}
+		} // else if
+		//-------------------------------------------------
+		else if (ReadResult == SER_ERR_RX_OVERRUN){
+			SerRxOverrunOccurred = 1; // to be inserted in status register (command F)
+     1f0:	e59f5ed4 	ldr	r5, [pc, #3796]	; 10cc <USR_Stack_Size+0x8cc>
+{
+     1f4:	e24dd00c 	sub	sp, sp, #12
+     1f8:	ea000008 	b	220 <ProcessMsgFromSerial+0x38>
+			SerRcvBuf[SerRcvBufPtr] = CurRcvChar;
+     1fc:	e5d53000 	ldrb	r3, [r5]
+     200:	e5dd4005 	ldrb	r4, [sp, #5]
+			if (SerRcvBufPtr <= buflen){
+     204:	e3530021 	cmp	r3, #33	; 0x21
+			SerRcvBuf[SerRcvBufPtr] = CurRcvChar;
+     208:	e0852003 	add	r2, r5, r3
+				SerRcvBufPtr++;
+     20c:	e2833001 	add	r3, r3, #1
+     210:	95c53000 	strbls	r3, [r5]
+		} // else if
+		//-------------------------------------------------
+	} // do
+	while (CurRcvChar != '\r');	
+     214:	e354000d 	cmp	r4, #13
+			SerRcvBuf[SerRcvBufPtr] = CurRcvChar;
+     218:	e5c24004 	strb	r4, [r2, #4]
+	while (CurRcvChar != '\r');	
+     21c:	0a00000d 	beq	258 <ProcessMsgFromSerial+0x70>
+		ReadResult = SER_Read (SER_PORT1, &CurRcvChar, 1, &BytesRead);
+     220:	e3a02001 	mov	r2, #1
+     224:	e3a00000 	mov	r0, #0
+     228:	e28d3006 	add	r3, sp, #6
+     22c:	e28d1005 	add	r1, sp, #5
+     230:	eb0006c9 	bl	1d5c <SER_Read>
+		if (ReadResult == SER_ERR_RX_EMPTY){
+     234:	e3500002 	cmp	r0, #2
+     238:	0a000051 	beq	384 <ProcessMsgFromSerial+0x19c>
+	    else if (ReadResult == SER_ERR_OK){
+     23c:	e3500000 	cmp	r0, #0
+     240:	0affffed 	beq	1fc <ProcessMsgFromSerial+0x14>
+			SerRcvBuf[SerRcvBufPtr] = CurRcvChar;
+     244:	e5dd4005 	ldrb	r4, [sp, #5]
+		else if (ReadResult == SER_ERR_RX_OVERRUN){
+     248:	e3500003 	cmp	r0, #3
+			SerRxOverrunOccurred = 1; // to be inserted in status register (command F)
+     24c:	05c56025 	strbeq	r6, [r5, #37]	; 0x25
+	while (CurRcvChar != '\r');	
+     250:	e354000d 	cmp	r4, #13
+     254:	1afffff1 	bne	220 <ProcessMsgFromSerial+0x38>
+	CmdLength = SerRcvBufPtr - 1; // without carriage return
+     258:	e59f5e6c 	ldr	r5, [pc, #3692]	; 10cc <USR_Stack_Size+0x8cc>
+     25c:	e5d56000 	ldrb	r6, [r5]
+     260:	e5d53004 	ldrb	r3, [r5, #4]
+     264:	e2466001 	sub	r6, r6, #1
+     268:	e2433043 	sub	r3, r3, #67	; 0x43
+		//-------------------------------------------------
+	
+	RetValue = ret_OK;
+     26c:	e5cd4007 	strb	r4, [sp, #7]
+	CmdLength = SerRcvBufPtr - 1; // without carriage return
+     270:	e20660ff 	and	r6, r6, #255	; 0xff
+	switch (SerRcvBuf[0]) { // Char 0 always contains cmd
+     274:	e3530033 	cmp	r3, #51	; 0x33
+     278:	979ff103 	ldrls	pc, [pc, r3, lsl #2]
+     27c:	ea000035 	b	358 <ProcessMsgFromSerial+0x170>
+     280:	0000100c 	.word	0x0000100c
+     284:	00000350 	.word	0x00000350
+     288:	00000358 	.word	0x00000358
+     28c:	00000c58 	.word	0x00000c58
+     290:	00000358 	.word	0x00000358
+     294:	00000358 	.word	0x00000358
+     298:	00000358 	.word	0x00000358
+     29c:	00000358 	.word	0x00000358
+     2a0:	00000358 	.word	0x00000358
+     2a4:	00000754 	.word	0x00000754
+     2a8:	000003cc 	.word	0x000003cc
+     2ac:	000007ac 	.word	0x000007ac
+     2b0:	00000fb8 	.word	0x00000fb8
+     2b4:	00000358 	.word	0x00000358
+     2b8:	00000358 	.word	0x00000358
+     2bc:	000009b4 	.word	0x000009b4
+     2c0:	00000be8 	.word	0x00000be8
+     2c4:	00000454 	.word	0x00000454
+     2c8:	00000358 	.word	0x00000358
+     2cc:	00000390 	.word	0x00000390
+     2d0:	000003e8 	.word	0x000003e8
+     2d4:	00000d04 	.word	0x00000d04
+     2d8:	00000d5c 	.word	0x00000d5c
+     2dc:	00000db4 	.word	0x00000db4
+     2e0:	00000358 	.word	0x00000358
+     2e4:	00000358 	.word	0x00000358
+     2e8:	00000358 	.word	0x00000358
+     2ec:	00000358 	.word	0x00000358
+     2f0:	00000358 	.word	0x00000358
+     2f4:	00000358 	.word	0x00000358
+     2f8:	00000358 	.word	0x00000358
+     2fc:	00000358 	.word	0x00000358
+     300:	00000358 	.word	0x00000358
+     304:	00000358 	.word	0x00000358
+     308:	00000358 	.word	0x00000358
+     30c:	00000358 	.word	0x00000358
+     310:	00000358 	.word	0x00000358
+     314:	00000358 	.word	0x00000358
+     318:	00000358 	.word	0x00000358
+     31c:	00000358 	.word	0x00000358
+     320:	00000358 	.word	0x00000358
+     324:	00000358 	.word	0x00000358
+     328:	000003cc 	.word	0x000003cc
+     32c:	00000358 	.word	0x00000358
+     330:	00000358 	.word	0x00000358
+     334:	00000358 	.word	0x00000358
+     338:	00000358 	.word	0x00000358
+     33c:	00000e08 	.word	0x00000e08
+     340:	00000eec 	.word	0x00000eec
+     344:	000007ec 	.word	0x000007ec
+     348:	00000358 	.word	0x00000358
+     34c:	00000390 	.word	0x00000390
+			RetValue=ret_ERROR; // command wrong length or parameter out of range 
+		}
+		break;
+		//-------------------------------------------------
+	case ('D'): // single or dual filter
+		if ((CmdLength == 2) )
+     350:	e3560002 	cmp	r6, #2
+     354:	0a00001e 	beq	3d4 <ProcessMsgFromSerial+0x1ec>
+		RetValue = ret_ERROR;
+     358:	e3a03007 	mov	r3, #7
+     35c:	e5cd3007 	strb	r3, [sp, #7]
+	//	HW_SetLED ( HW_LED_CAN1, HW_LED_RED);
+	//	LedTimeDiff = SYSTIME_NOW;
+
+		// Send ASCII string to RS232 UART (Host-PC)
+		SerXmtBuf[0] = RetValue; // BEL
+		SerXmtBufPtr = 1;
+     360:	e3a02001 	mov	r2, #1
+		SerXmtBuf[0] = RetValue; // BEL
+     364:	e3a03007 	mov	r3, #7
+		SER_Write (SER_PORT1, &SerXmtBuf, SerXmtBufPtr);
+     368:	e3a00000 	mov	r0, #0
+     36c:	e59f1d5c 	ldr	r1, [pc, #3420]	; 10d0 <USR_Stack_Size+0x8d0>
+		SerXmtBuf[0] = RetValue; // BEL
+     370:	e5c53028 	strb	r3, [r5, #40]	; 0x28
+		SerXmtBufPtr = 1;
+     374:	e5c52049 	strb	r2, [r5, #73]	; 0x49
+		SER_Write (SER_PORT1, &SerXmtBuf, SerXmtBufPtr);
+     378:	eb000633 	bl	1c4c <SER_Write>
+	}
+	
+	SerRcvBufPtr = 0;
+     37c:	e3a03000 	mov	r3, #0
+     380:	e5c53000 	strb	r3, [r5]
+}
+     384:	e28dd00c 	add	sp, sp, #12
+     388:	e8bd43f0 	pop	{r4, r5, r6, r7, r8, r9, lr}
+     38c:	e12fff1e 	bx	lr
+		if (CmdLength == 1) {
+     390:	e3560001 	cmp	r6, #1
+     394:	1affffef 	bne	358 <ProcessMsgFromSerial+0x170>
+	SerXmtBuf[SerXmtBufPtr] = '0';
+	SerXmtBufPtr++;
+	SerXmtBuf[SerXmtBufPtr] = '1';
+	SerXmtBufPtr++;
+	SerXmtBuf[SerXmtBufPtr] = '\r'; // Append <CR>
+	SerXmtBufPtr++;
+     398:	e3a02006 	mov	r2, #6
+	SerXmtBuf[SerXmtBufPtr] = 'V';
+     39c:	e59f0d30 	ldr	r0, [pc, #3376]	; 10d4 <USR_Stack_Size+0x8d4>
+	SerXmtBuf[SerXmtBufPtr] = '1';
+     3a0:	e59f3d30 	ldr	r3, [pc, #3376]	; 10d8 <USR_Stack_Size+0x8d8>
+	SerXmtBuf[SerXmtBufPtr] = 'V';
+     3a4:	e5850028 	str	r0, [r5, #40]	; 0x28
+
+	// Send ASCII string to RS232 UART (Host-PC)
+	SER_Write (SER_PORT1, &SerXmtBuf, SerXmtBufPtr);
+     3a8:	e59f1d20 	ldr	r1, [pc, #3360]	; 10d0 <USR_Stack_Size+0x8d0>
+     3ac:	e3a00000 	mov	r0, #0
+	SerXmtBuf[SerXmtBufPtr] = '1';
+     3b0:	e1c532bc 	strh	r3, [r5, #44]	; 0x2c
+	SerXmtBufPtr++;
+     3b4:	e5c52049 	strb	r2, [r5, #73]	; 0x49
+	SER_Write (SER_PORT1, &SerXmtBuf, SerXmtBufPtr);
+     3b8:	eb000623 	bl	1c4c <SER_Write>
+	if (RetValue == ret_ERROR) {
+     3bc:	e5dd3007 	ldrb	r3, [sp, #7]
+     3c0:	e3530007 	cmp	r3, #7
+     3c4:	1affffec 	bne	37c <ProcessMsgFromSerial+0x194>
+     3c8:	eaffffe4 	b	360 <ProcessMsgFromSerial+0x178>
+		if (CmdLength == 9) {
+     3cc:	e3560009 	cmp	r6, #9
+     3d0:	1affffe0 	bne	358 <ProcessMsgFromSerial+0x170>
+			SER_Write (SER_PORT1, &RetValue, 1);
+     3d4:	e3a02001 	mov	r2, #1
+     3d8:	e28d1007 	add	r1, sp, #7
+     3dc:	e3a00000 	mov	r0, #0
+     3e0:	eb000619 	bl	1c4c <SER_Write>
+     3e4:	eafffff4 	b	3bc <ProcessMsgFromSerial+0x1d4>
+		if ((CmdLength == 2) 
+     3e8:	e3560002 	cmp	r6, #2
+     3ec:	1affffd9 	bne	358 <ProcessMsgFromSerial+0x170>
+		&&  (ascii2hex(SerRcvBuf[1]) <= 1)) {
+     3f0:	e5d50005 	ldrb	r0, [r5, #5]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     3f4:	e2403041 	sub	r3, r0, #65	; 0x41
+     3f8:	e3530019 	cmp	r3, #25
+		chr -= 0x37;
+     3fc:	92403037 	subls	r3, r0, #55	; 0x37
+		return chr &0xF;
+     400:	9203300f 	andls	r3, r3, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     404:	9a000004 	bls	41c <PLLSTAT_PLOCK+0x1c>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     408:	e2403061 	sub	r3, r0, #97	; 0x61
+     40c:	e3530019 	cmp	r3, #25
+		chr -=0x57;
+     410:	92403057 	subls	r3, r0, #87	; 0x57
+		return chr &0xF;
+     414:	9203300f 	andls	r3, r3, #15
+	return chr & 0xF;
+     418:	8200300f 	andhi	r3, r0, #15
+		&&  (ascii2hex(SerRcvBuf[1]) <= 1)) {
+     41c:	e3530001 	cmp	r3, #1
+     420:	8affffcc 	bhi	358 <ProcessMsgFromSerial+0x170>
+	if (CanChnOpen == 0){ // precondition	
+     424:	e5d53026 	ldrb	r3, [r5, #38]	; 0x26
+     428:	e3530000 	cmp	r3, #0
+     42c:	1a0002df 	bne	fb0 <USR_Stack_Size+0x7b0>
+		FilterMode = ascii2hex(SerRcvBuf[1]);
+     430:	ebffff60 	bl	1b8 <ascii2hex>
+     434:	e5c5005d 	strb	r0, [r5, #93]	; 0x5d
+	//-------------------------------------------------
+
+	SerXmtBufPtr = 0;
+
+	SerXmtBuf[SerXmtBufPtr] = Result;
+	SerXmtBufPtr++;
+     438:	e3a02001 	mov	r2, #1
+	
+	// Send ASCII string to RS232 UART (Host-PC)
+	SER_Write (SER_PORT1, &SerXmtBuf, SerXmtBufPtr);
+     43c:	e59f1c8c 	ldr	r1, [pc, #3212]	; 10d0 <USR_Stack_Size+0x8d0>
+     440:	e3a00000 	mov	r0, #0
+	SerXmtBuf[SerXmtBufPtr] = Result;
+     444:	e5c54028 	strb	r4, [r5, #40]	; 0x28
+	SerXmtBufPtr++;
+     448:	e5c52049 	strb	r2, [r5, #73]	; 0x49
+	SER_Write (SER_PORT1, &SerXmtBuf, SerXmtBufPtr);
+     44c:	eb0005fe 	bl	1c4c <SER_Write>
+}
+     450:	eaffffd9 	b	3bc <ProcessMsgFromSerial+0x1d4>
+				if ((CmdLength == 10 + (ascii2hex(SerRcvBuf[9])* 2)) 
+     454:	e5d5200d 	ldrb	r2, [r5, #13]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     458:	e2421041 	sub	r1, r2, #65	; 0x41
+     45c:	e20110ff 	and	r1, r1, #255	; 0xff
+     460:	e3510019 	cmp	r1, #25
+		chr -= 0x37;
+     464:	92423037 	subls	r3, r2, #55	; 0x37
+		return chr &0xF;
+     468:	9203300f 	andls	r3, r3, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     46c:	9a000005 	bls	488 <PLLSTAT_PLOCK+0x88>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     470:	e2423061 	sub	r3, r2, #97	; 0x61
+     474:	e20330ff 	and	r3, r3, #255	; 0xff
+     478:	e3530019 	cmp	r3, #25
+		chr -=0x57;
+     47c:	92423057 	subls	r3, r2, #87	; 0x57
+		return chr &0xF;
+     480:	9203300f 	andls	r3, r3, #15
+	return chr & 0xF;
+     484:	8202300f 	andhi	r3, r2, #15
+				if ((CmdLength == 10 + (ascii2hex(SerRcvBuf[9])* 2)) 
+     488:	e2833005 	add	r3, r3, #5
+     48c:	e1560083 	cmp	r6, r3, lsl #1
+     490:	1affffb0 	bne	358 <ProcessMsgFromSerial+0x170>
+		&&  (CanChnOpen == 1) 
+     494:	e5d53026 	ldrb	r3, [r5, #38]	; 0x26
+     498:	e3530001 	cmp	r3, #1
+     49c:	1affffad 	bne	358 <ProcessMsgFromSerial+0x170>
+		&&  (CanBusMode == BUS_ON)) {
+     4a0:	e59f6c34 	ldr	r6, [pc, #3124]	; 10dc <USR_Stack_Size+0x8dc>
+     4a4:	e5d60004 	ldrb	r0, [r6, #4]
+     4a8:	e3500000 	cmp	r0, #0
+     4ac:	1affffa9 	bne	358 <ProcessMsgFromSerial+0x170>
+	&&  (AutostartMode == 0)) {
+     4b0:	e5d5304a 	ldrb	r3, [r5, #74]	; 0x4a
+     4b4:	e3530000 	cmp	r3, #0
+     4b8:	1a000300 	bne	10c0 <USR_Stack_Size+0x8c0>
+		CanTxMsg.Data32[0] = 0;
+     4bc:	e5853054 	str	r3, [r5, #84]	; 0x54
+		CanTxMsg.Data32[1] = 0;
+     4c0:	e5853058 	str	r3, [r5, #88]	; 0x58
+		CanTxMsg.Id =                 (ascii2hex(SerRcvBuf[1])<<28 )& 0xF0000000;
+     4c4:	e5d53005 	ldrb	r3, [r5, #5]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     4c8:	e2430041 	sub	r0, r3, #65	; 0x41
+     4cc:	e3500019 	cmp	r0, #25
+		chr -= 0x37;
+     4d0:	92433037 	subls	r3, r3, #55	; 0x37
+		return chr &0xF;
+     4d4:	9203300f 	andls	r3, r3, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     4d8:	9a000004 	bls	4f0 <PLLSTAT_PLOCK+0xf0>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     4dc:	e2430061 	sub	r0, r3, #97	; 0x61
+     4e0:	e20000ff 	and	r0, r0, #255	; 0xff
+     4e4:	e3500019 	cmp	r0, #25
+		chr -=0x57;
+     4e8:	92433057 	subls	r3, r3, #87	; 0x57
+	return chr & 0xF;
+     4ec:	e203300f 	and	r3, r3, #15
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[2])<<24 )& 0x0F000000));
+     4f0:	e5d50006 	ldrb	r0, [r5, #6]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     4f4:	e240c041 	sub	ip, r0, #65	; 0x41
+     4f8:	e35c0019 	cmp	ip, #25
+		chr -= 0x37;
+     4fc:	92400037 	subls	r0, r0, #55	; 0x37
+		CanTxMsg.Id =                 (ascii2hex(SerRcvBuf[1])<<28 )& 0xF0000000;
+     500:	e1a03e03 	lsl	r3, r3, #28
+		return chr &0xF;
+     504:	9200000f 	andls	r0, r0, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     508:	9a000004 	bls	520 <PLLSTAT_PLOCK+0x120>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     50c:	e240c061 	sub	ip, r0, #97	; 0x61
+     510:	e20cc0ff 	and	ip, ip, #255	; 0xff
+     514:	e35c0019 	cmp	ip, #25
+		chr -=0x57;
+     518:	92400057 	subls	r0, r0, #87	; 0x57
+	return chr & 0xF;
+     51c:	e200000f 	and	r0, r0, #15
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[2])<<24 )& 0x0F000000));
+     520:	e1833c00 	orr	r3, r3, r0, lsl #24
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[3])<<20 )& 0x00F00000));
+     524:	e5d50007 	ldrb	r0, [r5, #7]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     528:	e240c041 	sub	ip, r0, #65	; 0x41
+     52c:	e35c0019 	cmp	ip, #25
+		chr -= 0x37;
+     530:	92400037 	subls	r0, r0, #55	; 0x37
+		return chr &0xF;
+     534:	9200000f 	andls	r0, r0, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     538:	9a000004 	bls	550 <PLLSTAT_PLOCK+0x150>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     53c:	e240c061 	sub	ip, r0, #97	; 0x61
+     540:	e20cc0ff 	and	ip, ip, #255	; 0xff
+     544:	e35c0019 	cmp	ip, #25
+		chr -=0x57;
+     548:	92400057 	subls	r0, r0, #87	; 0x57
+	return chr & 0xF;
+     54c:	e200000f 	and	r0, r0, #15
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[3])<<20 )& 0x00F00000));
+     550:	e1833a00 	orr	r3, r3, r0, lsl #20
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[4])<<16 )& 0x000F0000));
+     554:	e5d50008 	ldrb	r0, [r5, #8]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     558:	e240c041 	sub	ip, r0, #65	; 0x41
+     55c:	e35c0019 	cmp	ip, #25
+		chr -= 0x37;
+     560:	92400037 	subls	r0, r0, #55	; 0x37
+		return chr &0xF;
+     564:	9200000f 	andls	r0, r0, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     568:	9a000004 	bls	580 <PLLSTAT_PLOCK+0x180>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     56c:	e240c061 	sub	ip, r0, #97	; 0x61
+     570:	e20cc0ff 	and	ip, ip, #255	; 0xff
+     574:	e35c0019 	cmp	ip, #25
+		chr -=0x57;
+     578:	92400057 	subls	r0, r0, #87	; 0x57
+	return chr & 0xF;
+     57c:	e200000f 	and	r0, r0, #15
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[4])<<16 )& 0x000F0000));
+     580:	e1833800 	orr	r3, r3, r0, lsl #16
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[5])<<12 )& 0x0000F000));
+     584:	e5d50009 	ldrb	r0, [r5, #9]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     588:	e240c041 	sub	ip, r0, #65	; 0x41
+     58c:	e35c0019 	cmp	ip, #25
+		chr -= 0x37;
+     590:	92400037 	subls	r0, r0, #55	; 0x37
+		return chr &0xF;
+     594:	9200000f 	andls	r0, r0, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     598:	9a000004 	bls	5b0 <PLLSTAT_PLOCK+0x1b0>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     59c:	e240c061 	sub	ip, r0, #97	; 0x61
+     5a0:	e20cc0ff 	and	ip, ip, #255	; 0xff
+     5a4:	e35c0019 	cmp	ip, #25
+		chr -=0x57;
+     5a8:	92400057 	subls	r0, r0, #87	; 0x57
+	return chr & 0xF;
+     5ac:	e200000f 	and	r0, r0, #15
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[5])<<12 )& 0x0000F000));
+     5b0:	e1833600 	orr	r3, r3, r0, lsl #12
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[6])<< 8 )& 0x00000F00));
+     5b4:	e5d5000a 	ldrb	r0, [r5, #10]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     5b8:	e240c041 	sub	ip, r0, #65	; 0x41
+     5bc:	e35c0019 	cmp	ip, #25
+		chr -= 0x37;
+     5c0:	92400037 	subls	r0, r0, #55	; 0x37
+		return chr &0xF;
+     5c4:	9200000f 	andls	r0, r0, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     5c8:	9a000004 	bls	5e0 <PLLSTAT_PLOCK+0x1e0>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     5cc:	e240c061 	sub	ip, r0, #97	; 0x61
+     5d0:	e20cc0ff 	and	ip, ip, #255	; 0xff
+     5d4:	e35c0019 	cmp	ip, #25
+		chr -=0x57;
+     5d8:	92400057 	subls	r0, r0, #87	; 0x57
+	return chr & 0xF;
+     5dc:	e200000f 	and	r0, r0, #15
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[6])<< 8 )& 0x00000F00));
+     5e0:	e1833400 	orr	r3, r3, r0, lsl #8
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[7])<< 4 )& 0x000000F0));
+     5e4:	e5d5000b 	ldrb	r0, [r5, #11]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     5e8:	e240c041 	sub	ip, r0, #65	; 0x41
+     5ec:	e35c0019 	cmp	ip, #25
+		chr -= 0x37;
+     5f0:	92400037 	subls	r0, r0, #55	; 0x37
+		return chr &0xF;
+     5f4:	9200000f 	andls	r0, r0, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     5f8:	9a000004 	bls	610 <PLLSTAT_PLOCK+0x210>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     5fc:	e240c061 	sub	ip, r0, #97	; 0x61
+     600:	e20cc0ff 	and	ip, ip, #255	; 0xff
+     604:	e35c0019 	cmp	ip, #25
+		chr -=0x57;
+     608:	92400057 	subls	r0, r0, #87	; 0x57
+	return chr & 0xF;
+     60c:	e200000f 	and	r0, r0, #15
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[7])<< 4 )& 0x000000F0));
+     610:	e1833200 	orr	r3, r3, r0, lsl #4
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[8])     )& 0x0000000F));
+     614:	e5d5000c 	ldrb	r0, [r5, #12]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     618:	e240c041 	sub	ip, r0, #65	; 0x41
+     61c:	e35c0019 	cmp	ip, #25
+		chr -= 0x37;
+     620:	92400037 	subls	r0, r0, #55	; 0x37
+		return chr &0xF;
+     624:	9200000f 	andls	r0, r0, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     628:	9a000004 	bls	640 <PLLSTAT_PLOCK+0x240>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     62c:	e240c061 	sub	ip, r0, #97	; 0x61
+     630:	e20cc0ff 	and	ip, ip, #255	; 0xff
+     634:	e35c0019 	cmp	ip, #25
+		chr -=0x57;
+     638:	92400057 	subls	r0, r0, #87	; 0x57
+	return chr & 0xF;
+     63c:	e200000f 	and	r0, r0, #15
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[8])     )& 0x0000000F));
+     640:	e1800003 	orr	r0, r0, r3
+		CanTxMsg.Type = CAN_MSG_EXTENDED;
+     644:	e3a03002 	mov	r3, #2
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     648:	e3510019 	cmp	r1, #25
+		chr -= 0x37;
+     64c:	92422037 	subls	r2, r2, #55	; 0x37
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[8])     )& 0x0000000F));
+     650:	e5850050 	str	r0, [r5, #80]	; 0x50
+		CanTxMsg.Type = CAN_MSG_EXTENDED;
+     654:	e5c5304e 	strb	r3, [r5, #78]	; 0x4e
+		return chr &0xF;
+     658:	9202200f 	andls	r2, r2, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     65c:	9a000004 	bls	674 <PLLSTAT_PLOCK+0x274>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     660:	e2423061 	sub	r3, r2, #97	; 0x61
+     664:	e20330ff 	and	r3, r3, #255	; 0xff
+     668:	e3530019 	cmp	r3, #25
+		chr -=0x57;
+     66c:	92422057 	subls	r2, r2, #87	; 0x57
+	return chr & 0xF;
+     670:	e202200f 	and	r2, r2, #15
+     674:	e59fca64 	ldr	ip, [pc, #2660]	; 10e0 <USR_Stack_Size+0x8e0>
+		for (i=0;i<(CanTxMsg.Len);i++) {
+     678:	e3a0e000 	mov	lr, #0
+		CanTxMsg.Len = (ascii2hex(SerRcvBuf[9]))& 0xF;
+     67c:	e5c5204f 	strb	r2, [r5, #79]	; 0x4f
+		for (i=0;i<(CanTxMsg.Len);i++) {
+     680:	e24c0050 	sub	r0, ip, #80	; 0x50
+     684:	ea00001b 	b	6f8 <PLLSTAT_PLOCK+0x2f8>
+			CanTxMsg.Data8[i] = (ascii2hex(SerRcvBuf[10+2*i])<<4 )& 0x0F0;
+     688:	e5d0300a 	ldrb	r3, [r0, #10]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     68c:	e2431041 	sub	r1, r3, #65	; 0x41
+     690:	e3510019 	cmp	r1, #25
+		chr -= 0x37;
+     694:	92433037 	subls	r3, r3, #55	; 0x37
+		return chr &0xF;
+     698:	9203300f 	andls	r3, r3, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     69c:	9a000004 	bls	6b4 <PLLSTAT_PLOCK+0x2b4>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     6a0:	e2431061 	sub	r1, r3, #97	; 0x61
+     6a4:	e20110ff 	and	r1, r1, #255	; 0xff
+     6a8:	e3510019 	cmp	r1, #25
+		chr -=0x57;
+     6ac:	92433057 	subls	r3, r3, #87	; 0x57
+	return chr & 0xF;
+     6b0:	e203300f 	and	r3, r3, #15
+			CanTxMsg.Data8[i] = (CanTxMsg.Data8[i] | ((ascii2hex(SerRcvBuf[11+2*i]))& 0x00F));
+     6b4:	e5d0100b 	ldrb	r1, [r0, #11]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     6b8:	e2417041 	sub	r7, r1, #65	; 0x41
+     6bc:	e3570019 	cmp	r7, #25
+			CanTxMsg.Data8[i] = (CanTxMsg.Data8[i] | ((ascii2hex(SerRcvBuf[11+2*i]))& 0x00F));
+     6c0:	e1a03e03 	lsl	r3, r3, #28
+		chr -= 0x37;
+     6c4:	92411037 	subls	r1, r1, #55	; 0x37
+			CanTxMsg.Data8[i] = (CanTxMsg.Data8[i] | ((ascii2hex(SerRcvBuf[11+2*i]))& 0x00F));
+     6c8:	e1a03c43 	asr	r3, r3, #24
+		return chr &0xF;
+     6cc:	9201100f 	andls	r1, r1, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     6d0:	9a000004 	bls	6e8 <PLLSTAT_PLOCK+0x2e8>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     6d4:	e2417061 	sub	r7, r1, #97	; 0x61
+     6d8:	e20770ff 	and	r7, r7, #255	; 0xff
+     6dc:	e3570019 	cmp	r7, #25
+		chr -=0x57;
+     6e0:	92411057 	subls	r1, r1, #87	; 0x57
+	return chr & 0xF;
+     6e4:	e201100f 	and	r1, r1, #15
+			CanTxMsg.Data8[i] = (CanTxMsg.Data8[i] | ((ascii2hex(SerRcvBuf[11+2*i]))& 0x00F));
+     6e8:	e1831001 	orr	r1, r3, r1
+     6ec:	e4cc1001 	strb	r1, [ip], #1
+		for (i=0;i<(CanTxMsg.Len);i++) {
+     6f0:	e28ee001 	add	lr, lr, #1
+     6f4:	e2800002 	add	r0, r0, #2
+     6f8:	e20e30ff 	and	r3, lr, #255	; 0xff
+     6fc:	e1520003 	cmp	r2, r3
+     700:	8affffe0 	bhi	688 <PLLSTAT_PLOCK+0x288>
+		CAN_UserWrite (CAN_BUS1, &CanTxMsg);
+     704:	e3a00000 	mov	r0, #0
+     708:	e59f19d4 	ldr	r1, [pc, #2516]	; 10e4 <USR_Stack_Size+0x8e4>
+     70c:	eb00040b 	bl	1740 <CAN_UserWrite>
+	SerXmtBufPtr = 0;
+     710:	e3a02000 	mov	r2, #0
+	if (AutoPollAutoSend == 1) {
+     714:	e5d63005 	ldrb	r3, [r6, #5]
+     718:	e3530001 	cmp	r3, #1
+	SerXmtBufPtr = 0;
+     71c:	e5c52049 	strb	r2, [r5, #73]	; 0x49
+			SerXmtBuf[SerXmtBufPtr] = 'Z';
+     720:	03a0205a 	moveq	r2, #90	; 0x5a
+			SerXmtBufPtr++;
+     724:	05c53049 	strbeq	r3, [r5, #73]	; 0x49
+			SerXmtBuf[SerXmtBufPtr] = 'Z';
+     728:	05c52028 	strbeq	r2, [r5, #40]	; 0x28
+	SerXmtBuf[SerXmtBufPtr] = Result;
+     72c:	e5d53049 	ldrb	r3, [r5, #73]	; 0x49
+	SerXmtBufPtr++;
+     730:	e2832001 	add	r2, r3, #1
+	SerXmtBuf[SerXmtBufPtr] = Result;
+     734:	e0853003 	add	r3, r5, r3
+     738:	e5c34028 	strb	r4, [r3, #40]	; 0x28
+	SerXmtBufPtr++;
+     73c:	e20220ff 	and	r2, r2, #255	; 0xff
+	SER_Write (SER_PORT1, &SerXmtBuf, SerXmtBufPtr);
+     740:	e59f1988 	ldr	r1, [pc, #2440]	; 10d0 <USR_Stack_Size+0x8d0>
+     744:	e3a00000 	mov	r0, #0
+	SerXmtBufPtr++;
+     748:	e5c52049 	strb	r2, [r5, #73]	; 0x49
+	SER_Write (SER_PORT1, &SerXmtBuf, SerXmtBufPtr);
+     74c:	eb00053e 	bl	1c4c <SER_Write>
+}
+     750:	eaffff19 	b	3bc <ProcessMsgFromSerial+0x1d4>
+		if ((CmdLength == 1)&& (CanChnOpen == 0) && (CanInitialized == 1)) {
+     754:	e3560001 	cmp	r6, #1
+     758:	1afffefe 	bne	358 <ProcessMsgFromSerial+0x170>
+     75c:	e5d54026 	ldrb	r4, [r5, #38]	; 0x26
+     760:	e3540000 	cmp	r4, #0
+     764:	1afffefb 	bne	358 <ProcessMsgFromSerial+0x170>
+     768:	e5d53027 	ldrb	r3, [r5, #39]	; 0x27
+     76c:	e3530001 	cmp	r3, #1
+     770:	1afffef8 	bne	358 <ProcessMsgFromSerial+0x170>
+			CAN_ReInitChannel ( CAN_BUS1);
+     774:	e1a00004 	mov	r0, r4
+     778:	eb000b6d 	bl	3534 <CAN_ReInitChannel>
+			CAN_SetBusMode ( CAN_BUS1, BUS_LOM);
+     77c:	e3a01002 	mov	r1, #2
+     780:	e1a00004 	mov	r0, r4
+     784:	eb00081f 	bl	2808 <CAN_SetBusMode>
+			CanBusMode =BUS_LOM;
+     788:	e3a0c002 	mov	ip, #2
+     78c:	e59f3948 	ldr	r3, [pc, #2376]	; 10dc <USR_Stack_Size+0x8dc>
+			SER_Write (SER_PORT1, &RetValue, 1);
+     790:	e1a00004 	mov	r0, r4
+     794:	e1a02006 	mov	r2, r6
+     798:	e28d1007 	add	r1, sp, #7
+			CanChnOpen = 1;
+     79c:	e5c56026 	strb	r6, [r5, #38]	; 0x26
+			CanBusMode =BUS_LOM;
+     7a0:	e5c3c004 	strb	ip, [r3, #4]
+			SER_Write (SER_PORT1, &RetValue, 1);
+     7a4:	eb000528 	bl	1c4c <SER_Write>
+     7a8:	eaffff03 	b	3bc <ProcessMsgFromSerial+0x1d4>
+		if (CmdLength == 1) {
+     7ac:	e3560001 	cmp	r6, #1
+     7b0:	1afffee8 	bne	358 <ProcessMsgFromSerial+0x170>
+ 	SerXmtBuf[SerXmtBufPtr] = 'N';
+     7b4:	e3a0304e 	mov	r3, #78	; 0x4e
+	memcpy (&SerXmtBuf[SerXmtBufPtr],"0001",4);
+     7b8:	e3a02004 	mov	r2, #4
+     7bc:	e59f1924 	ldr	r1, [pc, #2340]	; 10e8 <USR_Stack_Size+0x8e8>
+     7c0:	e59f0924 	ldr	r0, [pc, #2340]	; 10ec <USR_Stack_Size+0x8ec>
+ 	SerXmtBuf[SerXmtBufPtr] = 'N';
+     7c4:	e5c53028 	strb	r3, [r5, #40]	; 0x28
+	memcpy (&SerXmtBuf[SerXmtBufPtr],"0001",4);
+     7c8:	eb000bc7 	bl	36ec <memcpy>
+	SerXmtBufPtr++;
+     7cc:	e3a02006 	mov	r2, #6
+	SerXmtBuf[SerXmtBufPtr] = '\r'; // Append <CR>
+     7d0:	e3a0300d 	mov	r3, #13
+	SER_Write (SER_PORT1, &SerXmtBuf, SerXmtBufPtr);
+     7d4:	e59f18f4 	ldr	r1, [pc, #2292]	; 10d0 <USR_Stack_Size+0x8d0>
+     7d8:	e3a00000 	mov	r0, #0
+	SerXmtBuf[SerXmtBufPtr] = '\r'; // Append <CR>
+     7dc:	e5c5302d 	strb	r3, [r5, #45]	; 0x2d
+	SerXmtBufPtr++;
+     7e0:	e5c52049 	strb	r2, [r5, #73]	; 0x49
+	SER_Write (SER_PORT1, &SerXmtBuf, SerXmtBufPtr);
+     7e4:	eb000518 	bl	1c4c <SER_Write>
+}
+     7e8:	eafffef3 	b	3bc <ProcessMsgFromSerial+0x1d4>
+		if ((CmdLength == 5 + (ascii2hex(SerRcvBuf[4])* 2)&&  (CanChnOpen == 1) 
+     7ec:	e5d53008 	ldrb	r3, [r5, #8]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     7f0:	e2431041 	sub	r1, r3, #65	; 0x41
+     7f4:	e20110ff 	and	r1, r1, #255	; 0xff
+     7f8:	e3510019 	cmp	r1, #25
+		chr -= 0x37;
+     7fc:	92432037 	subls	r2, r3, #55	; 0x37
+		return chr &0xF;
+     800:	9202200f 	andls	r2, r2, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     804:	9a000005 	bls	820 <USR_Stack_Size+0x20>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     808:	e2432061 	sub	r2, r3, #97	; 0x61
+     80c:	e20220ff 	and	r2, r2, #255	; 0xff
+     810:	e3520019 	cmp	r2, #25
+		chr -=0x57;
+     814:	92432057 	subls	r2, r3, #87	; 0x57
+		return chr &0xF;
+     818:	9202200f 	andls	r2, r2, #15
+	return chr & 0xF;
+     81c:	8203200f 	andhi	r2, r3, #15
+		if ((CmdLength == 5 + (ascii2hex(SerRcvBuf[4])* 2)&&  (CanChnOpen == 1) 
+     820:	e1a02082 	lsl	r2, r2, #1
+     824:	e2822005 	add	r2, r2, #5
+     828:	e1560002 	cmp	r6, r2
+     82c:	1afffec9 	bne	358 <ProcessMsgFromSerial+0x170>
+     830:	e5d52026 	ldrb	r2, [r5, #38]	; 0x26
+     834:	e3520001 	cmp	r2, #1
+     838:	1afffec6 	bne	358 <ProcessMsgFromSerial+0x170>
+		&&  (CanBusMode == BUS_ON))  ) {
+     83c:	e59f6898 	ldr	r6, [pc, #2200]	; 10dc <USR_Stack_Size+0x8dc>
+     840:	e5d60004 	ldrb	r0, [r6, #4]
+     844:	e3500000 	cmp	r0, #0
+     848:	1afffec2 	bne	358 <ProcessMsgFromSerial+0x170>
+	&&  (AutostartMode == 0)) {
+     84c:	e5d5204a 	ldrb	r2, [r5, #74]	; 0x4a
+     850:	e3520000 	cmp	r2, #0
+     854:	1a000219 	bne	10c0 <USR_Stack_Size+0x8c0>
+		CanTxMsg.Data32[0] = 0;
+     858:	e5852054 	str	r2, [r5, #84]	; 0x54
+		CanTxMsg.Data32[1] = 0;
+     85c:	e5852058 	str	r2, [r5, #88]	; 0x58
+		CanTxMsg.Id =                 (ascii2hex(SerRcvBuf[1])<<8 )& 0xF00;
+     860:	e5d52005 	ldrb	r2, [r5, #5]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     864:	e2420041 	sub	r0, r2, #65	; 0x41
+     868:	e3500019 	cmp	r0, #25
+		chr -= 0x37;
+     86c:	92422037 	subls	r2, r2, #55	; 0x37
+		return chr &0xF;
+     870:	9202200f 	andls	r2, r2, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     874:	9a000004 	bls	88c <USR_Stack_Size+0x8c>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     878:	e2420061 	sub	r0, r2, #97	; 0x61
+     87c:	e20000ff 	and	r0, r0, #255	; 0xff
+     880:	e3500019 	cmp	r0, #25
+		chr -=0x57;
+     884:	92422057 	subls	r2, r2, #87	; 0x57
+	return chr & 0xF;
+     888:	e202200f 	and	r2, r2, #15
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[2])<<4 )& 0x0F0));
+     88c:	e5d50006 	ldrb	r0, [r5, #6]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     890:	e240c041 	sub	ip, r0, #65	; 0x41
+     894:	e35c0019 	cmp	ip, #25
+		chr -= 0x37;
+     898:	92400037 	subls	r0, r0, #55	; 0x37
+		CanTxMsg.Id =                 (ascii2hex(SerRcvBuf[1])<<8 )& 0xF00;
+     89c:	e1a02402 	lsl	r2, r2, #8
+		return chr &0xF;
+     8a0:	9200000f 	andls	r0, r0, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     8a4:	9a000004 	bls	8bc <USR_Stack_Size+0xbc>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     8a8:	e240c061 	sub	ip, r0, #97	; 0x61
+     8ac:	e20cc0ff 	and	ip, ip, #255	; 0xff
+     8b0:	e35c0019 	cmp	ip, #25
+		chr -=0x57;
+     8b4:	92400057 	subls	r0, r0, #87	; 0x57
+	return chr & 0xF;
+     8b8:	e200000f 	and	r0, r0, #15
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[2])<<4 )& 0x0F0));
+     8bc:	e1822200 	orr	r2, r2, r0, lsl #4
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[3])    )& 0x00F));
+     8c0:	e5d50007 	ldrb	r0, [r5, #7]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     8c4:	e240c041 	sub	ip, r0, #65	; 0x41
+     8c8:	e35c0019 	cmp	ip, #25
+		chr -= 0x37;
+     8cc:	92400037 	subls	r0, r0, #55	; 0x37
+		return chr &0xF;
+     8d0:	9200000f 	andls	r0, r0, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     8d4:	9a000004 	bls	8ec <USR_Stack_Size+0xec>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     8d8:	e240c061 	sub	ip, r0, #97	; 0x61
+     8dc:	e20cc0ff 	and	ip, ip, #255	; 0xff
+     8e0:	e35c0019 	cmp	ip, #25
+		chr -=0x57;
+     8e4:	92400057 	subls	r0, r0, #87	; 0x57
+	return chr & 0xF;
+     8e8:	e200000f 	and	r0, r0, #15
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[3])    )& 0x00F));
+     8ec:	e1800002 	orr	r0, r0, r2
+		CanTxMsg.Type = CAN_MSG_STANDARD;
+     8f0:	e3a02000 	mov	r2, #0
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     8f4:	e3510019 	cmp	r1, #25
+		chr -= 0x37;
+     8f8:	92433037 	subls	r3, r3, #55	; 0x37
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[3])    )& 0x00F));
+     8fc:	e5850050 	str	r0, [r5, #80]	; 0x50
+		CanTxMsg.Type = CAN_MSG_STANDARD;
+     900:	e5c5204e 	strb	r2, [r5, #78]	; 0x4e
+		return chr &0xF;
+     904:	9203300f 	andls	r3, r3, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     908:	9a000004 	bls	920 <USR_Stack_Size+0x120>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     90c:	e2432061 	sub	r2, r3, #97	; 0x61
+     910:	e20220ff 	and	r2, r2, #255	; 0xff
+     914:	e3520019 	cmp	r2, #25
+		chr -=0x57;
+     918:	92433057 	subls	r3, r3, #87	; 0x57
+	return chr & 0xF;
+     91c:	e203300f 	and	r3, r3, #15
+     920:	e59fc7b8 	ldr	ip, [pc, #1976]	; 10e0 <USR_Stack_Size+0x8e0>
+		for (i=0;i<(CanTxMsg.Len);i++) {
+     924:	e3a0e000 	mov	lr, #0
+		CanTxMsg.Len = (ascii2hex(SerRcvBuf[4]))& 0x00F;
+     928:	e5c5304f 	strb	r3, [r5, #79]	; 0x4f
+		for (i=0;i<(CanTxMsg.Len);i++) {
+     92c:	e24c0050 	sub	r0, ip, #80	; 0x50
+     930:	ea00001b 	b	9a4 <USR_Stack_Size+0x1a4>
+			CanTxMsg.Data8[i] = (ascii2hex(SerRcvBuf[5+2*i])<<4 )& 0x0F0;
+     934:	e5d02005 	ldrb	r2, [r0, #5]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     938:	e2421041 	sub	r1, r2, #65	; 0x41
+     93c:	e3510019 	cmp	r1, #25
+		chr -= 0x37;
+     940:	92422037 	subls	r2, r2, #55	; 0x37
+		return chr &0xF;
+     944:	9202200f 	andls	r2, r2, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     948:	9a000004 	bls	960 <USR_Stack_Size+0x160>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     94c:	e2421061 	sub	r1, r2, #97	; 0x61
+     950:	e20110ff 	and	r1, r1, #255	; 0xff
+     954:	e3510019 	cmp	r1, #25
+		chr -=0x57;
+     958:	92422057 	subls	r2, r2, #87	; 0x57
+	return chr & 0xF;
+     95c:	e202200f 	and	r2, r2, #15
+			CanTxMsg.Data8[i] = (CanTxMsg.Data8[i] | ((ascii2hex(SerRcvBuf[i*2+6]))& 0x00F));
+     960:	e5d01006 	ldrb	r1, [r0, #6]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     964:	e2417041 	sub	r7, r1, #65	; 0x41
+     968:	e3570019 	cmp	r7, #25
+			CanTxMsg.Data8[i] = (CanTxMsg.Data8[i] | ((ascii2hex(SerRcvBuf[i*2+6]))& 0x00F));
+     96c:	e1a02e02 	lsl	r2, r2, #28
+		chr -= 0x37;
+     970:	92411037 	subls	r1, r1, #55	; 0x37
+			CanTxMsg.Data8[i] = (CanTxMsg.Data8[i] | ((ascii2hex(SerRcvBuf[i*2+6]))& 0x00F));
+     974:	e1a02c42 	asr	r2, r2, #24
+		return chr &0xF;
+     978:	9201100f 	andls	r1, r1, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     97c:	9a000004 	bls	994 <USR_Stack_Size+0x194>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     980:	e2417061 	sub	r7, r1, #97	; 0x61
+     984:	e20770ff 	and	r7, r7, #255	; 0xff
+     988:	e3570019 	cmp	r7, #25
+		chr -=0x57;
+     98c:	92411057 	subls	r1, r1, #87	; 0x57
+	return chr & 0xF;
+     990:	e201100f 	and	r1, r1, #15
+			CanTxMsg.Data8[i] = (CanTxMsg.Data8[i] | ((ascii2hex(SerRcvBuf[i*2+6]))& 0x00F));
+     994:	e1821001 	orr	r1, r2, r1
+     998:	e4cc1001 	strb	r1, [ip], #1
+		for (i=0;i<(CanTxMsg.Len);i++) {
+     99c:	e28ee001 	add	lr, lr, #1
+     9a0:	e2800002 	add	r0, r0, #2
+     9a4:	e20e20ff 	and	r2, lr, #255	; 0xff
+     9a8:	e1530002 	cmp	r3, r2
+     9ac:	8affffe0 	bhi	934 <USR_Stack_Size+0x134>
+     9b0:	eaffff53 	b	704 <PLLSTAT_PLOCK+0x304>
+		if ((CmdLength == 10) 
+     9b4:	e356000a 	cmp	r6, #10
+     9b8:	1afffe66 	bne	358 <ProcessMsgFromSerial+0x170>
+		&&  (CanChnOpen == 1) 
+     9bc:	e5d53026 	ldrb	r3, [r5, #38]	; 0x26
+     9c0:	e3530001 	cmp	r3, #1
+     9c4:	1afffe63 	bne	358 <ProcessMsgFromSerial+0x170>
+		&&  (CanBusMode == BUS_ON)) {
+     9c8:	e59f670c 	ldr	r6, [pc, #1804]	; 10dc <USR_Stack_Size+0x8dc>
+     9cc:	e5d62004 	ldrb	r2, [r6, #4]
+     9d0:	e3520000 	cmp	r2, #0
+     9d4:	1afffe5f 	bne	358 <ProcessMsgFromSerial+0x170>
+		CanTxMsg.Id =                 (ascii2hex(SerRcvBuf[1])<<28 )& 0xF0000000;
+     9d8:	e5d53005 	ldrb	r3, [r5, #5]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     9dc:	e2431041 	sub	r1, r3, #65	; 0x41
+     9e0:	e3510019 	cmp	r1, #25
+		chr -= 0x37;
+     9e4:	92433037 	subls	r3, r3, #55	; 0x37
+		CanTxMsg.Data32[0] = 0;
+     9e8:	e5852054 	str	r2, [r5, #84]	; 0x54
+		CanTxMsg.Data32[1] = 0;
+     9ec:	e5852058 	str	r2, [r5, #88]	; 0x58
+		return chr &0xF;
+     9f0:	9203300f 	andls	r3, r3, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     9f4:	9a000004 	bls	a0c <USR_Stack_Size+0x20c>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     9f8:	e2432061 	sub	r2, r3, #97	; 0x61
+     9fc:	e20220ff 	and	r2, r2, #255	; 0xff
+     a00:	e3520019 	cmp	r2, #25
+		chr -=0x57;
+     a04:	92433057 	subls	r3, r3, #87	; 0x57
+	return chr & 0xF;
+     a08:	e203300f 	and	r3, r3, #15
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[2])<<24 )& 0x0F000000));
+     a0c:	e5d52006 	ldrb	r2, [r5, #6]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     a10:	e2421041 	sub	r1, r2, #65	; 0x41
+     a14:	e3510019 	cmp	r1, #25
+		chr -= 0x37;
+     a18:	92422037 	subls	r2, r2, #55	; 0x37
+		CanTxMsg.Id =                 (ascii2hex(SerRcvBuf[1])<<28 )& 0xF0000000;
+     a1c:	e1a03e03 	lsl	r3, r3, #28
+		return chr &0xF;
+     a20:	9202100f 	andls	r1, r2, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     a24:	9a000004 	bls	a3c <USR_Stack_Size+0x23c>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     a28:	e2421061 	sub	r1, r2, #97	; 0x61
+     a2c:	e20110ff 	and	r1, r1, #255	; 0xff
+     a30:	e3510019 	cmp	r1, #25
+		chr -=0x57;
+     a34:	92422057 	subls	r2, r2, #87	; 0x57
+	return chr & 0xF;
+     a38:	e202100f 	and	r1, r2, #15
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[3])<<20 )& 0x00F00000));
+     a3c:	e5d52007 	ldrb	r2, [r5, #7]
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[2])<<24 )& 0x0F000000));
+     a40:	e1833c01 	orr	r3, r3, r1, lsl #24
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     a44:	e2421041 	sub	r1, r2, #65	; 0x41
+     a48:	e3510019 	cmp	r1, #25
+		chr -= 0x37;
+     a4c:	92422037 	subls	r2, r2, #55	; 0x37
+		return chr &0xF;
+     a50:	9202100f 	andls	r1, r2, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     a54:	9a000004 	bls	a6c <USR_Stack_Size+0x26c>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     a58:	e2421061 	sub	r1, r2, #97	; 0x61
+     a5c:	e20110ff 	and	r1, r1, #255	; 0xff
+     a60:	e3510019 	cmp	r1, #25
+		chr -=0x57;
+     a64:	92422057 	subls	r2, r2, #87	; 0x57
+	return chr & 0xF;
+     a68:	e202100f 	and	r1, r2, #15
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[4])<<16 )& 0x000F0000));
+     a6c:	e5d52008 	ldrb	r2, [r5, #8]
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[3])<<20 )& 0x00F00000));
+     a70:	e1833a01 	orr	r3, r3, r1, lsl #20
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     a74:	e2421041 	sub	r1, r2, #65	; 0x41
+     a78:	e3510019 	cmp	r1, #25
+		chr -= 0x37;
+     a7c:	92422037 	subls	r2, r2, #55	; 0x37
+		return chr &0xF;
+     a80:	9202100f 	andls	r1, r2, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     a84:	9a000004 	bls	a9c <USR_Stack_Size+0x29c>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     a88:	e2421061 	sub	r1, r2, #97	; 0x61
+     a8c:	e20110ff 	and	r1, r1, #255	; 0xff
+     a90:	e3510019 	cmp	r1, #25
+		chr -=0x57;
+     a94:	92422057 	subls	r2, r2, #87	; 0x57
+	return chr & 0xF;
+     a98:	e202100f 	and	r1, r2, #15
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[5])<<12 )& 0x0000F000));
+     a9c:	e5d52009 	ldrb	r2, [r5, #9]
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[4])<<16 )& 0x000F0000));
+     aa0:	e1833801 	orr	r3, r3, r1, lsl #16
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     aa4:	e2421041 	sub	r1, r2, #65	; 0x41
+     aa8:	e3510019 	cmp	r1, #25
+		chr -= 0x37;
+     aac:	92422037 	subls	r2, r2, #55	; 0x37
+		return chr &0xF;
+     ab0:	9202100f 	andls	r1, r2, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     ab4:	9a000004 	bls	acc <USR_Stack_Size+0x2cc>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     ab8:	e2421061 	sub	r1, r2, #97	; 0x61
+     abc:	e20110ff 	and	r1, r1, #255	; 0xff
+     ac0:	e3510019 	cmp	r1, #25
+		chr -=0x57;
+     ac4:	92422057 	subls	r2, r2, #87	; 0x57
+	return chr & 0xF;
+     ac8:	e202100f 	and	r1, r2, #15
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[6])<< 8 )& 0x00000F00));
+     acc:	e5d5200a 	ldrb	r2, [r5, #10]
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[5])<<12 )& 0x0000F000));
+     ad0:	e1833601 	orr	r3, r3, r1, lsl #12
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     ad4:	e2421041 	sub	r1, r2, #65	; 0x41
+     ad8:	e3510019 	cmp	r1, #25
+		chr -= 0x37;
+     adc:	92422037 	subls	r2, r2, #55	; 0x37
+		return chr &0xF;
+     ae0:	9202100f 	andls	r1, r2, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     ae4:	9a000004 	bls	afc <USR_Stack_Size+0x2fc>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     ae8:	e2421061 	sub	r1, r2, #97	; 0x61
+     aec:	e20110ff 	and	r1, r1, #255	; 0xff
+     af0:	e3510019 	cmp	r1, #25
+		chr -=0x57;
+     af4:	92422057 	subls	r2, r2, #87	; 0x57
+	return chr & 0xF;
+     af8:	e202100f 	and	r1, r2, #15
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[7])<< 4 )& 0x000000F0));
+     afc:	e5d5200b 	ldrb	r2, [r5, #11]
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[6])<< 8 )& 0x00000F00));
+     b00:	e1833401 	orr	r3, r3, r1, lsl #8
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     b04:	e2421041 	sub	r1, r2, #65	; 0x41
+     b08:	e3510019 	cmp	r1, #25
+		chr -= 0x37;
+     b0c:	92422037 	subls	r2, r2, #55	; 0x37
+		return chr &0xF;
+     b10:	9202100f 	andls	r1, r2, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     b14:	9a000004 	bls	b2c <USR_Stack_Size+0x32c>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     b18:	e2421061 	sub	r1, r2, #97	; 0x61
+     b1c:	e20110ff 	and	r1, r1, #255	; 0xff
+     b20:	e3510019 	cmp	r1, #25
+		chr -=0x57;
+     b24:	92422057 	subls	r2, r2, #87	; 0x57
+	return chr & 0xF;
+     b28:	e202100f 	and	r1, r2, #15
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[8])     )& 0x0000000F));
+     b2c:	e5d5200c 	ldrb	r2, [r5, #12]
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[7])<< 4 )& 0x000000F0));
+     b30:	e1833201 	orr	r3, r3, r1, lsl #4
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     b34:	e2421041 	sub	r1, r2, #65	; 0x41
+     b38:	e3510019 	cmp	r1, #25
+		chr -= 0x37;
+     b3c:	92422037 	subls	r2, r2, #55	; 0x37
+		return chr &0xF;
+     b40:	9202200f 	andls	r2, r2, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     b44:	9a000004 	bls	b5c <USR_Stack_Size+0x35c>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     b48:	e2421061 	sub	r1, r2, #97	; 0x61
+     b4c:	e20110ff 	and	r1, r1, #255	; 0xff
+     b50:	e3510019 	cmp	r1, #25
+		chr -=0x57;
+     b54:	92422057 	subls	r2, r2, #87	; 0x57
+	return chr & 0xF;
+     b58:	e202200f 	and	r2, r2, #15
+		CanTxMsg.Type = CAN_MSG_EXTENDED | CAN_MSG_RTR;
+     b5c:	e3a01003 	mov	r1, #3
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[8])     )& 0x0000000F));
+     b60:	e1822003 	orr	r2, r2, r3
+		CanTxMsg.Len = (ascii2hex(SerRcvBuf[9]))& 0xF;
+     b64:	e5d5300d 	ldrb	r3, [r5, #13]
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[8])     )& 0x0000000F));
+     b68:	e5852050 	str	r2, [r5, #80]	; 0x50
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     b6c:	e2432041 	sub	r2, r3, #65	; 0x41
+     b70:	e3520019 	cmp	r2, #25
+		CanTxMsg.Type = CAN_MSG_EXTENDED | CAN_MSG_RTR;
+     b74:	e5c5104e 	strb	r1, [r5, #78]	; 0x4e
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     b78:	9a0000d8 	bls	ee0 <USR_Stack_Size+0x6e0>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     b7c:	e2432061 	sub	r2, r3, #97	; 0x61
+     b80:	e20220ff 	and	r2, r2, #255	; 0xff
+     b84:	e3520019 	cmp	r2, #25
+		chr -=0x57;
+     b88:	92433057 	subls	r3, r3, #87	; 0x57
+	return chr & 0xF;
+     b8c:	e203300f 	and	r3, r3, #15
+		CAN_UserWrite (CAN_BUS1, &CanTxMsg);
+     b90:	e59f154c 	ldr	r1, [pc, #1356]	; 10e4 <USR_Stack_Size+0x8e4>
+     b94:	e3a00000 	mov	r0, #0
+		CanTxMsg.Len = (ascii2hex(SerRcvBuf[9]))& 0xF;
+     b98:	e5c5304f 	strb	r3, [r5, #79]	; 0x4f
+		CAN_UserWrite (CAN_BUS1, &CanTxMsg);
+     b9c:	eb0002e7 	bl	1740 <CAN_UserWrite>
+	SerXmtBufPtr = 0;
+     ba0:	e3a02000 	mov	r2, #0
+	if (AutoPollAutoSend == 1) {
+     ba4:	e5d63005 	ldrb	r3, [r6, #5]
+     ba8:	e3530001 	cmp	r3, #1
+	SerXmtBufPtr = 0;
+     bac:	e5c52049 	strb	r2, [r5, #73]	; 0x49
+			SerXmtBuf[SerXmtBufPtr] = 'z';
+     bb0:	03a0207a 	moveq	r2, #122	; 0x7a
+	SerXmtBuf[SerXmtBufPtr] = Result;
+     bb4:	e3a0c00d 	mov	ip, #13
+			SerXmtBufPtr++;
+     bb8:	05c53049 	strbeq	r3, [r5, #73]	; 0x49
+	SerXmtBuf[SerXmtBufPtr] = Result;
+     bbc:	e5d53049 	ldrb	r3, [r5, #73]	; 0x49
+			SerXmtBuf[SerXmtBufPtr] = 'z';
+     bc0:	05c52028 	strbeq	r2, [r5, #40]	; 0x28
+	SerXmtBufPtr++;
+     bc4:	e2832001 	add	r2, r3, #1
+     bc8:	e20220ff 	and	r2, r2, #255	; 0xff
+	SerXmtBuf[SerXmtBufPtr] = Result;
+     bcc:	e0853003 	add	r3, r5, r3
+	SerXmtBufPtr++;
+     bd0:	e5c52049 	strb	r2, [r5, #73]	; 0x49
+	SER_Write (SER_PORT1, &SerXmtBuf, SerXmtBufPtr);
+     bd4:	e59f14f4 	ldr	r1, [pc, #1268]	; 10d0 <USR_Stack_Size+0x8d0>
+	SerXmtBuf[SerXmtBufPtr] = Result;
+     bd8:	e5c3c028 	strb	ip, [r3, #40]	; 0x28
+	SER_Write (SER_PORT1, &SerXmtBuf, SerXmtBufPtr);
+     bdc:	e3a00000 	mov	r0, #0
+     be0:	eb000419 	bl	1c4c <SER_Write>
+}
+     be4:	eafffdf4 	b	3bc <ProcessMsgFromSerial+0x1d4>
+		if ((CmdLength == 2) 
+     be8:	e3560002 	cmp	r6, #2
+     bec:	1afffdd9 	bne	358 <ProcessMsgFromSerial+0x170>
+		&&  (ascii2hex(SerRcvBuf[1]) <= 8)&&(CanChnOpen==0)) {
+     bf0:	e5d51005 	ldrb	r1, [r5, #5]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     bf4:	e2413041 	sub	r3, r1, #65	; 0x41
+     bf8:	e3530019 	cmp	r3, #25
+		chr -= 0x37;
+     bfc:	92411037 	subls	r1, r1, #55	; 0x37
+		return chr &0xF;
+     c00:	9201100f 	andls	r1, r1, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     c04:	9a000004 	bls	c1c <USR_Stack_Size+0x41c>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     c08:	e2413061 	sub	r3, r1, #97	; 0x61
+     c0c:	e20330ff 	and	r3, r3, #255	; 0xff
+     c10:	e3530019 	cmp	r3, #25
+		chr -=0x57;
+     c14:	92411057 	subls	r1, r1, #87	; 0x57
+	return chr & 0xF;
+     c18:	e201100f 	and	r1, r1, #15
+		&&  (ascii2hex(SerRcvBuf[1]) <= 8)&&(CanChnOpen==0)) {
+     c1c:	e3510008 	cmp	r1, #8
+     c20:	8afffdcc 	bhi	358 <ProcessMsgFromSerial+0x170>
+     c24:	e5d54026 	ldrb	r4, [r5, #38]	; 0x26
+     c28:	e3540000 	cmp	r4, #0
+     c2c:	1afffdc9 	bne	358 <ProcessMsgFromSerial+0x170>
+			CanSpeed = ascii2hex(SerRcvBuf[1]);
+     c30:	e59f34a4 	ldr	r3, [pc, #1188]	; 10dc <USR_Stack_Size+0x8dc>
+			CAN_InitChannelMio (CAN_BUS1, CanSpeed);
+     c34:	e1a00004 	mov	r0, r4
+			CanSpeed = ascii2hex(SerRcvBuf[1]);
+     c38:	e5831000 	str	r1, [r3]
+			CAN_InitChannelMio (CAN_BUS1, CanSpeed);
+     c3c:	eb00026c 	bl	15f4 <CAN_InitChannelMio>
+			CanInitialized = 1;
+     c40:	e3a02001 	mov	r2, #1
+			SER_Write (SER_PORT1, &RetValue, 1);
+     c44:	e1a00004 	mov	r0, r4
+     c48:	e28d1007 	add	r1, sp, #7
+			CanInitialized = 1;
+     c4c:	e5c52027 	strb	r2, [r5, #39]	; 0x27
+			SER_Write (SER_PORT1, &RetValue, 1);
+     c50:	eb0003fd 	bl	1c4c <SER_Write>
+     c54:	eafffdd8 	b	3bc <ProcessMsgFromSerial+0x1d4>
+		if (CmdLength == 1) {
+     c58:	e3560001 	cmp	r6, #1
+     c5c:	1afffdbd 	bne	358 <ProcessMsgFromSerial+0x170>
+	if (CanChnOpen == 1){ // precondition	
+     c60:	e5d53026 	ldrb	r3, [r5, #38]	; 0x26
+     c64:	e3530001 	cmp	r3, #1
+	SerXmtBufPtr = 0;
+     c68:	e3a01000 	mov	r1, #0
+		SerXmtBuf[SerXmtBufPtr] = ret_ERROR;
+     c6c:	13a03007 	movne	r3, #7
+	SerXmtBufPtr = 0;
+     c70:	e5c51049 	strb	r1, [r5, #73]	; 0x49
+		SerXmtBuf[SerXmtBufPtr] = ret_ERROR;
+     c74:	15c53028 	strbne	r3, [r5, #40]	; 0x28
+		SerXmtBufPtr++;
+     c78:	15c56049 	strbne	r6, [r5, #73]	; 0x49
+	if (CanChnOpen == 1){ // precondition	
+     c7c:	1a00001b 	bne	cf0 <USR_Stack_Size+0x4f0>
+		statusbyte |= (C1ICR & 0xEC);
+     c80:	e59f2468 	ldr	r2, [pc, #1128]	; 10f0 <USR_Stack_Size+0x8f0>
+		statusbyte |= (SerRxOverrunOccurred & 0x01);
+     c84:	e5d53025 	ldrb	r3, [r5, #37]	; 0x25
+		statusbyte |= (C1ICR & 0xEC);
+     c88:	e592200c 	ldr	r2, [r2, #12]
+		statusbyte |= (SerRxOverrunOccurred & 0x01);
+     c8c:	e2033001 	and	r3, r3, #1
+		statusbyte |= (C1ICR & 0xEC);
+     c90:	e20220ec 	and	r2, r2, #236	; 0xec
+		statusbyte |= (SerRxOverrunOccurred & 0x01);
+     c94:	e1833002 	orr	r3, r3, r2
+		statusbyte |= (SerTxCongestionOccurred & 0x01)*2;
+     c98:	e5d5205c 	ldrb	r2, [r5, #92]	; 0x5c
+     c9c:	e2022001 	and	r2, r2, #1
+	if(chr > 9)
+     ca0:	e353009f 	cmp	r3, #159	; 0x9f
+		statusbyte |= (SerTxCongestionOccurred & 0x01)*2;
+     ca4:	e1832082 	orr	r2, r3, r2, lsl #1
+		SerXmtBuf[SerXmtBufPtr] = hex2ascii((statusbyte & 0xF0) >> 4);
+     ca8:	e1a03223 	lsr	r3, r3, #4
+		chr += 0x37;
+     cac:	82833037 	addhi	r3, r3, #55	; 0x37
+		chr += 0x30;
+     cb0:	92833030 	addls	r3, r3, #48	; 0x30
+		SerXmtBuf[SerXmtBufPtr] = hex2ascii((statusbyte & 0xF0) >> 4);
+     cb4:	e5c53029 	strb	r3, [r5, #41]	; 0x29
+		SerXmtBufPtr++;
+     cb8:	e3a03004 	mov	r3, #4
+		SerXmtBuf[SerXmtBufPtr] = 'F';
+     cbc:	e3a00046 	mov	r0, #70	; 0x46
+		SerRxOverrunOccurred = 0; 		// reset flag after reading
+     cc0:	e5c51025 	strb	r1, [r5, #37]	; 0x25
+		SerTxCongestionOccurred = 0; 	// reset flag after reading
+     cc4:	e5c5105c 	strb	r1, [r5, #92]	; 0x5c
+		SerXmtBuf[SerXmtBufPtr] = ret_OK; // [<CR>]
+     cc8:	e3a0100d 	mov	r1, #13
+     ccc:	e1a06003 	mov	r6, r3
+		SerXmtBuf[SerXmtBufPtr] = hex2ascii (statusbyte & 0x0F);
+     cd0:	e202200f 	and	r2, r2, #15
+	if(chr > 9)
+     cd4:	e3520009 	cmp	r2, #9
+		chr += 0x37;
+     cd8:	82822037 	addhi	r2, r2, #55	; 0x37
+		chr += 0x30;
+     cdc:	92822030 	addls	r2, r2, #48	; 0x30
+		SerXmtBuf[SerXmtBufPtr] = 'F';
+     ce0:	e5c50028 	strb	r0, [r5, #40]	; 0x28
+		SerXmtBuf[SerXmtBufPtr] = hex2ascii (statusbyte & 0x0F);
+     ce4:	e5c5202a 	strb	r2, [r5, #42]	; 0x2a
+		SerXmtBuf[SerXmtBufPtr] = ret_OK; // [<CR>]
+     ce8:	e5c5102b 	strb	r1, [r5, #43]	; 0x2b
+		SerXmtBufPtr++;
+     cec:	e5c53049 	strb	r3, [r5, #73]	; 0x49
+	SER_Write (SER_PORT1, &SerXmtBuf, SerXmtBufPtr);
+     cf0:	e1a02006 	mov	r2, r6
+     cf4:	e59f13d4 	ldr	r1, [pc, #980]	; 10d0 <USR_Stack_Size+0x8d0>
+     cf8:	e3a00000 	mov	r0, #0
+     cfc:	eb0003d2 	bl	1c4c <SER_Write>
+}
+     d00:	eafffdad 	b	3bc <ProcessMsgFromSerial+0x1d4>
+		if ((CmdLength == 2) 
+     d04:	e3560002 	cmp	r6, #2
+     d08:	1afffd92 	bne	358 <ProcessMsgFromSerial+0x170>
+		&&  (ascii2hex(SerRcvBuf[1]) <= 1)) {
+     d0c:	e5d50005 	ldrb	r0, [r5, #5]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     d10:	e2403041 	sub	r3, r0, #65	; 0x41
+     d14:	e3530019 	cmp	r3, #25
+		chr -= 0x37;
+     d18:	92403037 	subls	r3, r0, #55	; 0x37
+		return chr &0xF;
+     d1c:	9203300f 	andls	r3, r3, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     d20:	9a000004 	bls	d38 <USR_Stack_Size+0x538>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     d24:	e2403061 	sub	r3, r0, #97	; 0x61
+     d28:	e3530019 	cmp	r3, #25
+		chr -=0x57;
+     d2c:	92403057 	subls	r3, r0, #87	; 0x57
+		return chr &0xF;
+     d30:	9203300f 	andls	r3, r3, #15
+	return chr & 0xF;
+     d34:	8200300f 	andhi	r3, r0, #15
+		&&  (ascii2hex(SerRcvBuf[1]) <= 1)) {
+     d38:	e3530001 	cmp	r3, #1
+     d3c:	8afffd85 	bhi	358 <ProcessMsgFromSerial+0x170>
+	if (CanChnOpen == 0){ // precondition	
+     d40:	e5d53026 	ldrb	r3, [r5, #38]	; 0x26
+     d44:	e3530000 	cmp	r3, #0
+     d48:	1a000098 	bne	fb0 <USR_Stack_Size+0x7b0>
+		AutoPollAutoSend = ascii2hex(SerRcvBuf[1]);
+     d4c:	ebfffd19 	bl	1b8 <ascii2hex>
+     d50:	e59f3384 	ldr	r3, [pc, #900]	; 10dc <USR_Stack_Size+0x8dc>
+     d54:	e5c30005 	strb	r0, [r3, #5]
+     d58:	eafffdb6 	b	438 <PLLSTAT_PLOCK+0x38>
+		if ((CmdLength == 1)&& (CanChnOpen == 0) && (CanInitialized == 1)) {
+     d5c:	e3560001 	cmp	r6, #1
+     d60:	1afffd7c 	bne	358 <ProcessMsgFromSerial+0x170>
+     d64:	e5d54026 	ldrb	r4, [r5, #38]	; 0x26
+     d68:	e3540000 	cmp	r4, #0
+     d6c:	1afffd79 	bne	358 <ProcessMsgFromSerial+0x170>
+     d70:	e5d53027 	ldrb	r3, [r5, #39]	; 0x27
+     d74:	e3530001 	cmp	r3, #1
+     d78:	1afffd76 	bne	358 <ProcessMsgFromSerial+0x170>
+			AutoPollAutoSend=1;
+     d7c:	e59f7358 	ldr	r7, [pc, #856]	; 10dc <USR_Stack_Size+0x8dc>
+			CAN_ReInitChannel ( CAN_BUS1);
+     d80:	e1a00004 	mov	r0, r4
+			AutoPollAutoSend=1;
+     d84:	e5c76005 	strb	r6, [r7, #5]
+			CAN_ReInitChannel ( CAN_BUS1);
+     d88:	eb0009e9 	bl	3534 <CAN_ReInitChannel>
+			CAN_SetBusMode ( CAN_BUS1, BUS_ON);
+     d8c:	e1a01004 	mov	r1, r4
+     d90:	e1a00004 	mov	r0, r4
+     d94:	eb00069b 	bl	2808 <CAN_SetBusMode>
+			SER_Write (SER_PORT1, &RetValue, 1);
+     d98:	e1a02006 	mov	r2, r6
+     d9c:	e1a00004 	mov	r0, r4
+     da0:	e28d1007 	add	r1, sp, #7
+			CanChnOpen = 1;
+     da4:	e5c56026 	strb	r6, [r5, #38]	; 0x26
+			CanBusMode = BUS_ON;
+     da8:	e5c74004 	strb	r4, [r7, #4]
+			SER_Write (SER_PORT1, &RetValue, 1);
+     dac:	eb0003a6 	bl	1c4c <SER_Write>
+     db0:	eafffd81 	b	3bc <ProcessMsgFromSerial+0x1d4>
+		if ((CmdLength == 2) 
+     db4:	e3560002 	cmp	r6, #2
+     db8:	1afffd66 	bne	358 <ProcessMsgFromSerial+0x170>
+		&&  (ascii2hex(SerRcvBuf[1]) <= 1)) {
+     dbc:	e5d50005 	ldrb	r0, [r5, #5]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     dc0:	e2403041 	sub	r3, r0, #65	; 0x41
+     dc4:	e3530019 	cmp	r3, #25
+		chr -= 0x37;
+     dc8:	92403037 	subls	r3, r0, #55	; 0x37
+		return chr &0xF;
+     dcc:	9203300f 	andls	r3, r3, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     dd0:	9a000004 	bls	de8 <USR_Stack_Size+0x5e8>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     dd4:	e2403061 	sub	r3, r0, #97	; 0x61
+     dd8:	e3530019 	cmp	r3, #25
+		chr -=0x57;
+     ddc:	92403057 	subls	r3, r0, #87	; 0x57
+		return chr &0xF;
+     de0:	9203300f 	andls	r3, r3, #15
+	return chr & 0xF;
+     de4:	8200300f 	andhi	r3, r0, #15
+		&&  (ascii2hex(SerRcvBuf[1]) <= 1)) {
+     de8:	e3530001 	cmp	r3, #1
+     dec:	8afffd59 	bhi	358 <ProcessMsgFromSerial+0x170>
+	if (CanChnOpen == 0){ // precondition
+     df0:	e5d53026 	ldrb	r3, [r5, #38]	; 0x26
+     df4:	e3530000 	cmp	r3, #0
+     df8:	1a00006c 	bne	fb0 <USR_Stack_Size+0x7b0>
+		CanRcvTimestampOn = ascii2hex(SerRcvBuf[1]);
+     dfc:	ebfffced 	bl	1b8 <ascii2hex>
+     e00:	e5c5005e 	strb	r0, [r5, #94]	; 0x5e
+     e04:	eafffd8b 	b	438 <PLLSTAT_PLOCK+0x38>
+		if ((CmdLength == 5) 
+     e08:	e3560005 	cmp	r6, #5
+     e0c:	1afffd51 	bne	358 <ProcessMsgFromSerial+0x170>
+		&&  (CanChnOpen == 1) 
+     e10:	e5d53026 	ldrb	r3, [r5, #38]	; 0x26
+     e14:	e3530001 	cmp	r3, #1
+     e18:	1afffd4e 	bne	358 <ProcessMsgFromSerial+0x170>
+		&&  (CanBusMode == BUS_ON)) {
+     e1c:	e59f62b8 	ldr	r6, [pc, #696]	; 10dc <USR_Stack_Size+0x8dc>
+     e20:	e5d62004 	ldrb	r2, [r6, #4]
+     e24:	e3520000 	cmp	r2, #0
+     e28:	1afffd4a 	bne	358 <ProcessMsgFromSerial+0x170>
+		CanTxMsg.Id =                 (ascii2hex(SerRcvBuf[1])<<8 )& 0xF00;
+     e2c:	e5d53005 	ldrb	r3, [r5, #5]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     e30:	e2431041 	sub	r1, r3, #65	; 0x41
+     e34:	e3510019 	cmp	r1, #25
+		chr -= 0x37;
+     e38:	92433037 	subls	r3, r3, #55	; 0x37
+		CanTxMsg.Data32[0] = 0;
+     e3c:	e5852054 	str	r2, [r5, #84]	; 0x54
+		CanTxMsg.Data32[1] = 0;
+     e40:	e5852058 	str	r2, [r5, #88]	; 0x58
+		return chr &0xF;
+     e44:	9203300f 	andls	r3, r3, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     e48:	9a000004 	bls	e60 <USR_Stack_Size+0x660>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     e4c:	e2432061 	sub	r2, r3, #97	; 0x61
+     e50:	e20220ff 	and	r2, r2, #255	; 0xff
+     e54:	e3520019 	cmp	r2, #25
+		chr -=0x57;
+     e58:	92433057 	subls	r3, r3, #87	; 0x57
+	return chr & 0xF;
+     e5c:	e203300f 	and	r3, r3, #15
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[2])<<4 )& 0x0F0));
+     e60:	e5d52006 	ldrb	r2, [r5, #6]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     e64:	e2421041 	sub	r1, r2, #65	; 0x41
+     e68:	e3510019 	cmp	r1, #25
+		chr -= 0x37;
+     e6c:	92422037 	subls	r2, r2, #55	; 0x37
+		CanTxMsg.Id =                 (ascii2hex(SerRcvBuf[1])<<8 )& 0xF00;
+     e70:	e1a03403 	lsl	r3, r3, #8
+		return chr &0xF;
+     e74:	9202100f 	andls	r1, r2, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     e78:	9a000004 	bls	e90 <USR_Stack_Size+0x690>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     e7c:	e2421061 	sub	r1, r2, #97	; 0x61
+     e80:	e20110ff 	and	r1, r1, #255	; 0xff
+     e84:	e3510019 	cmp	r1, #25
+		chr -=0x57;
+     e88:	92422057 	subls	r2, r2, #87	; 0x57
+	return chr & 0xF;
+     e8c:	e202100f 	and	r1, r2, #15
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[3])    )& 0x00F));
+     e90:	e5d52007 	ldrb	r2, [r5, #7]
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[2])<<4 )& 0x0F0));
+     e94:	e1833201 	orr	r3, r3, r1, lsl #4
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     e98:	e2421041 	sub	r1, r2, #65	; 0x41
+     e9c:	e3510019 	cmp	r1, #25
+		chr -= 0x37;
+     ea0:	92422037 	subls	r2, r2, #55	; 0x37
+		return chr &0xF;
+     ea4:	9202200f 	andls	r2, r2, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     ea8:	9a000004 	bls	ec0 <USR_Stack_Size+0x6c0>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     eac:	e2421061 	sub	r1, r2, #97	; 0x61
+     eb0:	e20110ff 	and	r1, r1, #255	; 0xff
+     eb4:	e3510019 	cmp	r1, #25
+		chr -=0x57;
+     eb8:	92422057 	subls	r2, r2, #87	; 0x57
+	return chr & 0xF;
+     ebc:	e202200f 	and	r2, r2, #15
+		CanTxMsg.Type = CAN_MSG_STANDARD | CAN_MSG_RTR;
+     ec0:	e3a01001 	mov	r1, #1
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[3])    )& 0x00F));
+     ec4:	e1822003 	orr	r2, r2, r3
+		CanTxMsg.Len = (ascii2hex(SerRcvBuf[4]))& 0x00F;
+     ec8:	e5d53008 	ldrb	r3, [r5, #8]
+		CanTxMsg.Id = (CanTxMsg.Id | ((ascii2hex(SerRcvBuf[3])    )& 0x00F));
+     ecc:	e5852050 	str	r2, [r5, #80]	; 0x50
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     ed0:	e2432041 	sub	r2, r3, #65	; 0x41
+     ed4:	e3520019 	cmp	r2, #25
+		CanTxMsg.Type = CAN_MSG_STANDARD | CAN_MSG_RTR;
+     ed8:	e5c5104e 	strb	r1, [r5, #78]	; 0x4e
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     edc:	8affff26 	bhi	b7c <USR_Stack_Size+0x37c>
+		chr -= 0x37;
+     ee0:	e2433037 	sub	r3, r3, #55	; 0x37
+		return chr &0xF;
+     ee4:	e203300f 	and	r3, r3, #15
+     ee8:	eaffff28 	b	b90 <USR_Stack_Size+0x390>
+		if (CmdLength == 5) {
+     eec:	e3560005 	cmp	r6, #5
+     ef0:	1afffd18 	bne	358 <ProcessMsgFromSerial+0x170>
+	BYTE0  = ((ascii2hex(SerRcvBuf[1])<<4)& 0xF0);
+     ef4:	e5d56005 	ldrb	r6, [r5, #5]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     ef8:	e2463041 	sub	r3, r6, #65	; 0x41
+     efc:	e3530019 	cmp	r3, #25
+		chr -= 0x37;
+     f00:	92466037 	subls	r6, r6, #55	; 0x37
+		return chr &0xF;
+     f04:	9206600f 	andls	r6, r6, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     f08:	9a000004 	bls	f20 <USR_Stack_Size+0x720>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     f0c:	e2463061 	sub	r3, r6, #97	; 0x61
+     f10:	e20330ff 	and	r3, r3, #255	; 0xff
+     f14:	e3530019 	cmp	r3, #25
+		chr -=0x57;
+     f18:	92466057 	subls	r6, r6, #87	; 0x57
+	return chr & 0xF;
+     f1c:	e206600f 	and	r6, r6, #15
+	BYTE0 |= ((ascii2hex(SerRcvBuf[2])   )& 0x0F);
+     f20:	e5d53006 	ldrb	r3, [r5, #6]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     f24:	e2432041 	sub	r2, r3, #65	; 0x41
+     f28:	e3520019 	cmp	r2, #25
+		chr -= 0x37;
+     f2c:	92433037 	subls	r3, r3, #55	; 0x37
+		return chr &0xF;
+     f30:	9203300f 	andls	r3, r3, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     f34:	9a000004 	bls	f4c <USR_Stack_Size+0x74c>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     f38:	e2432061 	sub	r2, r3, #97	; 0x61
+     f3c:	e20220ff 	and	r2, r2, #255	; 0xff
+     f40:	e3520019 	cmp	r2, #25
+		chr -=0x57;
+     f44:	92433057 	subls	r3, r3, #87	; 0x57
+	return chr & 0xF;
+     f48:	e203300f 	and	r3, r3, #15
+	BYTE1  = ((ascii2hex(SerRcvBuf[3])<<4)& 0xF0);
+     f4c:	e5d52007 	ldrb	r2, [r5, #7]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     f50:	e2421041 	sub	r1, r2, #65	; 0x41
+     f54:	e3510019 	cmp	r1, #25
+		chr -= 0x37;
+     f58:	92422037 	subls	r2, r2, #55	; 0x37
+		return chr &0xF;
+     f5c:	9202100f 	andls	r1, r2, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     f60:	9a000004 	bls	f78 <USR_Stack_Size+0x778>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     f64:	e2421061 	sub	r1, r2, #97	; 0x61
+     f68:	e20110ff 	and	r1, r1, #255	; 0xff
+     f6c:	e3510019 	cmp	r1, #25
+		chr -=0x57;
+     f70:	92422057 	subls	r2, r2, #87	; 0x57
+	return chr & 0xF;
+     f74:	e202100f 	and	r1, r2, #15
+	BYTE1 |= ((ascii2hex(SerRcvBuf[4])   )& 0x0F);
+     f78:	e5d52008 	ldrb	r2, [r5, #8]
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     f7c:	e2420041 	sub	r0, r2, #65	; 0x41
+     f80:	e3500019 	cmp	r0, #25
+		chr -= 0x37;
+     f84:	92422037 	subls	r2, r2, #55	; 0x37
+		return chr &0xF;
+     f88:	9202200f 	andls	r2, r2, #15
+	if((chr <= 0x5A) && (chr >= 0x41)) // Großbuchstaben
+     f8c:	9a000004 	bls	fa4 <USR_Stack_Size+0x7a4>
+	if((chr <= 0x7A) && (chr >= 0x61)) // Kleinbuchstaben
+     f90:	e2420061 	sub	r0, r2, #97	; 0x61
+     f94:	e20000ff 	and	r0, r0, #255	; 0xff
+     f98:	e3500019 	cmp	r0, #25
+		chr -=0x57;
+     f9c:	92422057 	subls	r2, r2, #87	; 0x57
+	return chr & 0xF;
+     fa0:	e202200f 	and	r2, r2, #15
+	if (CanChnOpen == 0) { // precondition
+     fa4:	e5d57026 	ldrb	r7, [r5, #38]	; 0x26
+     fa8:	e3570000 	cmp	r7, #0
+     fac:	0a000023 	beq	1040 <USR_Stack_Size+0x840>
+		Result = ret_ERROR;
+     fb0:	e3a04007 	mov	r4, #7
+     fb4:	eafffd1f 	b	438 <PLLSTAT_PLOCK+0x38>
+		if ((CmdLength == 1)&& (CanChnOpen == 0) && (CanInitialized == 1)) {
+     fb8:	e3560001 	cmp	r6, #1
+     fbc:	1afffce5 	bne	358 <ProcessMsgFromSerial+0x170>
+     fc0:	e5d54026 	ldrb	r4, [r5, #38]	; 0x26
+     fc4:	e3540000 	cmp	r4, #0
+     fc8:	1afffce2 	bne	358 <ProcessMsgFromSerial+0x170>
+     fcc:	e5d53027 	ldrb	r3, [r5, #39]	; 0x27
+     fd0:	e3530001 	cmp	r3, #1
+     fd4:	1afffcdf 	bne	358 <ProcessMsgFromSerial+0x170>
+			CAN_ReInitChannel ( CAN_BUS1);
+     fd8:	e1a00004 	mov	r0, r4
+     fdc:	eb000954 	bl	3534 <CAN_ReInitChannel>
+			CAN_SetBusMode ( CAN_BUS1, BUS_ON);
+     fe0:	e1a01004 	mov	r1, r4
+     fe4:	e1a00004 	mov	r0, r4
+     fe8:	eb000606 	bl	2808 <CAN_SetBusMode>
+			CanBusMode = BUS_ON;
+     fec:	e59f30e8 	ldr	r3, [pc, #232]	; 10dc <USR_Stack_Size+0x8dc>
+			SER_Write (SER_PORT1, &RetValue, 1);
+     ff0:	e1a02006 	mov	r2, r6
+     ff4:	e1a00004 	mov	r0, r4
+     ff8:	e28d1007 	add	r1, sp, #7
+			CanChnOpen = 1;
+     ffc:	e5c56026 	strb	r6, [r5, #38]	; 0x26
+			CanBusMode = BUS_ON;
+    1000:	e5c34004 	strb	r4, [r3, #4]
+			SER_Write (SER_PORT1, &RetValue, 1);
+    1004:	eb000310 	bl	1c4c <SER_Write>
+    1008:	eafffceb 	b	3bc <ProcessMsgFromSerial+0x1d4>
+		if ((CmdLength == 1)) {
+    100c:	e3560001 	cmp	r6, #1
+    1010:	1afffcd0 	bne	358 <ProcessMsgFromSerial+0x170>
+			CAN_SetBusMode ( CAN_BUS1, BUS_OFF);
+    1014:	e1a01006 	mov	r1, r6
+    1018:	e3a00000 	mov	r0, #0
+    101c:	eb0005f9 	bl	2808 <CAN_SetBusMode>
+			CanChnOpen = 0;
+    1020:	e3a00000 	mov	r0, #0
+			CanBusMode = BUS_OFF;
+    1024:	e59f30b0 	ldr	r3, [pc, #176]	; 10dc <USR_Stack_Size+0x8dc>
+			SER_Write (SER_PORT1, &RetValue, 1);
+    1028:	e1a02006 	mov	r2, r6
+    102c:	e28d1007 	add	r1, sp, #7
+			CanBusMode = BUS_OFF;
+    1030:	e5c36004 	strb	r6, [r3, #4]
+			CanChnOpen = 0;
+    1034:	e5c50026 	strb	r0, [r5, #38]	; 0x26
+			SER_Write (SER_PORT1, &RetValue, 1);
+    1038:	eb000303 	bl	1c4c <SER_Write>
+    103c:	eafffcde 	b	3bc <ProcessMsgFromSerial+0x1d4>
+		C1MOD=1<<0;			//RESET MODE 
+    1040:	e3a08001 	mov	r8, #1
+		LpcBtr |=   ((u32_t)BYTE1       << 16);			// TSEG1, TSEG2, SAM
+    1044:	e1822201 	orr	r2, r2, r1, lsl #4
+	BYTE0 |= ((ascii2hex(SerRcvBuf[2])   )& 0x0F);
+    1048:	e1831206 	orr	r1, r3, r6, lsl #4
+		LpcBtr  = ((((u32_t)BYTE0 &0x3F) +1) *6) -1; 	// BRP, bit 0..9
+    104c:	e201303f 	and	r3, r1, #63	; 0x3f
+    1050:	e0833008 	add	r3, r3, r8
+    1054:	e0833813 	add	r3, r3, r3, lsl r8
+		LpcBtr |=   ((u32_t)BYTE0 &0xC0) << 8;			// SJW, bit 14..15
+    1058:	e1a06401 	lsl	r6, r1, #8
+		LpcBtr  = ((((u32_t)BYTE0 &0x3F) +1) *6) -1; 	// BRP, bit 0..9
+    105c:	e1a03813 	lsl	r3, r3, r8
+    1060:	e2433001 	sub	r3, r3, #1
+		LpcBtr |=   ((u32_t)BYTE0 &0xC0) << 8;			// SJW, bit 14..15
+    1064:	e2066903 	and	r6, r6, #49152	; 0xc000
+    1068:	e1866003 	orr	r6, r6, r3
+		LpcBtr |=   ((u32_t)BYTE1       << 16);			// TSEG1, TSEG2, SAM
+    106c:	e1866802 	orr	r6, r6, r2, lsl #16
+		PINSEL1 |= (1<<22) | (1<<24) |(1<<26) |(1<<28) |(1<<18) |(1<<16) |(1<<14) ;
+    1070:	e59f207c 	ldr	r2, [pc, #124]	; 10f4 <USR_Stack_Size+0x8f4>
+    1074:	e5923004 	ldr	r3, [r2, #4]
+		C1MOD=1<<0;			//RESET MODE 
+    1078:	e59f9070 	ldr	r9, [pc, #112]	; 10f0 <USR_Stack_Size+0x8f0>
+		PINSEL1 |= (1<<22) | (1<<24) |(1<<26) |(1<<28) |(1<<18) |(1<<16) |(1<<14) ;
+    107c:	e3833555 	orr	r3, r3, #356515840	; 0x15400000
+    1080:	e3833915 	orr	r3, r3, #344064	; 0x54000
+    1084:	e5823004 	str	r3, [r2, #4]
+		CAN_SetBusMode ( CAN_BUS1, BUS_OFF);
+    1088:	e1a01008 	mov	r1, r8
+    108c:	e1a00007 	mov	r0, r7
+		C1MOD=1<<0;			//RESET MODE 
+    1090:	e5898000 	str	r8, [r9]
+		CAN_SetBusMode ( CAN_BUS1, BUS_OFF);
+    1094:	eb0005db 	bl	2808 <CAN_SetBusMode>
+		C1IER=0x00; // Disabling all interrupts
+    1098:	e5897010 	str	r7, [r9, #16]
+		CAN_SetBusMode ( CAN_BUS1, BUS_OFF);					// CAN Bus On
+    109c:	e1a01008 	mov	r1, r8
+		C1BTR = LpcBtr;
+    10a0:	e5896014 	str	r6, [r9, #20]
+		CAN_SetBusMode ( CAN_BUS1, BUS_OFF);					// CAN Bus On
+    10a4:	e1a00007 	mov	r0, r7
+		C1MOD=0;
+    10a8:	e5897000 	str	r7, [r9]
+		CAN_SetBusMode ( CAN_BUS1, BUS_OFF);					// CAN Bus On
+    10ac:	eb0005d5 	bl	2808 <CAN_SetBusMode>
+		CAN_ReInitChannel ( CAN_BUS1);
+    10b0:	e1a00007 	mov	r0, r7
+    10b4:	eb00091e 	bl	3534 <CAN_ReInitChannel>
+		CanInitialized = 1; 	// Now CAN channel can be opened
+    10b8:	e5c58027 	strb	r8, [r5, #39]	; 0x27
+    10bc:	eafffcdd 	b	438 <PLLSTAT_PLOCK+0x38>
+		Result = ret_ERROR;
+    10c0:	e3a04007 	mov	r4, #7
+	SerXmtBufPtr = 0;
+    10c4:	e5c50049 	strb	r0, [r5, #73]	; 0x49
+	if (AutoPollAutoSend == 1) {
+    10c8:	eafffd97 	b	72c <PLLSTAT_PLOCK+0x32c>
+    10cc:	40000008 	.word	0x40000008
+    10d0:	40000030 	.word	0x40000030
+    10d4:	30303056 	.word	0x30303056
+    10d8:	00000d31 	.word	0x00000d31
+    10dc:	40000000 	.word	0x40000000
+    10e0:	4000005c 	.word	0x4000005c
+    10e4:	40000054 	.word	0x40000054
+    10e8:	0000381c 	.word	0x0000381c
+    10ec:	40000031 	.word	0x40000031
+    10f0:	e0044000 	.word	0xe0044000
+    10f4:	e002c000 	.word	0xe002c000
+
+000010f8 <ProcessMsgFromCan>:
+//-------------------------------------------------
+{
+	static u8_t i; //all purpose loop counter
+	static u16_t Timestamp;
+
+	if (AutoPollAutoSend == 1) {
+    10f8:	e59f338c 	ldr	r3, [pc, #908]	; 148c <ProcessMsgFromCan+0x394>
+    10fc:	e5d33005 	ldrb	r3, [r3, #5]
+    1100:	e3530001 	cmp	r3, #1
+    1104:	112fff1e 	bxne	lr
+{
+    1108:	e92d4070 	push	{r4, r5, r6, lr}
+
+		// repeat previous message if not successfully sent in last cycle
+		if (UARTWriteResult != SER_ERR_OK) {
+    110c:	e59f437c 	ldr	r4, [pc, #892]	; 1490 <ProcessMsgFromCan+0x398>
+    1110:	e5940060 	ldr	r0, [r4, #96]	; 0x60
+    1114:	e3500000 	cmp	r0, #0
+    1118:	1a000040 	bne	1220 <ProcessMsgFromCan+0x128>
+			UARTWriteResult = SER_Write ( SER_PORT1, &SerXmtBuf[0], SerXmtBufPtr);
+			return;
+		}
+		//-------------------------------------------------
+
+		if (CAN_UserRead (CAN_BUS1, &CanRxMsg) != 0) {
+    111c:	e2841064 	add	r1, r4, #100	; 0x64
+    1120:	eb00019b 	bl	1794 <CAN_UserRead>
+    1124:	e3500000 	cmp	r0, #0
+    1128:	0a000042 	beq	1238 <ProcessMsgFromCan+0x140>
+			
+			Timestamp = Millitimer; // get current timestamp 
+
+			// if 11 bit Id
+			if ((CanRxMsg.Type & CAN_MSG_EXTENDED) == 0) { // is -not- 29 bit
+    112c:	e5d43066 	ldrb	r3, [r4, #102]	; 0x66
+    1130:	e3130002 	tst	r3, #2
+			Timestamp = Millitimer; // get current timestamp 
+    1134:	e1d407b4 	ldrh	r0, [r4, #116]	; 0x74
+			if ((CanRxMsg.Type & CAN_MSG_EXTENDED) == 0) { // is -not- 29 bit
+    1138:	1a000040 	bne	1240 <ProcessMsgFromCan+0x148>
+
+				if ((CanRxMsg.Type & CAN_MSG_RTR) == 0) { // is -not- RTR
+					SerXmtBuf[0] = 't';
+    113c:	e2133001 	ands	r3, r3, #1
+    1140:	13a0c072 	movne	ip, #114	; 0x72
+    1144:	03a0c074 	moveq	ip, #116	; 0x74
+				}
+				else { // is 11 bit RTR	
+					SerXmtBuf[0] = 'r';
+				}
+				// convert 11 bit Id
+				SerXmtBuf[1] = hex2ascii((CanRxMsg.Id & 0x700)>>8);
+    1148:	e5942068 	ldr	r2, [r4, #104]	; 0x68
+    114c:	e1a01422 	lsr	r1, r2, #8
+    1150:	e2011007 	and	r1, r1, #7
+		chr += 0x30;
+    1154:	e2811030 	add	r1, r1, #48	; 0x30
+				SerXmtBuf[1] = hex2ascii((CanRxMsg.Id & 0x700)>>8);
+    1158:	e5c41029 	strb	r1, [r4, #41]	; 0x29
+				SerXmtBuf[2] = hex2ascii((CanRxMsg.Id & 0x0F0)>>4);
+    115c:	e1a01222 	lsr	r1, r2, #4
+    1160:	e201100f 	and	r1, r1, #15
+				SerXmtBuf[3] = hex2ascii (CanRxMsg.Id & 0x00F);
+    1164:	e202200f 	and	r2, r2, #15
+	if(chr > 9)
+    1168:	e3510009 	cmp	r1, #9
+		chr += 0x37;
+    116c:	82811037 	addhi	r1, r1, #55	; 0x37
+		chr += 0x30;
+    1170:	92811030 	addls	r1, r1, #48	; 0x30
+				// convert DLC
+				SerXmtBuf[4] = hex2ascii(CanRxMsg.Len);
+    1174:	e5d4e067 	ldrb	lr, [r4, #103]	; 0x67
+	if(chr > 9)
+    1178:	e3520009 	cmp	r2, #9
+		chr += 0x37;
+    117c:	82822037 	addhi	r2, r2, #55	; 0x37
+		chr += 0x30;
+    1180:	92822030 	addls	r2, r2, #48	; 0x30
+				SerXmtBuf[3] = hex2ascii (CanRxMsg.Id & 0x00F);
+    1184:	e5c4202b 	strb	r2, [r4, #43]	; 0x2b
+	chr = chr & 0xF;
+    1188:	e20e200f 	and	r2, lr, #15
+	if(chr > 9)
+    118c:	e3520009 	cmp	r2, #9
+    1190:	e5c4c028 	strb	ip, [r4, #40]	; 0x28
+				SerXmtBuf[2] = hex2ascii((CanRxMsg.Id & 0x0F0)>>4);
+    1194:	e5c4102a 	strb	r1, [r4, #42]	; 0x2a
+	if(chr > 9)
+    1198:	8a0000b4 	bhi	1470 <ProcessMsgFromCan+0x378>
+		chr += 0x30;
+    119c:	e2822030 	add	r2, r2, #48	; 0x30
+
+				if ((CanRxMsg.Type & CAN_MSG_RTR) == 0) { // is -not- RTR
+    11a0:	e3530000 	cmp	r3, #0
+				SerXmtBuf[4] = hex2ascii(CanRxMsg.Len);
+    11a4:	e5c4202c 	strb	r2, [r4, #44]	; 0x2c
+				if ((CanRxMsg.Type & CAN_MSG_RTR) == 0) { // is -not- RTR
+    11a8:	1a0000b4 	bne	1480 <ProcessMsgFromCan+0x388>
+					// convert data bytes to ASCII
+					for (i=0;i<CanRxMsg.Len;++i) {
+    11ac:	e35e0000 	cmp	lr, #0
+    11b0:	e5c43076 	strb	r3, [r4, #118]	; 0x76
+    11b4:	0a000014 	beq	120c <ProcessMsgFromCan+0x114>
+    11b8:	e59fc2d4 	ldr	ip, [pc, #724]	; 1494 <ProcessMsgFromCan+0x39c>
+    11bc:	e24e5001 	sub	r5, lr, #1
+    11c0:	e20530ff 	and	r3, r5, #255	; 0xff
+    11c4:	e28c5001 	add	r5, ip, #1
+    11c8:	e24c2043 	sub	r2, ip, #67	; 0x43
+    11cc:	e0855003 	add	r5, r5, r3
+						SerXmtBuf[5+i*2] = hex2ascii((CanRxMsg.Data8[i] & 0xF0)>>4);
+    11d0:	e5fc3001 	ldrb	r3, [ip, #1]!
+	if(chr > 9)
+    11d4:	e353009f 	cmp	r3, #159	; 0x9f
+						SerXmtBuf[5+i*2] = hex2ascii((CanRxMsg.Data8[i] & 0xF0)>>4);
+    11d8:	e1a01223 	lsr	r1, r3, #4
+						SerXmtBuf[6+i*2] = hex2ascii (CanRxMsg.Data8[i] & 0x0F);
+    11dc:	e203300f 	and	r3, r3, #15
+		chr += 0x37;
+    11e0:	82811037 	addhi	r1, r1, #55	; 0x37
+		chr += 0x30;
+    11e4:	92811030 	addls	r1, r1, #48	; 0x30
+	if(chr > 9)
+    11e8:	e3530009 	cmp	r3, #9
+		chr += 0x37;
+    11ec:	82833037 	addhi	r3, r3, #55	; 0x37
+		chr += 0x30;
+    11f0:	92833030 	addls	r3, r3, #48	; 0x30
+					for (i=0;i<CanRxMsg.Len;++i) {
+    11f4:	e155000c 	cmp	r5, ip
+						SerXmtBuf[5+i*2] = hex2ascii((CanRxMsg.Data8[i] & 0xF0)>>4);
+    11f8:	e5c21005 	strb	r1, [r2, #5]
+						SerXmtBuf[6+i*2] = hex2ascii (CanRxMsg.Data8[i] & 0x0F);
+    11fc:	e5c23006 	strb	r3, [r2, #6]
+					for (i=0;i<CanRxMsg.Len;++i) {
+    1200:	e2822002 	add	r2, r2, #2
+    1204:	1afffff1 	bne	11d0 <ProcessMsgFromCan+0xd8>
+    1208:	e5c4e076 	strb	lr, [r4, #118]	; 0x76
+					}
+					SerXmtBufPtr = 5 + (CanRxMsg.Len *2);
+    120c:	e1a0308e 	lsl	r3, lr, #1
+    1210:	e2833005 	add	r3, r3, #5
+    1214:	e20330ff 	and	r3, r3, #255	; 0xff
+					SerXmtBufPtr = 5;
+				}
+
+				// append timestamp, if enabled
+				if (CanRcvTimestampOn == 1) {
+					SerXmtBuf[SerXmtBufPtr]   = hex2ascii((Timestamp & 0xF000)>>12);
+    1218:	e1a01003 	mov	r1, r3
+    121c:	ea000043 	b	1330 <ProcessMsgFromCan+0x238>
+			UARTWriteResult = SER_Write ( SER_PORT1, &SerXmtBuf[0], SerXmtBufPtr);
+    1220:	e3a00000 	mov	r0, #0
+    1224:	e5d42049 	ldrb	r2, [r4, #73]	; 0x49
+    1228:	e2841028 	add	r1, r4, #40	; 0x28
+			SerTxCongestionOccurred = 1; // set flag indicationg Tx buffer was full before
+    122c:	e5c4305c 	strb	r3, [r4, #92]	; 0x5c
+			UARTWriteResult = SER_Write ( SER_PORT1, &SerXmtBuf[0], SerXmtBufPtr);
+    1230:	eb000285 	bl	1c4c <SER_Write>
+    1234:	e5840060 	str	r0, [r4, #96]	; 0x60
+				UARTWriteResult = SER_Write ( SER_PORT1, &SerXmtBuf[0], SerXmtBufPtr);
+			} // IF Id=Extended
+			//-------------------------------------------------
+		} // IF Can read
+	} // IF auto poll auto send
+}
+    1238:	e8bd4070 	pop	{r4, r5, r6, lr}
+    123c:	e12fff1e 	bx	lr
+					SerXmtBuf[0] = 'T';
+    1240:	e2132001 	ands	r2, r3, #1
+    1244:	13a0c052 	movne	ip, #82	; 0x52
+    1248:	03a0c054 	moveq	ip, #84	; 0x54
+				SerXmtBuf[1] = hex2ascii((CanRxMsg.Id & 0x10000000)>>28);
+    124c:	e5943068 	ldr	r3, [r4, #104]	; 0x68
+    1250:	e1a01e23 	lsr	r1, r3, #28
+    1254:	e2011001 	and	r1, r1, #1
+		chr += 0x30;
+    1258:	e2811030 	add	r1, r1, #48	; 0x30
+				SerXmtBuf[1] = hex2ascii((CanRxMsg.Id & 0x10000000)>>28);
+    125c:	e5c41029 	strb	r1, [r4, #41]	; 0x29
+				SerXmtBuf[2] = hex2ascii((CanRxMsg.Id & 0x0F000000)>>24);
+    1260:	e1a01c23 	lsr	r1, r3, #24
+    1264:	e201100f 	and	r1, r1, #15
+	if(chr > 9)
+    1268:	e3510009 	cmp	r1, #9
+		chr += 0x37;
+    126c:	82811037 	addhi	r1, r1, #55	; 0x37
+		chr += 0x30;
+    1270:	92811030 	addls	r1, r1, #48	; 0x30
+				SerXmtBuf[2] = hex2ascii((CanRxMsg.Id & 0x0F000000)>>24);
+    1274:	e5c4102a 	strb	r1, [r4, #42]	; 0x2a
+				SerXmtBuf[3] = hex2ascii((CanRxMsg.Id & 0x00F00000)>>20);
+    1278:	e1a01a23 	lsr	r1, r3, #20
+    127c:	e201100f 	and	r1, r1, #15
+	if(chr > 9)
+    1280:	e3510009 	cmp	r1, #9
+		chr += 0x37;
+    1284:	82811037 	addhi	r1, r1, #55	; 0x37
+		chr += 0x30;
+    1288:	92811030 	addls	r1, r1, #48	; 0x30
+				SerXmtBuf[3] = hex2ascii((CanRxMsg.Id & 0x00F00000)>>20);
+    128c:	e5c4102b 	strb	r1, [r4, #43]	; 0x2b
+				SerXmtBuf[4] = hex2ascii((CanRxMsg.Id & 0x000F0000)>>16);
+    1290:	e1a01823 	lsr	r1, r3, #16
+    1294:	e201100f 	and	r1, r1, #15
+	if(chr > 9)
+    1298:	e3510009 	cmp	r1, #9
+		chr += 0x37;
+    129c:	82811037 	addhi	r1, r1, #55	; 0x37
+		chr += 0x30;
+    12a0:	92811030 	addls	r1, r1, #48	; 0x30
+				SerXmtBuf[4] = hex2ascii((CanRxMsg.Id & 0x000F0000)>>16);
+    12a4:	e5c4102c 	strb	r1, [r4, #44]	; 0x2c
+				SerXmtBuf[5] = hex2ascii((CanRxMsg.Id & 0x0000F000)>>12);
+    12a8:	e1a01623 	lsr	r1, r3, #12
+    12ac:	e201100f 	and	r1, r1, #15
+	if(chr > 9)
+    12b0:	e3510009 	cmp	r1, #9
+		chr += 0x37;
+    12b4:	82811037 	addhi	r1, r1, #55	; 0x37
+		chr += 0x30;
+    12b8:	92811030 	addls	r1, r1, #48	; 0x30
+				SerXmtBuf[5] = hex2ascii((CanRxMsg.Id & 0x0000F000)>>12);
+    12bc:	e5c4102d 	strb	r1, [r4, #45]	; 0x2d
+				SerXmtBuf[6] = hex2ascii((CanRxMsg.Id & 0x00000F00)>>8);
+    12c0:	e1a01423 	lsr	r1, r3, #8
+    12c4:	e201100f 	and	r1, r1, #15
+	if(chr > 9)
+    12c8:	e3510009 	cmp	r1, #9
+		chr += 0x37;
+    12cc:	82811037 	addhi	r1, r1, #55	; 0x37
+		chr += 0x30;
+    12d0:	92811030 	addls	r1, r1, #48	; 0x30
+				SerXmtBuf[6] = hex2ascii((CanRxMsg.Id & 0x00000F00)>>8);
+    12d4:	e5c4102e 	strb	r1, [r4, #46]	; 0x2e
+				SerXmtBuf[7] = hex2ascii((CanRxMsg.Id & 0x000000F0)>>4);
+    12d8:	e1a01223 	lsr	r1, r3, #4
+    12dc:	e201100f 	and	r1, r1, #15
+				SerXmtBuf[8] = hex2ascii (CanRxMsg.Id & 0x0000000F);
+    12e0:	e203300f 	and	r3, r3, #15
+	if(chr > 9)
+    12e4:	e3510009 	cmp	r1, #9
+		chr += 0x37;
+    12e8:	82811037 	addhi	r1, r1, #55	; 0x37
+		chr += 0x30;
+    12ec:	92811030 	addls	r1, r1, #48	; 0x30
+    12f0:	e5c4c028 	strb	ip, [r4, #40]	; 0x28
+	if(chr > 9)
+    12f4:	e3530009 	cmp	r3, #9
+				SerXmtBuf[9] = hex2ascii(CanRxMsg.Len);
+    12f8:	e5d4c067 	ldrb	ip, [r4, #103]	; 0x67
+		chr += 0x37;
+    12fc:	82833037 	addhi	r3, r3, #55	; 0x37
+		chr += 0x30;
+    1300:	92833030 	addls	r3, r3, #48	; 0x30
+				SerXmtBuf[8] = hex2ascii (CanRxMsg.Id & 0x0000000F);
+    1304:	e5c43030 	strb	r3, [r4, #48]	; 0x30
+	chr = chr & 0xF;
+    1308:	e20c300f 	and	r3, ip, #15
+	if(chr > 9)
+    130c:	e3530009 	cmp	r3, #9
+				SerXmtBuf[7] = hex2ascii((CanRxMsg.Id & 0x000000F0)>>4);
+    1310:	e5c4102f 	strb	r1, [r4, #47]	; 0x2f
+	if(chr > 9)
+    1314:	9a000034 	bls	13ec <ProcessMsgFromCan+0x2f4>
+		chr += 0x37;
+    1318:	e2833037 	add	r3, r3, #55	; 0x37
+				if ((CanRxMsg.Type & CAN_MSG_RTR) == 0) { // is -not- RTR
+    131c:	e3520000 	cmp	r2, #0
+				SerXmtBuf[9] = hex2ascii(CanRxMsg.Len);
+    1320:	e5c43031 	strb	r3, [r4, #49]	; 0x31
+				if ((CanRxMsg.Type & CAN_MSG_RTR) == 0) { // is -not- RTR
+    1324:	0a000037 	beq	1408 <ProcessMsgFromCan+0x310>
+					SerXmtBufPtr = 10;
+    1328:	e3a0100a 	mov	r1, #10
+    132c:	e1a03001 	mov	r3, r1
+				if (CanRcvTimestampOn == 1) {
+    1330:	e5d4205e 	ldrb	r2, [r4, #94]	; 0x5e
+    1334:	e3520001 	cmp	r2, #1
+    1338:	1a00001f 	bne	13bc <ProcessMsgFromCan+0x2c4>
+					SerXmtBuf[SerXmtBufPtr]   = hex2ascii((Timestamp & 0xF000)>>12);
+    133c:	e1a0c620 	lsr	ip, r0, #12
+	if(chr > 9)
+    1340:	e3500a0a 	cmp	r0, #40960	; 0xa000
+					SerXmtBuf[SerXmtBufPtr+1] = hex2ascii((Timestamp & 0x0F00)>>8);
+    1344:	e1a02440 	asr	r2, r0, #8
+    1348:	e202200f 	and	r2, r2, #15
+		chr += 0x37;
+    134c:	228cc037 	addcs	ip, ip, #55	; 0x37
+		chr += 0x30;
+    1350:	328cc030 	addcc	ip, ip, #48	; 0x30
+					SerXmtBuf[SerXmtBufPtr]   = hex2ascii((Timestamp & 0xF000)>>12);
+    1354:	e084e001 	add	lr, r4, r1
+    1358:	e5cec028 	strb	ip, [lr, #40]	; 0x28
+	if(chr > 9)
+    135c:	e3520009 	cmp	r2, #9
+					SerXmtBuf[SerXmtBufPtr+1] = hex2ascii((Timestamp & 0x0F00)>>8);
+    1360:	e281c001 	add	ip, r1, #1
+		chr += 0x37;
+    1364:	82822037 	addhi	r2, r2, #55	; 0x37
+		chr += 0x30;
+    1368:	92822030 	addls	r2, r2, #48	; 0x30
+					SerXmtBuf[SerXmtBufPtr+1] = hex2ascii((Timestamp & 0x0F00)>>8);
+    136c:	e084c00c 	add	ip, r4, ip
+    1370:	e5cc2028 	strb	r2, [ip, #40]	; 0x28
+					SerXmtBuf[SerXmtBufPtr+2] = hex2ascii((Timestamp & 0x00F0)>>4);
+    1374:	e1a02240 	asr	r2, r0, #4
+    1378:	e202200f 	and	r2, r2, #15
+	if(chr > 9)
+    137c:	e3520009 	cmp	r2, #9
+					SerXmtBuf[SerXmtBufPtr+2] = hex2ascii((Timestamp & 0x00F0)>>4);
+    1380:	e281c002 	add	ip, r1, #2
+					SerXmtBufPtr = SerXmtBufPtr +4;
+    1384:	e2833004 	add	r3, r3, #4
+		chr += 0x37;
+    1388:	82822037 	addhi	r2, r2, #55	; 0x37
+		chr += 0x30;
+    138c:	92822030 	addls	r2, r2, #48	; 0x30
+					SerXmtBuf[SerXmtBufPtr+2] = hex2ascii((Timestamp & 0x00F0)>>4);
+    1390:	e084c00c 	add	ip, r4, ip
+					SerXmtBufPtr = SerXmtBufPtr +4;
+    1394:	e20330ff 	and	r3, r3, #255	; 0xff
+					SerXmtBuf[SerXmtBufPtr+2] = hex2ascii((Timestamp & 0x00F0)>>4);
+    1398:	e5cc2028 	strb	r2, [ip, #40]	; 0x28
+					SerXmtBuf[SerXmtBufPtr+3] = hex2ascii (Timestamp & 0x000F);
+    139c:	e2812003 	add	r2, r1, #3
+				SerXmtBuf[SerXmtBufPtr] = '\r'; // Append <CR>
+    13a0:	e1a01003 	mov	r1, r3
+					SerXmtBuf[SerXmtBufPtr+3] = hex2ascii (Timestamp & 0x000F);
+    13a4:	e200000f 	and	r0, r0, #15
+	if(chr > 9)
+    13a8:	e3500009 	cmp	r0, #9
+		chr += 0x37;
+    13ac:	82800037 	addhi	r0, r0, #55	; 0x37
+		chr += 0x30;
+    13b0:	92800030 	addls	r0, r0, #48	; 0x30
+					SerXmtBuf[SerXmtBufPtr+3] = hex2ascii (Timestamp & 0x000F);
+    13b4:	e0842002 	add	r2, r4, r2
+    13b8:	e5c20028 	strb	r0, [r2, #40]	; 0x28
+				SerXmtBuf[SerXmtBufPtr] = '\r'; // Append <CR>
+    13bc:	e3a0c00d 	mov	ip, #13
+				SerXmtBufPtr ++;
+    13c0:	e2833001 	add	r3, r3, #1
+    13c4:	e20320ff 	and	r2, r3, #255	; 0xff
+				SerXmtBuf[SerXmtBufPtr] = '\r'; // Append <CR>
+    13c8:	e0843001 	add	r3, r4, r1
+				SerXmtBufPtr ++;
+    13cc:	e5c42049 	strb	r2, [r4, #73]	; 0x49
+				UARTWriteResult = SER_Write ( SER_PORT1, &SerXmtBuf[0], SerXmtBufPtr);
+    13d0:	e3a00000 	mov	r0, #0
+    13d4:	e59f10bc 	ldr	r1, [pc, #188]	; 1498 <ProcessMsgFromCan+0x3a0>
+				SerXmtBuf[SerXmtBufPtr] = '\r'; // Append <CR>
+    13d8:	e5c3c028 	strb	ip, [r3, #40]	; 0x28
+				UARTWriteResult = SER_Write ( SER_PORT1, &SerXmtBuf[0], SerXmtBufPtr);
+    13dc:	eb00021a 	bl	1c4c <SER_Write>
+    13e0:	e5840060 	str	r0, [r4, #96]	; 0x60
+}
+    13e4:	e8bd4070 	pop	{r4, r5, r6, lr}
+    13e8:	e12fff1e 	bx	lr
+		chr += 0x30;
+    13ec:	e2833030 	add	r3, r3, #48	; 0x30
+				if ((CanRxMsg.Type & CAN_MSG_RTR) == 0) { // is -not- RTR
+    13f0:	e3520000 	cmp	r2, #0
+				SerXmtBuf[9] = hex2ascii(CanRxMsg.Len);
+    13f4:	e5c43031 	strb	r3, [r4, #49]	; 0x31
+				if ((CanRxMsg.Type & CAN_MSG_RTR) == 0) { // is -not- RTR
+    13f8:	1affffca 	bne	1328 <ProcessMsgFromCan+0x230>
+					for (i=0;i<CanRxMsg.Len;++i) {
+    13fc:	e35c0000 	cmp	ip, #0
+    1400:	e5c42076 	strb	r2, [r4, #118]	; 0x76
+    1404:	0a000014 	beq	145c <ProcessMsgFromCan+0x364>
+    1408:	e59fe084 	ldr	lr, [pc, #132]	; 1494 <ProcessMsgFromCan+0x39c>
+    140c:	e24c5001 	sub	r5, ip, #1
+    1410:	e20550ff 	and	r5, r5, #255	; 0xff
+    1414:	e28e3001 	add	r3, lr, #1
+    1418:	e24e2043 	sub	r2, lr, #67	; 0x43
+    141c:	e0855003 	add	r5, r5, r3
+						SerXmtBuf[10+i*2] = hex2ascii((CanRxMsg.Data8[i] & 0xF0)>>4);
+    1420:	e5fe3001 	ldrb	r3, [lr, #1]!
+	if(chr > 9)
+    1424:	e353009f 	cmp	r3, #159	; 0x9f
+						SerXmtBuf[10+i*2] = hex2ascii((CanRxMsg.Data8[i] & 0xF0)>>4);
+    1428:	e1a01223 	lsr	r1, r3, #4
+						SerXmtBuf[11+i*2] = hex2ascii (CanRxMsg.Data8[i] & 0x0F);
+    142c:	e203300f 	and	r3, r3, #15
+		chr += 0x37;
+    1430:	82811037 	addhi	r1, r1, #55	; 0x37
+		chr += 0x30;
+    1434:	92811030 	addls	r1, r1, #48	; 0x30
+	if(chr > 9)
+    1438:	e3530009 	cmp	r3, #9
+		chr += 0x37;
+    143c:	82833037 	addhi	r3, r3, #55	; 0x37
+		chr += 0x30;
+    1440:	92833030 	addls	r3, r3, #48	; 0x30
+					for (i=0;i<CanRxMsg.Len;++i) {
+    1444:	e155000e 	cmp	r5, lr
+						SerXmtBuf[10+i*2] = hex2ascii((CanRxMsg.Data8[i] & 0xF0)>>4);
+    1448:	e5c2100a 	strb	r1, [r2, #10]
+						SerXmtBuf[11+i*2] = hex2ascii (CanRxMsg.Data8[i] & 0x0F);
+    144c:	e5c2300b 	strb	r3, [r2, #11]
+					for (i=0;i<CanRxMsg.Len;++i) {
+    1450:	e2822002 	add	r2, r2, #2
+    1454:	1afffff1 	bne	1420 <ProcessMsgFromCan+0x328>
+    1458:	e5c4c076 	strb	ip, [r4, #118]	; 0x76
+					SerXmtBufPtr = 10 + (CanRxMsg.Len *2);
+    145c:	e28c3005 	add	r3, ip, #5
+    1460:	e1a03083 	lsl	r3, r3, #1
+    1464:	e20330ff 	and	r3, r3, #255	; 0xff
+					SerXmtBuf[SerXmtBufPtr]   = hex2ascii((Timestamp & 0xF000)>>12);
+    1468:	e1a01003 	mov	r1, r3
+    146c:	eaffffaf 	b	1330 <ProcessMsgFromCan+0x238>
+		chr += 0x37;
+    1470:	e2822037 	add	r2, r2, #55	; 0x37
+				if ((CanRxMsg.Type & CAN_MSG_RTR) == 0) { // is -not- RTR
+    1474:	e3530000 	cmp	r3, #0
+				SerXmtBuf[4] = hex2ascii(CanRxMsg.Len);
+    1478:	e5c4202c 	strb	r2, [r4, #44]	; 0x2c
+				if ((CanRxMsg.Type & CAN_MSG_RTR) == 0) { // is -not- RTR
+    147c:	0affff4d 	beq	11b8 <ProcessMsgFromCan+0xc0>
+					SerXmtBufPtr = 5;
+    1480:	e3a01005 	mov	r1, #5
+    1484:	e1a03001 	mov	r3, r1
+				if (CanRcvTimestampOn == 1) {
+    1488:	eaffffa8 	b	1330 <ProcessMsgFromCan+0x238>
+    148c:	40000000 	.word	0x40000000
+    1490:	40000008 	.word	0x40000008
+    1494:	40000073 	.word	0x40000073
+    1498:	40000030 	.word	0x40000030
+
+0000149c <main>:
+	IOSET1 = 0x00100000;	//led on
+    149c:	e3a08601 	mov	r8, #1048576	; 0x100000
+{
+    14a0:	e92d4080 	push	{r7, lr}
+	IODIR1 |= 0x00100000;                     /* P1.16..23 defined as Outputs  */
+    14a4:	e59f712c 	ldr	r7, [pc, #300]	; 15d8 <main+0x13c>
+	HW_Init();
+    14a8:	eb0003b4 	bl	2380 <HW_Init>
+	IODIR1 |= 0x00100000;                     /* P1.16..23 defined as Outputs  */
+    14ac:	e5973018 	ldr	r3, [r7, #24]
+    14b0:	e1833008 	orr	r3, r3, r8
+    14b4:	e5873018 	str	r3, [r7, #24]
+	SYSTIME_Init();
+    14b8:	eb000153 	bl	1a0c <SYSTIME_Init>
+	IOSET1 = 0x00100000;	//led on
+    14bc:	e5878014 	str	r8, [r7, #20]
+	SER_UserInit();
+    14c0:	eb000162 	bl	1a50 <SER_UserInit>
+	SYSTIME_wait_us ( 180000);
+    14c4:	e59f0110 	ldr	r0, [pc, #272]	; 15dc <main+0x140>
+    14c8:	eb000143 	bl	19dc <SYSTIME_wait_us>
+	CAN_UserInit();
+    14cc:	eb0000c6 	bl	17ec <CAN_UserInit>
+	CAN_SetBusMode ( CAN_BUS1, BUS_ON);
+    14d0:	e3a01000 	mov	r1, #0
+    14d4:	e1a00001 	mov	r0, r1
+    14d8:	eb0004ca 	bl	2808 <CAN_SetBusMode>
+	CanChnOpen = 1;
+    14dc:	e3a03001 	mov	r3, #1
+	CanBusMode = BUS_ON;
+    14e0:	e3a02000 	mov	r2, #0
+	CanChnOpen = 1;
+    14e4:	e59f50f4 	ldr	r5, [pc, #244]	; 15e0 <main+0x144>
+    14e8:	e5c53026 	strb	r3, [r5, #38]	; 0x26
+	CanBusMode = BUS_ON;
+    14ec:	e59f30f0 	ldr	r3, [pc, #240]	; 15e4 <main+0x148>
+	SYSTIME_wait_us ( 180000);
+    14f0:	e59f00e4 	ldr	r0, [pc, #228]	; 15dc <main+0x140>
+	CanBusMode = BUS_ON;
+    14f4:	e5c32004 	strb	r2, [r3, #4]
+		if (SYSTIME_DIFF (TimeDiff1000Hz, SYSTIME_NOW) > 1000){
+    14f8:	e59f60e8 	ldr	r6, [pc, #232]	; 15e8 <main+0x14c>
+	SYSTIME_wait_us ( 180000);
+    14fc:	eb000136 	bl	19dc <SYSTIME_wait_us>
+			if(Millitimer>60000) Millitimer=0;
+    1500:	e59f40e4 	ldr	r4, [pc, #228]	; 15ec <main+0x150>
+	IOCLR1 = 0x00100000;	//led off
+    1504:	e587801c 	str	r8, [r7, #28]
+    1508:	ea00000c 	b	1540 <main+0xa4>
+				LED_toggleCAN1 ^= 1;
+    150c:	e5d53080 	ldrb	r3, [r5, #128]	; 0x80
+    1510:	e2232001 	eor	r2, r3, #1
+    1514:	e5c52080 	strb	r2, [r5, #128]	; 0x80
+			{	IOSET1 = 0x00100000;		}
+    1518:	e3a02601 	mov	r2, #1048576	; 0x100000
+			if ( LED_toggleCAN1)
+    151c:	e3530001 	cmp	r3, #1
+			{	IOSET1 = 0x00100000;		}
+    1520:	e59f30b0 	ldr	r3, [pc, #176]	; 15d8 <main+0x13c>
+			{	IOCLR1 = 0x00100000;}
+    1524:	0583201c 	streq	r2, [r3, #28]
+			if ( LED_toggleCAN1)
+    1528:	0a000000 	beq	1530 <main+0x94>
+				IOSET1 = 0x00100000;
+    152c:	e5832014 	str	r2, [r3, #20]
+			LedTimeDiff = SYSTIME_NOW;
+    1530:	e5963008 	ldr	r3, [r6, #8]
+    1534:	e585307c 	str	r3, [r5, #124]	; 0x7c
+		ProcessMsgFromCan();
+    1538:	ebfffeee 	bl	10f8 <ProcessMsgFromCan>
+		ProcessMsgFromSerial();
+    153c:	ebfffb29 	bl	1e8 <ProcessMsgFromSerial>
+		if (SYSTIME_DIFF (TimeDiff1000Hz, SYSTIME_NOW) > 1000){
+    1540:	e5963008 	ldr	r3, [r6, #8]
+    1544:	e5952078 	ldr	r2, [r5, #120]	; 0x78
+    1548:	e1530002 	cmp	r3, r2
+    154c:	e5963008 	ldr	r3, [r6, #8]
+    1550:	32433001 	subcc	r3, r3, #1
+    1554:	e0433002 	sub	r3, r3, r2
+    1558:	e3530ffa 	cmp	r3, #1000	; 0x3e8
+    155c:	93a03000 	movls	r3, #0
+    1560:	83a03001 	movhi	r3, #1
+    1564:	e3530000 	cmp	r3, #0
+    1568:	0a000008 	beq	1590 <main+0xf4>
+			Millitimer++;
+    156c:	e1d537b4 	ldrh	r3, [r5, #116]	; 0x74
+    1570:	e2833001 	add	r3, r3, #1
+    1574:	e1a03803 	lsl	r3, r3, #16
+    1578:	e1a03823 	lsr	r3, r3, #16
+			if(Millitimer>60000) Millitimer=0;
+    157c:	e1530004 	cmp	r3, r4
+    1580:	83a03000 	movhi	r3, #0
+    1584:	e1c537b4 	strh	r3, [r5, #116]	; 0x74
+			TimeDiff1000Hz=SYSTIME_NOW;
+    1588:	e5963008 	ldr	r3, [r6, #8]
+    158c:	e5853078 	str	r3, [r5, #120]	; 0x78
+		if (SYSTIME_DIFF (LedTimeDiff, SYSTIME_NOW) > 500000){
+    1590:	e5963008 	ldr	r3, [r6, #8]
+    1594:	e595207c 	ldr	r2, [r5, #124]	; 0x7c
+    1598:	e1530002 	cmp	r3, r2
+    159c:	e5963008 	ldr	r3, [r6, #8]
+    15a0:	e59f1048 	ldr	r1, [pc, #72]	; 15f0 <main+0x154>
+    15a4:	32433001 	subcc	r3, r3, #1
+    15a8:	e0433002 	sub	r3, r3, r2
+    15ac:	e1530001 	cmp	r3, r1
+    15b0:	93a03000 	movls	r3, #0
+    15b4:	83a03001 	movhi	r3, #1
+    15b8:	e3530000 	cmp	r3, #0
+    15bc:	0affffdd 	beq	1538 <main+0x9c>
+			if (CanChnOpen) {
+    15c0:	e5d53026 	ldrb	r3, [r5, #38]	; 0x26
+    15c4:	e3530000 	cmp	r3, #0
+    15c8:	1affffcf 	bne	150c <main+0x70>
+				IOSET1 = 0x00100000;
+    15cc:	e3a02601 	mov	r2, #1048576	; 0x100000
+    15d0:	e59f3000 	ldr	r3, [pc]	; 15d8 <main+0x13c>
+    15d4:	eaffffd4 	b	152c <main+0x90>
+    15d8:	e0028000 	.word	0xe0028000
+    15dc:	0002bf20 	.word	0x0002bf20
+    15e0:	40000008 	.word	0x40000008
+    15e4:	40000000 	.word	0x40000000
+    15e8:	e0008000 	.word	0xe0008000
+    15ec:	0000ea60 	.word	0x0000ea60
+    15f0:	0007a120 	.word	0x0007a120
+
+000015f4 <CAN_InitChannelMio>:
+
+CANStatus_t  CAN_InitChannelMio (	CANHandle_t  hBus, u32_t Timing)
+{
+
+	PINSEL1 |= (1<<22) | (1<<24) |(1<<26) |(1<<28) |(1<<18) |(1<<16) |(1<<14) ;
+	C1MOD=1<<0;			//RESET MODE 
+    15f4:	e3a02001 	mov	r2, #1
+{
+    15f8:	e92d4070 	push	{r4, r5, r6, lr}
+    15fc:	e1a04001 	mov	r4, r1
+	PINSEL1 |= (1<<22) | (1<<24) |(1<<26) |(1<<28) |(1<<18) |(1<<16) |(1<<14) ;
+    1600:	e59f110c 	ldr	r1, [pc, #268]	; 1714 <CAN_InitChannelMio+0x120>
+    1604:	e5913004 	ldr	r3, [r1, #4]
+	C1MOD=1<<0;			//RESET MODE 
+    1608:	e59f5108 	ldr	r5, [pc, #264]	; 1718 <CAN_InitChannelMio+0x124>
+	PINSEL1 |= (1<<22) | (1<<24) |(1<<26) |(1<<28) |(1<<18) |(1<<16) |(1<<14) ;
+    160c:	e3833555 	orr	r3, r3, #356515840	; 0x15400000
+    1610:	e3833915 	orr	r3, r3, #344064	; 0x54000
+    1614:	e5813004 	str	r3, [r1, #4]
+	CAN_SetBusMode ( CAN_BUS1, BUS_OFF);
+    1618:	e3a00000 	mov	r0, #0
+    161c:	e1a01002 	mov	r1, r2
+	C1MOD=1<<0;			//RESET MODE 
+    1620:	e5852000 	str	r2, [r5]
+	CAN_SetBusMode ( CAN_BUS1, BUS_OFF);
+    1624:	eb000477 	bl	2808 <CAN_SetBusMode>
+	C1IER=0x00; // Disabling all interrupts
+    1628:	e3a03000 	mov	r3, #0
+    162c:	e5853010 	str	r3, [r5, #16]
+	
+			switch (Timing){
+    1630:	e3540008 	cmp	r4, #8
+    1634:	979ff104 	ldrls	pc, [pc, r4, lsl #2]
+    1638:	ea00000b 	b	166c <CAN_InitChannelMio+0x78>
+    163c:	00001694 	.word	0x00001694
+    1640:	000016a4 	.word	0x000016a4
+    1644:	000016b4 	.word	0x000016b4
+    1648:	000016c4 	.word	0x000016c4
+    164c:	000016d4 	.word	0x000016d4
+    1650:	000016e4 	.word	0x000016e4
+    1654:	000016f4 	.word	0x000016f4
+    1658:	00001704 	.word	0x00001704
+    165c:	00001660 	.word	0x00001660
+			break;
+			case 7:
+			C1BTR = TSEG1 |TSEG2|4|SAM;
+			break;
+			case 8:
+			C1BTR = TSEG1 |TSEG2|3|SAM;
+    1660:	e59f30b0 	ldr	r3, [pc, #176]	; 1718 <CAN_InitChannelMio+0x124>
+    1664:	e59f20b0 	ldr	r2, [pc, #176]	; 171c <CAN_InitChannelMio+0x128>
+    1668:	e5832014 	str	r2, [r3, #20]
+			break;
+
+			}
+	
+	C1MOD=0;
+    166c:	e3a04000 	mov	r4, #0
+    1670:	e59f30a0 	ldr	r3, [pc, #160]	; 1718 <CAN_InitChannelMio+0x124>
+	CAN_SetBusMode ( CAN_BUS1, BUS_OFF);					// CAN Bus Off
+    1674:	e3a01001 	mov	r1, #1
+	C1MOD=0;
+    1678:	e5834000 	str	r4, [r3]
+	CAN_SetBusMode ( CAN_BUS1, BUS_OFF);					// CAN Bus Off
+    167c:	e1a00004 	mov	r0, r4
+    1680:	eb000460 	bl	2808 <CAN_SetBusMode>
+	CAN_ReInitChannel ( CAN_BUS1);
+    1684:	e1a00004 	mov	r0, r4
+    1688:	eb0007a9 	bl	3534 <CAN_ReInitChannel>
+
+
+
+
+
+}
+    168c:	e8bd4070 	pop	{r4, r5, r6, lr}
+    1690:	e12fff1e 	bx	lr
+			C1BTR = TSEG1 |TSEG2|399|SAM;
+    1694:	e59f307c 	ldr	r3, [pc, #124]	; 1718 <CAN_InitChannelMio+0x124>
+    1698:	e59f2080 	ldr	r2, [pc, #128]	; 1720 <CAN_InitChannelMio+0x12c>
+    169c:	e5832014 	str	r2, [r3, #20]
+			break;
+    16a0:	eafffff1 	b	166c <CAN_InitChannelMio+0x78>
+			C1BTR = TSEG1 |TSEG2|199|SAM;
+    16a4:	e59f306c 	ldr	r3, [pc, #108]	; 1718 <CAN_InitChannelMio+0x124>
+    16a8:	e59f2074 	ldr	r2, [pc, #116]	; 1724 <CAN_InitChannelMio+0x130>
+    16ac:	e5832014 	str	r2, [r3, #20]
+			break;
+    16b0:	eaffffed 	b	166c <CAN_InitChannelMio+0x78>
+			C1BTR = TSEG1 |TSEG2|79|SAM;
+    16b4:	e59f305c 	ldr	r3, [pc, #92]	; 1718 <CAN_InitChannelMio+0x124>
+    16b8:	e59f2068 	ldr	r2, [pc, #104]	; 1728 <CAN_InitChannelMio+0x134>
+    16bc:	e5832014 	str	r2, [r3, #20]
+			break;
+    16c0:	eaffffe9 	b	166c <CAN_InitChannelMio+0x78>
+			C1BTR = TSEG1 |TSEG2|39|SAM;
+    16c4:	e59f304c 	ldr	r3, [pc, #76]	; 1718 <CAN_InitChannelMio+0x124>
+    16c8:	e59f205c 	ldr	r2, [pc, #92]	; 172c <CAN_InitChannelMio+0x138>
+    16cc:	e5832014 	str	r2, [r3, #20]
+			break;
+    16d0:	eaffffe5 	b	166c <CAN_InitChannelMio+0x78>
+			C1BTR = TSEG1 |TSEG2|31|SAM;
+    16d4:	e59f303c 	ldr	r3, [pc, #60]	; 1718 <CAN_InitChannelMio+0x124>
+    16d8:	e59f2050 	ldr	r2, [pc, #80]	; 1730 <CAN_InitChannelMio+0x13c>
+    16dc:	e5832014 	str	r2, [r3, #20]
+			break;
+    16e0:	eaffffe1 	b	166c <CAN_InitChannelMio+0x78>
+			C1BTR = TSEG1 |TSEG2|15|SAM;
+    16e4:	e59f302c 	ldr	r3, [pc, #44]	; 1718 <CAN_InitChannelMio+0x124>
+    16e8:	e59f2044 	ldr	r2, [pc, #68]	; 1734 <CAN_InitChannelMio+0x140>
+    16ec:	e5832014 	str	r2, [r3, #20]
+			break;
+    16f0:	eaffffdd 	b	166c <CAN_InitChannelMio+0x78>
+			C1BTR = TSEG1 |TSEG2|7|SAM;
+    16f4:	e59f301c 	ldr	r3, [pc, #28]	; 1718 <CAN_InitChannelMio+0x124>
+    16f8:	e59f2038 	ldr	r2, [pc, #56]	; 1738 <CAN_InitChannelMio+0x144>
+    16fc:	e5832014 	str	r2, [r3, #20]
+			break;
+    1700:	eaffffd9 	b	166c <CAN_InitChannelMio+0x78>
+			C1BTR = TSEG1 |TSEG2|4|SAM;
+    1704:	e59f300c 	ldr	r3, [pc, #12]	; 1718 <CAN_InitChannelMio+0x124>
+    1708:	e59f202c 	ldr	r2, [pc, #44]	; 173c <CAN_InitChannelMio+0x148>
+    170c:	e5832014 	str	r2, [r3, #20]
+			break;
+    1710:	eaffffd5 	b	166c <CAN_InitChannelMio+0x78>
+    1714:	e002c000 	.word	0xe002c000
+    1718:	e0044000 	.word	0xe0044000
+    171c:	002a0003 	.word	0x002a0003
+    1720:	002a018f 	.word	0x002a018f
+    1724:	002a00c7 	.word	0x002a00c7
+    1728:	002a004f 	.word	0x002a004f
+    172c:	002a0027 	.word	0x002a0027
+    1730:	002a001f 	.word	0x002a001f
+    1734:	002a000f 	.word	0x002a000f
+    1738:	002a0007 	.word	0x002a0007
+    173c:	002a0004 	.word	0x002a0004
+
+00001740 <CAN_UserWrite>:
+// CAN_UserWrite()
+// Send a message on CAN_BUSx
+CANStatus_t  CAN_UserWrite ( CANHandle_t  hBus, CANMsg_t  *pBuff)
+{
+    1740:	e92d4070 	push	{r4, r5, r6, lr}
+    1744:	e1a05000 	mov	r5, r0
+    1748:	e1a04001 	mov	r4, r1
+	CANMsg_t  *pMsg;
+	
+	
+	ret = CAN_ERR_OK;
+	
+	pMsg = CAN_TxQueueGetNext ( hBus);
+    174c:	eb00044a 	bl	287c <CAN_TxQueueGetNext>
+
+	if ( pMsg != NULL)
+    1750:	e2503000 	subs	r3, r0, #0
+	}
+	
+	else
+	{
+		// Tx Queue FULL
+		ret = CAN_ERR_FAIL;
+    1754:	01a00003 	moveq	r0, r3
+	if ( pMsg != NULL)
+    1758:	0a00000b 	beq	178c <CAN_UserWrite+0x4c>
+		pMsg->Id   = pBuff->Id;
+    175c:	e5942004 	ldr	r2, [r4, #4]
+    1760:	e5832004 	str	r2, [r3, #4]
+		pMsg->Len  = pBuff->Len;
+    1764:	e5d42003 	ldrb	r2, [r4, #3]
+    1768:	e5c32003 	strb	r2, [r3, #3]
+		pMsg->Type = pBuff->Type;
+    176c:	e5d42002 	ldrb	r2, [r4, #2]
+    1770:	e5c32002 	strb	r2, [r3, #2]
+		pMsg->Data32[1] = pBuff->Data32[1];
+    1774:	e2841008 	add	r1, r4, #8
+    1778:	e8910006 	ldm	r1, {r1, r2}
+		ret = CAN_TxQueueWriteNext ( hBus);
+    177c:	e1a00005 	mov	r0, r5
+		pMsg->Data32[0] = pBuff->Data32[0];
+    1780:	e5831008 	str	r1, [r3, #8]
+		pMsg->Data32[1] = pBuff->Data32[1];
+    1784:	e583200c 	str	r2, [r3, #12]
+		ret = CAN_TxQueueWriteNext ( hBus);
+    1788:	eb000464 	bl	2920 <CAN_TxQueueWriteNext>
+	}
+	
+	return ret;
+}
+    178c:	e8bd4070 	pop	{r4, r5, r6, lr}
+    1790:	e12fff1e 	bx	lr
+
+00001794 <CAN_UserRead>:
+
+
+// CAN_UserRead()
+// read message from CAN_BUSx
+u32_t  CAN_UserRead ( CANHandle_t  hBus, CANMsg_t  *pBuff)
+{
+    1794:	e92d4070 	push	{r4, r5, r6, lr}
+    1798:	e1a05000 	mov	r5, r0
+    179c:	e1a04001 	mov	r4, r1
+	CANMsg_t  *pMsg;
+	
+	
+	ret = 0;
+	
+	pMsg = CAN_RxQueueGetNext ( hBus);
+    17a0:	eb000449 	bl	28cc <CAN_RxQueueGetNext>
+
+	if ( pMsg != NULL)
+    17a4:	e2503000 	subs	r3, r0, #0
+	ret = 0;
+    17a8:	01a00003 	moveq	r0, r3
+	if ( pMsg != NULL)
+    17ac:	0a00000c 	beq	17e4 <CAN_UserRead+0x50>
+	{
+		pBuff->Id   = pMsg->Id;
+    17b0:	e5932004 	ldr	r2, [r3, #4]
+    17b4:	e5842004 	str	r2, [r4, #4]
+		pBuff->Len  = pMsg->Len;
+    17b8:	e5d32003 	ldrb	r2, [r3, #3]
+    17bc:	e5c42003 	strb	r2, [r4, #3]
+		pBuff->Type = pMsg->Type;
+    17c0:	e5d32002 	ldrb	r2, [r3, #2]
+    17c4:	e5c42002 	strb	r2, [r4, #2]
+		
+		pBuff->Data32[0] = pMsg->Data32[0];
+		pBuff->Data32[1] = pMsg->Data32[1];
+    17c8:	e2832008 	add	r2, r3, #8
+    17cc:	e892000c 	ldm	r2, {r2, r3}
+		
+		CAN_RxQueueReadNext ( hBus);
+    17d0:	e1a00005 	mov	r0, r5
+		pBuff->Data32[0] = pMsg->Data32[0];
+    17d4:	e5842008 	str	r2, [r4, #8]
+		pBuff->Data32[1] = pMsg->Data32[1];
+    17d8:	e584300c 	str	r3, [r4, #12]
+		CAN_RxQueueReadNext ( hBus);
+    17dc:	eb000496 	bl	2a3c <CAN_RxQueueReadNext>
+		ret = 1;
+    17e0:	e3a00001 	mov	r0, #1
+	}
+	
+	return ret;
+}
+    17e4:	e8bd4070 	pop	{r4, r5, r6, lr}
+    17e8:	e12fff1e 	bx	lr
+
+000017ec <CAN_UserInit>:
+
+
+// CAN_UserInit()
+// initialize CAN1 and CAN2
+void  CAN_UserInit ( void)
+{
+    17ec:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
+
+	// init CAN1
+
+	CAN_ReferenceTxQueue ( CAN_BUS1, &TxQueueCAN1[0], CAN1_TX_QUEUE_SIZE);				// Reference above Arrays as Queues
+    17f0:	e59f71d0 	ldr	r7, [pc, #464]	; 19c8 <CAN_UserInit+0x1dc>
+    17f4:	e3a02008 	mov	r2, #8
+    17f8:	e1a01007 	mov	r1, r7
+    17fc:	e3a00000 	mov	r0, #0
+    1800:	eb00038b 	bl	2634 <CAN_ReferenceTxQueue>
+	CAN_ReferenceRxQueue ( CAN_BUS1, &RxQueueCAN1[0], CAN1_RX_QUEUE_SIZE);
+    1804:	e3a02010 	mov	r2, #16
+    1808:	e2871080 	add	r1, r7, #128	; 0x80
+    180c:	e3a00000 	mov	r0, #0
+    1810:	eb00039a 	bl	2680 <CAN_ReferenceRxQueue>
+
+	CAN_SetTimestampHandler ( CAN_BUS1, NULL);
+    1814:	e3a01000 	mov	r1, #0
+    1818:	e1a00001 	mov	r0, r1
+	C1IER=0x00; // Disabling all interrupts
+    181c:	e1a05001 	mov	r5, r1
+	CAN_SetTimestampHandler ( CAN_BUS1, NULL);
+    1820:	eb0003c3 	bl	2734 <CAN_SetTimestampHandler>
+
+	VICVectAddr1 = (u32_t) CAN_GetIsrVector ( CAN1_TX_INTSOURCE);
+    1824:	e3a00014 	mov	r0, #20
+    1828:	eb0003a6 	bl	26c8 <CAN_GetIsrVector>
+    182c:	e3e04000 	mvn	r4, #0
+    1830:	e1a03000 	mov	r3, r0
+	VICVectAddr3 = (u32_t) CAN_GetIsrVector ( CAN1_RX_INTSOURCE);
+    1834:	e3a0001a 	mov	r0, #26
+	VICVectAddr1 = (u32_t) CAN_GetIsrVector ( CAN1_TX_INTSOURCE);
+    1838:	e5043efb 	str	r3, [r4, #-3835]	; 0xfffff105
+	VICVectAddr3 = (u32_t) CAN_GetIsrVector ( CAN1_RX_INTSOURCE);
+    183c:	eb0003a1 	bl	26c8 <CAN_GetIsrVector>
+
+	VICVectCntl1 = 1 << 5 | CAN1_TX_INTSOURCE;											// Setup VIC
+    1840:	e3a0e034 	mov	lr, #52	; 0x34
+	VICVectAddr3 = (u32_t) CAN_GetIsrVector ( CAN1_RX_INTSOURCE);
+    1844:	e1a03000 	mov	r3, r0
+	VICVectCntl3 = 1 << 5 | CAN1_RX_INTSOURCE;
+    1848:	e3a0c03a 	mov	ip, #58	; 0x3a
+
+	VICIntEnable = 1 << CAN1_TX_INTSOURCE | 1 << CAN1_RX_INTSOURCE;
+    184c:	e3a02641 	mov	r2, #68157440	; 0x4100000
+	C1MOD=1<<0;			//RESET MODE 
+    1850:	e3a08001 	mov	r8, #1
+	VICVectAddr3 = (u32_t) CAN_GetIsrVector ( CAN1_RX_INTSOURCE);
+    1854:	e5043ef3 	str	r3, [r4, #-3827]	; 0xfffff10d
+
+	CAN_SetErrorLimit ( CAN_BUS1, STD_TX_ERRORLIMIT);
+    1858:	e3a01060 	mov	r1, #96	; 0x60
+	VICVectCntl1 = 1 << 5 | CAN1_TX_INTSOURCE;											// Setup VIC
+    185c:	e504edfb 	str	lr, [r4, #-3579]	; 0xfffff205
+	CAN_SetErrorLimit ( CAN_BUS1, STD_TX_ERRORLIMIT);
+    1860:	e1a00005 	mov	r0, r5
+	VICVectCntl3 = 1 << 5 | CAN1_RX_INTSOURCE;
+    1864:	e504cdf3 	str	ip, [r4, #-3571]	; 0xfffff20d
+	VICIntEnable = 1 << CAN1_TX_INTSOURCE | 1 << CAN1_RX_INTSOURCE;
+    1868:	e5042fef 	str	r2, [r4, #-4079]	; 0xfffff011
+	CAN_SetErrorLimit ( CAN_BUS1, STD_TX_ERRORLIMIT);
+    186c:	eb0003b9 	bl	2758 <CAN_SetErrorLimit>
+
+	CAN_SetTxErrorCallback ( CAN_BUS1, NULL);											// Set ErrorLimit & Callbacks
+    1870:	e1a01005 	mov	r1, r5
+    1874:	e1a00005 	mov	r0, r5
+    1878:	eb0003d9 	bl	27e4 <CAN_SetTxErrorCallback>
+	CAN_SetRxCallback ( CAN_BUS1, NULL);
+    187c:	e1a01005 	mov	r1, r5
+    1880:	e1a00005 	mov	r0, r5
+    1884:	eb0003bc 	bl	277c <CAN_SetRxCallback>
+
+	CAN_SetChannelInfo ( CAN_BUS1, NULL);													// Textinfo is NULL
+    1888:	e1a01005 	mov	r1, r5
+    188c:	e1a00005 	mov	r0, r5
+    1890:	eb0003c2 	bl	27a0 <CAN_SetChannelInfo>
+
+	
+
+	// init CAN2
+
+	CAN_ReferenceTxQueue ( CAN_BUS2, &TxQueueCAN2[0], CAN2_TX_QUEUE_SIZE);
+    1894:	e2871d06 	add	r1, r7, #384	; 0x180
+    1898:	e3a02008 	mov	r2, #8
+    189c:	e1a00008 	mov	r0, r8
+    18a0:	eb000363 	bl	2634 <CAN_ReferenceTxQueue>
+	CAN_ReferenceRxQueue ( CAN_BUS2, &RxQueueCAN2[0], CAN2_RX_QUEUE_SIZE);				// See above
+    18a4:	e3a02010 	mov	r2, #16
+    18a8:	e2871c02 	add	r1, r7, #512	; 0x200
+    18ac:	e1a00008 	mov	r0, r8
+    18b0:	eb000372 	bl	2680 <CAN_ReferenceRxQueue>
+
+	CAN_SetTimestampHandler ( CAN_BUS2, NULL);
+    18b4:	e1a01005 	mov	r1, r5
+    18b8:	e1a00008 	mov	r0, r8
+    18bc:	eb00039c 	bl	2734 <CAN_SetTimestampHandler>
+
+	VICVectAddr2 = (u32_t) CAN_GetIsrVector ( CAN2_TX_INTSOURCE);
+    18c0:	e3a00015 	mov	r0, #21
+    18c4:	eb00037f 	bl	26c8 <CAN_GetIsrVector>
+    18c8:	e1a03000 	mov	r3, r0
+	VICVectAddr4 = (u32_t) CAN_GetIsrVector ( CAN2_RX_INTSOURCE);
+    18cc:	e3a0001b 	mov	r0, #27
+	VICVectAddr2 = (u32_t) CAN_GetIsrVector ( CAN2_TX_INTSOURCE);
+    18d0:	e5043ef7 	str	r3, [r4, #-3831]	; 0xfffff109
+	VICVectAddr4 = (u32_t) CAN_GetIsrVector ( CAN2_RX_INTSOURCE);
+    18d4:	eb00037b 	bl	26c8 <CAN_GetIsrVector>
+
+	VICVectCntl2 = 1 << 5 | CAN2_TX_INTSOURCE;
+    18d8:	e3a0e035 	mov	lr, #53	; 0x35
+	VICVectCntl4 = 1 << 5 | CAN2_RX_INTSOURCE;
+    18dc:	e3a0c03b 	mov	ip, #59	; 0x3b
+	VICVectAddr4 = (u32_t) CAN_GetIsrVector ( CAN2_RX_INTSOURCE);
+    18e0:	e1a03000 	mov	r3, r0
+
+	VICIntEnable = 1 << CAN2_TX_INTSOURCE | 1 << CAN2_RX_INTSOURCE;
+    18e4:	e3a02682 	mov	r2, #136314880	; 0x8200000
+	VICVectAddr4 = (u32_t) CAN_GetIsrVector ( CAN2_RX_INTSOURCE);
+    18e8:	e5043eef 	str	r3, [r4, #-3823]	; 0xfffff111
+
+	CAN_SetErrorLimit ( CAN_BUS2, STD_TX_ERRORLIMIT);
+    18ec:	e3a01060 	mov	r1, #96	; 0x60
+	VICVectCntl2 = 1 << 5 | CAN2_TX_INTSOURCE;
+    18f0:	e504edf7 	str	lr, [r4, #-3575]	; 0xfffff209
+	CAN_SetErrorLimit ( CAN_BUS2, STD_TX_ERRORLIMIT);
+    18f4:	e1a00008 	mov	r0, r8
+	VICVectCntl4 = 1 << 5 | CAN2_RX_INTSOURCE;
+    18f8:	e504cdef 	str	ip, [r4, #-3567]	; 0xfffff211
+	VICIntEnable = 1 << CAN2_TX_INTSOURCE | 1 << CAN2_RX_INTSOURCE;
+    18fc:	e5042fef 	str	r2, [r4, #-4079]	; 0xfffff011
+	CAN_SetErrorLimit ( CAN_BUS2, STD_TX_ERRORLIMIT);
+    1900:	eb000394 	bl	2758 <CAN_SetErrorLimit>
+
+	CAN_SetTxErrorCallback ( CAN_BUS2, NULL);
+    1904:	e1a01005 	mov	r1, r5
+    1908:	e1a00008 	mov	r0, r8
+    190c:	eb0003b4 	bl	27e4 <CAN_SetTxErrorCallback>
+	CAN_SetRxCallback ( CAN_BUS2, NULL);
+    1910:	e1a01005 	mov	r1, r5
+    1914:	e1a00008 	mov	r0, r8
+    1918:	eb000397 	bl	277c <CAN_SetRxCallback>
+
+	CAN_SetChannelInfo ( CAN_BUS2, NULL);
+    191c:	e1a01005 	mov	r1, r5
+    1920:	e1a00008 	mov	r0, r8
+    1924:	eb00039d 	bl	27a0 <CAN_SetChannelInfo>
+
+
+	// Set Error Handler
+
+	VICVectAddr0 = (u32_t) CAN_GetIsrVector ( GLOBAL_CAN_INTSOURCE);
+    1928:	e3a00013 	mov	r0, #19
+    192c:	eb000365 	bl	26c8 <CAN_GetIsrVector>
+	VICVectCntl0 = 1 << 5 | GLOBAL_CAN_INTSOURCE;
+    1930:	e3a02033 	mov	r2, #51	; 0x33
+	VICIntEnable = 1 << GLOBAL_CAN_INTSOURCE;
+    1934:	e3a03702 	mov	r3, #524288	; 0x80000
+	VICVectAddr0 = (u32_t) CAN_GetIsrVector ( GLOBAL_CAN_INTSOURCE);
+    1938:	e5040eff 	str	r0, [r4, #-3839]	; 0xfffff101
+	VICVectCntl0 = 1 << 5 | GLOBAL_CAN_INTSOURCE;
+    193c:	e5042dff 	str	r2, [r4, #-3583]	; 0xfffff201
+	VICIntEnable = 1 << GLOBAL_CAN_INTSOURCE;
+    1940:	e5043fef 	str	r3, [r4, #-4079]	; 0xfffff011
+
+	
+	// Setup Filters
+
+	CAN_InitFilters();										// Clear Filter LUT
+    1944:	eb000603 	bl	3158 <CAN_InitFilters>
+	CAN_SetFilterMode ( AF_ON_BYPASS_ON);				// No Filters ( Bypassed)
+    1948:	e3a00002 	mov	r0, #2
+    194c:	eb0005f9 	bl	3138 <CAN_SetFilterMode>
+
+
+	// init CAN1 and CAN2 with Values above
+	IOSET1 = 0x00100000;
+    1950:	e3a0c601 	mov	ip, #1048576	; 0x100000
+    1954:	e59f3070 	ldr	r3, [pc, #112]	; 19cc <CAN_UserInit+0x1e0>
+	PINSEL1 |= (1<<22) | (1<<24) |(1<<26) |(1<<28) |(1<<18) |(1<<16) |(1<<14) ;
+    1958:	e59f2070 	ldr	r2, [pc, #112]	; 19d0 <CAN_UserInit+0x1e4>
+	IOSET1 = 0x00100000;
+    195c:	e583c014 	str	ip, [r3, #20]
+	PINSEL1 |= (1<<22) | (1<<24) |(1<<26) |(1<<28) |(1<<18) |(1<<16) |(1<<14) ;
+    1960:	e5923004 	ldr	r3, [r2, #4]
+	C1MOD=1<<0;			//RESET MODE 
+    1964:	e59f6068 	ldr	r6, [pc, #104]	; 19d4 <CAN_UserInit+0x1e8>
+	PINSEL1 |= (1<<22) | (1<<24) |(1<<26) |(1<<28) |(1<<18) |(1<<16) |(1<<14) ;
+    1968:	e3833555 	orr	r3, r3, #356515840	; 0x15400000
+    196c:	e3833915 	orr	r3, r3, #344064	; 0x54000
+    1970:	e5823004 	str	r3, [r2, #4]
+	CAN_SetBusMode ( CAN_BUS1, BUS_OFF);
+    1974:	e1a01008 	mov	r1, r8
+    1978:	e1a00005 	mov	r0, r5
+	C1MOD=1<<0;			//RESET MODE 
+    197c:	e5868000 	str	r8, [r6]
+	CAN_SetBusMode ( CAN_BUS1, BUS_OFF);
+    1980:	eb0003a0 	bl	2808 <CAN_SetBusMode>
+			C1BTR = TSEG1 |TSEG2|7|SAM;
+    1984:	e59f304c 	ldr	r3, [pc, #76]	; 19d8 <CAN_UserInit+0x1ec>
+	CAN_SetBusMode ( CAN_BUS1, BUS_OFF);					// CAN Bus Off
+    1988:	e1a01008 	mov	r1, r8
+	C1IER=0x00; // Disabling all interrupts
+    198c:	e5865010 	str	r5, [r6, #16]
+	CAN_SetBusMode ( CAN_BUS1, BUS_OFF);					// CAN Bus Off
+    1990:	e1a00005 	mov	r0, r5
+			C1BTR = TSEG1 |TSEG2|7|SAM;
+    1994:	e5863014 	str	r3, [r6, #20]
+	C1MOD=0;
+    1998:	e5865000 	str	r5, [r6]
+	CAN_SetBusMode ( CAN_BUS1, BUS_OFF);					// CAN Bus Off
+    199c:	eb000399 	bl	2808 <CAN_SetBusMode>
+	CAN_ReInitChannel ( CAN_BUS1);
+    19a0:	e1a00005 	mov	r0, r5
+    19a4:	eb0006e2 	bl	3534 <CAN_ReInitChannel>
+	//CAN_InitChannel ( CAN_BUS2, CAN_BAUD_500K);
+	
+	
+	CAN_InitChannelMio (CAN_BUS1, CAN_BAUD_500K);
+	//
+	CAN_SetTransceiverMode ( CAN_BUS1, CAN_TRANSCEIVER_MODE_NORMAL);
+    19a8:	e1a01005 	mov	r1, r5
+    19ac:	e1a00005 	mov	r0, r5
+    19b0:	eb00044d 	bl	2aec <CAN_SetTransceiverMode>
+//	CAN_SetTransceiverMode ( CAN_BUS2, CAN_TRANSCEIVER_MODE_NORMAL);
+
+
+	// Busses on
+
+	CAN_SetBusMode ( CAN_BUS1, BUS_ON);					// CAN Bus On
+    19b4:	e1a01005 	mov	r1, r5
+    19b8:	e1a00005 	mov	r0, r5
+    19bc:	eb000391 	bl	2808 <CAN_SetBusMode>
+//	CAN_SetBusMode ( CAN_BUS2, BUS_ON);
+
+}
+    19c0:	e8bd41f0 	pop	{r4, r5, r6, r7, r8, lr}
+    19c4:	e12fff1e 	bx	lr
+    19c8:	4000008c 	.word	0x4000008c
+    19cc:	e0028000 	.word	0xe0028000
+    19d0:	e002c000 	.word	0xe002c000
+    19d4:	e0044000 	.word	0xe0044000
+    19d8:	002a0007 	.word	0x002a0007
+
+000019dc <SYSTIME_wait_us>:
+    19dc:	e3500000 	cmp	r0, #0
+    19e0:	012fff1e 	bxeq	lr
+    19e4:	e59f101c 	ldr	r1, [pc, #28]	; 1a08 <SYSTIME_wait_us+0x2c>
+    19e8:	e5912008 	ldr	r2, [r1, #8]
+    19ec:	e5913008 	ldr	r3, [r1, #8]
+    19f0:	e1520003 	cmp	r2, r3
+    19f4:	82433001 	subhi	r3, r3, #1
+    19f8:	e0433002 	sub	r3, r3, r2
+    19fc:	e1530000 	cmp	r3, r0
+    1a00:	3afffff9 	bcc	19ec <SYSTIME_wait_us+0x10>
+    1a04:	e12fff1e 	bx	lr
+    1a08:	e0008000 	.word	0xe0008000
+
+00001a0c <SYSTIME_Init>:
+    1a0c:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
+    1a10:	e3a02000 	mov	r2, #0
+    1a14:	e3a0e002 	mov	lr, #2
+    1a18:	e3a0c03b 	mov	ip, #59	; 0x3b
+    1a1c:	e3a000ff 	mov	r0, #255	; 0xff
+    1a20:	e3a01001 	mov	r1, #1
+    1a24:	e59f3020 	ldr	r3, [pc, #32]	; 1a4c <SYSTIME_Init+0x40>
+    1a28:	e583e004 	str	lr, [r3, #4]
+    1a2c:	e583c00c 	str	ip, [r3, #12]
+    1a30:	e49de004 	pop	{lr}		; (ldr lr, [sp], #4)
+    1a34:	e5832014 	str	r2, [r3, #20]
+    1a38:	e5832028 	str	r2, [r3, #40]	; 0x28
+    1a3c:	e583203c 	str	r2, [r3, #60]	; 0x3c
+    1a40:	e5830000 	str	r0, [r3]
+    1a44:	e5831004 	str	r1, [r3, #4]
+    1a48:	e12fff1e 	bx	lr
+    1a4c:	e0008000 	.word	0xe0008000
+
+00001a50 <SER_UserInit>:
+{
+
+	SERInit_t  setup;
+	
+	
+	setup.prescaler = ( HW_CPU_CLOCK_HZ + 8 * SER_BAUD) / ( 16 * SER_BAUD);
+    1a50:	e3a02003 	mov	r2, #3
+{
+    1a54:	e92d4010 	push	{r4, lr}
+	setup.databits = 8;
+	setup.stopbits = 1;
+	setup.parity = SER_PARITY_NONE;
+	
+	setup.pTxFifo = &TxFifo;
+    1a58:	e59f3038 	ldr	r3, [pc, #56]	; 1a98 <SER_UserInit+0x48>
+{
+    1a5c:	e24dd018 	sub	sp, sp, #24
+	setup.databits = 8;
+    1a60:	e59fe034 	ldr	lr, [pc, #52]	; 1a9c <SER_UserInit+0x4c>
+	setup.pRxFifo = &RxFifo;
+	
+	setup.TxFifoSize = SER_TX_FIFO_SIZE;
+	setup.RxFifoSize = SER_RX_FIFO_SIZE;
+    1a64:	e59fc034 	ldr	ip, [pc, #52]	; 1aa0 <SER_UserInit+0x50>
+	setup.pRxFifo = &RxFifo;
+    1a68:	e2834028 	add	r4, r3, #40	; 0x28
+	
+	setup.ISRnum = 5;		// VIC channels 0 to 4 used for CAN
+	
+	SER_Initialize ( SER_PORT1, &setup);
+    1a6c:	e28d1004 	add	r1, sp, #4
+    1a70:	e3a00000 	mov	r0, #0
+	setup.pTxFifo = &TxFifo;
+    1a74:	e58d3008 	str	r3, [sp, #8]
+	setup.pRxFifo = &RxFifo;
+    1a78:	e58d400c 	str	r4, [sp, #12]
+	setup.databits = 8;
+    1a7c:	e58de010 	str	lr, [sp, #16]
+	setup.RxFifoSize = SER_RX_FIFO_SIZE;
+    1a80:	e1cdc1b4 	strh	ip, [sp, #20]
+	setup.prescaler = ( HW_CPU_CLOCK_HZ + 8 * SER_BAUD) / ( 16 * SER_BAUD);
+    1a84:	e58d2004 	str	r2, [sp, #4]
+	SER_Initialize ( SER_PORT1, &setup);
+    1a88:	eb000125 	bl	1f24 <SER_Initialize>
+	
+}
+    1a8c:	e28dd018 	add	sp, sp, #24
+    1a90:	e8bd4010 	pop	{r4, lr}
+    1a94:	e12fff1e 	bx	lr
+    1a98:	4000038c 	.word	0x4000038c
+    1a9c:	28000108 	.word	0x28000108
+    1aa0:	0000053c 	.word	0x0000053c
+
+00001aa4 <_read_r>:
+    1aa4:	e3a00000 	mov	r0, #0
+    1aa8:	e5c20000 	strb	r0, [r2]
+    1aac:	e12fff1e 	bx	lr
+
+00001ab0 <_write_r>:
+    1ab0:	e1a00003 	mov	r0, r3
+    1ab4:	e12fff1e 	bx	lr
+
+00001ab8 <_close_r>:
+    1ab8:	e3a00000 	mov	r0, #0
+    1abc:	e12fff1e 	bx	lr
+
+00001ac0 <_lseek_r>:
+    1ac0:	e3a00000 	mov	r0, #0
+    1ac4:	e12fff1e 	bx	lr
+
+00001ac8 <_fstat_r>:
+    1ac8:	e3a03a02 	mov	r3, #8192	; 0x2000
+    1acc:	e3a00000 	mov	r0, #0
+    1ad0:	e5823004 	str	r3, [r2, #4]
+    1ad4:	e12fff1e 	bx	lr
+
+00001ad8 <isatty>:
+    1ad8:	e3a00001 	mov	r0, #1
+    1adc:	e12fff1e 	bx	lr
+
+00001ae0 <_exit>:
+    1ae0:	eafffffe 	b	1ae0 <_exit>
+
+00001ae4 <_sbrk_r>:
+    1ae4:	e59f3018 	ldr	r3, [pc, #24]	; 1b04 <_sbrk_r+0x20>
+    1ae8:	e5930000 	ldr	r0, [r3]
+    1aec:	e59f2014 	ldr	r2, [pc, #20]	; 1b08 <_sbrk_r+0x24>
+    1af0:	e3500000 	cmp	r0, #0
+    1af4:	01a00002 	moveq	r0, r2
+    1af8:	e0801001 	add	r1, r0, r1
+    1afc:	e5831000 	str	r1, [r3]
+    1b00:	e12fff1e 	bx	lr
+    1b04:	400003f0 	.word	0x400003f0
+    1b08:	40000da8 	.word	0x40000da8
+
+00001b0c <SER_ISR>:
+    1b0c:	e92d11ff 	push	{r0, r1, r2, r3, r4, r5, r6, r7, r8, ip}
+    1b10:	e59f112c 	ldr	r1, [pc, #300]	; 1c44 <SER_ISR+0x138>
+    1b14:	e59f212c 	ldr	r2, [pc, #300]	; 1c48 <SER_ISR+0x13c>
+    1b18:	e5d13008 	ldrb	r3, [r1, #8]
+    1b1c:	e1a0c002 	mov	ip, r2
+    1b20:	e20330ff 	and	r3, r3, #255	; 0xff
+    1b24:	e3a05001 	mov	r5, #1
+    1b28:	ea000005 	b	1b44 <SER_ISR+0x38>
+    1b2c:	e3530002 	cmp	r3, #2
+    1b30:	0a000026 	beq	1bd0 <SER_ISR+0xc4>
+    1b34:	e5d13008 	ldrb	r3, [r1, #8]
+    1b38:	e3130001 	tst	r3, #1
+    1b3c:	e20330ff 	and	r3, r3, #255	; 0xff
+    1b40:	1a00001d 	bne	1bbc <SER_ISR+0xb0>
+    1b44:	e2130001 	ands	r0, r3, #1
+    1b48:	1a00001b 	bne	1bbc <SER_ISR+0xb0>
+    1b4c:	e1a030a3 	lsr	r3, r3, #1
+    1b50:	e2033007 	and	r3, r3, #7
+    1b54:	e3530001 	cmp	r3, #1
+    1b58:	1afffff3 	bne	1b2c <SER_ISR+0x20>
+    1b5c:	e5d24000 	ldrb	r4, [r2]
+    1b60:	e5d23001 	ldrb	r3, [r2, #1]
+    1b64:	e1530004 	cmp	r3, r4
+    1b68:	9afffff1 	bls	1b34 <SER_ISR+0x28>
+    1b6c:	e5d14014 	ldrb	r4, [r1, #20]
+    1b70:	e3140020 	tst	r4, #32
+    1b74:	0affffee 	beq	1b34 <SER_ISR+0x28>
+    1b78:	e5dc6008 	ldrb	r6, [ip, #8]
+    1b7c:	e59c7004 	ldr	r7, [ip, #4]
+    1b80:	e2864001 	add	r4, r6, #1
+    1b84:	e7d76006 	ldrb	r6, [r7, r6]
+    1b88:	e5c16000 	strb	r6, [r1]
+    1b8c:	e20440ff 	and	r4, r4, #255	; 0xff
+    1b90:	e1530004 	cmp	r3, r4
+    1b94:	e5d23000 	ldrb	r3, [r2]
+    1b98:	e2833001 	add	r3, r3, #1
+    1b9c:	e20330ff 	and	r3, r3, #255	; 0xff
+    1ba0:	e5cc4008 	strb	r4, [ip, #8]
+    1ba4:	e5c23000 	strb	r3, [r2]
+    1ba8:	95cc0008 	strbls	r0, [ip, #8]
+    1bac:	e5d13008 	ldrb	r3, [r1, #8]
+    1bb0:	e3130001 	tst	r3, #1
+    1bb4:	e20330ff 	and	r3, r3, #255	; 0xff
+    1bb8:	0affffe1 	beq	1b44 <SER_ISR+0x38>
+    1bbc:	e3a02000 	mov	r2, #0
+    1bc0:	e3e03000 	mvn	r3, #0
+    1bc4:	e5032fcf 	str	r2, [r3, #-4047]	; 0xfffff031
+    1bc8:	e8bd11ff 	pop	{r0, r1, r2, r3, r4, r5, r6, r7, r8, ip}
+    1bcc:	e25ef004 	subs	pc, lr, #4
+    1bd0:	e5d13000 	ldrb	r3, [r1]
+    1bd4:	e5d24009 	ldrb	r4, [r2, #9]
+    1bd8:	e3540000 	cmp	r4, #0
+    1bdc:	e20330ff 	and	r3, r3, #255	; 0xff
+    1be0:	0a00000d 	beq	1c1c <SER_ISR+0x110>
+    1be4:	e5dc600a 	ldrb	r6, [ip, #10]
+    1be8:	e59c700c 	ldr	r7, [ip, #12]
+    1bec:	e7c73006 	strb	r3, [r7, r6]
+    1bf0:	e5d23009 	ldrb	r3, [r2, #9]
+    1bf4:	e5dc8010 	ldrb	r8, [ip, #16]
+    1bf8:	e2864001 	add	r4, r6, #1
+    1bfc:	e20440ff 	and	r4, r4, #255	; 0xff
+    1c00:	e2433001 	sub	r3, r3, #1
+    1c04:	e1580004 	cmp	r8, r4
+    1c08:	e20330ff 	and	r3, r3, #255	; 0xff
+    1c0c:	e5cc400a 	strb	r4, [ip, #10]
+    1c10:	e5c23009 	strb	r3, [r2, #9]
+    1c14:	95cc000a 	strbls	r0, [ip, #10]
+    1c18:	eaffffc5 	b	1b34 <SER_ISR+0x28>
+    1c1c:	e5dc3011 	ldrb	r3, [ip, #17]
+    1c20:	e3530000 	cmp	r3, #0
+    1c24:	05cc5011 	strbeq	r5, [ip, #17]
+    1c28:	e5d23012 	ldrb	r3, [r2, #18]
+    1c2c:	e35300ff 	cmp	r3, #255	; 0xff
+    1c30:	15d23012 	ldrbne	r3, [r2, #18]
+    1c34:	12833001 	addne	r3, r3, #1
+    1c38:	120330ff 	andne	r3, r3, #255	; 0xff
+    1c3c:	15c23012 	strbne	r3, [r2, #18]
+    1c40:	eaffffbb 	b	1b34 <SER_ISR+0x28>
+    1c44:	e000c000 	.word	0xe000c000
+    1c48:	400003f4 	.word	0x400003f4
+
+00001c4c <SER_Write>:
+    1c4c:	e3500000 	cmp	r0, #0
+    1c50:	e92d00f0 	push	{r4, r5, r6, r7}
+    1c54:	13a00001 	movne	r0, #1
+    1c58:	1a000003 	bne	1c6c <SER_Write+0x20>
+    1c5c:	e3510000 	cmp	r1, #0
+    1c60:	13520000 	cmpne	r2, #0
+    1c64:	03a00006 	moveq	r0, #6
+    1c68:	1a000004 	bne	1c80 <SER_Write+0x34>
+    1c6c:	e3a01040 	mov	r1, #64	; 0x40
+    1c70:	e3e03000 	mvn	r3, #0
+    1c74:	e5031fef 	str	r1, [r3, #-4079]	; 0xfffff011
+    1c78:	e8bd00f0 	pop	{r4, r5, r6, r7}
+    1c7c:	e12fff1e 	bx	lr
+    1c80:	e59fc0cc 	ldr	ip, [pc, #204]	; 1d54 <SER_Write+0x108>
+    1c84:	e5dc3000 	ldrb	r3, [ip]
+    1c88:	e1520003 	cmp	r2, r3
+    1c8c:	83a00004 	movhi	r0, #4
+    1c90:	8afffff5 	bhi	1c6c <SER_Write+0x20>
+    1c94:	e3a00040 	mov	r0, #64	; 0x40
+    1c98:	e3e03000 	mvn	r3, #0
+    1c9c:	e5030feb 	str	r0, [r3, #-4075]	; 0xfffff015
+    1ca0:	e1a00000 	nop			; (mov r0, r0)
+    1ca4:	e1a00000 	nop			; (mov r0, r0)
+    1ca8:	e1a00000 	nop			; (mov r0, r0)
+    1cac:	e1a00000 	nop			; (mov r0, r0)
+    1cb0:	e5dc3000 	ldrb	r3, [ip]
+    1cb4:	e5dc0001 	ldrb	r0, [ip, #1]
+    1cb8:	e1500003 	cmp	r0, r3
+    1cbc:	0a000019 	beq	1d28 <SER_Write+0xdc>
+    1cc0:	e2425001 	sub	r5, r2, #1
+    1cc4:	e2810001 	add	r0, r1, #1
+    1cc8:	e20550ff 	and	r5, r5, #255	; 0xff
+    1ccc:	e59c7004 	ldr	r7, [ip, #4]
+    1cd0:	e5dc6001 	ldrb	r6, [ip, #1]
+    1cd4:	e5dc3013 	ldrb	r3, [ip, #19]
+    1cd8:	e0805005 	add	r5, r0, r5
+    1cdc:	ea000000 	b	1ce4 <SER_Write+0x98>
+    1ce0:	e2800001 	add	r0, r0, #1
+    1ce4:	e5d14000 	ldrb	r4, [r1]
+    1ce8:	e5dc2000 	ldrb	r2, [ip]
+    1cec:	e2831001 	add	r1, r3, #1
+    1cf0:	e7c74003 	strb	r4, [r7, r3]
+    1cf4:	e20130ff 	and	r3, r1, #255	; 0xff
+    1cf8:	e1530006 	cmp	r3, r6
+    1cfc:	e2422001 	sub	r2, r2, #1
+    1d00:	23a03000 	movcs	r3, #0
+    1d04:	e20220ff 	and	r2, r2, #255	; 0xff
+    1d08:	e1500005 	cmp	r0, r5
+    1d0c:	e1a01000 	mov	r1, r0
+    1d10:	e5cc2000 	strb	r2, [ip]
+    1d14:	1afffff1 	bne	1ce0 <SER_Write+0x94>
+    1d18:	e59f2034 	ldr	r2, [pc, #52]	; 1d54 <SER_Write+0x108>
+    1d1c:	e3a00000 	mov	r0, #0
+    1d20:	e5c23013 	strb	r3, [r2, #19]
+    1d24:	eaffffd0 	b	1c6c <SER_Write+0x20>
+    1d28:	e59f3028 	ldr	r3, [pc, #40]	; 1d58 <SER_Write+0x10c>
+    1d2c:	e5d30014 	ldrb	r0, [r3, #20]
+    1d30:	e3100020 	tst	r0, #32
+    1d34:	0affffe1 	beq	1cc0 <SER_Write+0x74>
+    1d38:	e4d10001 	ldrb	r0, [r1], #1
+    1d3c:	e2422001 	sub	r2, r2, #1
+    1d40:	e21220ff 	ands	r2, r2, #255	; 0xff
+    1d44:	e5c30000 	strb	r0, [r3]
+    1d48:	01a00002 	moveq	r0, r2
+    1d4c:	0affffc6 	beq	1c6c <SER_Write+0x20>
+    1d50:	eaffffda 	b	1cc0 <SER_Write+0x74>
+    1d54:	400003f4 	.word	0x400003f4
+    1d58:	e000c000 	.word	0xe000c000
+
+00001d5c <SER_Read>:
+    1d5c:	e3500000 	cmp	r0, #0
+    1d60:	e92d05f0 	push	{r4, r5, r6, r7, r8, sl}
+    1d64:	13a02000 	movne	r2, #0
+    1d68:	13a00001 	movne	r0, #1
+    1d6c:	1a000006 	bne	1d8c <SER_Read+0x30>
+    1d70:	e3510000 	cmp	r1, #0
+    1d74:	13520000 	cmpne	r2, #0
+    1d78:	01a02000 	moveq	r2, r0
+    1d7c:	13a04000 	movne	r4, #0
+    1d80:	03a04001 	moveq	r4, #1
+    1d84:	03a00006 	moveq	r0, #6
+    1d88:	1a000006 	bne	1da8 <SER_Read+0x4c>
+    1d8c:	e3530000 	cmp	r3, #0
+    1d90:	e3a0c040 	mov	ip, #64	; 0x40
+    1d94:	e3e01000 	mvn	r1, #0
+    1d98:	e501cfef 	str	ip, [r1, #-4079]	; 0xfffff011
+    1d9c:	15c32000 	strbne	r2, [r3]
+    1da0:	e8bd05f0 	pop	{r4, r5, r6, r7, r8, sl}
+    1da4:	e12fff1e 	bx	lr
+    1da8:	e59fc0c4 	ldr	ip, [pc, #196]	; 1e74 <SER_Read+0x118>
+    1dac:	e5dc0009 	ldrb	r0, [ip, #9]
+    1db0:	e5dc5010 	ldrb	r5, [ip, #16]
+    1db4:	e1500005 	cmp	r0, r5
+    1db8:	01a02004 	moveq	r2, r4
+    1dbc:	03a00002 	moveq	r0, #2
+    1dc0:	0afffff1 	beq	1d8c <SER_Read+0x30>
+    1dc4:	e3a06040 	mov	r6, #64	; 0x40
+    1dc8:	e3e00000 	mvn	r0, #0
+    1dcc:	e5006feb 	str	r6, [r0, #-4075]	; 0xfffff015
+    1dd0:	e1a00000 	nop			; (mov r0, r0)
+    1dd4:	e1a00000 	nop			; (mov r0, r0)
+    1dd8:	e1a00000 	nop			; (mov r0, r0)
+    1ddc:	e1a00000 	nop			; (mov r0, r0)
+    1de0:	e5dc0011 	ldrb	r0, [ip, #17]
+    1de4:	e21000ff 	ands	r0, r0, #255	; 0xff
+    1de8:	0a000005 	beq	1e04 <SER_Read+0xa8>
+    1dec:	e5dc0012 	ldrb	r0, [ip, #18]
+    1df0:	e3a02001 	mov	r2, #1
+    1df4:	e5c10000 	strb	r0, [r1]
+    1df8:	e5cc4011 	strb	r4, [ip, #17]
+    1dfc:	e3a00003 	mov	r0, #3
+    1e00:	eaffffe1 	b	1d8c <SER_Read+0x30>
+    1e04:	e2422001 	sub	r2, r2, #1
+    1e08:	e20220ff 	and	r2, r2, #255	; 0xff
+    1e0c:	e2818001 	add	r8, r1, #1
+    1e10:	e59c700c 	ldr	r7, [ip, #12]
+    1e14:	e5dc4014 	ldrb	r4, [ip, #20]
+    1e18:	e0888002 	add	r8, r8, r2
+    1e1c:	e1a02000 	mov	r2, r0
+    1e20:	e5dc0009 	ldrb	r0, [ip, #9]
+    1e24:	e2800001 	add	r0, r0, #1
+    1e28:	e20000ff 	and	r0, r0, #255	; 0xff
+    1e2c:	e5cc0009 	strb	r0, [ip, #9]
+    1e30:	e284a001 	add	sl, r4, #1
+    1e34:	e7d70004 	ldrb	r0, [r7, r4]
+    1e38:	e5dc6009 	ldrb	r6, [ip, #9]
+    1e3c:	e20a40ff 	and	r4, sl, #255	; 0xff
+    1e40:	e1550004 	cmp	r5, r4
+    1e44:	93a04000 	movls	r4, #0
+    1e48:	e2822001 	add	r2, r2, #1
+    1e4c:	e1550006 	cmp	r5, r6
+    1e50:	e4c10001 	strb	r0, [r1], #1
+    1e54:	e20220ff 	and	r2, r2, #255	; 0xff
+    1e58:	e59f0014 	ldr	r0, [pc, #20]	; 1e74 <SER_Read+0x118>
+    1e5c:	9a000001 	bls	1e68 <SER_Read+0x10c>
+    1e60:	e1510008 	cmp	r1, r8
+    1e64:	1affffed 	bne	1e20 <SER_Read+0xc4>
+    1e68:	e5c04014 	strb	r4, [r0, #20]
+    1e6c:	e3a00000 	mov	r0, #0
+    1e70:	eaffffc5 	b	1d8c <SER_Read+0x30>
+    1e74:	400003f4 	.word	0x400003f4
+
+00001e78 <SER_ResetTX>:
+    1e78:	e3500000 	cmp	r0, #0
+    1e7c:	1a00000d 	bne	1eb8 <SER_ResetTX+0x40>
+    1e80:	e3e02000 	mvn	r2, #0
+    1e84:	e3a01040 	mov	r1, #64	; 0x40
+    1e88:	e5021feb 	str	r1, [r2, #-4075]	; 0xfffff015
+    1e8c:	e1a00000 	nop			; (mov r0, r0)
+    1e90:	e1a00000 	nop			; (mov r0, r0)
+    1e94:	e1a00000 	nop			; (mov r0, r0)
+    1e98:	e1a00000 	nop			; (mov r0, r0)
+    1e9c:	e59f301c 	ldr	r3, [pc, #28]	; 1ec0 <SER_ResetTX+0x48>
+    1ea0:	e5d3c001 	ldrb	ip, [r3, #1]
+    1ea4:	e5c30013 	strb	r0, [r3, #19]
+    1ea8:	e5c3c000 	strb	ip, [r3]
+    1eac:	e5c30008 	strb	r0, [r3, #8]
+    1eb0:	e5021fef 	str	r1, [r2, #-4079]	; 0xfffff011
+    1eb4:	e12fff1e 	bx	lr
+    1eb8:	e3a00001 	mov	r0, #1
+    1ebc:	e12fff1e 	bx	lr
+    1ec0:	400003f4 	.word	0x400003f4
+
+00001ec4 <SER_ResetRX>:
+    1ec4:	e3500000 	cmp	r0, #0
+    1ec8:	1a000011 	bne	1f14 <SER_ResetRX+0x50>
+    1ecc:	e3e02000 	mvn	r2, #0
+    1ed0:	e3a01040 	mov	r1, #64	; 0x40
+    1ed4:	e5021feb 	str	r1, [r2, #-4075]	; 0xfffff015
+    1ed8:	e1a00000 	nop			; (mov r0, r0)
+    1edc:	e1a00000 	nop			; (mov r0, r0)
+    1ee0:	e1a00000 	nop			; (mov r0, r0)
+    1ee4:	e1a00000 	nop			; (mov r0, r0)
+    1ee8:	e59f302c 	ldr	r3, [pc, #44]	; 1f1c <SER_ResetRX+0x58>
+    1eec:	e5d3c010 	ldrb	ip, [r3, #16]
+    1ef0:	e5c3000a 	strb	r0, [r3, #10]
+    1ef4:	e5c3c009 	strb	ip, [r3, #9]
+    1ef8:	e5c30011 	strb	r0, [r3, #17]
+    1efc:	e59fc01c 	ldr	ip, [pc, #28]	; 1f20 <SER_ResetRX+0x5c>
+    1f00:	e5c30012 	strb	r0, [r3, #18]
+    1f04:	e5dcc008 	ldrb	ip, [ip, #8]
+    1f08:	e5c30014 	strb	r0, [r3, #20]
+    1f0c:	e5021fef 	str	r1, [r2, #-4079]	; 0xfffff011
+    1f10:	e12fff1e 	bx	lr
+    1f14:	e3a00001 	mov	r0, #1
+    1f18:	e12fff1e 	bx	lr
+    1f1c:	400003f4 	.word	0x400003f4
+    1f20:	e000c000 	.word	0xe000c000
+
+00001f24 <SER_Initialize>:
+    1f24:	e3a02040 	mov	r2, #64	; 0x40
+    1f28:	e3e03000 	mvn	r3, #0
+    1f2c:	e92d0030 	push	{r4, r5}
+    1f30:	e5032feb 	str	r2, [r3, #-4075]	; 0xfffff015
+    1f34:	e1a00000 	nop			; (mov r0, r0)
+    1f38:	e1a00000 	nop			; (mov r0, r0)
+    1f3c:	e1a00000 	nop			; (mov r0, r0)
+    1f40:	e1a00000 	nop			; (mov r0, r0)
+    1f44:	e3500000 	cmp	r0, #0
+    1f48:	13a00001 	movne	r0, #1
+    1f4c:	1a000003 	bne	1f60 <SER_Initialize+0x3c>
+    1f50:	e5913000 	ldr	r3, [r1]
+    1f54:	e3530000 	cmp	r3, #0
+    1f58:	1a000002 	bne	1f68 <SER_Initialize+0x44>
+    1f5c:	e3a00005 	mov	r0, #5
+    1f60:	e8bd0030 	pop	{r4, r5}
+    1f64:	e12fff1e 	bx	lr
+    1f68:	e5912004 	ldr	r2, [r1, #4]
+    1f6c:	e3520000 	cmp	r2, #0
+    1f70:	0afffff9 	beq	1f5c <SER_Initialize+0x38>
+    1f74:	e5914008 	ldr	r4, [r1, #8]
+    1f78:	e3540000 	cmp	r4, #0
+    1f7c:	0afffff6 	beq	1f5c <SER_Initialize+0x38>
+    1f80:	e5d1500f 	ldrb	r5, [r1, #15]
+    1f84:	e59fc130 	ldr	ip, [pc, #304]	; 20bc <SER_Initialize+0x198>
+    1f88:	e3550000 	cmp	r5, #0
+    1f8c:	e58c2004 	str	r2, [ip, #4]
+    1f90:	e58c400c 	str	r4, [ip, #12]
+    1f94:	0afffff0 	beq	1f5c <SER_Initialize+0x38>
+    1f98:	e5d12010 	ldrb	r2, [r1, #16]
+    1f9c:	e3520000 	cmp	r2, #0
+    1fa0:	0affffed 	beq	1f5c <SER_Initialize+0x38>
+    1fa4:	e5d1400c 	ldrb	r4, [r1, #12]
+    1fa8:	e2444005 	sub	r4, r4, #5
+    1fac:	e5cc5000 	strb	r5, [ip]
+    1fb0:	e5cc5001 	strb	r5, [ip, #1]
+    1fb4:	e5cc2009 	strb	r2, [ip, #9]
+    1fb8:	e5cc2010 	strb	r2, [ip, #16]
+    1fbc:	e5cc0011 	strb	r0, [ip, #17]
+    1fc0:	e5cc0013 	strb	r0, [ip, #19]
+    1fc4:	e5cc0008 	strb	r0, [ip, #8]
+    1fc8:	e5cc000a 	strb	r0, [ip, #10]
+    1fcc:	e5cc0014 	strb	r0, [ip, #20]
+    1fd0:	e5cc0012 	strb	r0, [ip, #18]
+    1fd4:	e3540003 	cmp	r4, #3
+    1fd8:	979ff104 	ldrls	pc, [pc, r4, lsl #2]
+    1fdc:	eaffffde 	b	1f5c <SER_Initialize+0x38>
+    1fe0:	000020ac 	.word	0x000020ac
+    1fe4:	000020a4 	.word	0x000020a4
+    1fe8:	0000209c 	.word	0x0000209c
+    1fec:	00001ff0 	.word	0x00001ff0
+    1ff0:	e3a00003 	mov	r0, #3
+    1ff4:	e5d1200d 	ldrb	r2, [r1, #13]
+    1ff8:	e3520001 	cmp	r2, #1
+    1ffc:	0a000002 	beq	200c <SER_Initialize+0xe8>
+    2000:	e3520002 	cmp	r2, #2
+    2004:	1affffd4 	bne	1f5c <SER_Initialize+0x38>
+    2008:	e3800004 	orr	r0, r0, #4
+    200c:	e5d1200e 	ldrb	r2, [r1, #14]
+    2010:	e3520001 	cmp	r2, #1
+    2014:	0a000026 	beq	20b4 <SER_Initialize+0x190>
+    2018:	3a000002 	bcc	2028 <SER_Initialize+0x104>
+    201c:	e3520002 	cmp	r2, #2
+    2020:	1affffcd 	bne	1f5c <SER_Initialize+0x38>
+    2024:	e3800008 	orr	r0, r0, #8
+    2028:	e5d12011 	ldrb	r2, [r1, #17]
+    202c:	e352000f 	cmp	r2, #15
+    2030:	8affffc9 	bhi	1f5c <SER_Initialize+0x38>
+    2034:	e59f2084 	ldr	r2, [pc, #132]	; 20c0 <SER_Initialize+0x19c>
+    2038:	e1a0c423 	lsr	ip, r3, #8
+    203c:	e3e0407f 	mvn	r4, #127	; 0x7f
+    2040:	e20330ff 	and	r3, r3, #255	; 0xff
+    2044:	e5c2400c 	strb	r4, [r2, #12]
+    2048:	e20000ff 	and	r0, r0, #255	; 0xff
+    204c:	e5c23000 	strb	r3, [r2]
+    2050:	e20cc0ff 	and	ip, ip, #255	; 0xff
+    2054:	e3a03003 	mov	r3, #3
+    2058:	e5c2c004 	strb	ip, [r2, #4]
+    205c:	e5c2000c 	strb	r0, [r2, #12]
+    2060:	e5c23004 	strb	r3, [r2, #4]
+    2064:	e5d13011 	ldrb	r3, [r1, #17]
+    2068:	e59f0054 	ldr	r0, [pc, #84]	; 20c4 <SER_Initialize+0x1a0>
+    206c:	e1a03103 	lsl	r3, r3, #2
+    2070:	e5030f00 	str	r0, [r3, #-3840]	; 0xfffff100
+    2074:	e5d13011 	ldrb	r3, [r1, #17]
+    2078:	e3a01026 	mov	r1, #38	; 0x26
+    207c:	e1a03103 	lsl	r3, r3, #2
+    2080:	e5031e00 	str	r1, [r3, #-3584]	; 0xfffff200
+    2084:	e5d23008 	ldrb	r3, [r2, #8]
+    2088:	e3a02040 	mov	r2, #64	; 0x40
+    208c:	e3e03000 	mvn	r3, #0
+    2090:	e3a00000 	mov	r0, #0
+    2094:	e5032fef 	str	r2, [r3, #-4079]	; 0xfffff011
+    2098:	eaffffb0 	b	1f60 <SER_Initialize+0x3c>
+    209c:	e3a00002 	mov	r0, #2
+    20a0:	eaffffd3 	b	1ff4 <SER_Initialize+0xd0>
+    20a4:	e3a00001 	mov	r0, #1
+    20a8:	eaffffd1 	b	1ff4 <SER_Initialize+0xd0>
+    20ac:	e3a00000 	mov	r0, #0
+    20b0:	eaffffcf 	b	1ff4 <SER_Initialize+0xd0>
+    20b4:	e3800018 	orr	r0, r0, #24
+    20b8:	eaffffda 	b	2028 <SER_Initialize+0x104>
+    20bc:	400003f4 	.word	0x400003f4
+    20c0:	e000c000 	.word	0xe000c000
+    20c4:	00001b0c 	.word	0x00001b0c
+
+000020c8 <DefaultISR>:
+    20c8:	e92d000c 	push	{r2, r3}
+    20cc:	e3a02000 	mov	r2, #0
+    20d0:	e3e03000 	mvn	r3, #0
+    20d4:	e5032fcf 	str	r2, [r3, #-4047]	; 0xfffff031
+    20d8:	e8bd000c 	pop	{r2, r3}
+    20dc:	e25ef004 	subs	pc, lr, #4
+
+000020e0 <HW_GetHexSwitch>:
+    20e0:	e3500000 	cmp	r0, #0
+    20e4:	0a00000e 	beq	2124 <HW_GetHexSwitch+0x44>
+    20e8:	e59f303c 	ldr	r3, [pc, #60]	; 212c <HW_GetHexSwitch+0x4c>
+    20ec:	e5932000 	ldr	r2, [r3]
+    20f0:	e1a02222 	lsr	r2, r2, #4
+    20f4:	e202200f 	and	r2, r2, #15
+    20f8:	e5c02000 	strb	r2, [r0]
+    20fc:	e5932000 	ldr	r2, [r3]
+    2100:	e1a02422 	lsr	r2, r2, #8
+    2104:	e202200f 	and	r2, r2, #15
+    2108:	e5c02001 	strb	r2, [r0, #1]
+    210c:	e5933010 	ldr	r3, [r3, #16]
+    2110:	e1a03b23 	lsr	r3, r3, #22
+    2114:	e2033007 	and	r3, r3, #7
+    2118:	e5c03002 	strb	r3, [r0, #2]
+    211c:	e3a00000 	mov	r0, #0
+    2120:	e12fff1e 	bx	lr
+    2124:	e3a00001 	mov	r0, #1
+    2128:	e12fff1e 	bx	lr
+    212c:	e0028000 	.word	0xe0028000
+
+00002130 <HW_SetLED>:
+    2130:	e3500001 	cmp	r0, #1
+    2134:	0a000011 	beq	2180 <HW_SetLED+0x50>
+    2138:	2a000006 	bcs	2158 <HW_SetLED+0x28>
+    213c:	e3510003 	cmp	r1, #3
+    2140:	979ff101 	ldrls	pc, [pc, r1, lsl #2]
+    2144:	ea000014 	b	219c <HW_SetLED+0x6c>
+    2148:	000022e8 	.word	0x000022e8
+    214c:	000022cc 	.word	0x000022cc
+    2150:	000022b0 	.word	0x000022b0
+    2154:	0000229c 	.word	0x0000229c
+    2158:	e3500002 	cmp	r0, #2
+    215c:	13a00002 	movne	r0, #2
+    2160:	112fff1e 	bxne	lr
+    2164:	e3510003 	cmp	r1, #3
+    2168:	979ff101 	ldrls	pc, [pc, r1, lsl #2]
+    216c:	ea000048 	b	2294 <HW_SetLED+0x164>
+    2170:	0000227c 	.word	0x0000227c
+    2174:	00002258 	.word	0x00002258
+    2178:	00002234 	.word	0x00002234
+    217c:	0000221c 	.word	0x0000221c
+    2180:	e3510003 	cmp	r1, #3
+    2184:	979ff101 	ldrls	pc, [pc, r1, lsl #2]
+    2188:	ea000003 	b	219c <HW_SetLED+0x6c>
+    218c:	00002204 	.word	0x00002204
+    2190:	000021e0 	.word	0x000021e0
+    2194:	000021bc 	.word	0x000021bc
+    2198:	000021a4 	.word	0x000021a4
+    219c:	e3a00001 	mov	r0, #1
+    21a0:	e12fff1e 	bx	lr
+    21a4:	e59f3150 	ldr	r3, [pc, #336]	; 22fc <HW_SetLED+0x1cc>
+    21a8:	e5932018 	ldr	r2, [r3, #24]
+    21ac:	e3822803 	orr	r2, r2, #196608	; 0x30000
+    21b0:	e5832018 	str	r2, [r3, #24]
+    21b4:	e3a00000 	mov	r0, #0
+    21b8:	e12fff1e 	bx	lr
+    21bc:	e59f3138 	ldr	r3, [pc, #312]	; 22fc <HW_SetLED+0x1cc>
+    21c0:	e5932018 	ldr	r2, [r3, #24]
+    21c4:	e3822802 	orr	r2, r2, #131072	; 0x20000
+    21c8:	e5832018 	str	r2, [r3, #24]
+    21cc:	e5932018 	ldr	r2, [r3, #24]
+    21d0:	e3c22801 	bic	r2, r2, #65536	; 0x10000
+    21d4:	e5832018 	str	r2, [r3, #24]
+    21d8:	e3a00000 	mov	r0, #0
+    21dc:	e12fff1e 	bx	lr
+    21e0:	e59f3114 	ldr	r3, [pc, #276]	; 22fc <HW_SetLED+0x1cc>
+    21e4:	e5932018 	ldr	r2, [r3, #24]
+    21e8:	e3822801 	orr	r2, r2, #65536	; 0x10000
+    21ec:	e5832018 	str	r2, [r3, #24]
+    21f0:	e5932018 	ldr	r2, [r3, #24]
+    21f4:	e3c22802 	bic	r2, r2, #131072	; 0x20000
+    21f8:	e5832018 	str	r2, [r3, #24]
+    21fc:	e3a00000 	mov	r0, #0
+    2200:	e12fff1e 	bx	lr
+    2204:	e59f30f0 	ldr	r3, [pc, #240]	; 22fc <HW_SetLED+0x1cc>
+    2208:	e5932018 	ldr	r2, [r3, #24]
+    220c:	e3c22803 	bic	r2, r2, #196608	; 0x30000
+    2210:	e5832018 	str	r2, [r3, #24]
+    2214:	e3a00000 	mov	r0, #0
+    2218:	e12fff1e 	bx	lr
+    221c:	e59f30d8 	ldr	r3, [pc, #216]	; 22fc <HW_SetLED+0x1cc>
+    2220:	e5932018 	ldr	r2, [r3, #24]
+    2224:	e3822703 	orr	r2, r2, #786432	; 0xc0000
+    2228:	e5832018 	str	r2, [r3, #24]
+    222c:	e3a00000 	mov	r0, #0
+    2230:	e12fff1e 	bx	lr
+    2234:	e59f30c0 	ldr	r3, [pc, #192]	; 22fc <HW_SetLED+0x1cc>
+    2238:	e5932018 	ldr	r2, [r3, #24]
+    223c:	e3822702 	orr	r2, r2, #524288	; 0x80000
+    2240:	e5832018 	str	r2, [r3, #24]
+    2244:	e5932018 	ldr	r2, [r3, #24]
+    2248:	e3c22701 	bic	r2, r2, #262144	; 0x40000
+    224c:	e5832018 	str	r2, [r3, #24]
+    2250:	e3a00000 	mov	r0, #0
+    2254:	e12fff1e 	bx	lr
+    2258:	e59f309c 	ldr	r3, [pc, #156]	; 22fc <HW_SetLED+0x1cc>
+    225c:	e5932018 	ldr	r2, [r3, #24]
+    2260:	e3822701 	orr	r2, r2, #262144	; 0x40000
+    2264:	e5832018 	str	r2, [r3, #24]
+    2268:	e5932018 	ldr	r2, [r3, #24]
+    226c:	e3c22702 	bic	r2, r2, #524288	; 0x80000
+    2270:	e5832018 	str	r2, [r3, #24]
+    2274:	e3a00000 	mov	r0, #0
+    2278:	e12fff1e 	bx	lr
+    227c:	e59f3078 	ldr	r3, [pc, #120]	; 22fc <HW_SetLED+0x1cc>
+    2280:	e5932018 	ldr	r2, [r3, #24]
+    2284:	e3c22703 	bic	r2, r2, #786432	; 0xc0000
+    2288:	e5832018 	str	r2, [r3, #24]
+    228c:	e3a00000 	mov	r0, #0
+    2290:	e12fff1e 	bx	lr
+    2294:	e3a00001 	mov	r0, #1
+    2298:	e12fff1e 	bx	lr
+    229c:	e59f3058 	ldr	r3, [pc, #88]	; 22fc <HW_SetLED+0x1cc>
+    22a0:	e3a02622 	mov	r2, #35651584	; 0x2200000
+    22a4:	e583201c 	str	r2, [r3, #28]
+    22a8:	e3a00000 	mov	r0, #0
+    22ac:	e12fff1e 	bx	lr
+    22b0:	e59f3044 	ldr	r3, [pc, #68]	; 22fc <HW_SetLED+0x1cc>
+    22b4:	e3a02402 	mov	r2, #33554432	; 0x2000000
+    22b8:	e5832014 	str	r2, [r3, #20]
+    22bc:	e3a02602 	mov	r2, #2097152	; 0x200000
+    22c0:	e3a00000 	mov	r0, #0
+    22c4:	e583201c 	str	r2, [r3, #28]
+    22c8:	e12fff1e 	bx	lr
+    22cc:	e59f3028 	ldr	r3, [pc, #40]	; 22fc <HW_SetLED+0x1cc>
+    22d0:	e3a02602 	mov	r2, #2097152	; 0x200000
+    22d4:	e5832014 	str	r2, [r3, #20]
+    22d8:	e3a02402 	mov	r2, #33554432	; 0x2000000
+    22dc:	e3a00000 	mov	r0, #0
+    22e0:	e583201c 	str	r2, [r3, #28]
+    22e4:	e12fff1e 	bx	lr
+    22e8:	e59f300c 	ldr	r3, [pc, #12]	; 22fc <HW_SetLED+0x1cc>
+    22ec:	e3a02622 	mov	r2, #35651584	; 0x2200000
+    22f0:	e5832014 	str	r2, [r3, #20]
+    22f4:	e3a00000 	mov	r0, #0
+    22f8:	e12fff1e 	bx	lr
+    22fc:	e0028000 	.word	0xe0028000
+
+00002300 <HW_JumpToBootloader>:
+    2300:	e59f1068 	ldr	r1, [pc, #104]	; 2370 <HW_JumpToBootloader+0x70>
+    2304:	e3a02001 	mov	r2, #1
+    2308:	e92d4008 	push	{r3, lr}
+    230c:	e5812000 	str	r2, [r1]
+    2310:	e3e03000 	mvn	r3, #0
+    2314:	e2811901 	add	r1, r1, #16384	; 0x4000
+    2318:	e5812000 	str	r2, [r1]
+    231c:	e5033feb 	str	r3, [r3, #-4075]	; 0xfffff015
+    2320:	e1a00000 	nop			; (mov r0, r0)
+    2324:	e1a00000 	nop			; (mov r0, r0)
+    2328:	e1a00000 	nop			; (mov r0, r0)
+    232c:	e1a00000 	nop			; (mov r0, r0)
+    2330:	e59f203c 	ldr	r2, [pc, #60]	; 2374 <HW_JumpToBootloader+0x74>
+    2334:	e59f103c 	ldr	r1, [pc, #60]	; 2378 <HW_JumpToBootloader+0x78>
+    2338:	e59fc03c 	ldr	ip, [pc, #60]	; 237c <HW_JumpToBootloader+0x7c>
+    233c:	e3a03000 	mov	r3, #0
+    2340:	e5c23080 	strb	r3, [r2, #128]	; 0x80
+    2344:	e581cff8 	str	ip, [r1, #4088]	; 0xff8
+    2348:	e3e0c055 	mvn	ip, #85	; 0x55
+    234c:	e5c2c08c 	strb	ip, [r2, #140]	; 0x8c
+    2350:	e5810ffc 	str	r0, [r1, #4092]	; 0xffc
+    2354:	e3a01055 	mov	r1, #85	; 0x55
+    2358:	e5c2108c 	strb	r1, [r2, #140]	; 0x8c
+    235c:	e5c23040 	strb	r3, [r2, #64]	; 0x40
+    2360:	e1a0e00f 	mov	lr, pc
+    2364:	e12fff13 	bx	r3
+    2368:	e8bd4008 	pop	{r3, lr}
+    236c:	e12fff1e 	bx	lr
+    2370:	e0044000 	.word	0xe0044000
+    2374:	e01fc000 	.word	0xe01fc000
+    2378:	40003000 	.word	0x40003000
+    237c:	12435687 	.word	0x12435687
+
+00002380 <HW_Init>:
+    2380:	e59f10b0 	ldr	r1, [pc, #176]	; 2438 <HW_Init+0xb8>
+    2384:	e3a0c001 	mov	ip, #1
+    2388:	e5c1c100 	strb	ip, [r1, #256]	; 0x100
+    238c:	e5c1c040 	strb	ip, [r1, #64]	; 0x40
+    2390:	e59f10a4 	ldr	r1, [pc, #164]	; 243c <HW_Init+0xbc>
+    2394:	e3e02000 	mvn	r2, #0
+    2398:	e3a00000 	mov	r0, #0
+    239c:	e5022feb 	str	r2, [r2, #-4075]	; 0xfffff015
+    23a0:	e59f3098 	ldr	r3, [pc, #152]	; 2440 <HW_Init+0xc0>
+    23a4:	e5020ff3 	str	r0, [r2, #-4083]	; 0xfffff00d
+    23a8:	e5021fcb 	str	r1, [r2, #-4043]	; 0xfffff035
+    23ac:	e5932004 	ldr	r2, [r3, #4]
+    23b0:	e3822701 	orr	r2, r2, #262144	; 0x40000
+    23b4:	e5832004 	str	r2, [r3, #4]
+    23b8:	e5932004 	ldr	r2, [r3, #4]
+    23bc:	e3822905 	orr	r2, r2, #81920	; 0x14000
+    23c0:	e5832004 	str	r2, [r3, #4]
+    23c4:	e5932000 	ldr	r2, [r3]
+    23c8:	e3822005 	orr	r2, r2, #5
+    23cc:	e5832000 	str	r2, [r3]
+    23d0:	e593c000 	ldr	ip, [r3]
+    23d4:	e59f2068 	ldr	r2, [pc, #104]	; 2444 <HW_Init+0xc4>
+    23d8:	e38cc050 	orr	ip, ip, #80	; 0x50
+    23dc:	e583c000 	str	ip, [r3]
+    23e0:	e3a0104b 	mov	r1, #75	; 0x4b
+    23e4:	e3a0c06c 	mov	ip, #108	; 0x6c
+    23e8:	e5c2c018 	strb	ip, [r2, #24]
+    23ec:	e1c211b0 	strh	r1, [r2, #16]
+    23f0:	e1c211b4 	strh	r1, [r2, #20]
+    23f4:	e3a01044 	mov	r1, #68	; 0x44
+    23f8:	e5c21000 	strb	r1, [r2]
+    23fc:	e3a01008 	mov	r1, #8
+    2400:	e5c21018 	strb	r1, [r2, #24]
+    2404:	e2433901 	sub	r3, r3, #16384	; 0x4000
+    2408:	e5932008 	ldr	r2, [r3, #8]
+    240c:	e3c22eff 	bic	r2, r2, #4080	; 0xff0
+    2410:	e5832008 	str	r2, [r3, #8]
+    2414:	e5932018 	ldr	r2, [r3, #24]
+    2418:	e3c22507 	bic	r2, r2, #29360128	; 0x1c00000
+    241c:	e5832018 	str	r2, [r3, #24]
+    2420:	e5932018 	ldr	r2, [r3, #24]
+    2424:	e3822622 	orr	r2, r2, #35651584	; 0x2200000
+    2428:	e5832018 	str	r2, [r3, #24]
+    242c:	e3a02622 	mov	r2, #35651584	; 0x2200000
+    2430:	e5832014 	str	r2, [r3, #20]
+    2434:	e12fff1e 	bx	lr
+    2438:	e01fc000 	.word	0xe01fc000
+    243c:	000020c8 	.word	0x000020c8
+    2440:	e002c000 	.word	0xe002c000
+    2444:	e001c000 	.word	0xe001c000
+
+00002448 <HandleTxInt>:
+    2448:	e52d4004 	push	{r4}		; (str r4, [sp, #-4]!)
+    244c:	e59f10b0 	ldr	r1, [pc, #176]	; 2504 <HandleTxInt+0xbc>
+    2450:	e0602200 	rsb	r2, r0, r0, lsl #4
+    2454:	e1a02102 	lsl	r2, r2, #2
+    2458:	e0813002 	add	r3, r1, r2
+    245c:	e1d3c0b2 	ldrh	ip, [r3, #2]
+    2460:	e19120b2 	ldrh	r2, [r1, r2]
+    2464:	e152000c 	cmp	r2, ip
+    2468:	0a000023 	beq	24fc <HandleTxInt+0xb4>
+    246c:	e59f2094 	ldr	r2, [pc, #148]	; 2508 <HandleTxInt+0xc0>
+    2470:	e7922100 	ldr	r2, [r2, r0, lsl #2]
+    2474:	e5921008 	ldr	r1, [r2, #8]
+    2478:	e3110004 	tst	r1, #4
+    247c:	0a00001e 	beq	24fc <HandleTxInt+0xb4>
+    2480:	e593101c 	ldr	r1, [r3, #28]
+    2484:	e591000c 	ldr	r0, [r1, #12]
+    2488:	e582003c 	str	r0, [r2, #60]	; 0x3c
+    248c:	e5910008 	ldr	r0, [r1, #8]
+    2490:	e5820038 	str	r0, [r2, #56]	; 0x38
+    2494:	e5910004 	ldr	r0, [r1, #4]
+    2498:	e3c0020e 	bic	r0, r0, #-536870912	; 0xe0000000
+    249c:	e5820034 	str	r0, [r2, #52]	; 0x34
+    24a0:	e5d1c002 	ldrb	ip, [r1, #2]
+    24a4:	e5d14003 	ldrb	r4, [r1, #3]
+    24a8:	e1a0cf0c 	lsl	ip, ip, #30
+    24ac:	e59f0058 	ldr	r0, [pc, #88]	; 250c <HandleTxInt+0xc4>
+    24b0:	e18cc804 	orr	ip, ip, r4, lsl #16
+    24b4:	e00c0000 	and	r0, ip, r0
+    24b8:	e5820030 	str	r0, [r2, #48]	; 0x30
+    24bc:	e5d10002 	ldrb	r0, [r1, #2]
+    24c0:	e3100004 	tst	r0, #4
+    24c4:	13a00023 	movne	r0, #35	; 0x23
+    24c8:	03a00021 	moveq	r0, #33	; 0x21
+    24cc:	e5820004 	str	r0, [r2, #4]
+    24d0:	e1d320b2 	ldrh	r2, [r3, #2]
+    24d4:	e593000c 	ldr	r0, [r3, #12]
+    24d8:	e2822001 	add	r2, r2, #1
+    24dc:	e2811010 	add	r1, r1, #16
+    24e0:	e1a02802 	lsl	r2, r2, #16
+    24e4:	e1a02822 	lsr	r2, r2, #16
+    24e8:	e1510000 	cmp	r1, r0
+    24ec:	e1c320b2 	strh	r2, [r3, #2]
+    24f0:	85932008 	ldrhi	r2, [r3, #8]
+    24f4:	e583101c 	str	r1, [r3, #28]
+    24f8:	8583201c 	strhi	r2, [r3, #28]
+    24fc:	e8bd0010 	ldmfd	sp!, {r4}
+    2500:	e12fff1e 	bx	lr
+    2504:	4000040c 	.word	0x4000040c
+    2508:	0000380c 	.word	0x0000380c
+    250c:	c00f0000 	.word	0xc00f0000
+
+00002510 <HandleRxInt>:
+    2510:	e59f30fc 	ldr	r3, [pc, #252]	; 2614 <HandleRxInt+0x104>
+    2514:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
+    2518:	e0604200 	rsb	r4, r0, r0, lsl #4
+    251c:	e0834104 	add	r4, r3, r4, lsl #2
+    2520:	e59f30f0 	ldr	r3, [pc, #240]	; 2618 <HandleRxInt+0x108>
+    2524:	e7935100 	ldr	r5, [r3, r0, lsl #2]
+    2528:	e1a08000 	mov	r8, r0
+    252c:	e3a07004 	mov	r7, #4
+    2530:	e5953008 	ldr	r3, [r5, #8]
+    2534:	e3130001 	tst	r3, #1
+    2538:	0a000033 	beq	260c <HandleRxInt+0xfc>
+    253c:	e1d430b6 	ldrh	r3, [r4, #6]
+    2540:	e3530000 	cmp	r3, #0
+    2544:	05857004 	streq	r7, [r5, #4]
+    2548:	0afffff8 	beq	2530 <HandleRxInt+0x20>
+    254c:	e5943034 	ldr	r3, [r4, #52]	; 0x34
+    2550:	e3530000 	cmp	r3, #0
+    2554:	e5946020 	ldr	r6, [r4, #32]
+    2558:	11a00006 	movne	r0, r6
+    255c:	11a0e00f 	movne	lr, pc
+    2560:	112fff13 	bxne	r3
+    2564:	e595302c 	ldr	r3, [r5, #44]	; 0x2c
+    2568:	e586300c 	str	r3, [r6, #12]
+    256c:	e5953028 	ldr	r3, [r5, #40]	; 0x28
+    2570:	e5863008 	str	r3, [r6, #8]
+    2574:	e5953024 	ldr	r3, [r5, #36]	; 0x24
+    2578:	e3c3320e 	bic	r3, r3, #-536870912	; 0xe0000000
+    257c:	e5c68001 	strb	r8, [r6, #1]
+    2580:	e5863004 	str	r3, [r6, #4]
+    2584:	e5953020 	ldr	r3, [r5, #32]
+    2588:	e1a03823 	lsr	r3, r3, #16
+    258c:	e203300f 	and	r3, r3, #15
+    2590:	e5c63003 	strb	r3, [r6, #3]
+    2594:	e5953020 	ldr	r3, [r5, #32]
+    2598:	e1a03f23 	lsr	r3, r3, #30
+    259c:	e5c63002 	strb	r3, [r6, #2]
+    25a0:	e594302c 	ldr	r3, [r4, #44]	; 0x2c
+    25a4:	e3530000 	cmp	r3, #0
+    25a8:	e5857004 	str	r7, [r5, #4]
+    25ac:	0a000004 	beq	25c4 <HandleRxInt+0xb4>
+    25b0:	e1a00006 	mov	r0, r6
+    25b4:	e1a0e00f 	mov	lr, pc
+    25b8:	e12fff13 	bx	r3
+    25bc:	e3500001 	cmp	r0, #1
+    25c0:	0affffda 	beq	2530 <HandleRxInt+0x20>
+    25c4:	e1d430b6 	ldrh	r3, [r4, #6]
+    25c8:	e2433001 	sub	r3, r3, #1
+    25cc:	e1a03803 	lsl	r3, r3, #16
+    25d0:	e5942034 	ldr	r2, [r4, #52]	; 0x34
+    25d4:	e1a03823 	lsr	r3, r3, #16
+    25d8:	e1c430b6 	strh	r3, [r4, #6]
+    25dc:	e5943020 	ldr	r3, [r4, #32]
+    25e0:	e3520000 	cmp	r2, #0
+    25e4:	e5942014 	ldr	r2, [r4, #20]
+    25e8:	12833014 	addne	r3, r3, #20
+    25ec:	02833010 	addeq	r3, r3, #16
+    25f0:	e1520003 	cmp	r2, r3
+    25f4:	e5843020 	str	r3, [r4, #32]
+    25f8:	35943010 	ldrcc	r3, [r4, #16]
+    25fc:	35843020 	strcc	r3, [r4, #32]
+    2600:	e5953008 	ldr	r3, [r5, #8]
+    2604:	e3130001 	tst	r3, #1
+    2608:	1affffcb 	bne	253c <HandleRxInt+0x2c>
+    260c:	e8bd41f0 	pop	{r4, r5, r6, r7, r8, lr}
+    2610:	e12fff1e 	bx	lr
+    2614:	4000040c 	.word	0x4000040c
+    2618:	0000380c 	.word	0x0000380c
+
+0000261c <CAN_DEFISR>:
+    261c:	e92d000c 	push	{r2, r3}
+    2620:	e3a02000 	mov	r2, #0
+    2624:	e3e03000 	mvn	r3, #0
+    2628:	e5032fcf 	str	r2, [r3, #-4047]	; 0xfffff031
+    262c:	e8bd000c 	pop	{r2, r3}
+    2630:	e25ef004 	subs	pc, lr, #4
+
+00002634 <CAN_ReferenceTxQueue>:
+    2634:	e3500001 	cmp	r0, #1
+    2638:	93a03000 	movls	r3, #0
+    263c:	83a03001 	movhi	r3, #1
+    2640:	e3510000 	cmp	r1, #0
+    2644:	03833001 	orreq	r3, r3, #1
+    2648:	e3530000 	cmp	r3, #0
+    264c:	13a00000 	movne	r0, #0
+    2650:	112fff1e 	bxne	lr
+    2654:	e3520000 	cmp	r2, #0
+    2658:	10600200 	rsbne	r0, r0, r0, lsl #4
+    265c:	159f3018 	ldrne	r3, [pc, #24]	; 267c <CAN_ReferenceTxQueue+0x48>
+    2660:	11a00100 	lslne	r0, r0, #2
+    2664:	1083c000 	addne	ip, r3, r0
+    2668:	118320b0 	strhne	r2, [r3, r0]
+    266c:	158c1008 	strne	r1, [ip, #8]
+    2670:	13a00001 	movne	r0, #1
+    2674:	01a00002 	moveq	r0, r2
+    2678:	e12fff1e 	bx	lr
+    267c:	4000040c 	.word	0x4000040c
+
+00002680 <CAN_ReferenceRxQueue>:
+    2680:	e3500001 	cmp	r0, #1
+    2684:	93a03000 	movls	r3, #0
+    2688:	83a03001 	movhi	r3, #1
+    268c:	e3510000 	cmp	r1, #0
+    2690:	03833001 	orreq	r3, r3, #1
+    2694:	e3530000 	cmp	r3, #0
+    2698:	13a00000 	movne	r0, #0
+    269c:	112fff1e 	bxne	lr
+    26a0:	e3520000 	cmp	r2, #0
+    26a4:	159f3018 	ldrne	r3, [pc, #24]	; 26c4 <CAN_ReferenceRxQueue+0x44>
+    26a8:	10600200 	rsbne	r0, r0, r0, lsl #4
+    26ac:	10830100 	addne	r0, r3, r0, lsl #2
+    26b0:	15801010 	strne	r1, [r0, #16]
+    26b4:	11c020b4 	strhne	r2, [r0, #4]
+    26b8:	01a00002 	moveq	r0, r2
+    26bc:	13a00001 	movne	r0, #1
+    26c0:	e12fff1e 	bx	lr
+    26c4:	4000040c 	.word	0x4000040c
+
+000026c8 <CAN_GetIsrVector>:
+    26c8:	e59f0000 	ldr	r0, [pc]	; 26d0 <CAN_GetIsrVector+0x8>
+    26cc:	e12fff1e 	bx	lr
+    26d0:	00003608 	.word	0x00003608
+
+000026d4 <CAN_SetAtomicHandler>:
+    26d4:	e3500001 	cmp	r0, #1
+    26d8:	93a00000 	movls	r0, #0
+    26dc:	83a00001 	movhi	r0, #1
+    26e0:	e3510000 	cmp	r1, #0
+    26e4:	11a01000 	movne	r1, r0
+    26e8:	03801001 	orreq	r1, r0, #1
+    26ec:	e3510000 	cmp	r1, #0
+    26f0:	13a00000 	movne	r0, #0
+    26f4:	112fff1e 	bxne	lr
+    26f8:	e3e03000 	mvn	r3, #0
+    26fc:	e5132fcb 	ldr	r2, [r3, #-4043]	; 0xfffff035
+    2700:	e3520000 	cmp	r2, #0
+    2704:	059f2008 	ldreq	r2, [pc, #8]	; 2714 <CAN_SetAtomicHandler+0x40>
+    2708:	e3a00001 	mov	r0, #1
+    270c:	05032fcb 	streq	r2, [r3, #-4043]	; 0xfffff035
+    2710:	e12fff1e 	bx	lr
+    2714:	0000261c 	.word	0x0000261c
+
+00002718 <CAN_SetUnatomicHandler>:
+    2718:	e3500001 	cmp	r0, #1
+    271c:	93a00000 	movls	r0, #0
+    2720:	83a00001 	movhi	r0, #1
+    2724:	e3510000 	cmp	r1, #0
+    2728:	03800001 	orreq	r0, r0, #1
+    272c:	e2200001 	eor	r0, r0, #1
+    2730:	e12fff1e 	bx	lr
+
+00002734 <CAN_SetTimestampHandler>:
+    2734:	e3500001 	cmp	r0, #1
+    2738:	959f3014 	ldrls	r3, [pc, #20]	; 2754 <CAN_SetTimestampHandler+0x20>
+    273c:	90600200 	rsbls	r0, r0, r0, lsl #4
+    2740:	90830100 	addls	r0, r3, r0, lsl #2
+    2744:	95801034 	strls	r1, [r0, #52]	; 0x34
+    2748:	83a00000 	movhi	r0, #0
+    274c:	93a00001 	movls	r0, #1
+    2750:	e12fff1e 	bx	lr
+    2754:	4000040c 	.word	0x4000040c
+
+00002758 <CAN_SetErrorLimit>:
+    2758:	e3500001 	cmp	r0, #1
+    275c:	959f3014 	ldrls	r3, [pc, #20]	; 2778 <CAN_SetErrorLimit+0x20>
+    2760:	90600200 	rsbls	r0, r0, r0, lsl #4
+    2764:	90830100 	addls	r0, r3, r0, lsl #2
+    2768:	95c01038 	strbls	r1, [r0, #56]	; 0x38
+    276c:	83a00000 	movhi	r0, #0
+    2770:	93a00001 	movls	r0, #1
+    2774:	e12fff1e 	bx	lr
+    2778:	4000040c 	.word	0x4000040c
+
+0000277c <CAN_SetRxCallback>:
+    277c:	e3500001 	cmp	r0, #1
+    2780:	959f3014 	ldrls	r3, [pc, #20]	; 279c <CAN_SetRxCallback+0x20>
+    2784:	90600200 	rsbls	r0, r0, r0, lsl #4
+    2788:	90830100 	addls	r0, r3, r0, lsl #2
+    278c:	9580102c 	strls	r1, [r0, #44]	; 0x2c
+    2790:	83a00000 	movhi	r0, #0
+    2794:	93a00001 	movls	r0, #1
+    2798:	e12fff1e 	bx	lr
+    279c:	4000040c 	.word	0x4000040c
+
+000027a0 <CAN_SetChannelInfo>:
+    27a0:	e3500001 	cmp	r0, #1
+    27a4:	959f3014 	ldrls	r3, [pc, #20]	; 27c0 <CAN_SetChannelInfo+0x20>
+    27a8:	90600200 	rsbls	r0, r0, r0, lsl #4
+    27ac:	90830100 	addls	r0, r3, r0, lsl #2
+    27b0:	95801028 	strls	r1, [r0, #40]	; 0x28
+    27b4:	83a00000 	movhi	r0, #0
+    27b8:	93a00001 	movls	r0, #1
+    27bc:	e12fff1e 	bx	lr
+    27c0:	4000040c 	.word	0x4000040c
+
+000027c4 <CAN_GetChannelInfo>:
+    27c4:	e3500001 	cmp	r0, #1
+    27c8:	959f3010 	ldrls	r3, [pc, #16]	; 27e0 <CAN_GetChannelInfo+0x1c>
+    27cc:	90600200 	rsbls	r0, r0, r0, lsl #4
+    27d0:	90830100 	addls	r0, r3, r0, lsl #2
+    27d4:	95900028 	ldrls	r0, [r0, #40]	; 0x28
+    27d8:	83a00000 	movhi	r0, #0
+    27dc:	e12fff1e 	bx	lr
+    27e0:	4000040c 	.word	0x4000040c
+
+000027e4 <CAN_SetTxErrorCallback>:
+    27e4:	e3500001 	cmp	r0, #1
+    27e8:	959f3014 	ldrls	r3, [pc, #20]	; 2804 <CAN_SetTxErrorCallback+0x20>
+    27ec:	90600200 	rsbls	r0, r0, r0, lsl #4
+    27f0:	90830100 	addls	r0, r3, r0, lsl #2
+    27f4:	95801030 	strls	r1, [r0, #48]	; 0x30
+    27f8:	83a00000 	movhi	r0, #0
+    27fc:	93a00001 	movls	r0, #1
+    2800:	e12fff1e 	bx	lr
+    2804:	4000040c 	.word	0x4000040c
+
+00002808 <CAN_SetBusMode>:
+    2808:	e3500001 	cmp	r0, #1
+    280c:	83a00000 	movhi	r0, #0
+    2810:	812fff1e 	bxhi	lr
+    2814:	e59f305c 	ldr	r3, [pc, #92]	; 2878 <CAN_SetBusMode+0x70>
+    2818:	e3510001 	cmp	r1, #1
+    281c:	e7933100 	ldr	r3, [r3, r0, lsl #2]
+    2820:	0a00000a 	beq	2850 <CAN_SetBusMode+0x48>
+    2824:	3a000003 	bcc	2838 <CAN_SetBusMode+0x30>
+    2828:	e3510002 	cmp	r1, #2
+    282c:	0a00000c 	beq	2864 <CAN_SetBusMode+0x5c>
+    2830:	e3a00002 	mov	r0, #2
+    2834:	e12fff1e 	bx	lr
+    2838:	e3a02000 	mov	r2, #0
+    283c:	e5832000 	str	r2, [r3]
+    2840:	e3a02083 	mov	r2, #131	; 0x83
+    2844:	e3a00001 	mov	r0, #1
+    2848:	e5832010 	str	r2, [r3, #16]
+    284c:	e12fff1e 	bx	lr
+    2850:	e3a02000 	mov	r2, #0
+    2854:	e5831000 	str	r1, [r3]
+    2858:	e1a00001 	mov	r0, r1
+    285c:	e5832010 	str	r2, [r3, #16]
+    2860:	e12fff1e 	bx	lr
+    2864:	e3a02001 	mov	r2, #1
+    2868:	e5831000 	str	r1, [r3]
+    286c:	e1a00002 	mov	r0, r2
+    2870:	e5832010 	str	r2, [r3, #16]
+    2874:	e12fff1e 	bx	lr
+    2878:	0000380c 	.word	0x0000380c
+
+0000287c <CAN_TxQueueGetNext>:
+    287c:	e3500001 	cmp	r0, #1
+    2880:	83a00000 	movhi	r0, #0
+    2884:	812fff1e 	bxhi	lr
+    2888:	e59f3034 	ldr	r3, [pc, #52]	; 28c4 <CAN_TxQueueGetNext+0x48>
+    288c:	e0602200 	rsb	r2, r0, r0, lsl #4
+    2890:	e0832102 	add	r2, r3, r2, lsl #2
+    2894:	e1d230b2 	ldrh	r3, [r2, #2]
+    2898:	e59f1028 	ldr	r1, [pc, #40]	; 28c8 <CAN_TxQueueGetNext+0x4c>
+    289c:	e3530000 	cmp	r3, #0
+    28a0:	e7911100 	ldr	r1, [r1, r0, lsl #2]
+    28a4:	01a00003 	moveq	r0, r3
+    28a8:	012fff1e 	bxeq	lr
+    28ac:	e5913000 	ldr	r3, [r1]
+    28b0:	e3130001 	tst	r3, #1
+    28b4:	05920018 	ldreq	r0, [r2, #24]
+    28b8:	012fff1e 	bxeq	lr
+    28bc:	e3a00000 	mov	r0, #0
+    28c0:	e12fff1e 	bx	lr
+    28c4:	4000040c 	.word	0x4000040c
+    28c8:	0000380c 	.word	0x0000380c
+
+000028cc <CAN_RxQueueGetNext>:
+    28cc:	e3500001 	cmp	r0, #1
+    28d0:	8a00000e 	bhi	2910 <CAN_RxQueueGetNext+0x44>
+    28d4:	e59f303c 	ldr	r3, [pc, #60]	; 2918 <CAN_RxQueueGetNext+0x4c>
+    28d8:	e0602200 	rsb	r2, r0, r0, lsl #4
+    28dc:	e0833102 	add	r3, r3, r2, lsl #2
+    28e0:	e1d320b6 	ldrh	r2, [r3, #6]
+    28e4:	e1d310b4 	ldrh	r1, [r3, #4]
+    28e8:	e1510002 	cmp	r1, r2
+    28ec:	e59f2028 	ldr	r2, [pc, #40]	; 291c <CAN_RxQueueGetNext+0x50>
+    28f0:	e7922100 	ldr	r2, [r2, r0, lsl #2]
+    28f4:	0a000005 	beq	2910 <CAN_RxQueueGetNext+0x44>
+    28f8:	e5922000 	ldr	r2, [r2]
+    28fc:	e3120001 	tst	r2, #1
+    2900:	05930024 	ldreq	r0, [r3, #36]	; 0x24
+    2904:	012fff1e 	bxeq	lr
+    2908:	e3a00000 	mov	r0, #0
+    290c:	e12fff1e 	bx	lr
+    2910:	e3a00000 	mov	r0, #0
+    2914:	e12fff1e 	bx	lr
+    2918:	4000040c 	.word	0x4000040c
+    291c:	0000380c 	.word	0x0000380c
+
+00002920 <CAN_TxQueueWriteNext>:
+    2920:	e3500001 	cmp	r0, #1
+    2924:	e92d0030 	push	{r4, r5}
+    2928:	83a00000 	movhi	r0, #0
+    292c:	9a000001 	bls	2938 <CAN_TxQueueWriteNext+0x18>
+    2930:	e8bd0030 	pop	{r4, r5}
+    2934:	e12fff1e 	bx	lr
+    2938:	e3e02000 	mvn	r2, #0
+    293c:	e5124fef 	ldr	r4, [r2, #-4079]	; 0xfffff011
+    2940:	e59fc0e8 	ldr	ip, [pc, #232]	; 2a30 <CAN_TxQueueWriteNext+0x110>
+    2944:	e0601200 	rsb	r1, r0, r0, lsl #4
+    2948:	e5022feb 	str	r2, [r2, #-4075]	; 0xfffff015
+    294c:	e59f50e0 	ldr	r5, [pc, #224]	; 2a34 <CAN_TxQueueWriteNext+0x114>
+    2950:	e1a01101 	lsl	r1, r1, #2
+    2954:	e08c3001 	add	r3, ip, r1
+    2958:	e7955100 	ldr	r5, [r5, r0, lsl #2]
+    295c:	e1a00000 	nop			; (mov r0, r0)
+    2960:	e1a00000 	nop			; (mov r0, r0)
+    2964:	e1a00000 	nop			; (mov r0, r0)
+    2968:	e1a00000 	nop			; (mov r0, r0)
+    296c:	e1d300b2 	ldrh	r0, [r3, #2]
+    2970:	e19c10b1 	ldrh	r1, [ip, r1]
+    2974:	e1510000 	cmp	r1, r0
+    2978:	0a00000f 	beq	29bc <CAN_TxQueueWriteNext+0x9c>
+    297c:	e5932018 	ldr	r2, [r3, #24]
+    2980:	e1d310b2 	ldrh	r1, [r3, #2]
+    2984:	e593000c 	ldr	r0, [r3, #12]
+    2988:	e2822010 	add	r2, r2, #16
+    298c:	e1520000 	cmp	r2, r0
+    2990:	e2411001 	sub	r1, r1, #1
+    2994:	e5832018 	str	r2, [r3, #24]
+    2998:	e1a01801 	lsl	r1, r1, #16
+    299c:	85932008 	ldrhi	r2, [r3, #8]
+    29a0:	e1a01821 	lsr	r1, r1, #16
+    29a4:	e1c310b2 	strh	r1, [r3, #2]
+    29a8:	85832018 	strhi	r2, [r3, #24]
+    29ac:	e3e03000 	mvn	r3, #0
+    29b0:	e5034fef 	str	r4, [r3, #-4079]	; 0xfffff011
+    29b4:	e3a00002 	mov	r0, #2
+    29b8:	eaffffdc 	b	2930 <CAN_TxQueueWriteNext+0x10>
+    29bc:	e5951008 	ldr	r1, [r5, #8]
+    29c0:	e3110004 	tst	r1, #4
+    29c4:	0affffec 	beq	297c <CAN_TxQueueWriteNext+0x5c>
+    29c8:	e5933018 	ldr	r3, [r3, #24]
+    29cc:	e593100c 	ldr	r1, [r3, #12]
+    29d0:	e585103c 	str	r1, [r5, #60]	; 0x3c
+    29d4:	e5931008 	ldr	r1, [r3, #8]
+    29d8:	e5851038 	str	r1, [r5, #56]	; 0x38
+    29dc:	e5931004 	ldr	r1, [r3, #4]
+    29e0:	e3c1120e 	bic	r1, r1, #-536870912	; 0xe0000000
+    29e4:	e5851034 	str	r1, [r5, #52]	; 0x34
+    29e8:	e5d30002 	ldrb	r0, [r3, #2]
+    29ec:	e5d3c003 	ldrb	ip, [r3, #3]
+    29f0:	e1a00f00 	lsl	r0, r0, #30
+    29f4:	e59f103c 	ldr	r1, [pc, #60]	; 2a38 <CAN_TxQueueWriteNext+0x118>
+    29f8:	e180080c 	orr	r0, r0, ip, lsl #16
+    29fc:	e0001001 	and	r1, r0, r1
+    2a00:	e5851030 	str	r1, [r5, #48]	; 0x30
+    2a04:	e5d33002 	ldrb	r3, [r3, #2]
+    2a08:	e3130004 	tst	r3, #4
+    2a0c:	13a03023 	movne	r3, #35	; 0x23
+    2a10:	03a03021 	moveq	r3, #33	; 0x21
+    2a14:	e5853004 	str	r3, [r5, #4]
+    2a18:	e5953000 	ldr	r3, [r5]
+    2a1c:	e3130001 	tst	r3, #1
+    2a20:	e5024fef 	str	r4, [r2, #-4079]	; 0xfffff011
+    2a24:	13a00003 	movne	r0, #3
+    2a28:	03a00001 	moveq	r0, #1
+    2a2c:	eaffffbf 	b	2930 <CAN_TxQueueWriteNext+0x10>
+    2a30:	4000040c 	.word	0x4000040c
+    2a34:	0000380c 	.word	0x0000380c
+    2a38:	c00f0000 	.word	0xc00f0000
+
+00002a3c <CAN_RxQueueReadNext>:
+    2a3c:	e3500001 	cmp	r0, #1
+    2a40:	9a000001 	bls	2a4c <CAN_RxQueueReadNext+0x10>
+    2a44:	e3a00000 	mov	r0, #0
+    2a48:	e12fff1e 	bx	lr
+    2a4c:	e3e03000 	mvn	r3, #0
+    2a50:	e5132fef 	ldr	r2, [r3, #-4079]	; 0xfffff011
+    2a54:	e5033feb 	str	r3, [r3, #-4075]	; 0xfffff015
+    2a58:	e59f3060 	ldr	r3, [pc, #96]	; 2ac0 <CAN_RxQueueReadNext+0x84>
+    2a5c:	e0600200 	rsb	r0, r0, r0, lsl #4
+    2a60:	e0830100 	add	r0, r3, r0, lsl #2
+    2a64:	e1a00000 	nop			; (mov r0, r0)
+    2a68:	e1a00000 	nop			; (mov r0, r0)
+    2a6c:	e1a00000 	nop			; (mov r0, r0)
+    2a70:	e1a00000 	nop			; (mov r0, r0)
+    2a74:	e1d030b6 	ldrh	r3, [r0, #6]
+    2a78:	e2833001 	add	r3, r3, #1
+    2a7c:	e1a03803 	lsl	r3, r3, #16
+    2a80:	e5901034 	ldr	r1, [r0, #52]	; 0x34
+    2a84:	e1a03823 	lsr	r3, r3, #16
+    2a88:	e1c030b6 	strh	r3, [r0, #6]
+    2a8c:	e5903024 	ldr	r3, [r0, #36]	; 0x24
+    2a90:	e3510000 	cmp	r1, #0
+    2a94:	e5901014 	ldr	r1, [r0, #20]
+    2a98:	12833014 	addne	r3, r3, #20
+    2a9c:	02833010 	addeq	r3, r3, #16
+    2aa0:	e1510003 	cmp	r1, r3
+    2aa4:	e5803024 	str	r3, [r0, #36]	; 0x24
+    2aa8:	35903010 	ldrcc	r3, [r0, #16]
+    2aac:	35803024 	strcc	r3, [r0, #36]	; 0x24
+    2ab0:	e3e03000 	mvn	r3, #0
+    2ab4:	e5032fef 	str	r2, [r3, #-4079]	; 0xfffff011
+    2ab8:	e3a00001 	mov	r0, #1
+    2abc:	e12fff1e 	bx	lr
+    2ac0:	4000040c 	.word	0x4000040c
+
+00002ac4 <CAN_GetTransceiverType>:
+    2ac4:	e3500001 	cmp	r0, #1
+    2ac8:	93a00000 	movls	r0, #0
+    2acc:	83a00001 	movhi	r0, #1
+    2ad0:	e3510000 	cmp	r1, #0
+    2ad4:	03800001 	orreq	r0, r0, #1
+    2ad8:	e3500000 	cmp	r0, #0
+    2adc:	03a00001 	moveq	r0, #1
+    2ae0:	05c10000 	strbeq	r0, [r1]
+    2ae4:	13a00000 	movne	r0, #0
+    2ae8:	e12fff1e 	bx	lr
+
+00002aec <CAN_SetTransceiverMode>:
+    2aec:	e3500001 	cmp	r0, #1
+    2af0:	83a00000 	movhi	r0, #0
+    2af4:	93a00001 	movls	r0, #1
+    2af8:	e12fff1e 	bx	lr
+
+00002afc <CAN_FilterAddId>:
+    2afc:	e92d000c 	push	{r2, r3}
+    2b00:	e92d05f0 	push	{r4, r5, r6, r7, r8, sl}
+    2b04:	e59f361c 	ldr	r3, [pc, #1564]	; 3128 <CAN_FilterAddId+0x62c>
+    2b08:	e5d32078 	ldrb	r2, [r3, #120]	; 0x78
+    2b0c:	e59fc618 	ldr	ip, [pc, #1560]	; 312c <CAN_FilterAddId+0x630>
+    2b10:	e24dd008 	sub	sp, sp, #8
+    2b14:	e3a04001 	mov	r4, #1
+    2b18:	e2722001 	rsbs	r2, r2, #1
+    2b1c:	e59d3020 	ldr	r3, [sp, #32]
+    2b20:	33a02000 	movcc	r2, #0
+    2b24:	e58c4000 	str	r4, [ip]
+    2b28:	e3510003 	cmp	r1, #3
+    2b2c:	979ff101 	ldrls	pc, [pc, r1, lsl #2]
+    2b30:	ea0000ed 	b	2eec <CAN_FilterAddId+0x3f0>
+    2b34:	00002d40 	.word	0x00002d40
+    2b38:	00002f00 	.word	0x00002f00
+    2b3c:	00002c20 	.word	0x00002c20
+    2b40:	00002b44 	.word	0x00002b44
+    2b44:	e59d1024 	ldr	r1, [sp, #36]	; 0x24
+    2b48:	e28dc028 	add	ip, sp, #40	; 0x28
+    2b4c:	e373021e 	cmn	r3, #-536870911	; 0xe0000001
+    2b50:	9371021e 	cmnls	r1, #-536870911	; 0xe0000001
+    2b54:	93a04000 	movls	r4, #0
+    2b58:	83a04001 	movhi	r4, #1
+    2b5c:	e58dc004 	str	ip, [sp, #4]
+    2b60:	8a000125 	bhi	2ffc <CAN_FilterAddId+0x500>
+    2b64:	e1530001 	cmp	r3, r1
+    2b68:	8a000125 	bhi	3004 <CAN_FilterAddId+0x508>
+    2b6c:	e59f55b8 	ldr	r5, [pc, #1464]	; 312c <CAN_FilterAddId+0x630>
+    2b70:	e59fc5b8 	ldr	ip, [pc, #1464]	; 3130 <CAN_FilterAddId+0x634>
+    2b74:	e5956014 	ldr	r6, [r5, #20]
+    2b78:	e156000c 	cmp	r6, ip
+    2b7c:	8a000120 	bhi	3004 <CAN_FilterAddId+0x508>
+    2b80:	e595c014 	ldr	ip, [r5, #20]
+    2b84:	e5957010 	ldr	r7, [r5, #16]
+    2b88:	e1a0c70c 	lsl	ip, ip, #14
+    2b8c:	e1a07707 	lsl	r7, r7, #14
+    2b90:	e0802002 	add	r2, r0, r2
+    2b94:	e1a0c82c 	lsr	ip, ip, #16
+    2b98:	e1a07827 	lsr	r7, r7, #16
+    2b9c:	e1a02e82 	lsl	r2, r2, #29
+    2ba0:	e15c0007 	cmp	ip, r7
+    2ba4:	e1823003 	orr	r3, r2, r3
+    2ba8:	9a000011 	bls	2bf4 <CAN_FilterAddId+0xf8>
+    2bac:	e59f6580 	ldr	r6, [pc, #1408]	; 3134 <CAN_FilterAddId+0x638>
+    2bb0:	e24c4002 	sub	r4, ip, #2
+    2bb4:	e7965104 	ldr	r5, [r6, r4, lsl #2]
+    2bb8:	e1530005 	cmp	r3, r5
+    2bbc:	2a00000c 	bcs	2bf4 <CAN_FilterAddId+0xf8>
+    2bc0:	e786510c 	str	r5, [r6, ip, lsl #2]
+    2bc4:	e1a04804 	lsl	r4, r4, #16
+    2bc8:	e24c5001 	sub	r5, ip, #1
+    2bcc:	e28c0001 	add	r0, ip, #1
+    2bd0:	e7965105 	ldr	r5, [r6, r5, lsl #2]
+    2bd4:	e1a0c824 	lsr	ip, r4, #16
+    2bd8:	e157000c 	cmp	r7, ip
+    2bdc:	e24c4002 	sub	r4, ip, #2
+    2be0:	e7865100 	str	r5, [r6, r0, lsl #2]
+    2be4:	2a000002 	bcs	2bf4 <CAN_FilterAddId+0xf8>
+    2be8:	e7965104 	ldr	r5, [r6, r4, lsl #2]
+    2bec:	e1530005 	cmp	r3, r5
+    2bf0:	3afffff2 	bcc	2bc0 <CAN_FilterAddId+0xc4>
+    2bf4:	e59f4538 	ldr	r4, [pc, #1336]	; 3134 <CAN_FilterAddId+0x638>
+    2bf8:	e28c0001 	add	r0, ip, #1
+    2bfc:	e1822001 	orr	r2, r2, r1
+    2c00:	e784310c 	str	r3, [r4, ip, lsl #2]
+    2c04:	e7842100 	str	r2, [r4, r0, lsl #2]
+    2c08:	e59f351c 	ldr	r3, [pc, #1308]	; 312c <CAN_FilterAddId+0x630>
+    2c0c:	e5932014 	ldr	r2, [r3, #20]
+    2c10:	e2822008 	add	r2, r2, #8
+    2c14:	e5832014 	str	r2, [r3, #20]
+    2c18:	e3a00001 	mov	r0, #1
+    2c1c:	ea0000b3 	b	2ef0 <CAN_FilterAddId+0x3f4>
+    2c20:	e59dc024 	ldr	ip, [sp, #36]	; 0x24
+    2c24:	e28d1028 	add	r1, sp, #40	; 0x28
+    2c28:	e35c0b02 	cmp	ip, #2048	; 0x800
+    2c2c:	33530b02 	cmpcc	r3, #2048	; 0x800
+    2c30:	33a05000 	movcc	r5, #0
+    2c34:	23a05001 	movcs	r5, #1
+    2c38:	e58d1004 	str	r1, [sp, #4]
+    2c3c:	2a0000ee 	bcs	2ffc <CAN_FilterAddId+0x500>
+    2c40:	e153000c 	cmp	r3, ip
+    2c44:	2a0000f0 	bcs	300c <CAN_FilterAddId+0x510>
+    2c48:	e59f44dc 	ldr	r4, [pc, #1244]	; 312c <CAN_FilterAddId+0x630>
+    2c4c:	e5941014 	ldr	r1, [r4, #20]
+    2c50:	e3510b02 	cmp	r1, #2048	; 0x800
+    2c54:	0a0000ec 	beq	300c <CAN_FilterAddId+0x510>
+    2c58:	e5941014 	ldr	r1, [r4, #20]
+    2c5c:	e594500c 	ldr	r5, [r4, #12]
+    2c60:	e0802002 	add	r2, r0, r2
+    2c64:	e1a03803 	lsl	r3, r3, #16
+    2c68:	e1a01701 	lsl	r1, r1, #14
+    2c6c:	e1a05705 	lsl	r5, r5, #14
+    2c70:	e1833e82 	orr	r3, r3, r2, lsl #29
+    2c74:	e1a01821 	lsr	r1, r1, #16
+    2c78:	e1a05825 	lsr	r5, r5, #16
+    2c7c:	e183c00c 	orr	ip, r3, ip
+    2c80:	e1510005 	cmp	r1, r5
+    2c84:	e18c2682 	orr	r2, ip, r2, lsl #13
+    2c88:	9a000007 	bls	2cac <CAN_FilterAddId+0x1b0>
+    2c8c:	e59fc4a0 	ldr	ip, [pc, #1184]	; 3134 <CAN_FilterAddId+0x638>
+    2c90:	e2413001 	sub	r3, r1, #1
+    2c94:	e79c4103 	ldr	r4, [ip, r3, lsl #2]
+    2c98:	e1a03803 	lsl	r3, r3, #16
+    2c9c:	e78c4101 	str	r4, [ip, r1, lsl #2]
+    2ca0:	e1a01823 	lsr	r1, r3, #16
+    2ca4:	e1550001 	cmp	r5, r1
+    2ca8:	3afffff8 	bcc	2c90 <CAN_FilterAddId+0x194>
+    2cac:	e59f1478 	ldr	r1, [pc, #1144]	; 312c <CAN_FilterAddId+0x630>
+    2cb0:	e591300c 	ldr	r3, [r1, #12]
+    2cb4:	e5910008 	ldr	r0, [r1, #8]
+    2cb8:	e1a03703 	lsl	r3, r3, #14
+    2cbc:	e1a00700 	lsl	r0, r0, #14
+    2cc0:	e1a03823 	lsr	r3, r3, #16
+    2cc4:	e1a00820 	lsr	r0, r0, #16
+    2cc8:	e1530000 	cmp	r3, r0
+    2ccc:	9a00000d 	bls	2d08 <CAN_FilterAddId+0x20c>
+    2cd0:	e59fc45c 	ldr	ip, [pc, #1116]	; 3134 <CAN_FilterAddId+0x638>
+    2cd4:	e2431001 	sub	r1, r3, #1
+    2cd8:	e79c4101 	ldr	r4, [ip, r1, lsl #2]
+    2cdc:	e1520004 	cmp	r2, r4
+    2ce0:	2a000008 	bcs	2d08 <CAN_FilterAddId+0x20c>
+    2ce4:	e1a01801 	lsl	r1, r1, #16
+    2ce8:	e78c4103 	str	r4, [ip, r3, lsl #2]
+    2cec:	e1a03821 	lsr	r3, r1, #16
+    2cf0:	e1500003 	cmp	r0, r3
+    2cf4:	e2431001 	sub	r1, r3, #1
+    2cf8:	2a000002 	bcs	2d08 <CAN_FilterAddId+0x20c>
+    2cfc:	e79c4101 	ldr	r4, [ip, r1, lsl #2]
+    2d00:	e1520004 	cmp	r2, r4
+    2d04:	3afffff6 	bcc	2ce4 <CAN_FilterAddId+0x1e8>
+    2d08:	e59f0424 	ldr	r0, [pc, #1060]	; 3134 <CAN_FilterAddId+0x638>
+    2d0c:	e59f1418 	ldr	r1, [pc, #1048]	; 312c <CAN_FilterAddId+0x630>
+    2d10:	e7802103 	str	r2, [r0, r3, lsl #2]
+    2d14:	e591300c 	ldr	r3, [r1, #12]
+    2d18:	e2833004 	add	r3, r3, #4
+    2d1c:	e581300c 	str	r3, [r1, #12]
+    2d20:	e5913010 	ldr	r3, [r1, #16]
+    2d24:	e2833004 	add	r3, r3, #4
+    2d28:	e5813010 	str	r3, [r1, #16]
+    2d2c:	e5913014 	ldr	r3, [r1, #20]
+    2d30:	e2833004 	add	r3, r3, #4
+    2d34:	e5813014 	str	r3, [r1, #20]
+    2d38:	e3a00001 	mov	r0, #1
+    2d3c:	ea00006b 	b	2ef0 <CAN_FilterAddId+0x3f4>
+    2d40:	e3530b02 	cmp	r3, #2048	; 0x800
+    2d44:	2a0000ac 	bcs	2ffc <CAN_FilterAddId+0x500>
+    2d48:	e59f13dc 	ldr	r1, [pc, #988]	; 312c <CAN_FilterAddId+0x630>
+    2d4c:	e591c008 	ldr	ip, [r1, #8]
+    2d50:	e5914004 	ldr	r4, [r1, #4]
+    2d54:	e1a0c78c 	lsl	ip, ip, #15
+    2d58:	e1a0c82c 	lsr	ip, ip, #16
+    2d5c:	e1a04784 	lsl	r4, r4, #15
+    2d60:	e15c0824 	cmp	ip, r4, lsr #16
+    2d64:	0a0000dd 	beq	30e0 <CAN_FilterAddId+0x5e4>
+    2d68:	9a0000c9 	bls	3094 <CAN_FilterAddId+0x598>
+    2d6c:	e5911014 	ldr	r1, [r1, #20]
+    2d70:	e3510b02 	cmp	r1, #2048	; 0x800
+    2d74:	e24cc002 	sub	ip, ip, #2
+    2d78:	0a00009a 	beq	2fe8 <CAN_FilterAddId+0x4ec>
+    2d7c:	e59f13b0 	ldr	r1, [pc, #944]	; 3134 <CAN_FilterAddId+0x638>
+    2d80:	e1a0c08c 	lsl	ip, ip, #1
+    2d84:	e0802002 	add	r2, r0, r2
+    2d88:	e19c10b1 	ldrh	r1, [ip, r1]
+    2d8c:	e1834682 	orr	r4, r3, r2, lsl #13
+    2d90:	e1a04804 	lsl	r4, r4, #16
+    2d94:	e3510a0f 	cmp	r1, #61440	; 0xf000
+    2d98:	e1a04824 	lsr	r4, r4, #16
+    2d9c:	0a0000c0 	beq	30a4 <CAN_FilterAddId+0x5a8>
+    2da0:	e59f2384 	ldr	r2, [pc, #900]	; 312c <CAN_FilterAddId+0x630>
+    2da4:	e5923014 	ldr	r3, [r2, #20]
+    2da8:	e592c008 	ldr	ip, [r2, #8]
+    2dac:	e1a03703 	lsl	r3, r3, #14
+    2db0:	e1a0c70c 	lsl	ip, ip, #14
+    2db4:	e1a03823 	lsr	r3, r3, #16
+    2db8:	e1a0c82c 	lsr	ip, ip, #16
+    2dbc:	e153000c 	cmp	r3, ip
+    2dc0:	9a000007 	bls	2de4 <CAN_FilterAddId+0x2e8>
+    2dc4:	e59f1368 	ldr	r1, [pc, #872]	; 3134 <CAN_FilterAddId+0x638>
+    2dc8:	e2432001 	sub	r2, r3, #1
+    2dcc:	e7910102 	ldr	r0, [r1, r2, lsl #2]
+    2dd0:	e1a02802 	lsl	r2, r2, #16
+    2dd4:	e7810103 	str	r0, [r1, r3, lsl #2]
+    2dd8:	e1a03822 	lsr	r3, r2, #16
+    2ddc:	e15c0003 	cmp	ip, r3
+    2de0:	3afffff8 	bcc	2dc8 <CAN_FilterAddId+0x2cc>
+    2de4:	e59f2340 	ldr	r2, [pc, #832]	; 312c <CAN_FilterAddId+0x630>
+    2de8:	e5921008 	ldr	r1, [r2, #8]
+    2dec:	e59f3340 	ldr	r3, [pc, #832]	; 3134 <CAN_FilterAddId+0x638>
+    2df0:	e1a01701 	lsl	r1, r1, #14
+    2df4:	e1a01821 	lsr	r1, r1, #16
+    2df8:	e3a00a0f 	mov	r0, #61440	; 0xf000
+    2dfc:	e7830101 	str	r0, [r3, r1, lsl #2]
+    2e00:	e5923008 	ldr	r3, [r2, #8]
+    2e04:	e5920008 	ldr	r0, [r2, #8]
+    2e08:	e5928004 	ldr	r8, [r2, #4]
+    2e0c:	e5921004 	ldr	r1, [r2, #4]
+    2e10:	e5921008 	ldr	r1, [r2, #8]
+    2e14:	e2811004 	add	r1, r1, #4
+    2e18:	e5821008 	str	r1, [r2, #8]
+    2e1c:	e592100c 	ldr	r1, [r2, #12]
+    2e20:	e2811004 	add	r1, r1, #4
+    2e24:	e582100c 	str	r1, [r2, #12]
+    2e28:	e5921010 	ldr	r1, [r2, #16]
+    2e2c:	e2811004 	add	r1, r1, #4
+    2e30:	e5821010 	str	r1, [r2, #16]
+    2e34:	e5921014 	ldr	r1, [r2, #20]
+    2e38:	e1a030a3 	lsr	r3, r3, #1
+    2e3c:	e2833001 	add	r3, r3, #1
+    2e40:	e2811004 	add	r1, r1, #4
+    2e44:	e1a03803 	lsl	r3, r3, #16
+    2e48:	e1a00700 	lsl	r0, r0, #14
+    2e4c:	e1a08788 	lsl	r8, r8, #15
+    2e50:	e5821014 	str	r1, [r2, #20]
+    2e54:	e1a03823 	lsr	r3, r3, #16
+    2e58:	e1a00820 	lsr	r0, r0, #16
+    2e5c:	e1a08828 	lsr	r8, r8, #16
+    2e60:	e1580003 	cmp	r8, r3
+    2e64:	8a0000a9 	bhi	3110 <CAN_FilterAddId+0x614>
+    2e68:	e59fa2c4 	ldr	sl, [pc, #708]	; 3134 <CAN_FilterAddId+0x638>
+    2e6c:	e79a5100 	ldr	r5, [sl, r0, lsl #2]
+    2e70:	e243c003 	sub	ip, r3, #3
+    2e74:	e2836001 	add	r6, r3, #1
+    2e78:	e1a0208c 	lsl	r2, ip, #1
+    2e7c:	e1a01086 	lsl	r1, r6, #1
+    2e80:	e282220e 	add	r2, r2, #-536870912	; 0xe0000000
+    2e84:	e281120e 	add	r1, r1, #-536870912	; 0xe0000000
+    2e88:	e2137001 	ands	r7, r3, #1
+    2e8c:	e282290e 	add	r2, r2, #229376	; 0x38000
+    2e90:	e281190e 	add	r1, r1, #229376	; 0x38000
+    2e94:	1a00005e 	bne	3014 <CAN_FilterAddId+0x518>
+    2e98:	e1d110b0 	ldrh	r1, [r1]
+    2e9c:	e1510004 	cmp	r1, r4
+    2ea0:	9a00005b 	bls	3014 <CAN_FilterAddId+0x518>
+    2ea4:	e1a02100 	lsl	r2, r0, #2
+    2ea8:	e282220e 	add	r2, r2, #-536870912	; 0xe0000000
+    2eac:	e1a05825 	lsr	r5, r5, #16
+    2eb0:	e282290e 	add	r2, r2, #229376	; 0x38000
+    2eb4:	e1855805 	orr	r5, r5, r5, lsl #16
+    2eb8:	e1a03806 	lsl	r3, r6, #16
+    2ebc:	e5825000 	str	r5, [r2]
+    2ec0:	e1a03823 	lsr	r3, r3, #16
+    2ec4:	e1580003 	cmp	r8, r3
+    2ec8:	9affffe8 	bls	2e70 <CAN_FilterAddId+0x374>
+    2ecc:	e2037001 	and	r7, r3, #1
+    2ed0:	e3570000 	cmp	r7, #0
+    2ed4:	1a000059 	bne	3040 <CAN_FilterAddId+0x544>
+    2ed8:	e1a05825 	lsr	r5, r5, #16
+    2edc:	e1844805 	orr	r4, r4, r5, lsl #16
+    2ee0:	e5824000 	str	r4, [r2]
+    2ee4:	e3a00001 	mov	r0, #1
+    2ee8:	ea000000 	b	2ef0 <CAN_FilterAddId+0x3f4>
+    2eec:	e3a00001 	mov	r0, #1
+    2ef0:	e28dd008 	add	sp, sp, #8
+    2ef4:	e8bd05f0 	pop	{r4, r5, r6, r7, r8, sl}
+    2ef8:	e28dd008 	add	sp, sp, #8
+    2efc:	e12fff1e 	bx	lr
+    2f00:	e373021e 	cmn	r3, #-536870911	; 0xe0000001
+    2f04:	8a00003c 	bhi	2ffc <CAN_FilterAddId+0x500>
+    2f08:	e59fc21c 	ldr	ip, [pc, #540]	; 312c <CAN_FilterAddId+0x630>
+    2f0c:	e59c1014 	ldr	r1, [ip, #20]
+    2f10:	e3510b02 	cmp	r1, #2048	; 0x800
+    2f14:	0a000038 	beq	2ffc <CAN_FilterAddId+0x500>
+    2f18:	e59c1014 	ldr	r1, [ip, #20]
+    2f1c:	e59c6010 	ldr	r6, [ip, #16]
+    2f20:	e1a01701 	lsl	r1, r1, #14
+    2f24:	e1a06706 	lsl	r6, r6, #14
+    2f28:	e1a01821 	lsr	r1, r1, #16
+    2f2c:	e1a06826 	lsr	r6, r6, #16
+    2f30:	e0802002 	add	r2, r0, r2
+    2f34:	e1510006 	cmp	r1, r6
+    2f38:	e1833e82 	orr	r3, r3, r2, lsl #29
+    2f3c:	9a000007 	bls	2f60 <CAN_FilterAddId+0x464>
+    2f40:	e59f41ec 	ldr	r4, [pc, #492]	; 3134 <CAN_FilterAddId+0x638>
+    2f44:	e241c001 	sub	ip, r1, #1
+    2f48:	e794510c 	ldr	r5, [r4, ip, lsl #2]
+    2f4c:	e1a0c80c 	lsl	ip, ip, #16
+    2f50:	e7845101 	str	r5, [r4, r1, lsl #2]
+    2f54:	e1a0182c 	lsr	r1, ip, #16
+    2f58:	e1560001 	cmp	r6, r1
+    2f5c:	3afffff8 	bcc	2f44 <CAN_FilterAddId+0x448>
+    2f60:	e59f21c4 	ldr	r2, [pc, #452]	; 312c <CAN_FilterAddId+0x630>
+    2f64:	e5921010 	ldr	r1, [r2, #16]
+    2f68:	e592200c 	ldr	r2, [r2, #12]
+    2f6c:	e1a01701 	lsl	r1, r1, #14
+    2f70:	e1a02702 	lsl	r2, r2, #14
+    2f74:	e1a01821 	lsr	r1, r1, #16
+    2f78:	e1a02822 	lsr	r2, r2, #16
+    2f7c:	e1510002 	cmp	r1, r2
+    2f80:	9a00000d 	bls	2fbc <CAN_FilterAddId+0x4c0>
+    2f84:	e59f01a8 	ldr	r0, [pc, #424]	; 3134 <CAN_FilterAddId+0x638>
+    2f88:	e241c001 	sub	ip, r1, #1
+    2f8c:	e790410c 	ldr	r4, [r0, ip, lsl #2]
+    2f90:	e1530004 	cmp	r3, r4
+    2f94:	2a000008 	bcs	2fbc <CAN_FilterAddId+0x4c0>
+    2f98:	e1a0c80c 	lsl	ip, ip, #16
+    2f9c:	e7804101 	str	r4, [r0, r1, lsl #2]
+    2fa0:	e1a0182c 	lsr	r1, ip, #16
+    2fa4:	e1520001 	cmp	r2, r1
+    2fa8:	e241c001 	sub	ip, r1, #1
+    2fac:	2a000002 	bcs	2fbc <CAN_FilterAddId+0x4c0>
+    2fb0:	e790410c 	ldr	r4, [r0, ip, lsl #2]
+    2fb4:	e1530004 	cmp	r3, r4
+    2fb8:	3afffff6 	bcc	2f98 <CAN_FilterAddId+0x49c>
+    2fbc:	e59f2170 	ldr	r2, [pc, #368]	; 3134 <CAN_FilterAddId+0x638>
+    2fc0:	e59fc164 	ldr	ip, [pc, #356]	; 312c <CAN_FilterAddId+0x630>
+    2fc4:	e7823101 	str	r3, [r2, r1, lsl #2]
+    2fc8:	e59c3010 	ldr	r3, [ip, #16]
+    2fcc:	e2833004 	add	r3, r3, #4
+    2fd0:	e58c3010 	str	r3, [ip, #16]
+    2fd4:	e59c3014 	ldr	r3, [ip, #20]
+    2fd8:	e2833004 	add	r3, r3, #4
+    2fdc:	e58c3014 	str	r3, [ip, #20]
+    2fe0:	e3a00001 	mov	r0, #1
+    2fe4:	eaffffc1 	b	2ef0 <CAN_FilterAddId+0x3f4>
+    2fe8:	e59f1144 	ldr	r1, [pc, #324]	; 3134 <CAN_FilterAddId+0x638>
+    2fec:	e1a0408c 	lsl	r4, ip, #1
+    2ff0:	e19410b1 	ldrh	r1, [r4, r1]
+    2ff4:	e3510a0f 	cmp	r1, #61440	; 0xf000
+    2ff8:	0affff5f 	beq	2d7c <CAN_FilterAddId+0x280>
+    2ffc:	e3a00000 	mov	r0, #0
+    3000:	eaffffba 	b	2ef0 <CAN_FilterAddId+0x3f4>
+    3004:	e1a00004 	mov	r0, r4
+    3008:	eaffffb8 	b	2ef0 <CAN_FilterAddId+0x3f4>
+    300c:	e1a00005 	mov	r0, r5
+    3010:	eaffffb6 	b	2ef0 <CAN_FilterAddId+0x3f4>
+    3014:	e3530002 	cmp	r3, #2
+    3018:	93a03000 	movls	r3, #0
+    301c:	82073001 	andhi	r3, r7, #1
+    3020:	e3530000 	cmp	r3, #0
+    3024:	0a000035 	beq	3100 <CAN_FilterAddId+0x604>
+    3028:	e1d230b0 	ldrh	r3, [r2]
+    302c:	e1530004 	cmp	r3, r4
+    3030:	8a000008 	bhi	3058 <CAN_FilterAddId+0x55c>
+    3034:	e1a02100 	lsl	r2, r0, #2
+    3038:	e282220e 	add	r2, r2, #-536870912	; 0xe0000000
+    303c:	e282290e 	add	r2, r2, #229376	; 0x38000
+    3040:	e1a05805 	lsl	r5, r5, #16
+    3044:	e1a04804 	lsl	r4, r4, #16
+    3048:	e1844825 	orr	r4, r4, r5, lsr #16
+    304c:	e5824000 	str	r4, [r2]
+    3050:	e3a00001 	mov	r0, #1
+    3054:	eaffffa5 	b	2ef0 <CAN_FilterAddId+0x3f4>
+    3058:	e2403001 	sub	r3, r0, #1
+    305c:	e79a2103 	ldr	r2, [sl, r3, lsl #2]
+    3060:	e1a05805 	lsl	r5, r5, #16
+    3064:	e1a05825 	lsr	r5, r5, #16
+    3068:	e1855802 	orr	r5, r5, r2, lsl #16
+    306c:	e1a03803 	lsl	r3, r3, #16
+    3070:	e78a5100 	str	r5, [sl, r0, lsl #2]
+    3074:	e1a00823 	lsr	r0, r3, #16
+    3078:	e1a02100 	lsl	r2, r0, #2
+    307c:	e282220e 	add	r2, r2, #-536870912	; 0xe0000000
+    3080:	e282290e 	add	r2, r2, #229376	; 0x38000
+    3084:	e1a0380c 	lsl	r3, ip, #16
+    3088:	e5925000 	ldr	r5, [r2]
+    308c:	e1a03823 	lsr	r3, r3, #16
+    3090:	eaffff8b 	b	2ec4 <CAN_FilterAddId+0x3c8>
+    3094:	e0802002 	add	r2, r0, r2
+    3098:	e1834682 	orr	r4, r3, r2, lsl #13
+    309c:	e1a04804 	lsl	r4, r4, #16
+    30a0:	e1a04824 	lsr	r4, r4, #16
+    30a4:	e59f3080 	ldr	r3, [pc, #128]	; 312c <CAN_FilterAddId+0x630>
+    30a8:	e5932008 	ldr	r2, [r3, #8]
+    30ac:	e5930008 	ldr	r0, [r3, #8]
+    30b0:	e1a020a2 	lsr	r2, r2, #1
+    30b4:	e5938004 	ldr	r8, [r3, #4]
+    30b8:	e1a00120 	lsr	r0, r0, #2
+    30bc:	e2423002 	sub	r3, r2, #2
+    30c0:	e2400001 	sub	r0, r0, #1
+    30c4:	e1a03803 	lsl	r3, r3, #16
+    30c8:	e1a00800 	lsl	r0, r0, #16
+    30cc:	e1a08788 	lsl	r8, r8, #15
+    30d0:	e1a03823 	lsr	r3, r3, #16
+    30d4:	e1a00820 	lsr	r0, r0, #16
+    30d8:	e1a08828 	lsr	r8, r8, #16
+    30dc:	eaffff5f 	b	2e60 <CAN_FilterAddId+0x364>
+    30e0:	e5911014 	ldr	r1, [r1, #20]
+    30e4:	e3510b02 	cmp	r1, #2048	; 0x800
+    30e8:	0affffc3 	beq	2ffc <CAN_FilterAddId+0x500>
+    30ec:	e0802002 	add	r2, r0, r2
+    30f0:	e1834682 	orr	r4, r3, r2, lsl #13
+    30f4:	e1a04804 	lsl	r4, r4, #16
+    30f8:	e1a04824 	lsr	r4, r4, #16
+    30fc:	eaffff27 	b	2da0 <CAN_FilterAddId+0x2a4>
+    3100:	e1a02100 	lsl	r2, r0, #2
+    3104:	e282220e 	add	r2, r2, #-536870912	; 0xe0000000
+    3108:	e282290e 	add	r2, r2, #229376	; 0x38000
+    310c:	eaffff6f 	b	2ed0 <CAN_FilterAddId+0x3d4>
+    3110:	e1a02100 	lsl	r2, r0, #2
+    3114:	e282220e 	add	r2, r2, #-536870912	; 0xe0000000
+    3118:	e282290e 	add	r2, r2, #229376	; 0x38000
+    311c:	e2037001 	and	r7, r3, #1
+    3120:	e5925000 	ldr	r5, [r2]
+    3124:	eaffff69 	b	2ed0 <CAN_FilterAddId+0x3d4>
+    3128:	4000040c 	.word	0x4000040c
+    312c:	e003c000 	.word	0xe003c000
+    3130:	000007f8 	.word	0x000007f8
+    3134:	e0038000 	.word	0xe0038000
+
+00003138 <CAN_SetFilterMode>:
+    3138:	e59f3014 	ldr	r3, [pc, #20]	; 3154 <CAN_SetFilterMode+0x1c>
+    313c:	e5830000 	str	r0, [r3]
+    3140:	e5932000 	ldr	r2, [r3]
+    3144:	e1520000 	cmp	r2, r0
+    3148:	1afffffb 	bne	313c <CAN_SetFilterMode+0x4>
+    314c:	e3a00001 	mov	r0, #1
+    3150:	e12fff1e 	bx	lr
+    3154:	e003c000 	.word	0xe003c000
+
+00003158 <CAN_InitFilters>:
+    3158:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
+    315c:	e24dd024 	sub	sp, sp, #36	; 0x24
+    3160:	e28d0020 	add	r0, sp, #32
+    3164:	e3a03036 	mov	r3, #54	; 0x36
+    3168:	e520301c 	str	r3, [r0, #-28]!	; 0xffffffe4
+    316c:	e28d1018 	add	r1, sp, #24
+    3170:	eb00015b 	bl	36e4 <MyIAP>
+    3174:	e59d201c 	ldr	r2, [sp, #28]
+    3178:	e59f3060 	ldr	r3, [pc, #96]	; 31e0 <CAN_InitFilters+0x88>
+    317c:	e0633002 	rsb	r3, r3, r2
+    3180:	e2732000 	rsbs	r2, r3, #0
+    3184:	e0a22003 	adc	r2, r2, r3
+    3188:	e59f3054 	ldr	r3, [pc, #84]	; 31e4 <CAN_InitFilters+0x8c>
+    318c:	e5c32078 	strb	r2, [r3, #120]	; 0x78
+    3190:	e59f3050 	ldr	r3, [pc, #80]	; 31e8 <CAN_InitFilters+0x90>
+    3194:	e3a02001 	mov	r2, #1
+    3198:	e5832000 	str	r2, [r3]
+    319c:	e59f0048 	ldr	r0, [pc, #72]	; 31ec <CAN_InitFilters+0x94>
+    31a0:	e59f2048 	ldr	r2, [pc, #72]	; 31f0 <CAN_InitFilters+0x98>
+    31a4:	e3a01000 	mov	r1, #0
+    31a8:	e4821004 	str	r1, [r2], #4
+    31ac:	e1520000 	cmp	r2, r0
+    31b0:	e3a03000 	mov	r3, #0
+    31b4:	1afffffb 	bne	31a8 <CAN_InitFilters+0x50>
+    31b8:	e59f2028 	ldr	r2, [pc, #40]	; 31e8 <CAN_InitFilters+0x90>
+    31bc:	e3a00001 	mov	r0, #1
+    31c0:	e5823004 	str	r3, [r2, #4]
+    31c4:	e5823008 	str	r3, [r2, #8]
+    31c8:	e582300c 	str	r3, [r2, #12]
+    31cc:	e5823010 	str	r3, [r2, #16]
+    31d0:	e5823014 	str	r3, [r2, #20]
+    31d4:	e28dd024 	add	sp, sp, #36	; 0x24
+    31d8:	e49de004 	pop	{lr}		; (ldr lr, [sp], #4)
+    31dc:	e12fff1e 	bx	lr
+    31e0:	0301ff13 	.word	0x0301ff13
+    31e4:	4000040c 	.word	0x4000040c
+    31e8:	e003c000 	.word	0xe003c000
+    31ec:	e0038800 	.word	0xe0038800
+    31f0:	e0038000 	.word	0xe0038000
+
+000031f4 <CAN_InitChannel>:
+    31f4:	e92d07f0 	push	{r4, r5, r6, r7, r8, r9, sl}
+    31f8:	e3500001 	cmp	r0, #1
+    31fc:	e24dd00c 	sub	sp, sp, #12
+    3200:	83a00000 	movhi	r0, #0
+    3204:	9a000002 	bls	3214 <CAN_InitChannel+0x20>
+    3208:	e28dd00c 	add	sp, sp, #12
+    320c:	e8bd07f0 	pop	{r4, r5, r6, r7, r8, r9, sl}
+    3210:	e12fff1e 	bx	lr
+    3214:	e59f82f8 	ldr	r8, [pc, #760]	; 3514 <CAN_InitChannel+0x320>
+    3218:	e5d83079 	ldrb	r3, [r8, #121]	; 0x79
+    321c:	e3530000 	cmp	r3, #0
+    3220:	1a00000f 	bne	3264 <CAN_InitChannel+0x70>
+    3224:	e5d83078 	ldrb	r3, [r8, #120]	; 0x78
+    3228:	e3530000 	cmp	r3, #0
+    322c:	1a00000c 	bne	3264 <CAN_InitChannel+0x70>
+    3230:	e58d3000 	str	r3, [sp]
+    3234:	e59d2000 	ldr	r2, [sp]
+    3238:	e59f32d8 	ldr	r3, [pc, #728]	; 3518 <CAN_InitChannel+0x324>
+    323c:	e1520003 	cmp	r2, r3
+    3240:	8a000005 	bhi	325c <CAN_InitChannel+0x68>
+    3244:	e59d2000 	ldr	r2, [sp]
+    3248:	e2822001 	add	r2, r2, #1
+    324c:	e58d2000 	str	r2, [sp]
+    3250:	e59d2000 	ldr	r2, [sp]
+    3254:	e1520003 	cmp	r2, r3
+    3258:	9afffff9 	bls	3244 <CAN_InitChannel+0x50>
+    325c:	e3a03001 	mov	r3, #1
+    3260:	e5c83079 	strb	r3, [r8, #121]	; 0x79
+    3264:	e59f32b0 	ldr	r3, [pc, #688]	; 351c <CAN_InitChannel+0x328>
+    3268:	e3a02a03 	mov	r2, #12288	; 0x3000
+    326c:	e583200c 	str	r2, [r3, #12]
+    3270:	e5932008 	ldr	r2, [r3, #8]
+    3274:	e3822a03 	orr	r2, r2, #12288	; 0x3000
+    3278:	e5832008 	str	r2, [r3, #8]
+    327c:	e59f329c 	ldr	r3, [pc, #668]	; 3520 <CAN_InitChannel+0x32c>
+    3280:	e3a02101 	mov	r2, #1073741824	; 0x40000000
+    3284:	e192c0b3 	ldrh	ip, [r2, r3]
+    3288:	e3a03000 	mov	r3, #0
+    328c:	e58d3000 	str	r3, [sp]
+    3290:	e59d3000 	ldr	r3, [sp]
+    3294:	e59f4288 	ldr	r4, [pc, #648]	; 3524 <CAN_InitChannel+0x330>
+    3298:	e1530004 	cmp	r3, r4
+    329c:	8a00000b 	bhi	32d0 <CAN_InitChannel+0xdc>
+    32a0:	e59d3000 	ldr	r3, [sp]
+    32a4:	e59d2000 	ldr	r2, [sp]
+    32a8:	e1a03083 	lsl	r3, r3, #1
+    32ac:	e2822001 	add	r2, r2, #1
+    32b0:	e2633dff 	rsb	r3, r3, #16320	; 0x3fc0
+    32b4:	e58d2000 	str	r2, [sp]
+    32b8:	e28331f1 	add	r3, r3, #1073741884	; 0x4000003c
+    32bc:	e59d2000 	ldr	r2, [sp]
+    32c0:	e1d330b0 	ldrh	r3, [r3]
+    32c4:	e1520004 	cmp	r2, r4
+    32c8:	e02cc003 	eor	ip, ip, r3
+    32cc:	9afffff3 	bls	32a0 <CAN_InitChannel+0xac>
+    32d0:	e59f6244 	ldr	r6, [pc, #580]	; 351c <CAN_InitChannel+0x328>
+    32d4:	e59f324c 	ldr	r3, [pc, #588]	; 3528 <CAN_InitChannel+0x334>
+    32d8:	e1a0500c 	mov	r5, ip
+    32dc:	e3a04010 	mov	r4, #16
+    32e0:	e3a09a02 	mov	r9, #8192	; 0x2000
+    32e4:	e3a0aa01 	mov	sl, #4096	; 0x1000
+    32e8:	e3a07000 	mov	r7, #0
+    32ec:	e3150001 	tst	r5, #1
+    32f0:	15869004 	strne	r9, [r6, #4]
+    32f4:	0586900c 	streq	r9, [r6, #12]
+    32f8:	e586a004 	str	sl, [r6, #4]
+    32fc:	e58d7004 	str	r7, [sp, #4]
+    3300:	e59d2004 	ldr	r2, [sp, #4]
+    3304:	e1520003 	cmp	r2, r3
+    3308:	8a000005 	bhi	3324 <CAN_InitChannel+0x130>
+    330c:	e59d2004 	ldr	r2, [sp, #4]
+    3310:	e2822001 	add	r2, r2, #1
+    3314:	e58d2004 	str	r2, [sp, #4]
+    3318:	e59d2004 	ldr	r2, [sp, #4]
+    331c:	e1520003 	cmp	r2, r3
+    3320:	9afffff9 	bls	330c <CAN_InitChannel+0x118>
+    3324:	e586a00c 	str	sl, [r6, #12]
+    3328:	e58d7004 	str	r7, [sp, #4]
+    332c:	e59d2004 	ldr	r2, [sp, #4]
+    3330:	e1520003 	cmp	r2, r3
+    3334:	8a000005 	bhi	3350 <CAN_InitChannel+0x15c>
+    3338:	e59d2004 	ldr	r2, [sp, #4]
+    333c:	e2822001 	add	r2, r2, #1
+    3340:	e58d2004 	str	r2, [sp, #4]
+    3344:	e59d2004 	ldr	r2, [sp, #4]
+    3348:	e1520003 	cmp	r2, r3
+    334c:	9afffff9 	bls	3338 <CAN_InitChannel+0x144>
+    3350:	e2544001 	subs	r4, r4, #1
+    3354:	e1a050a5 	lsr	r5, r5, #1
+    3358:	1affffe3 	bne	32ec <CAN_InitChannel+0xf8>
+    335c:	e59f31b8 	ldr	r3, [pc, #440]	; 351c <CAN_InitChannel+0x328>
+    3360:	e5932008 	ldr	r2, [r3, #8]
+    3364:	e3c22a02 	bic	r2, r2, #8192	; 0x2000
+    3368:	e5832008 	str	r2, [r3, #8]
+    336c:	e3a02a01 	mov	r2, #4096	; 0x1000
+    3370:	e5832004 	str	r2, [r3, #4]
+    3374:	e58d4000 	str	r4, [sp]
+    3378:	e59d3000 	ldr	r3, [sp]
+    337c:	e59f21a4 	ldr	r2, [pc, #420]	; 3528 <CAN_InitChannel+0x334>
+    3380:	e1530002 	cmp	r3, r2
+    3384:	8a000005 	bhi	33a0 <CAN_InitChannel+0x1ac>
+    3388:	e59d3000 	ldr	r3, [sp]
+    338c:	e2833001 	add	r3, r3, #1
+    3390:	e58d3000 	str	r3, [sp]
+    3394:	e59d3000 	ldr	r3, [sp]
+    3398:	e1530002 	cmp	r3, r2
+    339c:	9afffff9 	bls	3388 <CAN_InitChannel+0x194>
+    33a0:	e3a04000 	mov	r4, #0
+    33a4:	e59f5170 	ldr	r5, [pc, #368]	; 351c <CAN_InitChannel+0x328>
+    33a8:	e59f3178 	ldr	r3, [pc, #376]	; 3528 <CAN_InitChannel+0x334>
+    33ac:	e3a06010 	mov	r6, #16
+    33b0:	e3a0aa01 	mov	sl, #4096	; 0x1000
+    33b4:	e1a07004 	mov	r7, r4
+    33b8:	e585a004 	str	sl, [r5, #4]
+    33bc:	e58d7004 	str	r7, [sp, #4]
+    33c0:	e59d2004 	ldr	r2, [sp, #4]
+    33c4:	e1520003 	cmp	r2, r3
+    33c8:	8a000005 	bhi	33e4 <CAN_InitChannel+0x1f0>
+    33cc:	e59d2004 	ldr	r2, [sp, #4]
+    33d0:	e2822001 	add	r2, r2, #1
+    33d4:	e58d2004 	str	r2, [sp, #4]
+    33d8:	e59d2004 	ldr	r2, [sp, #4]
+    33dc:	e1520003 	cmp	r2, r3
+    33e0:	9afffff9 	bls	33cc <CAN_InitChannel+0x1d8>
+    33e4:	e5952000 	ldr	r2, [r5]
+    33e8:	e1a040a4 	lsr	r4, r4, #1
+    33ec:	e3120a02 	tst	r2, #8192	; 0x2000
+    33f0:	11e04884 	mvnne	r4, r4, lsl #17
+    33f4:	e585a00c 	str	sl, [r5, #12]
+    33f8:	e58d7004 	str	r7, [sp, #4]
+    33fc:	11e048a4 	mvnne	r4, r4, lsr #17
+    3400:	e59d2004 	ldr	r2, [sp, #4]
+    3404:	11a04804 	lslne	r4, r4, #16
+    3408:	11a04824 	lsrne	r4, r4, #16
+    340c:	e1520003 	cmp	r2, r3
+    3410:	8a000005 	bhi	342c <CAN_InitChannel+0x238>
+    3414:	e59d2004 	ldr	r2, [sp, #4]
+    3418:	e2822001 	add	r2, r2, #1
+    341c:	e58d2004 	str	r2, [sp, #4]
+    3420:	e59d2004 	ldr	r2, [sp, #4]
+    3424:	e1520003 	cmp	r2, r3
+    3428:	9afffff9 	bls	3414 <CAN_InitChannel+0x220>
+    342c:	e2566001 	subs	r6, r6, #1
+    3430:	1affffe0 	bne	33b8 <CAN_InitChannel+0x1c4>
+    3434:	e59f30f0 	ldr	r3, [pc, #240]	; 352c <CAN_InitChannel+0x338>
+    3438:	e3a02010 	mov	r2, #16
+    343c:	e2036a0a 	and	r6, r3, #40960	; 0xa000
+    3440:	e20c5001 	and	r5, ip, #1
+    3444:	e3560000 	cmp	r6, #0
+    3448:	12255001 	eorne	r5, r5, #1
+    344c:	e1a03883 	lsl	r3, r3, #17
+    3450:	e2522001 	subs	r2, r2, #1
+    3454:	e1853823 	orr	r3, r5, r3, lsr #16
+    3458:	e1a0c0ac 	lsr	ip, ip, #1
+    345c:	1afffff6 	bne	343c <CAN_InitChannel+0x248>
+    3460:	e1540003 	cmp	r4, r3
+    3464:	0a000000 	beq	346c <CAN_InitChannel+0x278>
+    3468:	eafffffe 	b	3468 <CAN_InitChannel+0x274>
+    346c:	e0602200 	rsb	r2, r0, r0, lsl #4
+    3470:	e1a02102 	lsl	r2, r2, #2
+    3474:	e0883002 	add	r3, r8, r2
+    3478:	e19840b2 	ldrh	r4, [r8, r2]
+    347c:	e5932034 	ldr	r2, [r3, #52]	; 0x34
+    3480:	e593c008 	ldr	ip, [r3, #8]
+    3484:	e2445001 	sub	r5, r4, #1
+    3488:	e3520000 	cmp	r2, #0
+    348c:	e59f209c 	ldr	r2, [pc, #156]	; 3530 <CAN_InitChannel+0x33c>
+    3490:	e08c5205 	add	r5, ip, r5, lsl #4
+    3494:	e7922100 	ldr	r2, [r2, r0, lsl #2]
+    3498:	e583c018 	str	ip, [r3, #24]
+    349c:	e583c01c 	str	ip, [r3, #28]
+    34a0:	e583500c 	str	r5, [r3, #12]
+    34a4:	e1c340b2 	strh	r4, [r3, #2]
+    34a8:	0a000010 	beq	34f0 <CAN_InitChannel+0x2fc>
+    34ac:	e1d3c0b4 	ldrh	ip, [r3, #4]
+    34b0:	e5930010 	ldr	r0, [r3, #16]
+    34b4:	e24c4001 	sub	r4, ip, #1
+    34b8:	e0844104 	add	r4, r4, r4, lsl #2
+    34bc:	e0804104 	add	r4, r0, r4, lsl #2
+    34c0:	e5830020 	str	r0, [r3, #32]
+    34c4:	e5830024 	str	r0, [r3, #36]	; 0x24
+    34c8:	e5834014 	str	r4, [r3, #20]
+    34cc:	e1c3c0b6 	strh	ip, [r3, #6]
+    34d0:	e5821014 	str	r1, [r2, #20]
+    34d4:	e5920014 	ldr	r0, [r2, #20]
+    34d8:	e1500001 	cmp	r0, r1
+    34dc:	1afffffb 	bne	34d0 <CAN_InitChannel+0x2dc>
+    34e0:	e5d33038 	ldrb	r3, [r3, #56]	; 0x38
+    34e4:	e3a00001 	mov	r0, #1
+    34e8:	e5823018 	str	r3, [r2, #24]
+    34ec:	eaffff45 	b	3208 <CAN_InitChannel+0x14>
+    34f0:	e1d3c0b4 	ldrh	ip, [r3, #4]
+    34f4:	e5930010 	ldr	r0, [r3, #16]
+    34f8:	e24c4001 	sub	r4, ip, #1
+    34fc:	e0804204 	add	r4, r0, r4, lsl #4
+    3500:	e5830020 	str	r0, [r3, #32]
+    3504:	e5830024 	str	r0, [r3, #36]	; 0x24
+    3508:	e5834014 	str	r4, [r3, #20]
+    350c:	e1c3c0b6 	strh	ip, [r3, #6]
+    3510:	eaffffee 	b	34d0 <CAN_InitChannel+0x2dc>
+    3514:	4000040c 	.word	0x4000040c
+    3518:	000aae5f 	.word	0x000aae5f
+    351c:	e0028000 	.word	0xe0028000
+    3520:	00003ffe 	.word	0x00003ffe
+    3524:	000003ff 	.word	0x000003ff
+    3528:	00000211 	.word	0x00000211
+    352c:	000093e5 	.word	0x000093e5
+    3530:	0000380c 	.word	0x0000380c
+
+00003534 <CAN_ReInitChannel>:
+    3534:	e3500001 	cmp	r0, #1
+    3538:	e92d0030 	push	{r4, r5}
+    353c:	9a000002 	bls	354c <CAN_ReInitChannel+0x18>
+    3540:	e3a00000 	mov	r0, #0
+    3544:	e8bd0030 	pop	{r4, r5}
+    3548:	e12fff1e 	bx	lr
+    354c:	e59f4064 	ldr	r4, [pc, #100]	; 35b8 <CAN_ReInitChannel+0x84>
+    3550:	e060c200 	rsb	ip, r0, r0, lsl #4
+    3554:	e1a0c10c 	lsl	ip, ip, #2
+    3558:	e084300c 	add	r3, r4, ip
+    355c:	e593100c 	ldr	r1, [r3, #12]
+    3560:	e5932008 	ldr	r2, [r3, #8]
+    3564:	e1510002 	cmp	r1, r2
+    3568:	e59f104c 	ldr	r1, [pc, #76]	; 35bc <CAN_ReInitChannel+0x88>
+    356c:	e7915100 	ldr	r5, [r1, r0, lsl #2]
+    3570:	e5931010 	ldr	r1, [r3, #16]
+    3574:	0a00000b 	beq	35a8 <CAN_ReInitChannel+0x74>
+    3578:	e19440bc 	ldrh	r4, [r4, ip]
+    357c:	e1d300b4 	ldrh	r0, [r3, #4]
+    3580:	e5d3c038 	ldrb	ip, [r3, #56]	; 0x38
+    3584:	e1c340b2 	strh	r4, [r3, #2]
+    3588:	e5832018 	str	r2, [r3, #24]
+    358c:	e1c300b6 	strh	r0, [r3, #6]
+    3590:	e583201c 	str	r2, [r3, #28]
+    3594:	e5831020 	str	r1, [r3, #32]
+    3598:	e5831024 	str	r1, [r3, #36]	; 0x24
+    359c:	e3a00001 	mov	r0, #1
+    35a0:	e585c018 	str	ip, [r5, #24]
+    35a4:	eaffffe6 	b	3544 <CAN_ReInitChannel+0x10>
+    35a8:	e5930014 	ldr	r0, [r3, #20]
+    35ac:	e1500001 	cmp	r0, r1
+    35b0:	1afffff0 	bne	3578 <CAN_ReInitChannel+0x44>
+    35b4:	eaffffe1 	b	3540 <CAN_ReInitChannel+0xc>
+    35b8:	4000040c 	.word	0x4000040c
+    35bc:	0000380c 	.word	0x0000380c
+
+000035c0 <HandleTxErrInt>:
+    35c0:	e92d4038 	push	{r3, r4, r5, lr}
+    35c4:	e59f3038 	ldr	r3, [pc, #56]	; 3604 <HandleTxErrInt+0x44>
+    35c8:	e0602200 	rsb	r2, r0, r0, lsl #4
+    35cc:	e0833102 	add	r3, r3, r2, lsl #2
+    35d0:	e5935030 	ldr	r5, [r3, #48]	; 0x30
+    35d4:	e3550000 	cmp	r5, #0
+    35d8:	e1a04000 	mov	r4, r0
+    35dc:	0a000003 	beq	35f0 <HandleTxErrInt+0x30>
+    35e0:	e1a0e00f 	mov	lr, pc
+    35e4:	e12fff15 	bx	r5
+    35e8:	e8bd4038 	pop	{r3, r4, r5, lr}
+    35ec:	e12fff1e 	bx	lr
+    35f0:	ebffffcf 	bl	3534 <CAN_ReInitChannel>
+    35f4:	e1a00004 	mov	r0, r4
+    35f8:	e1a01005 	mov	r1, r5
+    35fc:	e8bd4038 	pop	{r3, r4, r5, lr}
+    3600:	eafffc80 	b	2808 <CAN_SetBusMode>
+    3604:	4000040c 	.word	0x4000040c
+
+00003608 <CAN_ISR>:
+    3608:	e24ee004 	sub	lr, lr, #4
+    360c:	e92d50ff 	push	{r0, r1, r2, r3, r4, r5, r6, r7, ip, lr}
+    3610:	e59f50c4 	ldr	r5, [pc, #196]	; 36dc <CAN_ISR+0xd4>
+    3614:	e3a06008 	mov	r6, #8
+    3618:	e595400c 	ldr	r4, [r5, #12]
+    361c:	e3140002 	tst	r4, #2
+    3620:	e204408b 	and	r4, r4, #139	; 0x8b
+    3624:	1a000029 	bne	36d0 <CAN_ISR+0xc8>
+    3628:	e3140001 	tst	r4, #1
+    362c:	1a000024 	bne	36c4 <CAN_ISR+0xbc>
+    3630:	e3140080 	tst	r4, #128	; 0x80
+    3634:	1a00001f 	bne	36b8 <CAN_ISR+0xb0>
+    3638:	e3140008 	tst	r4, #8
+    363c:	15856004 	strne	r6, [r5, #4]
+    3640:	1afffff4 	bne	3618 <CAN_ISR+0x10>
+    3644:	e3540000 	cmp	r4, #0
+    3648:	1afffff2 	bne	3618 <CAN_ISR+0x10>
+    364c:	e59f508c 	ldr	r5, [pc, #140]	; 36e0 <CAN_ISR+0xd8>
+    3650:	e3a06008 	mov	r6, #8
+    3654:	e595400c 	ldr	r4, [r5, #12]
+    3658:	e3140002 	tst	r4, #2
+    365c:	e204408b 	and	r4, r4, #139	; 0x8b
+    3660:	1a000011 	bne	36ac <CAN_ISR+0xa4>
+    3664:	e3140001 	tst	r4, #1
+    3668:	1a00000c 	bne	36a0 <CAN_ISR+0x98>
+    366c:	e3140080 	tst	r4, #128	; 0x80
+    3670:	1a000007 	bne	3694 <CAN_ISR+0x8c>
+    3674:	e3140008 	tst	r4, #8
+    3678:	15856004 	strne	r6, [r5, #4]
+    367c:	1afffff4 	bne	3654 <CAN_ISR+0x4c>
+    3680:	e3540000 	cmp	r4, #0
+    3684:	1afffff2 	bne	3654 <CAN_ISR+0x4c>
+    3688:	e3e03000 	mvn	r3, #0
+    368c:	e5033fcf 	str	r3, [r3, #-4047]	; 0xfffff031
+    3690:	e8fd90ff 	ldm	sp!, {r0, r1, r2, r3, r4, r5, r6, r7, ip, pc}^
+    3694:	e3a00001 	mov	r0, #1
+    3698:	ebffffc8 	bl	35c0 <HandleTxErrInt>
+    369c:	eafffff4 	b	3674 <CAN_ISR+0x6c>
+    36a0:	e3a00001 	mov	r0, #1
+    36a4:	ebfffb99 	bl	2510 <HandleRxInt>
+    36a8:	eaffffef 	b	366c <CAN_ISR+0x64>
+    36ac:	e3a00001 	mov	r0, #1
+    36b0:	ebfffb64 	bl	2448 <HandleTxInt>
+    36b4:	eaffffea 	b	3664 <CAN_ISR+0x5c>
+    36b8:	e3a00000 	mov	r0, #0
+    36bc:	ebffffbf 	bl	35c0 <HandleTxErrInt>
+    36c0:	eaffffdc 	b	3638 <CAN_ISR+0x30>
+    36c4:	e3a00000 	mov	r0, #0
+    36c8:	ebfffb90 	bl	2510 <HandleRxInt>
+    36cc:	eaffffd7 	b	3630 <CAN_ISR+0x28>
+    36d0:	e3a00000 	mov	r0, #0
+    36d4:	ebfffb5b 	bl	2448 <HandleTxInt>
+    36d8:	eaffffd2 	b	3628 <CAN_ISR+0x20>
+    36dc:	e0044000 	.word	0xe0044000
+    36e0:	e0048000 	.word	0xe0048000
+
+000036e4 <MyIAP>:
+    36e4:	e3e0313a 	mvn	r3, #-2147483634	; 0x8000000e
+    36e8:	e12fff13 	bx	r3
+
+000036ec <memcpy>:
+    36ec:	e352000f 	cmp	r2, #15
+    36f0:	9a000036 	bls	37d0 <memcpy+0xe4>
+    36f4:	e1803001 	orr	r3, r0, r1
+    36f8:	e3130003 	tst	r3, #3
+    36fc:	1a00003f 	bne	3800 <memcpy+0x114>
+    3700:	e242c010 	sub	ip, r2, #16
+    3704:	e92d40f0 	push	{r4, r5, r6, r7, lr}
+    3708:	e2814020 	add	r4, r1, #32
+    370c:	e3cce00f 	bic	lr, ip, #15
+    3710:	e2813010 	add	r3, r1, #16
+    3714:	e2806010 	add	r6, r0, #16
+    3718:	e084400e 	add	r4, r4, lr
+    371c:	e1a0522c 	lsr	r5, ip, #4
+    3720:	e513e00c 	ldr	lr, [r3, #-12]
+    3724:	e513c008 	ldr	ip, [r3, #-8]
+    3728:	e5137010 	ldr	r7, [r3, #-16]
+    372c:	e506e00c 	str	lr, [r6, #-12]
+    3730:	e2833010 	add	r3, r3, #16
+    3734:	e513e014 	ldr	lr, [r3, #-20]	; 0xffffffec
+    3738:	e1530004 	cmp	r3, r4
+    373c:	e9065000 	stmdb	r6, {ip, lr}
+    3740:	e5067010 	str	r7, [r6, #-16]
+    3744:	e2866010 	add	r6, r6, #16
+    3748:	1afffff4 	bne	3720 <memcpy+0x34>
+    374c:	e285c001 	add	ip, r5, #1
+    3750:	e312000c 	tst	r2, #12
+    3754:	e202300f 	and	r3, r2, #15
+    3758:	e081120c 	add	r1, r1, ip, lsl #4
+    375c:	01a02003 	moveq	r2, r3
+    3760:	e080c20c 	add	ip, r0, ip, lsl #4
+    3764:	0a00000d 	beq	37a0 <memcpy+0xb4>
+    3768:	e1a04001 	mov	r4, r1
+    376c:	e2433004 	sub	r3, r3, #4
+    3770:	e3c36003 	bic	r6, r3, #3
+    3774:	e1a0e123 	lsr	lr, r3, #2
+    3778:	e08c6006 	add	r6, ip, r6
+    377c:	e24c3004 	sub	r3, ip, #4
+    3780:	e4945004 	ldr	r5, [r4], #4
+    3784:	e5a35004 	str	r5, [r3, #4]!
+    3788:	e1530006 	cmp	r3, r6
+    378c:	1afffffb 	bne	3780 <memcpy+0x94>
+    3790:	e28e3001 	add	r3, lr, #1
+    3794:	e2022003 	and	r2, r2, #3
+    3798:	e08cc103 	add	ip, ip, r3, lsl #2
+    379c:	e0811103 	add	r1, r1, r3, lsl #2
+    37a0:	e3520000 	cmp	r2, #0
+    37a4:	e2423001 	sub	r3, r2, #1
+    37a8:	12833001 	addne	r3, r3, #1
+    37ac:	124c2001 	subne	r2, ip, #1
+    37b0:	10813003 	addne	r3, r1, r3
+    37b4:	0a000003 	beq	37c8 <memcpy+0xdc>
+    37b8:	e4d1c001 	ldrb	ip, [r1], #1
+    37bc:	e1510003 	cmp	r1, r3
+    37c0:	e5e2c001 	strb	ip, [r2, #1]!
+    37c4:	1afffffb 	bne	37b8 <memcpy+0xcc>
+    37c8:	e8bd40f0 	pop	{r4, r5, r6, r7, lr}
+    37cc:	e12fff1e 	bx	lr
+    37d0:	e3520000 	cmp	r2, #0
+    37d4:	e1a0c000 	mov	ip, r0
+    37d8:	e2423001 	sub	r3, r2, #1
+    37dc:	012fff1e 	bxeq	lr
+    37e0:	e2833001 	add	r3, r3, #1
+    37e4:	e24c2001 	sub	r2, ip, #1
+    37e8:	e0813003 	add	r3, r1, r3
+    37ec:	e4d1c001 	ldrb	ip, [r1], #1
+    37f0:	e1510003 	cmp	r1, r3
+    37f4:	e5e2c001 	strb	ip, [r2, #1]!
+    37f8:	1afffffb 	bne	37ec <memcpy+0x100>
+    37fc:	e12fff1e 	bx	lr
+    3800:	e1a0c000 	mov	ip, r0
+    3804:	e2423001 	sub	r3, r2, #1
+    3808:	eafffff4 	b	37e0 <memcpy+0xf4>
+
+0000380c <RegBase>:
+    380c:	e0044000 e0048000 e004c000 e0050000     .@..............
+    381c:	31303030                                 0001.

@@ -1,0 +1,210 @@
+   1              		.cpu arm7tdmi
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 2
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"systime.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.align	2
+  16              		.global	SYSTIME_wait_us
+  17              		.arch armv4t
+  18              		.syntax unified
+  19              		.arm
+  20              		.fpu softvfp
+  22              	SYSTIME_wait_us:
+  23              	.LVL0:
+  24              	.LFB0:
+  25              		.file 1 "./src/systime.c"
+   1:./src/systime.c **** 
+   2:./src/systime.c **** #include "datatypes.h"
+   3:./src/systime.c **** #include "systime.h"
+   4:./src/systime.c **** #include "lpc21xx.h"
+   5:./src/systime.c **** 
+   6:./src/systime.c **** 
+   7:./src/systime.c **** 
+   8:./src/systime.c **** // wait for some micros
+   9:./src/systime.c **** void	SYSTIME_wait_us ( u32_t  TimeMicroSec)
+  10:./src/systime.c **** {
+  26              		.loc 1 10 1 view -0
+  27              		.cfi_startproc
+  28              		@ Function supports interworking.
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  11:./src/systime.c **** 
+  12:./src/systime.c **** 	if ( TimeMicroSec)
+  32              		.loc 1 12 2 view .LVU1
+  33              		.loc 1 12 5 is_stmt 0 view .LVU2
+  34 0000 000050E3 		cmp	r0, #0
+  35              		.loc 1 12 5 view .LVU3
+  36 0004 1EFF2F01 		bxeq	lr
+  37              	.LBB2:
+  13:./src/systime.c **** 	{
+  14:./src/systime.c **** 		u32_t  TimeStart, TimeNow;
+  38              		.loc 1 14 3 is_stmt 1 view .LVU4
+  15:./src/systime.c **** 
+  16:./src/systime.c **** 
+  17:./src/systime.c **** 		TimeStart = SYSTIME_NOW;	
+  39              		.loc 1 17 3 view .LVU5
+  40              		.loc 1 17 13 is_stmt 0 view .LVU6
+  41 0008 1C109FE5 		ldr	r1, .L12
+  42 000c 082091E5 		ldr	r2, [r1, #8]
+  43              	.LVL1:
+  44              	.L5:
+  18:./src/systime.c **** 
+  19:./src/systime.c **** 		do {
+  45              		.loc 1 19 3 is_stmt 1 discriminator 5 view .LVU7
+  20:./src/systime.c **** 			TimeNow = SYSTIME_NOW;
+  46              		.loc 1 20 4 discriminator 5 view .LVU8
+  47              		.loc 1 20 12 is_stmt 0 discriminator 5 view .LVU9
+  48 0010 083091E5 		ldr	r3, [r1, #8]
+  49              	.LVL2:
+  21:./src/systime.c **** 		} while ( SYSTIME_DIFF ( TimeStart, TimeNow) < TimeMicroSec);
+  50              		.loc 1 21 11 is_stmt 1 discriminator 5 view .LVU10
+  51              		.loc 1 21 13 is_stmt 0 discriminator 5 view .LVU11
+  52 0014 030052E1 		cmp	r2, r3
+  53 0018 01304382 		subhi	r3, r3, #1
+  54              	.LVL3:
+  55              		.loc 1 21 13 discriminator 5 view .LVU12
+  56 001c 023043E0 		sub	r3, r3, r2
+  57              		.loc 1 21 3 discriminator 5 view .LVU13
+  58 0020 000053E1 		cmp	r3, r0
+  59 0024 F9FFFF3A 		bcc	.L5
+  60 0028 1EFF2FE1 		bx	lr
+  61              	.L13:
+  62              		.align	2
+  63              	.L12:
+  64 002c 008000E0 		.word	-536838144
+  65              	.LBE2:
+  66              		.cfi_endproc
+  67              	.LFE0:
+  69              		.align	2
+  70              		.global	SYSTIME_Init
+  71              		.syntax unified
+  72              		.arm
+  73              		.fpu softvfp
+  75              	SYSTIME_Init:
+  76              	.LFB1:
+  22:./src/systime.c **** 	}
+  23:./src/systime.c **** }
+  24:./src/systime.c **** 
+  25:./src/systime.c **** 
+  26:./src/systime.c **** // init timer 1 as systemtimer
+  27:./src/systime.c **** void  SYSTIME_Init ( void)
+  28:./src/systime.c **** {
+  77              		.loc 1 28 1 is_stmt 1 view -0
+  78              		.cfi_startproc
+  79              		@ Function supports interworking.
+  80              		@ args = 0, pretend = 0, frame = 0
+  81              		@ frame_needed = 0, uses_anonymous_args = 0
+  29:./src/systime.c **** 
+  30:./src/systime.c **** 	// Timer config, 1 µs Resolution
+  31:./src/systime.c **** 
+  32:./src/systime.c **** 	// Timer halt
+  33:./src/systime.c **** 	T1TCR = 1 << 1;
+  82              		.loc 1 33 2 view .LVU15
+  28:./src/systime.c **** 
+  83              		.loc 1 28 1 is_stmt 0 view .LVU16
+  84 0030 04E02DE5 		str	lr, [sp, #-4]!
+  85              	.LCFI0:
+  86              		.cfi_def_cfa_offset 4
+  87              		.cfi_offset 14, -4
+  34:./src/systime.c **** 
+  35:./src/systime.c **** 	// Set Prescaler
+  36:./src/systime.c **** 	T1PR = 59;
+  37:./src/systime.c **** 
+  38:./src/systime.c **** 	// no Matches
+  39:./src/systime.c **** 	T1MCR = 0;
+  88              		.loc 1 39 8 view .LVU17
+  89 0034 0020A0E3 		mov	r2, #0
+  33:./src/systime.c **** 
+  90              		.loc 1 33 8 view .LVU18
+  91 0038 02E0A0E3 		mov	lr, #2
+  36:./src/systime.c **** 
+  92              		.loc 1 36 7 view .LVU19
+  93 003c 3BC0A0E3 		mov	ip, #59
+  40:./src/systime.c **** 
+  41:./src/systime.c **** 	//no Capture
+  42:./src/systime.c **** 	T1CCR = 0;
+  43:./src/systime.c **** 
+  44:./src/systime.c **** 	// no external Toggles
+  45:./src/systime.c **** 	T1EMR = 0;
+  46:./src/systime.c **** 
+  47:./src/systime.c **** 	// Clear all interrupts
+  48:./src/systime.c **** 	// we do not use interrupts
+  49:./src/systime.c **** 	T1IR = 0xFF;
+  94              		.loc 1 49 7 view .LVU20
+  95 0040 FF00A0E3 		mov	r0, #255
+  50:./src/systime.c **** 
+  51:./src/systime.c **** 	// Timer start
+  52:./src/systime.c **** 	T1TCR = 1;
+  96              		.loc 1 52 8 view .LVU21
+  97 0044 0110A0E3 		mov	r1, #1
+  33:./src/systime.c **** 
+  98              		.loc 1 33 8 view .LVU22
+  99 0048 20309FE5 		ldr	r3, .L16
+ 100 004c 04E083E5 		str	lr, [r3, #4]
+  36:./src/systime.c **** 
+ 101              		.loc 1 36 2 is_stmt 1 view .LVU23
+  36:./src/systime.c **** 
+ 102              		.loc 1 36 7 is_stmt 0 view .LVU24
+ 103 0050 0CC083E5 		str	ip, [r3, #12]
+  39:./src/systime.c **** 
+ 104              		.loc 1 39 2 is_stmt 1 view .LVU25
+  53:./src/systime.c **** 
+  54:./src/systime.c **** }
+ 105              		.loc 1 54 1 is_stmt 0 view .LVU26
+ 106 0054 04E09DE4 		ldr	lr, [sp], #4
+ 107              	.LCFI1:
+ 108              		.cfi_restore 14
+ 109              		.cfi_def_cfa_offset 0
+  39:./src/systime.c **** 
+ 110              		.loc 1 39 8 view .LVU27
+ 111 0058 142083E5 		str	r2, [r3, #20]
+  42:./src/systime.c **** 
+ 112              		.loc 1 42 2 is_stmt 1 view .LVU28
+  42:./src/systime.c **** 
+ 113              		.loc 1 42 8 is_stmt 0 view .LVU29
+ 114 005c 282083E5 		str	r2, [r3, #40]
+  45:./src/systime.c **** 
+ 115              		.loc 1 45 2 is_stmt 1 view .LVU30
+  45:./src/systime.c **** 
+ 116              		.loc 1 45 8 is_stmt 0 view .LVU31
+ 117 0060 3C2083E5 		str	r2, [r3, #60]
+  49:./src/systime.c **** 
+ 118              		.loc 1 49 2 is_stmt 1 view .LVU32
+  49:./src/systime.c **** 
+ 119              		.loc 1 49 7 is_stmt 0 view .LVU33
+ 120 0064 000083E5 		str	r0, [r3]
+  52:./src/systime.c **** 
+ 121              		.loc 1 52 2 is_stmt 1 view .LVU34
+  52:./src/systime.c **** 
+ 122              		.loc 1 52 8 is_stmt 0 view .LVU35
+ 123 0068 041083E5 		str	r1, [r3, #4]
+ 124              		.loc 1 54 1 view .LVU36
+ 125 006c 1EFF2FE1 		bx	lr
+ 126              	.L17:
+ 127              		.align	2
+ 128              	.L16:
+ 129 0070 008000E0 		.word	-536838144
+ 130              		.cfi_endproc
+ 131              	.LFE1:
+ 133              	.Letext0:
+ 134              		.file 2 "./inc/datatypes.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 systime.c
+C:\Users\Carmine\AppData\Local\Temp\ccRbek41.s:15     .text:00000000 $a
+C:\Users\Carmine\AppData\Local\Temp\ccRbek41.s:22     .text:00000000 SYSTIME_wait_us
+C:\Users\Carmine\AppData\Local\Temp\ccRbek41.s:64     .text:0000002c $d
+C:\Users\Carmine\AppData\Local\Temp\ccRbek41.s:69     .text:00000030 $a
+C:\Users\Carmine\AppData\Local\Temp\ccRbek41.s:75     .text:00000030 SYSTIME_Init
+C:\Users\Carmine\AppData\Local\Temp\ccRbek41.s:129    .text:00000070 $d
+
+NO UNDEFINED SYMBOLS
