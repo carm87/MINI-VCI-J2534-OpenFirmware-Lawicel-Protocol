@@ -10,7 +10,8 @@ This is the firmware I ported from Peak System CAN-RS232 hardware to Chinese MIN
 ## For whom wants just to use this firmware:
 
 1- connect your MINI-VCI and verify in windows control panel driver is correctly loaded shoul be COMx present
-2- open Flash Magic or LPC210x_ISP, select port COMx, baud 38400, select file MVCI_Lawicel_prot_v0001.bin/.hex
+2- open Flash Magic or LPC210x_ISP, select port COMx, baud 38400, select file /07_CAN_TO_SER_ASCII
+/out/MVCI_Lawicel_prot_v0001.bin/.hex
 3- write it into device flash
 
 
